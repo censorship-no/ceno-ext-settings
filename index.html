@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
+</head>
 <body>
 	<form id="myForm">
 		<div id="auto_refresh">
@@ -35,4 +36,16 @@
 		</div>
 	</form>
 </body>
+<script>
+window.addEventListener("load", () => {
+  const form = document.getElementById("myForm");
+
+  fetch('http://localhost/api/status')
+    .then(x => x.json())
+	.then(Object.entries)
+	.then(x => x.map(([k,v]) => {
+      document.getElementById(k).children[0].children[0].textContent = v;
+    }));
+});
+</script>
 </html>
