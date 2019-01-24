@@ -3,17 +3,36 @@
 <head></head>
 <body>
 	<form id="myForm">
+		<div id="auto_refresh">
+		<label>Auto refresh
+			<span class="value"></span>
+			<input type="button" value="Toggle" name="auto_refresh">
+		</label>
+		</div>
+		<div id="origin_access">
 		<label>Origin access
-			<input type="checkbox" name="origin_access">
+			<span class="value"></span>
+			<input type="button" value="Toggle" name="origin_access">
 		</label>
+		</div>
+		<div id="proxy_access">
 		<label>Proxy access
-			<input type="checkbox" name="proxy_access">
+			<span class="value"></span>
+			<input type="button" value="Toggle" name="proxy_access">
 		</label>
+		</div>
+		<div id="injector_proxy">
 		<label>Injector proxy
-			<input type="checkbox" name="injector_proxy">
+			<span class="value"></span>
+			<input type="button" value="Toggle" name="injector_proxy">
 		</label>
-		<input type="submit">
+		</div>
+		<div id="ipfs_cache">
+		<label>IPFS cache
+			<span class="value"></span>
+			<input type="button" value="Toggle" name="ipfs_cache">
+		</label>
+		</div>
 	</form>
-</form>
 </body>
 </html>
