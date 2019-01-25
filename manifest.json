@@ -1,0 +1,25 @@
+{
+
+  "description": "Adds a toolbar button for CENO settings page.",
+  "manifest_version": 2,
+  "name": "CENO Settings",
+  "version": "1.0",
+  "icons": {
+    "48": "icons/ceno-logo-48.png"
+  },
+  "browser_specific_settings": {
+  "gecko": {
+    "id": "settings.ceno@equalit.ie"
+    }
+  },
+
+  "browser_action": {
+    "default_icon": "icons/ceno-logo-32.png",
+    "default_title": "CENO"
+  },
+
+  "options_ui": {
+    "page": "index.html",
+    "browser_style": true
+  }
+}
