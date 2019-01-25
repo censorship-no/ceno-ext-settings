@@ -49,9 +49,9 @@ window.addEventListener("load", () => {
 
   const btns = Array.from(document.getElementById('myForm').getElementsByTagName('input'));
   btns.map(x =>
-    x.addEventListener('click', event => {
-      x.value = `Click count: ${event.detail}`;
-    })
+    x.addEventListener('click', _ =>
+      fetch(`http://localhost/?${x.name}=disable`)
+    )
   );
 });
 </script>
