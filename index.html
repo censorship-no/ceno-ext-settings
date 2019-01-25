@@ -46,6 +46,13 @@ window.addEventListener("load", () => {
 	.then(x => x.map(([k,v]) => {
       document.getElementById(k).children[0].children[0].textContent = v;
     }));
+
+  const btns = Array.from(document.getElementById('myForm').getElementsByTagName('input'));
+  btns.map(x =>
+    x.addEventListener('click', event => {
+      x.value = `Click count: ${event.detail}`;
+    })
+  );
 });
 </script>
 </html>
