@@ -14,9 +14,9 @@ window.addEventListener("load", () => {
 
   fetch('http://localhost/api/status')
     .then(x => x.json())
-        .then(Object.entries)
-        .then(x => x.map(([k,v]) => {
-      state.set(k, v);
+    .then(Object.entries)
+    .then(x => x.map(([k,v]) => {
+       state.set(k, v);
     }));
 
   const btns = Array.from(document.getElementById('myForm').getElementsByTagName('input'));
