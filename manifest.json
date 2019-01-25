@@ -21,5 +21,9 @@
   "options_ui": {
     "page": "index.html",
     "browser_style": true
+  },
+
+  "background": {
+    "scripts": ["button.js"]
   }
 }
