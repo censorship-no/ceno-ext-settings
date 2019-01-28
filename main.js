@@ -1,4 +1,6 @@
-const updDOMVal = (name, newval) => document.getElementById(name).children[1].textContent = newval;
+const renderBool = x => x ? '✅' : '❎';
+
+const updDOMVal = (name, newval) => document.getElementById(name).children[1].textContent = renderBool(newval);
 
 class State extends Map {
   set (k, v) {
