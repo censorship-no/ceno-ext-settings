@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+#myForm {
+	display: grid;
+}
+#myForm > div {
+	grid-column: span 3;
+
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+</style>
 </head>
 <body>
 	<form id="myForm">
 		<div id="auto_refresh">
-		<label>Auto refresh
-			<span class="value"></span>
-			<input type="button" value="Toggle" name="auto_refresh">
-		</label>
+		<label for="auto_refresh">Auto refresh</label>
+		<span class="value"></span>
+		<input type="button" value="Toggle" name="auto_refresh">
 		</div>
 		<div id="origin_access">
-		<label>Origin access
-			<span class="value"></span>
-			<input type="button" value="Toggle" name="origin_access">
-		</label>
+		<label for="origin_access">Origin access</label>
+		<span class="value"></span>
+		<input type="button" value="Toggle" name="origin_access">
 		</div>
 		<div id="proxy_access">
-		<label>Proxy access
-			<span class="value"></span>
-			<input type="button" value="Toggle" name="proxy_access">
-		</label>
+		<label for="proxy_access">Proxy access</label>
+		<span class="value"></span>
+		<input type="button" value="Toggle" name="proxy_access">
 		</div>
 		<div id="injector_proxy">
-		<label>Injector proxy
-			<span class="value"></span>
-			<input type="button" value="Toggle" name="injector_proxy">
-		</label>
+		<label for="injector_proxy">Injector proxy</label>
+		<span class="value"></span>
+		<input type="button" value="Toggle" name="injector_proxy">
 		</div>
 		<div id="ipfs_cache">
-		<label>IPFS cache
-			<span class="value"></span>
-			<input type="button" value="Toggle" name="ipfs_cache">
-		</label>
+		<label for="ipfs_cache">IPFS cache</label>
+		<span class="value"></span>
+		<input type="button" value="Toggle" name="ipfs_cache">
 		</div>
 	</form>
 	<script src="main.js"></script>

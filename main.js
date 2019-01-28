@@ -1,4 +1,4 @@
-const updDOMVal = (name, newval) => document.getElementById(name).children[0].children[0].textContent = newval;
+const updDOMVal = (name, newval) => document.getElementById(name).children[1].textContent = newval;
 
 class State extends Map {
   set (k, v) {
