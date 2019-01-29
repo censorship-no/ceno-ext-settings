@@ -1,0 +1,23 @@
+# -*- Mode: python; indent-tabs-mode: nil; tab-width: 40 -*-
+# vim: set filetype=python:
+
+DEFINES['MOZ_APP_VERSION'] = CONFIG['MOZ_APP_VERSION']
+DEFINES['MOZ_APP_MAXVERSION'] = CONFIG['MOZ_APP_MAXVERSION']
+
+FINAL_TARGET_FILES.features['settings.ceno@equalit.ie'] += [
+  'button.js',
+  'main.js',
+  'manifest.json'
+]
+
+FINAL_TARGET_FILES.features['settings.ceno@equalit.ie']['settings-page'] += [
+  'index.html'
+]
+
+FINAL_TARGET_FILES.features['settings.ceno@equalit.ie']['update-page']['img'] += [
+  'icons/ceno-logo-32.png',
+  'icons/ceno-logo-48.png'
+]
+
+with Files('**'):
+  BUG_COMPONENT = ('Censorship circumvention tool', 'Censorship no')
