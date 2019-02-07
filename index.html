@@ -3,43 +3,36 @@
 <head>
 	<meta charset="utf-8">
 <style>
-#myForm {
-	display: grid;
+body {
+	font-size: 1.11em; /* What about:preferences does. */
 }
 #myForm > div {
-	grid-column: span 3;
-
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: 1.5em 1fr;
 }
 </style>
 </head>
 <body>
 	<form id="myForm">
-		<div id="auto_refresh">
-		<label for="auto_refresh">Auto refresh</label>
-		<span class="value"></span>
-		<input type="button" value="Toggle" name="auto_refresh">
+		<div id="auto_refresh" class="browser-style">
+		<input type="checkbox" name="auto_refresh" id="auto_refresh_input">
+		<label for="auto_refresh_input">Auto refresh</label>
 		</div>
-		<div id="origin_access">
-		<label for="origin_access">Origin access</label>
-		<span class="value"></span>
-		<input type="button" value="Toggle" name="origin_access">
+		<div id="origin_access" class="browser-style">
+		<input type="checkbox" name="origin_access" id="origin_access_input">
+		<label for="origin_access_input">Origin access</label>
 		</div>
-		<div id="proxy_access">
-		<label for="proxy_access">Proxy access</label>
-		<span class="value"></span>
-		<input type="button" value="Toggle" name="proxy_access">
+		<div id="proxy_access" class="browser-style">
+		<input type="checkbox" name="proxy_access" id="proxy_access_input">
+		<label for="proxy_access_input">Proxy access</label>
 		</div>
-		<div id="injector_proxy">
-		<label for="injector_proxy">Injector proxy</label>
-		<span class="value"></span>
-		<input type="button" value="Toggle" name="injector_proxy">
+		<div id="injector_proxy" class="browser-style">
+		<input type="checkbox" name="injector_proxy" id="injector_proxy_input">
+		<label for="injector_proxy_input">Injector proxy</label>
 		</div>
-		<div id="ipfs_cache">
-		<label for="ipfs_cache">IPFS cache</label>
-		<span class="value"></span>
-		<input type="button" value="Toggle" name="ipfs_cache">
+		<div id="ipfs_cache" class="browser-style">
+		<input type="checkbox" name="ipfs_cache" id="ipfs_cache_input">
+		<label for="ipfs_cache_input">IPFS cache</label>
 		</div>
 	</form>
 	<script src="main.js"></script>

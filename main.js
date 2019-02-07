@@ -1,6 +1,4 @@
-const renderBool = x => x ? '✅' : '❎';
-
-const updDOMVal = (name, newval) => document.getElementById(name).children[1].textContent = renderBool(newval);
+const updDOMVal = (name, newval) => document.getElementById(name).children[0].checked = newval;
 
 class State extends Map {
   set (k, v) {
