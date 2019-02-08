@@ -3,7 +3,7 @@
   "description": "Adds a toolbar button for CENO settings page.",
   "manifest_version": 2,
   "name": "CENO Settings",
-  "version": "1.0",
+  "version": "1.0.1",
   "icons": {
     "48": "icons/ceno-logo-48.png"
   },
