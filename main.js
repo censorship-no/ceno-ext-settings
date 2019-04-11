@@ -1,8 +1,10 @@
-const updDOMVal = (name, newval) => document.getElementById(name).children[0].checked = newval;
-
 class State extends Map {
   set (k, v) {
-    updDOMVal(k, v);
+    ((name, newval) => {
+      const elt = document.getElementById(name);
+      if (elt == null) { return; } // We might not have counterparts for all the things in State in DOM
+      elt.children[0].checked = newval;
+    })(k, v);
     return super.set(k, v);
   }
 }
