@@ -14,7 +14,7 @@
   },
 
   "permissions": [
-    "http://localhost/api/status"
+    "http://127.0.0.1/api/status"
   ],
 
   "browser_action": {
