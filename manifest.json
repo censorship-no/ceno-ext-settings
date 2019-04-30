@@ -1,7 +1,7 @@
 {
 
   "description": "Adds a toolbar button for CENO settings page.",
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "CENO Settings",
   "version": "1.0.4",
   "icons": {
@@ -14,7 +14,9 @@
   },
 
   "permissions": [
-    "http://127.0.0.1/api/status"
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
   ],
 
   "browser_action": {
