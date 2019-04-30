@@ -10,6 +10,12 @@ We use [web-ext](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExt
 web-ext build
 ```
 
+## Testing
+Opens Firefox and installs the extension. 
+```sh
+web-ext run
+```
+
 ## Distributing
 
 To ship an updated version, one should bump version, sign the addon, and, optionally, push to the distribution file.
