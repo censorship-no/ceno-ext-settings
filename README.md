@@ -4,17 +4,9 @@ A WebExtension frontend for ouinet HTTP Settings API.
 
 We use [web-ext](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Getting_started_with_web-ext) for development.
 
-## Building
+## Developing
 
-```sh
-web-ext build
-```
-
-## Testing
-Opens Firefox and installs the extension. 
-```sh
-web-ext run
-```
+Run `web-ext run` to test in a temporary profile on desktop (with live reload!), and `web-ext run --target=firefox-android` for same on mobile (more details and debugging instructions at [upstream docs](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Getting_started_with_web-ext#Testing_in_Firefox_for_Android)).
 
 ## Distributing
 
