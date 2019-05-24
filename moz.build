@@ -7,7 +7,8 @@ DEFINES['MOZ_APP_MAXVERSION'] = CONFIG['MOZ_APP_MAXVERSION']
 FINAL_TARGET_FILES.features['settings.ceno@equalit.ie'] += [
   'button.js',
   'main.js',
-  'manifest.json'
+  'manifest.json',
+  'modifyheaders.js'
 ]
 
 FINAL_TARGET_FILES.features['settings.ceno@equalit.ie']['settings-page'] += [
