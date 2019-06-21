@@ -1,15 +1,15 @@
 {
-
-  "description": "Adds a toolbar button for CENO settings page.",
+  "description": "Adds a toolbar button for CENO settings page, checks for available updates to CENO, and other functionality for  CENO.",
   "manifest_version": 2,
-  "name": "CENO Settings",
-  "version": "1.0.41",
+  "name": "CENO Extension",
+  "version": "1.0.42",
   "icons": {
     "48": "icons/ceno-logo-48.png"
   },
+
   "browser_specific_settings": {
     "gecko": {
-      "id": "settings.ceno@equalit.ie"
+      "id": "ceno@equalit.ie"
       }
   },
 
@@ -20,9 +20,7 @@
   ],
 
   "browser_action": {
-    "default_icon": "icons/ceno-logo-32.png",
-    "default_title": "CENO",
-    "browser_style": true
+    "default_title": "CENO"
   },
 
   "options_ui": {
@@ -31,8 +29,23 @@
   },
 
   "background": {
-    "scripts": ["button.js", "modifyheaders.js"]
+    "scripts": [
+      "button.js",
+      "modify_headers.js",
+      "update_check.js"
+    ]
   },
+
+  "web_accessible_resources": [
+    "settings.html",
+    "update-page/index.html",
+    "update-page/style.css",
+    "update-page/img/ceno-logo-h.png",
+    "update-page/img/ceno-update-icon.png",
+    "update-page/img/ceno-warning-icon.png",
+    "update-page/img/google-play-badge-2.png",
+    "update-page/img/paskoocheh-download-badge.png"
+  ],
 
   "incognito": "spanning"
 }

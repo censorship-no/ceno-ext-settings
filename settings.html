@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<style>
+body {
+  font-family: 'Arial', 'Helvetica', 'sans-serif';
+  margin:0;
+  padding:0;
+}
+#header {
+  height: 120px;
+  line-height: 120px;
+  display: flex;
+  justify-content: flex-start;
+  vertical-align: middle;
+  font-size: 3em;
+  color: #fff;
+  background: #333;
+  padding-left: 50px;
+}
+#back {
+  padding: 25px;
+  padding-right: 50px;
+  height: 50px;
+  width: 50px;
+}
+#form {
+  color: #333;
+  font-size: 3em;
+}
+.row {
+  height: 140px;
+  line-height: 140px;
+  vertical-align: middle;
+  border-bottom: 2px solid #b2b2b2;
+}
+.cb_container {
+  display: block;
+  position: relative;
+  padding-left: 128px;
+}
+/* Hide the browser's default checkbox */
+.cb_container input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 46px;
+  left: 48px;
+  height: 40px;
+  width: 40px;
+  border: #aaa solid 5px;
+  border-radius: 25px;
+}
+/* When the checkbox is checked, add a blue background */
+.cb_container input:checked ~ .checkmark {
+  background-color: #2196f3;
+  border-color: #2196f3;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Show the checkmark when checked */
+.cb_container input:checked ~ .checkmark:after {
+  display: block;
+}
+/* Style the checkmark/indicator */
+.cb_container .checkmark:after {
+  left: 15px;
+  top: 8px;
+  width: 7px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#about {
+  padding: 50px;
+  font-size: 2em;
+  color: #999;
+}
+.name {
+  font-weight: bold;
+}
+</style>
+<script src="settings_page.js"></script>
+</head>
+<body>
+  <div id="header">CENO Settings</div>
+  <form id="form">
+    <div class="row">
+      <label class="cb_container">Origin access
+        <input type="checkbox" id="origin_access">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="row">
+      <label class="cb_container">Proxy access
+        <input type="checkbox" id="proxy_access">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="row">
+      <label class="cb_container">Injector proxy
+        <input type="checkbox" id="injector_proxy">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="row">
+      <label class="cb_container">Distributed cache
+        <input type="checkbox" id="ipfs_cache">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+  </form>
+  <div id="about">
+    <span class="name">CENO Browser</span><br>
+    <span id="ceno_version"> </span>
+    <p>
+    <span class="name">Ouinet</span><br>
+    <span id="ouinet_version"> </span>
+  </div>
+</body>
+</html>
