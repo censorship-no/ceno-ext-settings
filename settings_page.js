@@ -4,7 +4,11 @@ class State extends Map {
     if (!elem) {
       return; // We might not have counterparts for all the things in State in DOM
     }
-    elem.checked = value;
+    if (elem.type === 'checkbox') {
+      elem.checked = value;
+    } else {
+      elem.innerHTML = value;
+    }
     return super.set(key, value);
   }
 }
