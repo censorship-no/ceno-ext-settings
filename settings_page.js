@@ -13,9 +13,14 @@ class State extends Map {
   }
 }
 
-window.addEventListener("load", () => {
-  let state = new State();
+function showBrowserInfo(info) {
+  document.getElementById('ceno_version').innerHTML = `${info.version} Build ID ${info.buildID}`;
+}
 
+window.addEventListener("load", () => {
+  browser.runtime.getBrowserInfo().then(showBrowserInfo);
+
+  let state = new State();
   fetch('http://127.0.0.1:8081/api/status')
     .then(x => x.json())
     .then(Object.entries)
