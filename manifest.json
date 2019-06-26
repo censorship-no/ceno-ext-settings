@@ -24,7 +24,7 @@
   },
 
   "options_ui": {
-    "page": "index.html",
+    "page": "settings.html",
     "browser_style": true
   },
 
