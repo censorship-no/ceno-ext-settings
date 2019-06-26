@@ -20,6 +20,10 @@ h2 {
   font-weight: normal;
 }
 
+a {
+  text-decoration: none;
+}
+
 .header {
   width: 100%;
   padding-top: 20px;
@@ -31,10 +35,9 @@ h2 {
   background-color: #ffffff;
 }
 
-
-.content { 
-width: 100%;
-text-align: center;
+.content {
+  width: 100%;
+  text-align: center;
 }
 
 .CENO-LOGO-H {
