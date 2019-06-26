@@ -9,7 +9,7 @@ FINAL_TARGET_FILES.features['ceno@equalit.ie'] += [
   'manifest.json',
   'modify_headers.js',
   'settings.html',
-  'settings_page.js',
+  'settings.js',
   'update_check.js',
 ]
 
