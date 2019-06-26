@@ -20,11 +20,17 @@ function setCookie(e) {
     }
   }
 
-  if (versionError) {
+  if (versionError && !isAppStoreUrl(e.url)) {
     return {
       redirectUrl: browser.extension.getURL("update-page/index.html"),
     };
   }
+}
+
+function isAppStoreUrl(url) {
+  const appStores = ["play.google.com", "paskoocheh.com", "s3.amazonaws.com"];
+  const hostname = new URL(url).hostname;
+  return appStores.includes(hostname);
 }
 
 // Listen for onHeaderReceived for the target page.
