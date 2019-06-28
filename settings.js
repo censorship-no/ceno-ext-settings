@@ -8,6 +8,7 @@ class State extends Map {
       return; // We might not have counterparts for all the things in State in DOM
     }
     if (elem.type === 'checkbox') {
+      elem.disabled = false;
       elem.checked = value;
     } else {
       elem.innerHTML = value;
