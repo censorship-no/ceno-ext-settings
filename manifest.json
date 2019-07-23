@@ -14,6 +14,8 @@
   },
 
   "permissions": [
+    "storage",
+    "tabs",
     "webRequest",
     "webRequestBlocking",
     "<all_urls>"
@@ -24,6 +26,12 @@
     "default_title": "CENO"
   },
 
+  "page_action": {
+    "default_icon": "icons/ceno-logo-32.png",
+    "default_title": "CENO",
+    "default_popup": "popup.html"
+  },
+
   "options_ui": {
     "page": "settings.html",
     "browser_style": true
@@ -32,6 +40,11 @@
   "background": {
     "scripts": [ "background.js" ]
   },
+
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "js": [ "content.js" ]
+  }],
 
   "web_accessible_resources": [
     "settings.html",
