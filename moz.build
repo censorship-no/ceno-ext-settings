@@ -5,12 +5,14 @@ DEFINES['MOZ_APP_VERSION'] = CONFIG['MOZ_APP_VERSION']
 DEFINES['MOZ_APP_MAXVERSION'] = CONFIG['MOZ_APP_MAXVERSION']
 
 FINAL_TARGET_FILES.features['ceno@equalit.ie'] += [
+  'background.js',
   'button.js',
+  'content.js',
   'manifest.json',
-  'modify_headers.js',
+  'popup.html',
+  'popup.js',
   'settings.html',
   'settings.js',
-  'update_check.js',
 ]
 
 FINAL_TARGET_FILES.features['ceno@equalit.ie']['icons'] += [
