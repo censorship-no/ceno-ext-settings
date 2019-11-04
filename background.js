@@ -64,18 +64,19 @@ function updateOuinetDetailsFromHeaders(e) {
   insertCacheEntry(e.tabId, e.url, getOuinetDetails(e.responseHeaders));
 }
 
+const INJ_TS_RE = /\bts=([0-9]+)\b/;
 function getOuinetDetails(headers) {
   var details = {
     isProxied: false,
     injectionTime: null,
-    requestTime: Date.now(),
+    requestTime: Date.now() / 1000,  // seconds
   };
   for (var i = 0; i < headers.length; i++) {
-    if (headers[i].name.toUpperCase().startsWith("X-OUINET-INJECTION")) {
+    if (headers[i].name.toUpperCase() === "X-OUINET-INJECTION") {
       details.isProxied = true;
-    }
-    if (headers[i].name.toUpperCase() === "X-OUINET-INJECTION-TIME") {
-      details.injectionTime = headers[i].value;
+      var ts_match = INJ_TS_RE.exec(headers[i].value);
+      if (ts_match)
+        details.injectionTime = ts_match[1] - 0;
     }
   }
   return details;
