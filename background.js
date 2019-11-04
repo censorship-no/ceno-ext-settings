@@ -1,6 +1,7 @@
 'use strict';
 const CENO_ICON = "icons/ceno-logo-32.png";
 const CACHE_MAX_ENTRIES = 500;
+const OUINET_RESPONSE_VERSION = "1"  // response protocol version accepted
 
 function addIsPrivateHeader(e) {
   if (e.tabId < 0) {
@@ -71,15 +72,23 @@ function getOuinetDetails(headers) {
     injectionTime: null,
     requestTime: Date.now() / 1000,  // seconds
   };
+  var no_details = Object.assign({}, details);
+  var valid_proto = false;
   for (var i = 0; i < headers.length; i++) {
-    if (headers[i].name.toUpperCase() === "X-OUINET-INJECTION") {
-      details.isProxied = true;
-      var ts_match = INJ_TS_RE.exec(headers[i].value);
-      if (ts_match)
-        details.injectionTime = ts_match[1] - 0;
+    switch (headers[i].name.toUpperCase()) {
+      case "X-OUINET-VERSION":
+        valid_proto = (headers[i].value === OUINET_RESPONSE_VERSION);
+        break;
+      case "X-OUINET-INJECTION":
+        details.isProxied = true;
+        var ts_match = INJ_TS_RE.exec(headers[i].value);
+        if (ts_match) {
+          details.injectionTime = ts_match[1] - 0;
+        }
+        break;
     }
   }
-  return details;
+  return (valid_proto ? details : no_details);
 }
 
 function insertCacheEntry(tabId, url, details) {
