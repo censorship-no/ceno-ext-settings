@@ -33,7 +33,7 @@ function redirectWhenUpdateRequired(e) {
   if (!versionError) {
     for (var i in e.responseHeaders) {
         var h = e.responseHeaders[i];
-        if (h.name == "X-Ouinet-Error") {
+        if (h.name.toUpperCase() === "X-OUINET-ERROR") {
             var ec = h.value.substring(0, 2);
             if (ec === "0 " || ec === "1 ") {
                 versionError = true;
@@ -71,10 +71,10 @@ function getOuinetDetails(headers) {
     requestTime: Date.now(),
   };
   for (var i = 0; i < headers.length; i++) {
-    if (headers[i].name.startsWith("X-Ouinet-Injection")) {
+    if (headers[i].name.toUpperCase().startsWith("X-OUINET-INJECTION")) {
       details.isProxied = true;
     }
-    if (headers[i].name === "X-Ouinet-Injection-Time") {
+    if (headers[i].name.toUpperCase() === "X-OUINET-INJECTION-TIME") {
       details.injectionTime = headers[i].value;
     }
   }
