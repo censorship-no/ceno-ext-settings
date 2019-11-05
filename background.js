@@ -1,7 +1,7 @@
 'use strict';
 const CENO_ICON = "icons/ceno-logo-32.png";
 const CACHE_MAX_ENTRIES = 500;
-const OUINET_RESPONSE_VERSION = "1"  // response protocol version accepted
+const OUINET_RESPONSE_VERSION = "2"  // protocol version accepted and used
 
 function addIsPrivateHeader(e) {
   if (e.tabId < 0) {
