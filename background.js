@@ -63,9 +63,13 @@ function redirectWhenUpdateRequired(e) {
 }
 
 function warnWhenUpdateDetected(e) {
+  var isOuinetMessage = false
   for (var i in e.responseHeaders) {
     var h = e.responseHeaders[i];
-    if (h.name.toUpperCase() === "X-OUINET-WARNING") {
+    var hn = h.name.toUpperCase();
+    if (hn === "X-OUINET-VERSION" && h.value === OUINET_RESPONSE_VERSION) {
+      isOuinetMessage = true  // hope this comes before other `X-Ouinet-*` headers
+    } else if (isOuinetMessage && hn === "X-OUINET-WARNING") {
       browser.notifications.create("", {
         type: "basic",
         title: "CENO warning",
