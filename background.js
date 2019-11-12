@@ -49,6 +49,18 @@ function redirectWhenUpdateRequired(e) {
   }
 }
 
+function warnWhenUpdateDetected(e) {
+  for (var i in e.responseHeaders) {
+    var h = e.responseHeaders[i];
+    if (h.name.toUpperCase() === "X-OUINET-WARNING") {
+      browser.notifications.create("", {
+        type: "basic",
+        title: "CENO warning",
+        message: h.value})
+    }
+  }
+}
+
 const APP_STORES = ["play.google.com", "paskoocheh.com", "s3.amazonaws.com"];
 function isAppStoreUrl(url) {
   const hostname = new URL(url).hostname;
@@ -212,6 +224,12 @@ browser.webRequest.onHeadersReceived.addListener(
   redirectWhenUpdateRequired,
   {urls: ["<all_urls>"]},
   ["blocking", "responseHeaders"]
+);
+
+browser.webRequest.onHeadersReceived.addListener(
+  warnWhenUpdateDetected,
+  {urls: ["<all_urls>"]},
+  ["responseHeaders"]
 );
 
 browser.webRequest.onHeadersReceived.addListener(
