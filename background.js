@@ -3,6 +3,19 @@ const CENO_ICON = "icons/ceno-logo-32.png";
 const CACHE_MAX_ENTRIES = 500;
 const OUINET_RESPONSE_VERSION = "2"  // protocol version accepted and used
 
+
+// <https://stackoverflow.com/a/4835406>
+const htmlEscapes = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#039;'
+}
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, (c) => htmlEscapes[c]);
+}
+
 function addIsPrivateHeader(e) {
   if (e.tabId < 0) {
     return;
@@ -56,7 +69,7 @@ function warnWhenUpdateDetected(e) {
       browser.notifications.create("", {
         type: "basic",
         title: "CENO warning",
-        message: h.value})
+        message: escapeHtml(h.value)})
     }
   }
 }
