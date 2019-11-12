@@ -62,6 +62,8 @@ function redirectWhenUpdateRequired(e) {
   }
 }
 
+const WARN_THROTTLE_MILLIS = 5 * 60 * 1000
+var warningLastShownOn = {}  // warning string -> time in milliseconds
 function warnWhenUpdateDetected(e) {
   var isOuinetMessage = false
   for (var i in e.responseHeaders) {
@@ -70,10 +72,19 @@ function warnWhenUpdateDetected(e) {
     if (hn === "X-OUINET-VERSION" && h.value === OUINET_RESPONSE_VERSION) {
       isOuinetMessage = true  // hope this comes before other `X-Ouinet-*` headers
     } else if (isOuinetMessage && hn === "X-OUINET-WARNING") {
+      var hv = h.value
+      // Do not show the same warning if already shown
+      // in the last `WARN_THROTTLE_MILLIS` milliseconds.
+      var now = Date.now()
+      var lastShown = warningLastShownOn[hv] || 0
+      if (now - lastShown < WARN_THROTTLE_MILLIS) {
+        continue
+      }
+      warningLastShownOn[hv] = now
       browser.notifications.create("", {
         type: "basic",
         title: "CENO warning",
-        message: escapeHtml(h.value)})
+        message: escapeHtml(hv)})
     }
   }
 }
