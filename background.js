@@ -3,6 +3,19 @@ const CENO_ICON = "icons/ceno-logo-32.png";
 const CACHE_MAX_ENTRIES = 500;
 const OUINET_RESPONSE_VERSION = "2"  // protocol version accepted and used
 
+
+// <https://stackoverflow.com/a/4835406>
+const htmlEscapes = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#039;'
+}
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, (c) => htmlEscapes[c]);
+}
+
 function addIsPrivateHeader(e) {
   if (e.tabId < 0) {
     return;
@@ -46,6 +59,33 @@ function redirectWhenUpdateRequired(e) {
     return {
       redirectUrl: browser.extension.getURL("update-page/index.html"),
     };
+  }
+}
+
+const WARN_THROTTLE_MILLIS = 5 * 60 * 1000
+var warningLastShownOn = {}  // warning string -> time in milliseconds
+function warnWhenUpdateDetected(e) {
+  var isOuinetMessage = false
+  for (var i in e.responseHeaders) {
+    var h = e.responseHeaders[i];
+    var hn = h.name.toUpperCase();
+    if (hn === "X-OUINET-VERSION" && h.value === OUINET_RESPONSE_VERSION) {
+      isOuinetMessage = true  // hope this comes before other `X-Ouinet-*` headers
+    } else if (isOuinetMessage && hn === "X-OUINET-WARNING") {
+      var hv = h.value
+      // Do not show the same warning if already shown
+      // in the last `WARN_THROTTLE_MILLIS` milliseconds.
+      var now = Date.now()
+      var lastShown = warningLastShownOn[hv] || 0
+      if (now - lastShown < WARN_THROTTLE_MILLIS) {
+        continue
+      }
+      warningLastShownOn[hv] = now
+      browser.notifications.create("", {
+        type: "basic",
+        title: "CENO warning",
+        message: escapeHtml(hv)})
+    }
   }
 }
 
@@ -212,6 +252,12 @@ browser.webRequest.onHeadersReceived.addListener(
   redirectWhenUpdateRequired,
   {urls: ["<all_urls>"]},
   ["blocking", "responseHeaders"]
+);
+
+browser.webRequest.onHeadersReceived.addListener(
+  warnWhenUpdateDetected,
+  {urls: ["<all_urls>"]},
+  ["responseHeaders"]
 );
 
 browser.webRequest.onHeadersReceived.addListener(
