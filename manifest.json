@@ -2,7 +2,7 @@
   "description": "Adds a toolbar button for CENO settings page, checks for available updates to CENO, and other functionality for  CENO.",
   "manifest_version": 2,
   "name": "CENO Extension",
-  "version": "1.0.42",
+  "version": "1.0.43",
   "icons": {
     "48": "icons/ceno-logo-48.png"
   },
