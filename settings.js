@@ -1,23 +1,99 @@
 const STATUS_ENDPOINT = "http://127.0.0.1:8081/api/status";
 const SET_VALUE_ENDPOINT = "http://127.0.0.1:8081/";
 
-class State extends Map {
-  set (key, value) {
-    const elem = document.getElementById(key);
-    if (!elem) {
+class Button {
+  constructor(id) {
+    var elem = document.getElementById(id);
+    if (!elem) { return; }
+    if (elem.type !== 'checkbox') { return; }
+
+    elem.addEventListener('click', event => this.onClick(event));
+
+    this.id = id;
+    this.elem = elem;
+  }
+
+  set(value) {
+    if (!this.elem) return;
+    this.elem.disabled = false;
+    this.elem.checked = value;
+  }
+
+  disable() {
+    if (!this.elem) return;
+    this.elem.checked = false;
+    this.elem.disabled = true;
+  }
+
+  onClick(event) {
+    if (!this.elem) return;
+    const name = this.id;
+    const newValue = this.elem.checked;
+    fetch(SET_VALUE_ENDPOINT + `?${name}=${newValue ? 'enabled' : 'disabled'}`)
+      .then(_ => this.set(newValue))
+  }
+}
+
+class Text {
+  constructor(id) {
+    var elem = document.getElementById(id);
+    if (!elem) { return; }
+    this.elem = elem;
+  }
+
+  set(value) {
+    if (!this.elem) return;
+
+    if (Array.isArray(value)) {
+      this.elem.innerHTML = value.join('<br>');
+    } else {
+      this.elem.innerHTML = value;
+    }
+  }
+
+  disable() {
+    if (!this.elem) return;
+    this.elem.innerHTML = "---";
+  }
+}
+
+class State {
+  constructor() {
+    this.items = new Map();
+
+    var buttons = ["origin_access", "proxy_access", "injector_access", "distributed_cache"];
+    buttons.map(v => this.items.set(v, new Button(v)));
+
+    var texts = ["ouinet_version", "local_udp_endpoints", "is_upnp_active", "udp_world_reachable"];
+    texts.map(v => this.items.set(v, new Text(v)));
+
+    this.setCenoVersion();
+    this.setCenoSettingsVersion();
+  }
+
+  set(key, value) {
+    var item = this.items.get(key);
+    if (!item) {
       return; // We might not have counterparts for all the things in State in DOM
     }
-    if (elem.type === 'checkbox') {
-      elem.disabled = false;
-      elem.checked = value;
-    } else {
-      if (Array.isArray(value)) {
-        elem.innerHTML = value.join('<br>');
-      } else {
-        elem.innerHTML = value;
-      }
+    item.set(value);
+  }
+
+  setCenoVersion() {
+    this.ceno_version = new Text("ceno_version");
+    browser.runtime.getBrowserInfo().then(info =>
+      this.ceno_version.elem.innerHTML = `${info.version} Build ID ${info.buildID}`);
+  }
+
+  setCenoSettingsVersion() {
+    this.ceno_settings_version = new Text("ceno_settings_version");
+    this.ceno_settings_version.elem.innerHTML = browser.runtime.getManifest().version;
+  }
+
+  disable() {
+    for (let [key, value] of this.items) {
+      value.disable();
     }
-    return super.set(key, value);
   }
 }
 
@@ -25,52 +101,23 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function showBrowserInfo(info) {
-  document.getElementById('ceno_version').innerHTML = `${info.version} Build ID ${info.buildID}`;
-}
-
-function setupButtons(state) {
-    const form = document.getElementById("form");
-    const buttons = Array.from(form.getElementsByTagName('input'));
-
-    buttons.map(elem =>
-      elem.addEventListener('click', event => {
-        const name = elem.id;
-        const newValue = !state.get(name);
-        fetch(SET_VALUE_ENDPOINT + `?${name}=${newValue ? 'enabled' : 'disabled'}`)
-          .then(_ => state.set(name, newValue))
-      }));
-}
-
-function disableCheckboxes(state) {
-  for (let [key, value] of state) {
-    const elem = document.getElementById(key);
-    if (!elem) { return; }
-    if (elem.type === 'checkbox') {
-      elem.disabled = true;
-      return state.super.set(key, value);
-    }
-  }
-}
-
 window.addEventListener("load", async () => {
-  document.getElementById('ceno_settings_version').innerHTML = browser.runtime.getManifest().version;
-  browser.runtime.getBrowserInfo().then(showBrowserInfo);
-
   let state = new State();
 
-  setupButtons(state);
-
   while (true) {
-    let response = await fetch(STATUS_ENDPOINT);
+    try {
+      let response = await fetch(STATUS_ENDPOINT);
 
-    if (response.ok) {
-      let json = await response.json();
-      Object.entries(json).map(([k,v]) => state.set(k, v))
-    } else {
-      console.log("Error: " + error);
-      document.getElementById('ouinet_version').innerHTML = 'Could not connect to Ouinet';
-      disableCheckboxes(state);
+      if (response.ok) {
+        let json = await response.json();
+        Object.entries(json).map(([k,v]) => state.set(k, v))
+      } else {
+        console.log("Error: " + error);
+        state.disable();
+      }
+    } catch (err) {
+      console.log("Error: " + err.message);
+      state.disable();
     }
 
     await sleep(5000);
