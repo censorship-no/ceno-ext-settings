@@ -1,7 +1,8 @@
 'use strict';
 const CENO_ICON = "icons/ceno-logo-32.png";
 const CACHE_MAX_ENTRIES = 500;
-const OUINET_RESPONSE_VERSION = "2"  // protocol version accepted and used
+const OUINET_RESPONSE_VERSION_MIN = 1  // protocol versions accepted
+const OUINET_RESPONSE_VERSION_MAX = 4
 
 
 // <https://stackoverflow.com/a/4835406>
@@ -62,6 +63,14 @@ function redirectWhenUpdateRequired(e) {
   }
 }
 
+function isValidProtocolVersion(p) {
+    var pn = Number(p);
+    if (isNaN(pn) || pn % 1 > 0) {
+        return false;
+    }
+    return (OUINET_RESPONSE_VERSION_MIN <= pn) && (pn <= OUINET_RESPONSE_VERSION_MAX);
+}
+
 const WARN_THROTTLE_MILLIS = 5 * 60 * 1000
 var warningLastShownOn = {}  // warning string -> time in milliseconds
 function warnWhenUpdateDetected(e) {
@@ -69,7 +78,7 @@ function warnWhenUpdateDetected(e) {
   for (var i in e.responseHeaders) {
     var h = e.responseHeaders[i];
     var hn = h.name.toUpperCase();
-    if (hn === "X-OUINET-VERSION" && h.value === OUINET_RESPONSE_VERSION) {
+    if (hn === "X-OUINET-VERSION" && isValidProtocolVersion(h.value)) {
       isOuinetMessage = true  // hope this comes before other `X-Ouinet-*` headers
     } else if (isOuinetMessage && hn === "X-OUINET-WARNING") {
       var hv = h.value
@@ -117,7 +126,7 @@ function getOuinetDetails(headers) {
   for (var i = 0; i < headers.length; i++) {
     switch (headers[i].name.toUpperCase()) {
       case "X-OUINET-VERSION":
-        valid_proto = (headers[i].value === OUINET_RESPONSE_VERSION);
+        valid_proto = isValidProtocolVersion(headers[i].value);
         break;
       case "X-OUINET-INJECTION":
         details.isProxied = true;
