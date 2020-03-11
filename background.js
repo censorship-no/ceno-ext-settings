@@ -50,10 +50,10 @@ function onBeforeSendHeaders(e) {
       // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab
 
       let is_private = tab.incognito ? "True" : "False";
-      e.requestHeaders.push({name: "X-Is-Private", value: is_private});
+      e.requestHeaders.push({name: "X-Ouinet-Private", value: is_private});
 
       if (!tab.incognito) {
-        e.requestHeaders.push({name: "X-DHT-Group", value: getDhtGroup(e)});
+        e.requestHeaders.push({name: "X-Ouinet-Group", value: getDhtGroup(e)});
       }
 
       return {requestHeaders: e.requestHeaders};
