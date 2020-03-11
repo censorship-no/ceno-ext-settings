@@ -17,13 +17,45 @@ function escapeHtml(s) {
   return s.replace(/[&<>"']/g, (c) => htmlEscapes[c]);
 }
 
-function addIsPrivateHeader(e) {
+function removeSchemeFromURL(url) {
+    var index = url.indexOf('://');
+    if (index > -1) {
+      return url.substr(index + 3);
+    } else {
+      return url.substr(0);
+    }
+}
+
+function removeTrailingSlashes(s) {
+    return s.replace(/\/+$/, "");
+}
+
+function getDhtGroup(e) {
+    // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders
+    let url = e.documentUrl ? e.documentUrl : e.url;
+    if (!url) return url;
+    url = removeSchemeFromURL(url);
+    return removeTrailingSlashes(url);
+}
+
+// https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders
+function onBeforeSendHeaders(e) {
   if (e.tabId < 0) {
     return;
   }
+
+  // tabs.get returns a Promise
   return browser.tabs.get(e.tabId).then(tab => {
+      // The `tab` structure is described here:
+      // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab
+
       let is_private = tab.incognito ? "True" : "False";
       e.requestHeaders.push({name: "X-Is-Private", value: is_private});
+
+      if (!tab.incognito) {
+        e.requestHeaders.push({name: "X-DHT-Group", value: getDhtGroup(e)});
+      }
+
       return {requestHeaders: e.requestHeaders};
   });
 }
@@ -247,7 +279,7 @@ browser.browserAction.onClicked.addListener(function() {
 })
 
 browser.webRequest.onBeforeSendHeaders.addListener(
-  addIsPrivateHeader,
+  onBeforeSendHeaders,
   {urls: ["<all_urls>"]},
   ["blocking", "requestHeaders"]);
 
