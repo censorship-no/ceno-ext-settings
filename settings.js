@@ -57,6 +57,39 @@ class Text {
   }
 }
 
+class LogControl {
+  constructor(id) {
+    var elem = document.getElementById(id);
+    if (!elem) { return; }
+    if (elem.type !== 'checkbox') { return; }
+
+    elem.addEventListener('click', event => this.onClick(event));
+
+    this.id = id;
+    this.elem = elem;
+  }
+
+  set(value) {
+    if (!this.elem) return;
+    this.elem.disabled = false;
+    this.elem.checked = value;
+  }
+
+  disable() {
+    if (!this.elem) return;
+    this.elem.checked = false;
+    this.elem.disabled = true;
+  }
+
+  onClick(event) {
+    if (!this.elem) return;
+    const name = this.id;
+    const newValue = this.elem.checked;
+    fetch(SET_VALUE_ENDPOINT + `?${name}=${newValue ? 'enabled' : 'disabled'}`)
+      .then(_ => this.set(newValue))
+  }
+}
+
 class State {
   constructor() {
     this.items = new Map();
@@ -69,6 +102,8 @@ class State {
 
     this.setCenoVersion();
     this.setCenoSettingsVersion();
+
+    this.items.set("logfile", new LogControl("logfile"));
   }
 
   set(key, value) {

@@ -29,11 +29,21 @@ body {
   color: #333;
   font-size: 3em;
 }
-.row {
+#form .row {
   height: 140px;
   line-height: 140px;
   vertical-align: middle;
   border-bottom: 2px solid #b2b2b2;
+}
+#form-logging {
+  color: #333;
+  font-size: 3em;
+}
+#form-logging .row {
+  height: 140px;
+  line-height: 140px;
+  vertical-align: middle;
+  border-top: 2px solid #b2b2b2;
 }
 .cb_container {
   display: block;
@@ -46,6 +56,7 @@ body {
   opacity: 0;
   height: 0;
   width: 0;
+  border:1px solid gray;
 }
 .checkmark {
   position: absolute;
@@ -75,6 +86,15 @@ body {
 /* Show the checkmark when checked */
 .cb_container input:checked ~ .checkmark:after {
   display: block;
+}
+.download {
+  float:right;
+  display:inline-block;
+  padding-right:50px;
+}
+/* Hide the download link */
+.cb_container input:not(:checked) ~ .download {
+  opacity:0;
 }
 /* Style the checkmark/indicator */
 .cb_container .checkmark:after {
@@ -157,5 +177,15 @@ body {
     <span id="udp_world_reachable"> </span>
     <p>
   </div>
+  <form id="form-logging">
+    <div class="row">
+      <label class="cb_container">
+        <input type="checkbox" id="logfile" disabled>
+        <span class="checkmark"></span>
+        <div class="cb_label">Enable log file</div>
+        <a href="http://127.0.0.1:8081?logfile=get" class="download" download="log" target="_blank">Download</a>
+      </label>
+    </div>
+  </form>
 </body>
 </html>
