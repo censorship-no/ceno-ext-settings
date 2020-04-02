@@ -103,10 +103,23 @@ function isValidProtocolVersion(p) {
     return (OUINET_RESPONSE_VERSION_MIN <= pn) && (pn <= OUINET_RESPONSE_VERSION_MAX);
 }
 
+function findHeader(headers, name) {
+  var name_u = name.toUpperCase();
+
+  for (var i in headers) {
+    var h = headers[i];
+    if (h.name.toUpperCase() == name_u) {
+      return h.value;
+    }
+  }
+
+  return null;
+}
+
 const WARN_THROTTLE_MILLIS = 5 * 60 * 1000
 var warningLastShownOn = {}  // warning string -> time in milliseconds
 function warnWhenUpdateDetected(e) {
-  var isOuinetMessage = false
+  var isOuinetMessage = false;
   for (var i in e.responseHeaders) {
     var h = e.responseHeaders[i];
     var hn = h.name.toUpperCase();
@@ -128,6 +141,51 @@ function warnWhenUpdateDetected(e) {
         message: escapeHtml(hv)})
     }
   }
+}
+
+var gOuinetStats = {};
+const gOuinetSources = ['origin', 'proxy', 'injector', 'dist-cache', 'local-cache'];
+
+browser.webNavigation.onBeforeNavigate.addListener(details => {
+  if (details.frameId != 0) return;
+  const tabId = details.tabId;
+  gOuinetStats[tabId] = {};
+});
+
+function updateCenoStats(e) {
+  const tabId = e.tabId;
+
+
+  if (tabId < 0) return;
+  var src = findHeader(e.responseHeaders, "X-Ouinet-Source");
+  if (!src) src = "unknown";
+  if (e.fromCache) src = "local-cache";
+
+  if (!gOuinetStats[tabId]) gOuinetStats[tabId] = {};
+
+  if (!gOuinetStats[tabId][src]) {
+    gOuinetStats[tabId][src] = 1;
+  } else {
+    gOuinetStats[tabId][src] += 1;
+  }
+
+  browser.storage.local.get('stats', function(data) {
+    if (!data.stats) { data.stats = {}; }
+    if (!data.stats[tabId]) { data.stats[tabId] = {}; }
+
+    var stats = data.stats[tabId];
+
+    if (!gOuinetStats[tabId]) return;
+
+    for (const i in gOuinetSources) {
+      const name = gOuinetSources[i];
+      const v = gOuinetStats[tabId][name];
+      stats[name] = v ? v : 0;
+    }
+
+    data.stats[e.tabId] = stats;
+    browser.storage.local.set(data);
+  });
 }
 
 const APP_STORES = ["play.google.com", "paskoocheh.com", "s3.amazonaws.com"];
@@ -219,7 +277,7 @@ function setPageActionIcon(tabId, isUsingOuinet) {
 function setPageActionForTab(tabId) {
   getCacheEntry(tabId, (ouinetDetails) => {
       var isUsingOuinet = ouinetDetails && ouinetDetails.isProxied;
-      setPageActionIcon(tabId, isUsingOuinet);
+      setPageActionIcon(tabId, true /* isUsingOuinet */);
   });
 }
 
@@ -302,13 +360,19 @@ browser.webRequest.onHeadersReceived.addListener(
 );
 
 browser.webRequest.onHeadersReceived.addListener(
+  updateCenoStats,
+  {urls: ["<all_urls>"]},
+  ["responseHeaders"]
+);
+
+browser.webRequest.onHeadersReceived.addListener(
   updateOuinetDetailsFromHeaders,
   {urls: ["<all_urls>"]},
   ["responseHeaders"]
 );
 
 browser.runtime.onMessage.addListener(
-  (request, sender, sendResponse) => setPageActionForTab(sender.tab.id));
+  (request, sender, sendResponse) => setPageActionForTab(sender.tab.id, sender));
 
 browser.runtime.onStartup.addListener(clearLocalStorage);
 

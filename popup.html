@@ -17,12 +17,17 @@ body {
   font-size: 3em;
   color: #fff;
   background: #333;
-  padding-left: 50px;
+  padding-left: 40px;
 }
-#about {
-  padding: 50px;
+table {
+  width: 100%;
+  padding: 40px;
   font-size: 3em;
   color: #999;
+}
+.value {
+  padding-left: 20px;
+  -text-align: right;
 }
 .title {
   font-weight: bold;
@@ -31,12 +36,19 @@ body {
 <script src="popup.js"></script>
 </head>
 <body>
-  <div id="header">CENO Browser</div>
-  <div id="about">
-    <img src="icons/ceno.png"/>
-    <span class="title">Page uncensored by Ouinet</span><p>
-    <span id="url"></span><p>
-    <span id="time"></span><p>
-  </div>
+  <div id="header">CENO Sources</div>
+  <table>
+      <tr>
+          <td>Origin</td><td class="value" id="origin"></td>
+      </tr><tr>
+          <td>Proxy</td><td class="value" id="proxy"></td>
+      </tr><tr>
+          <td>Injector</td><td class="value" id="injector"></td>
+      </tr><tr>
+          <td>Distributed cache</td><td class="value" id="dist-cache"></td>
+      </tr><tr>
+          <td>Local cache</td><td class="value" id="local-cache"></td>
+      </tr>
+  </table>
 </body>
 </html>

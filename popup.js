@@ -1,38 +1,40 @@
-function showOuinetDetails() {
-  browser.tabs.query({active: true})
-    .then((tabs) => {
-      const key = tabs[0].id;
-      getCacheEntry(tabs[0].id, updatePage);
-  });
+'use strict';
+
+function sleep(s) {
+  return new Promise(resolve => setTimeout(resolve, s * 1000));
 }
 
-function getCacheEntry(tabId, callback) {
-  return browser.storage.local.get('cache', function(data) {
-    if (!data.cache || !data.cache[tabId]) {
-      callback();
-      return;
-    }
-    browser.tabs.get(tabId)
-      .then((tab) => {
-        var fromUrl = data.cache[tabId][tab.url];
-        if (fromUrl) {
-          callback(fromUrl, tab.url);
-          return;
-        }
-        var origin = new URL(tab.url).origin;
-        callback(data.cache[tabId][origin], origin);
-      });
-  });
+function queryTabs(query) {
+  return new Promise(resolve => { browser.tabs.query(query).then(resolve); });
 }
 
-function updatePage(details, url) {
-  if (details) {
-    document.getElementById('url').innerHTML = 'URL: ' + url;
-    document.getElementById('time').innerHTML = 'Retrieved at ' + details.injectionTime;
-  } else {
-    document.getElementById('url').innerHTML = '';
-    document.getElementById('time').innerHTML = '';
+function getCacheEntry(what) {
+  return new Promise(resolve => { browser.storage.local.get(what, resolve); });
+}
+
+async function updatePage() {
+  const active_tabs = await queryTabs({active:true});
+  if (!active_tabs.length) return;
+  const tabId = active_tabs[0].id;
+  const data = await getCacheEntry('stats');
+  if (!data || !data.stats || !data.stats[tabId]) return;
+
+  const set = (name) => {
+    var value = data.stats[tabId][name];
+    if (!value) value = 0;
+    document.getElementById(name).innerHTML = value;
+  };
+
+  set('origin');
+  set('proxy');
+  set('injector');
+  set('dist-cache');
+  set('local-cache');
+}
+
+(async function start() {
+  while (true) {
+    await updatePage();
+    await sleep(0.5);
   }
-}
-
-showOuinetDetails();
+})();
