@@ -101,7 +101,7 @@ class State {
     texts.map(v => this.items.set(v, new Text(v)));
 
     this.setCenoVersion();
-    this.setCenoSettingsVersion();
+    this.setCenoExtensionVersion();
 
     this.items.set("logfile", new LogControl("logfile"));
   }
@@ -120,9 +120,9 @@ class State {
       this.ceno_version.elem.innerHTML = `${info.version} Build ID ${info.buildID}`);
   }
 
-  setCenoSettingsVersion() {
-    this.ceno_settings_version = new Text("ceno_settings_version");
-    this.ceno_settings_version.elem.innerHTML = browser.runtime.getManifest().version;
+  setCenoExtensionVersion() {
+    this.ceno_extension_version = new Text("ceno_extension_version");
+    this.ceno_extension_version.elem.innerHTML = browser.runtime.getManifest().version;
   }
 
   disable() {
