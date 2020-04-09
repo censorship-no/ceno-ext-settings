@@ -1,5 +1,5 @@
 {
-  "description": "Adds a toolbar button for CENO settings page, checks for available updates to CENO, and other functionality for  CENO.",
+  "description": "Provides integration with CENO and Ouinet: page caching and grouping, page source information, settings and other functionality.",
   "manifest_version": 2,
   "name": "CENO Extension",
   "version": "1.0.43",
