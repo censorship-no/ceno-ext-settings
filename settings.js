@@ -97,7 +97,7 @@ class State {
     var buttons = ["origin_access", "proxy_access", "injector_access", "distributed_cache"];
     buttons.map(v => this.items.set(v, new Button(v)));
 
-    var texts = ["ouinet_version", "local_udp_endpoints", "is_upnp_active", "udp_world_reachable"];
+    var texts = ["ouinet_version", "ouinet_build_id", "local_udp_endpoints", "is_upnp_active", "udp_world_reachable"];
     texts.map(v => this.items.set(v, new Text(v)));
 
     this.setCenoVersion();
