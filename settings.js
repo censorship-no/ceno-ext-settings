@@ -1,5 +1,5 @@
-const STATUS_ENDPOINT = "http://127.0.0.137:8081/api/status";
-const SET_VALUE_ENDPOINT = "http://127.0.0.137:8081/";
+const STATUS_ENDPOINT = "http://127.0.0.1:8078/api/status";
+const SET_VALUE_ENDPOINT = "http://127.0.0.1:8078/";
 
 class Button {
   constructor(id) {
