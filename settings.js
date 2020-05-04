@@ -57,6 +57,16 @@ class Text {
   }
 }
 
+class DataSizeText extends Text {
+  constructor(id) {
+    super(id);
+  }
+
+  set(value) {
+    super.set(value + "&nbsp;B")
+  }
+}
+
 class LogControl {
   constructor(id) {
     var elem = document.getElementById(id);
@@ -99,6 +109,9 @@ class State {
 
     var texts = ["ouinet_version", "ouinet_build_id", "local_udp_endpoints", "is_upnp_active", "udp_world_reachable"];
     texts.map(v => this.items.set(v, new Text(v)));
+
+    var dsizes = ["local_cache_size"]
+    dsizes.map(v => this.items.set(v, new DataSizeText(v)));
 
     this.setCenoVersion();
     this.setCenoExtensionVersion();
