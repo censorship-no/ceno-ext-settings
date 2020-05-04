@@ -63,7 +63,16 @@ class DataSizeText extends Text {
   }
 
   set(value) {
-    super.set(value + "&nbsp;B")
+    var b = Number(value);
+    if (isNaN(b) || b < 1024) {
+      super.set(b + "&nbsp;B");
+      return;
+    }
+    // See <https://stackoverflow.com/a/42408230>.
+    var i = Math.floor(Math.log2(b) / 10);
+    var v = b / Math.pow(1024, i);
+    var u = "KMGTPEZY"[i-1] + "iB";
+    super.set(`${v.toFixed(2)}&nbsp;${u}`);
   }
 }
 
