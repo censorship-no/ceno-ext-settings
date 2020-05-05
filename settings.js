@@ -57,6 +57,25 @@ class Text {
   }
 }
 
+class DataSizeText extends Text {
+  constructor(id) {
+    super(id);
+  }
+
+  set(value) {
+    var b = Number(value);
+    if (isNaN(b) || b < 1024) {
+      super.set(b + "&nbsp;B");
+      return;
+    }
+    // See <https://stackoverflow.com/a/42408230>.
+    var i = Math.floor(Math.log2(b) / 10);
+    var v = b / Math.pow(1024, i);
+    var u = "KMGTPEZY"[i-1] + "iB";
+    super.set(`${v.toFixed(2)}&nbsp;${u}`);
+  }
+}
+
 class LogControl {
   constructor(id) {
     var elem = document.getElementById(id);
@@ -90,9 +109,40 @@ class LogControl {
   }
 }
 
+class Action {
+  constructor(id) {
+    var elem = document.getElementById(id);
+    if (!elem) { return; }
+    if (elem.type !== 'button') { return; }
+
+    elem.addEventListener('click', event => this.onClick(event));
+
+    this.id = id;
+    this.elem = elem;
+  }
+
+  enable() {
+    if (!this.elem) return;
+    this.elem.disabled = false;
+  }
+
+  disable() {
+    if (!this.elem) return;
+    this.elem.disabled = true;
+  }
+
+  onClick(event) {
+    if (!this.elem) return;
+    const name = this.id;
+    fetch(SET_VALUE_ENDPOINT + `?${name}=do`);
+    this.disable();
+  }
+}
+
 class State {
   constructor() {
     this.items = new Map();
+    this.actions = new Array();
 
     var buttons = ["origin_access", "proxy_access", "injector_access", "distributed_cache"];
     buttons.map(v => this.items.set(v, new Button(v)));
@@ -100,10 +150,15 @@ class State {
     var texts = ["ouinet_version", "ouinet_build_id", "local_udp_endpoints", "is_upnp_active", "udp_world_reachable"];
     texts.map(v => this.items.set(v, new Text(v)));
 
+    var dsizes = ["local_cache_size"]
+    dsizes.map(v => this.items.set(v, new DataSizeText(v)));
+
     this.setCenoVersion();
     this.setCenoExtensionVersion();
 
     this.items.set("logfile", new LogControl("logfile"));
+
+    this.actions.push(new Action("purge_cache"));
   }
 
   set(key, value) {
@@ -125,10 +180,13 @@ class State {
     this.ceno_extension_version.elem.innerHTML = browser.runtime.getManifest().version;
   }
 
+  enable() {
+    this.actions.forEach(a => a.enable());
+  }
+
   disable() {
-    for (let [key, value] of this.items) {
-      value.disable();
-    }
+    this.items.forEach(v => v.disable());
+    this.actions.forEach(a => a.disable());
   }
 }
 
@@ -146,6 +204,7 @@ window.addEventListener("load", async () => {
       if (response.ok) {
         let json = await response.json();
         Object.entries(json).map(([k,v]) => state.set(k, v))
+        state.enable();
       } else {
         console.log("Error: " + error);
         state.disable();

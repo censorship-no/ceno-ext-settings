@@ -119,6 +119,9 @@ body {
   font-size: 2em;
   color: #999;
 }
+.action {
+  font-size: inherit;
+}
 .name {
   font-weight: bold;
 }
@@ -176,6 +179,12 @@ body {
     <span class="name">Reachability status</span><br>
     <span id="udp_world_reachable"> </span>
     <p>
+    <form>
+      <span class="name">Local cache size</span><br>
+      <span id="local_cache_size"> </span>
+      <button class="action" type="button" id="purge_cache" disabled>Purge now</button>
+      <p>
+    </form>
   </div>
   <form id="form-logging">
     <div class="row">
