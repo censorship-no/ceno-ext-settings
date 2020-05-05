@@ -185,9 +185,7 @@ class State {
   }
 
   disable() {
-    for (let [key, value] of this.items) {
-      value.disable();
-    }
+    this.items.forEach(v => v.disable());
     this.actions.forEach(a => a.disable());
   }
 }
