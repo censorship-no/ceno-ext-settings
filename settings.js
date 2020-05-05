@@ -134,8 +134,8 @@ class Action {
   onClick(event) {
     if (!this.elem) return;
     const name = this.id;
-    fetch(SET_VALUE_ENDPOINT + `?${name}=do`)
-      .then(_ => this.disable())
+    fetch(SET_VALUE_ENDPOINT + `?${name}=do`);
+    this.disable();
   }
 }
 
