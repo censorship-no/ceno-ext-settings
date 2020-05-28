@@ -13,7 +13,6 @@ body {
   line-height: 120px;
   display: flex;
   justify-content: flex-start;
-  vertical-align: middle;
   font-size: 3em;
   color: #fff;
   background: #333;
@@ -25,30 +24,28 @@ body {
   height: 50px;
   width: 50px;
 }
-#form {
+.cb_form {
   color: #333;
   font-size: 3em;
-}
-#form .row {
-  height: 140px;
-  line-height: 140px;
-  vertical-align: middle;
-  border-bottom: 2px solid #b2b2b2;
-}
-#form-logging {
-  color: #333;
-  font-size: 3em;
-}
-#form-logging .row {
-  height: 140px;
-  line-height: 140px;
-  vertical-align: middle;
   border-top: 2px solid #b2b2b2;
+  padding: 50px;
+}
+.cb_form .row {
+  height: 80px;
+  line-height: 80px;
+}
+.cb_form .group + .group {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 2px solid #b2b2b2;
+}
+.cb_form .group p {
+  margin:0;
 }
 .cb_container {
   display: block;
   position: relative;
-  padding-left: 128px;
+  padding-left: 80px;
 }
 /* Hide the browser's default checkbox */
 .cb_container input {
@@ -60,8 +57,8 @@ body {
 }
 .checkmark {
   position: absolute;
-  top: 46px;
-  left: 48px;
+  top: 16px;
+  left: 0px;
   height: 40px;
   width: 40px;
   border: #aaa solid 5px;
@@ -118,6 +115,7 @@ body {
   padding: 50px;
   font-size: 2em;
   color: #999;
+  border-top: 2px solid #b2b2b2;
 }
 .action {
   font-size: inherit;
@@ -130,7 +128,9 @@ body {
 </head>
 <body>
   <div id="header">CENO Settings</div>
-  <form id="form">
+  <form class="cb_form">
+    <div class="group">
+    <p>Public and private browsing:
     <div class="row">
       <label class="cb_container">
         <input type="checkbox" id="origin_access" disabled>
@@ -138,6 +138,9 @@ body {
         <div class="cb_label">Origin access</div>
       </label>
     </div>
+    </div>
+    <div class="group">
+    <p>Private browsing:
     <div class="row">
       <label class="cb_container">
         <input type="checkbox" id="proxy_access" disabled>
@@ -145,6 +148,9 @@ body {
         <div class="cb_label">Proxy access</div>
       </label>
     </div>
+    </div>
+    <div class="group">
+    <p>Public browsing:
     <div class="row">
       <label class="cb_container">
         <input type="checkbox" id="injector_access" disabled>
@@ -158,6 +164,7 @@ body {
         <span class="checkmark"></span>
         <div class="cb_label">Distributed cache</div>
       </label>
+    </div>
     </div>
   </form>
   <div id="about">
@@ -186,7 +193,7 @@ body {
       <p>
     </form>
   </div>
-  <form id="form-logging">
+  <form class="cb_form">
     <div class="row">
       <label class="cb_container">
         <input type="checkbox" id="logfile" disabled>
