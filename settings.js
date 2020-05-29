@@ -139,6 +139,16 @@ class Action {
   }
 }
 
+function someEnabled(ids) {
+  return ids.reduce((r, i) => (r || document.getElementById(i).checked), false);
+}
+
+function displayIfNoneEnabled(idTarget, idSources) {
+  var target = document.getElementById(idTarget);
+  if (!target) { return; }
+  target.style.display = someEnabled(idSources) ? "none" : "block";
+}
+
 class State {
   constructor() {
     this.items = new Map();
@@ -182,7 +192,11 @@ class State {
 
   enable() {
     var warnings = document.getElementById("am-warnings");
-    if (warnings) { warnings.style.display = "initial"; }
+    if (warnings) {
+      warnings.style.display = "block";
+      displayIfNoneEnabled("am-warning-private", ["origin_access", "proxy_access"]);
+      displayIfNoneEnabled("am-warning-public", ["origin_access", "injector_access", "distributed_cache"]);
+    }
 
     this.actions.forEach(a => a.enable());
   }
