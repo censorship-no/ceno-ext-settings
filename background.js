@@ -30,12 +30,18 @@ function removeTrailingSlashes(s) {
     return s.replace(/\/+$/, "");
 }
 
+function removeTrailingWWW(s) {
+    return s.replace(/^www\./, "");
+}
+
 function getDhtGroup(e) {
     // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders
     let url = e.documentUrl ? e.documentUrl : e.url;
     if (!url) return url;
     url = removeSchemeFromURL(url);
-    return removeTrailingSlashes(url);
+    url = removeTrailingSlashes(url);
+    url = removeTrailingWWW(url);
+    return url;
 }
 
 // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders
