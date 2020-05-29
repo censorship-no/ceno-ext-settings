@@ -2,7 +2,7 @@
   "description": "Provides integration with CENO and Ouinet: page caching and grouping, page source information, settings and other functionality.",
   "manifest_version": 2,
   "name": "CENO Extension",
-  "version": "1.0.52",
+  "version": "1.1.0",
   "icons": {
     "48": "icons/ceno-logo-48.png"
   },
