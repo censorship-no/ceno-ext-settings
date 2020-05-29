@@ -13,7 +13,6 @@ body {
   line-height: 120px;
   display: flex;
   justify-content: flex-start;
-  vertical-align: middle;
   font-size: 3em;
   color: #fff;
   background: #333;
@@ -25,30 +24,31 @@ body {
   height: 50px;
   width: 50px;
 }
-#form {
+.cb_form {
   color: #333;
   font-size: 3em;
-}
-#form .row {
-  height: 140px;
-  line-height: 140px;
-  vertical-align: middle;
-  border-bottom: 2px solid #b2b2b2;
-}
-#form-logging {
-  color: #333;
-  font-size: 3em;
-}
-#form-logging .row {
-  height: 140px;
-  line-height: 140px;
-  vertical-align: middle;
   border-top: 2px solid #b2b2b2;
+  padding: 50px;
+}
+.cb_form .row {
+  height: 80px;
+  line-height: 80px;
+}
+#access-mechanisms .row {
+  font-size: 85%;
+}
+.cb_form .group + .group {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 2px solid #b2b2b2;
+}
+.cb_form .group p {
+  margin:0;
 }
 .cb_container {
   display: block;
   position: relative;
-  padding-left: 128px;
+  padding-left: 80px;
 }
 /* Hide the browser's default checkbox */
 .cb_container input {
@@ -60,8 +60,8 @@ body {
 }
 .checkmark {
   position: absolute;
-  top: 46px;
-  left: 48px;
+  top: 16px;
+  left: 0px;
   height: 40px;
   width: 40px;
   border: #aaa solid 5px;
@@ -114,10 +114,26 @@ body {
 .cb_container input:disabled ~ .cb_label {
   color: #aaa;
 }
+/* Warnings may only be shown after successfully contacting the client. */
+#am-warnings {
+  display: none;
+}
+[id^="am-warning-"] {
+  display: none;
+  margin: 8px 0 0 0;
+  padding: 16px;
+  font-size: 80%;
+  background: #fc4;
+}
+[id^="am-warning-"]:before {
+  content: "⚠ ";
+  color: red;
+}
 #about {
   padding: 50px;
   font-size: 2em;
   color: #999;
+  border-top: 2px solid #b2b2b2;
 }
 .action {
   font-size: inherit;
@@ -130,34 +146,47 @@ body {
 </head>
 <body>
   <div id="header">CENO Settings</div>
-  <form id="form">
-    <div class="row">
-      <label class="cb_container">
-        <input type="checkbox" id="origin_access" disabled>
-        <span class="checkmark"></span>
-        <div class="cb_label">Origin access</div>
-      </label>
+  <form class="cb_form" id="access-mechanisms">
+    <div class="group">
+      <p>Public and private browsing:</p>
+      <div class="row">
+        <label class="cb_container">
+          <input type="checkbox" id="origin_access" disabled>
+          <span class="checkmark"></span>
+          <div class="cb_label">Try direct access to origin first</div>
+        </label>
+      </div>
     </div>
-    <div class="row">
-      <label class="cb_container">
-        <input type="checkbox" id="proxy_access" disabled>
-        <span class="checkmark"></span>
-        <div class="cb_label">Proxy access</div>
-      </label>
+    <div class="group">
+      <p>Private browsing:</p>
+      <div class="row">
+        <label class="cb_container">
+          <input type="checkbox" id="proxy_access" disabled>
+          <span class="checkmark"></span>
+          <div class="cb_label">Try access to origin via injector</div>
+        </label>
+      </div>
     </div>
-    <div class="row">
-      <label class="cb_container">
-        <input type="checkbox" id="injector_access" disabled>
-        <span class="checkmark"></span>
-        <div class="cb_label">Injector access</div>
-      </label>
+    <div class="group">
+      <p>Public browsing (distributed cache):</p>
+      <div class="row">
+        <label class="cb_container">
+          <input type="checkbox" id="injector_access" disabled>
+          <span class="checkmark"></span>
+          <div class="cb_label">Get content via injector, share with others</div>
+        </label>
+      </div>
+      <div class="row">
+        <label class="cb_container">
+          <input type="checkbox" id="distributed_cache" disabled>
+          <span class="checkmark"></span>
+          <div class="cb_label">Get content shared by other users</div>
+        </label>
+      </div>
     </div>
-    <div class="row">
-      <label class="cb_container">
-        <input type="checkbox" id="distributed_cache" disabled>
-        <span class="checkmark"></span>
-        <div class="cb_label">Distributed cache</div>
-      </label>
+    <div id="am-warnings">
+      <p id="am-warning-public"><strong>Public browsing</strong> will fail with current settings</p>
+      <p id="am-warning-private"><strong>Private browsing</strong> will fail with current settings</p>
     </div>
   </form>
   <div id="about">
@@ -183,10 +212,9 @@ body {
       <span class="name">Local cache size</span><br>
       <span id="local_cache_size"> </span>
       <button class="action" type="button" id="purge_cache" disabled>Purge now</button>
-      <p>
     </form>
   </div>
-  <form id="form-logging">
+  <form class="cb_form">
     <div class="row">
       <label class="cb_container">
         <input type="checkbox" id="logfile" disabled>
