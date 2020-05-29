@@ -11,6 +11,7 @@ class Button {
 
     this.id = id;
     this.elem = elem;
+    this.cb = null;
   }
 
   set(value) {
@@ -29,6 +30,7 @@ class Button {
     if (!this.elem) return;
     const name = this.id;
     const newValue = this.elem.checked;
+    if (this.cb) this.cb(newValue);
     fetch(SET_VALUE_ENDPOINT + `?${name}=${newValue ? 'enabled' : 'disabled'}`)
       .then(_ => this.set(newValue))
   }
@@ -157,6 +159,21 @@ class State {
     var buttons = ["origin_access", "proxy_access", "injector_access", "distributed_cache"];
     buttons.map(v => this.items.set(v, new Button(v)));
 
+    var modeWarningGroups = [
+      ["am-warning-private", ["origin_access", "proxy_access"]],
+      ["am-warning-public", ["origin_access", "injector_access", "distributed_cache"]],
+    ];
+    this.modeWarningChecks = [];
+    modeWarningGroups.forEach(([idt, idss]) => {
+      var check = () => displayIfNoneEnabled(idt, idss);  // check options for browsing mode
+      this.modeWarningChecks.push(check);
+      idss.forEach(id => {
+        var it = this.items.get(id);
+        var cb = it.cb;  // to call previous check if existing
+        it.cb = cb ? (v => { cb(v); check(); }) : (_ => check());
+      });
+    });
+
     var texts = ["ouinet_version", "ouinet_build_id", "local_udp_endpoints", "is_upnp_active", "udp_world_reachable"];
     texts.map(v => this.items.set(v, new Text(v)));
 
@@ -194,8 +211,7 @@ class State {
     var warnings = document.getElementById("am-warnings");
     if (warnings) {
       warnings.style.display = "block";
-      displayIfNoneEnabled("am-warning-private", ["origin_access", "proxy_access"]);
-      displayIfNoneEnabled("am-warning-public", ["origin_access", "injector_access", "distributed_cache"]);
+      this.modeWarningChecks.forEach(check => check());
     }
 
     this.actions.forEach(a => a.enable());
