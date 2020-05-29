@@ -114,6 +114,17 @@ body {
 .cb_container input:disabled ~ .cb_label {
   color: #aaa;
 }
+/* Warnings may only be shown after successfully contacting the client. */
+#am-warnings {
+  display: none;
+}
+[id^="am-warning-"] {
+  color: red;
+  display: none;
+}
+[id^="am-warning-"]:before {
+  content: "⚠ ";
+}
 #about {
   padding: 50px;
   font-size: 2em;
@@ -168,6 +179,10 @@ body {
           <div class="cb_label">Get content shared by other users</div>
         </label>
       </div>
+    </div>
+    <div id="am-warnings">
+      <p id="am-warning-public">All mechanisms required for <strong>public browsing</strong> to work are off!</p>
+      <p id="am-warning-private">All mechanisms required for <strong>private browsing</strong> to work are off!</p>
     </div>
   </form>
   <div id="about">

@@ -181,10 +181,16 @@ class State {
   }
 
   enable() {
+    var warnings = document.getElementById("am-warnings");
+    if (warnings) { warnings.style.display = "initial"; }
+
     this.actions.forEach(a => a.enable());
   }
 
   disable() {
+    var warnings = document.getElementById("am-warnings");
+    if (warnings) { warnings.style.display = "none"; }
+
     this.items.forEach(v => v.disable());
     this.actions.forEach(a => a.disable());
   }
