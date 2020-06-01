@@ -19,6 +19,11 @@ body {
   background: #333;
   padding-left: 40px;
 }
+p {
+  margin: 40px 0 0 0;
+  padding: 0 40px;
+  font-size: 3em;
+}
 table {
   width: 100%;
   padding: 40px;
@@ -27,7 +32,7 @@ table {
 }
 .value {
   padding-left: 20px;
-  -text-align: right;
+  text-align: right;
 }
 .title {
   font-weight: bold;
@@ -37,17 +42,18 @@ table {
 </head>
 <body>
   <div id="header">CENO Sources</div>
+  <p>Number of page elements per source:</p>
   <table>
       <tr>
-          <td>Origin</td><td class="value" id="origin"></td>
+          <td>Direct from origin website</td><td class="value" id="origin"></td>
       </tr><tr>
-          <td>Proxy</td><td class="value" id="proxy"></td>
+          <td>Via CENO injector as proxy</td><td class="value" id="proxy"></td>
       </tr><tr>
-          <td>Injector</td><td class="value" id="injector"></td>
+          <td>Via CENO injector (shared)</td><td class="value" id="injector"></td>
       </tr><tr>
-          <td>Distributed cache</td><td class="value" id="dist-cache"></td>
+          <td>Shared by others' CENO cache</td><td class="value" id="dist-cache"></td>
       </tr><tr>
-          <td>Local cache</td><td class="value" id="local-cache"></td>
+          <td>Shared by local CENO cache</td><td class="value" id="local-cache"></td>
       </tr>
   </table>
 </body>
