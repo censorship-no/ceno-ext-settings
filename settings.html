@@ -8,6 +8,16 @@ body {
   margin:0;
   padding:0;
 }
+#test-warning {
+  font-size: 3em;
+  padding: 16px 50px;
+  margin:0;
+  background: #fc4;
+}
+#test-warning:before {
+  content: "⚠ ";
+  color: red;
+}
 #header {
   height: 120px;
   line-height: 120px;
@@ -146,6 +156,11 @@ body {
 </head>
 <body>
   <div id="header">CENO Settings</div>
+  <p id="test-warning">These are provided for testing and debugging purposes.
+    Before changing them, be sure to read the
+    <a href="https://censorship.no/user-manual/en/browser/settings.html"
+       title="Censorship.no! User Manual – CENO settings" target="_blank">manual</a>.
+  </p>
   <form class="cb_form" id="access-mechanisms">
     <div class="group">
       <p>Public and private browsing:</p>
