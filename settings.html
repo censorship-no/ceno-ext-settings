@@ -9,7 +9,7 @@ body {
   padding:0;
 }
 #test-warning {
-  font-size: 3em;
+  font-size: 2.75em;
   padding: 16px 50px;
   margin:0;
   background: #fc4;
@@ -156,46 +156,41 @@ body {
 </head>
 <body>
   <div id="header">CENO Settings</div>
-  <p id="test-warning">These are provided for testing and debugging purposes.
-    Before changing them, be sure to read the
+  <p id="test-warning">Settings are not stored when stopping CENO.
+    See the
     <a href="https://censorship.no/user-manual/en/browser/settings.html"
-       title="Censorship.no! User Manual – CENO settings" target="_blank">manual</a>.
+       title="Censorship.no! User Manual – CENO settings" target="_blank">manual</a>
+    for more information.
   </p>
   <form class="cb_form" id="access-mechanisms">
     <div class="group">
-      <p>Public and private browsing:</p>
+      <p>Content retrieval sources:</p>
       <div class="row">
         <label class="cb_container">
           <input type="checkbox" id="origin_access" disabled>
           <span class="checkmark"></span>
-          <div class="cb_label">Try direct access to origin website first</div>
+          <div class="cb_label">Direct from website</div>
         </label>
       </div>
-    </div>
-    <div class="group">
-      <p>Private browsing:</p>
       <div class="row">
         <label class="cb_container">
           <input type="checkbox" id="proxy_access" disabled>
           <span class="checkmark"></span>
-          <div class="cb_label">Try access to origin via injector as proxy</div>
+          <div class="cb_label">Via the CENO network (private)</div>
         </label>
       </div>
-    </div>
-    <div class="group">
-      <p>Public browsing (distributed cache):</p>
       <div class="row">
         <label class="cb_container">
           <input type="checkbox" id="injector_access" disabled>
           <span class="checkmark"></span>
-          <div class="cb_label">Get content via injector, share with others</div>
+          <div class="cb_label">Via the CENO network (to share)</div>
         </label>
       </div>
       <div class="row">
         <label class="cb_container">
           <input type="checkbox" id="distributed_cache" disabled>
           <span class="checkmark"></span>
-          <div class="cb_label">Get content shared by other users</div>
+          <div class="cb_label">Shared by other CENO users</div>
         </label>
       </div>
     </div>
