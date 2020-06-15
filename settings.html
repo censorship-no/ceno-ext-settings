@@ -9,7 +9,7 @@ body {
   padding:0;
 }
 #test-warning {
-  font-size: 3em;
+  font-size: 2.75em;
   padding: 16px 50px;
   margin:0;
   background: #fc4;
@@ -75,7 +75,7 @@ body {
   height: 40px;
   width: 40px;
   border: #aaa solid 5px;
-  border-radius: 25px;
+  border-radius: 15px;
 }
 /* When the checkbox is checked, add a blue background */
 .cb_container input:checked ~ .checkmark {
@@ -108,12 +108,12 @@ body {
 }
 /* Style the checkmark/indicator */
 .cb_container .checkmark:after {
-  left: 15px;
-  top: 8px;
-  width: 7px;
-  height: 15px;
+  left: 10px;
+  top: 0px;
+  width: 12px;
+  height: 24px;
   border: solid white;
-  border-width: 0 4px 4px 0;
+  border-width: 0 8px 8px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -156,46 +156,41 @@ body {
 </head>
 <body>
   <div id="header">CENO Settings</div>
-  <p id="test-warning">These are provided for testing and debugging purposes.
-    Before changing them, be sure to read the
+  <p id="test-warning">Settings are not stored when stopping CENO.
+    See the
     <a href="https://censorship.no/user-manual/en/browser/settings.html"
-       title="Censorship.no! User Manual – CENO settings" target="_blank">manual</a>.
+       title="Censorship.no! User Manual – CENO settings" target="_blank">manual</a>
+    for more information.
   </p>
   <form class="cb_form" id="access-mechanisms">
     <div class="group">
-      <p>Public and private browsing:</p>
+      <p>Content retrieval sources:</p>
       <div class="row">
         <label class="cb_container">
           <input type="checkbox" id="origin_access" disabled>
           <span class="checkmark"></span>
-          <div class="cb_label">Try direct access to origin website first</div>
+          <div class="cb_label">Direct from website</div>
         </label>
       </div>
-    </div>
-    <div class="group">
-      <p>Private browsing:</p>
       <div class="row">
         <label class="cb_container">
           <input type="checkbox" id="proxy_access" disabled>
           <span class="checkmark"></span>
-          <div class="cb_label">Try access to origin via injector as proxy</div>
+          <div class="cb_label">Via the CENO network (private)</div>
         </label>
       </div>
-    </div>
-    <div class="group">
-      <p>Public browsing (distributed cache):</p>
       <div class="row">
         <label class="cb_container">
           <input type="checkbox" id="injector_access" disabled>
           <span class="checkmark"></span>
-          <div class="cb_label">Get content via injector, share with others</div>
+          <div class="cb_label">Via the CENO network (public)</div>
         </label>
       </div>
       <div class="row">
         <label class="cb_container">
           <input type="checkbox" id="distributed_cache" disabled>
           <span class="checkmark"></span>
-          <div class="cb_label">Get content shared by other users</div>
+          <div class="cb_label">Shared by other CENO users</div>
         </label>
       </div>
     </div>
