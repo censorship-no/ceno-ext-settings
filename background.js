@@ -2,7 +2,7 @@
 const CENO_ICON = "icons/ceno-logo-32.png";
 const CACHE_MAX_ENTRIES = 500;
 const OUINET_RESPONSE_VERSION_MIN = 1  // protocol versions accepted
-const OUINET_RESPONSE_VERSION_MAX = 4
+const OUINET_RESPONSE_VERSION_MAX = 5
 
 
 // <https://stackoverflow.com/a/4835406>
