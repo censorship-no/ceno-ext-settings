@@ -174,7 +174,8 @@ class State {
       });
     });
 
-    var texts = ["ouinet_version", "ouinet_build_id", "local_udp_endpoints", "is_upnp_active", "udp_world_reachable"];
+    var texts = ["ouinet_version", "ouinet_build_id", "ouinet_protocol",
+                 "local_udp_endpoints", "is_upnp_active", "udp_world_reachable"];
     texts.map(v => this.items.set(v, new Text(v)));
 
     var dsizes = ["local_cache_size"]
