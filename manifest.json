@@ -52,7 +52,7 @@
 
   "web_accessible_resources": [
     "settings.html",
-    "__MSG_update-page/index_html__",
+    "__MSG_index_html__",
     "update-page/style.css",
     "update-page/img/ceno-logo-h.png",
     "update-page/img/ceno-update-icon.png",
@@ -61,8 +61,8 @@
     "update-page/img/paskoocheh-download-badge.png"
   ],
 
-  "incognito": "spanning"
-},
+  "incognito": "spanning",
 
   "default_locale": "en"
-}
+ }
+

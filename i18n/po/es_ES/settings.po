@@ -25,7 +25,7 @@ msgstr ""
 
 #: ./settings.html%2Bhtml.body.form.div.p:167-7
 msgid "Content retrieval sources:"
-msgstr ""
+msgstr "Content retrieval SOURCERESS"
 
 #: ./settings.html%2Bhtml.body.form.div.div.label.div:172-11
 msgid "Direct from website"

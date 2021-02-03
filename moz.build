@@ -9,9 +9,9 @@ FINAL_TARGET_FILES.features['ceno@equalit.ie'] += [
   'button.js',
   'content.js',
   'manifest.json',
-  'popup.html',
+  'html/**/popup.html',
   'popup.js',
-  'settings.html',
+  'html/**/settings.html',
   'settings.js',
 ]
 
@@ -21,7 +21,7 @@ FINAL_TARGET_FILES.features['ceno@equalit.ie']['icons'] += [
 ]
 
 FINAL_TARGET_FILES.features['ceno@equalit.ie']['update-page'] += [
-  'update-page/index.html',
+  'html/**/update-page/index.html',
   'update-page/style.css',
 ]
 

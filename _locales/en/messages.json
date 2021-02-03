@@ -1,4 +1,18 @@
-"popup_html": "././html/en/popup.html".
-"update-page/index_html": ".././i18n/html/en/update-page/index.html",
-"settings_html": "i18n/html/en/settings.html",
-"cenoWarning": "CENO warning"
+{
+  "popup_html": {
+     "message": "i18n/html/en/popup.html",
+     "description": "Pop-up notification"
+  },
+  "index_html": {
+     "message": "i18n/html/en/update-page/index.html",
+     "description": "Notification to update CENO"
+  },
+  "settings_html": {
+     "message": "i18n/html/en/settings.html",
+     "description": "CENO Settings page"
+  },
+  "cenoWarning": {
+     "message": "CENO warning",
+     "description": "Wi-Fi data warning"
+  }
+}
