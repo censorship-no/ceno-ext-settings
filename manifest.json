@@ -62,4 +62,7 @@
   ],
 
   "incognito": "spanning"
+},
+
+  "default_locale": "en"
 }
