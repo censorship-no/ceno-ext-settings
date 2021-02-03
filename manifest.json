@@ -33,7 +33,7 @@
   "page_action": {
     "default_icon": "icons/ceno-logo-32.png",
     "default_title": "CENO",
-    "default_popup": "popup.html"
+    "default_popup": "__MSG_popup.html"
   },
 
   "options_ui": {
