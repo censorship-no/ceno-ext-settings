@@ -33,11 +33,11 @@
   "page_action": {
     "default_icon": "icons/ceno-logo-32.png",
     "default_title": "CENO",
-    "default_popup": "__MSG_popup.html"
+    "default_popup": "__MSG_popup_html__"
   },
 
   "options_ui": {
-    "page": "settings.html",
+    "page": "__MSG_settings_html__",
     "browser_style": true
   },
 
@@ -52,7 +52,7 @@
 
   "web_accessible_resources": [
     "settings.html",
-    "update-page/index.html",
+    "__MSG_update-page/index_html__",
     "update-page/style.css",
     "update-page/img/ceno-logo-h.png",
     "update-page/img/ceno-update-icon.png",
