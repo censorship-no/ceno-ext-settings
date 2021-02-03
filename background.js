@@ -143,7 +143,7 @@ function warnWhenUpdateDetected(e) {
       warningLastShownOn[hv] = now
       browser.notifications.create("", {
         type: "basic",
-        title: "CENO warning",
+        title: browser.i18n.getMessages("cenoWarning"),
         message: escapeHtml(hv)})
     }
   }

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-03 10:41-0700\n"
+"POT-Creation-Date: 2021-02-03 12:46-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,10 @@ msgstr ""
 
 #: ./settings.html%2Bhtml.body.p:159-3
 msgid ""
-"Settings are intended for testing CENO and not stored when stopping it. See "
-"the <a href=\"https://censorship.no/user-manual/en/browser/settings.html\" "
-"title=\"Censorship.no! User Manual – CENO settings\" target=\"_blank\""
-">manual</a> for more information."
+"Settings on this page are only intended for testing CENO functionality in "
+"various network conditions. See the <a href=\"https://censorship.no/"
+"user-manual/en/browser/settings.html\" title=\"Censorship.no! User Manual – "
+"CENO settings\" target=\"_blank\">manual</a> for more information."
 msgstr ""
 
 #: ./settings.html%2Bhtml.body.form.div.p:167-7

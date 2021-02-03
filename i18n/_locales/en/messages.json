@@ -1,5 +1,4 @@
-"popup_html": "i18n/en/popup.html"
-
-"update-page/index_html": "i18n/en/index.html"
-
-"settings_html": "i18n/en/settings.html"
+"popup_html": "i18n/html/en/popup.html".
+"update-page/index_html": "i18n/html/en/update-page/index.html",
+"settings_html": "i18n/html/en/settings.html",
+"cenoWarning": "CENO warning"
