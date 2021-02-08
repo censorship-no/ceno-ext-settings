@@ -61,5 +61,7 @@
     "update-page/img/paskoocheh-download-badge.png"
   ],
 
-  "incognito": "spanning"
+  "incognito": "spanning",
+
+  "default_locale": "en"
 }
