@@ -6,5 +6,29 @@
     "extDesc": {
         "message": "Provides integration with CENO and Ouinet: page caching and grouping, page source information, settings and other functionality. Includes code from Localizer by rugk under MIT license.",
         "description": "Description of the extension."
+    },
+
+    "settingsTitle": {
+        "message": "CENO Settings"
+    },
+    "settingsWarn": {
+        "message": "Settings on this page are only intended for testing CENO functionality in various network conditions. These are $NOT_SAVED$ when stopping CENO. See the $MANUAL$ for more information.",
+        "placeholders": {
+            "not_saved": { "content": "$1" },
+            "manual": { "content": "$2"}
+        }
+    },
+    "settingsWarnNotsaved": {
+        "message": "not saved"
+    },
+    "settingsWarnMan": {
+        "message": "manual"
+    },
+    "settingsWarnManLN": {
+        "message": "https://censorship.no/user-manual/en/browser/settings.html",
+        "description": "Link to the Settings section of the User Manual. Do not translate unless the section has been translated."
+    },
+    "settingsWarnManTI": {
+        "message": "Censorship.no! User Manual – CENO settings"
     }
 }
