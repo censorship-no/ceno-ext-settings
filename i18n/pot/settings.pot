@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-03 12:46-0700\n"
+"POT-Creation-Date: 2021-02-08 09:41-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,70 +19,71 @@ msgstr ""
 #: ./settings.html%2Bhtml.body.p:159-3
 msgid ""
 "Settings on this page are only intended for testing CENO functionality in "
-"various network conditions. See the <a href=\"https://censorship.no/"
-"user-manual/en/browser/settings.html\" title=\"Censorship.no! User Manual – "
-"CENO settings\" target=\"_blank\">manual</a> for more information."
+"various network conditions. These are <strong>not saved</strong> when "
+"stopping CENO. See the <a href=\"https://censorship.no/user-manual/en/"
+"browser/settings.html\" title=\"Censorship.no! User Manual – CENO settings\" "
+"target=\"_blank\">manual</a> for more information."
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.form.div.p:167-7
+#: ./settings.html%2Bhtml.body.form.div.p:168-7
 msgid "Content retrieval sources:"
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.form.div.div.label.div:172-11
+#: ./settings.html%2Bhtml.body.form.div.div.label.div:173-11
 msgid "Direct from website"
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.form.div.div.label.div:179-11
+#: ./settings.html%2Bhtml.body.form.div.div.label.div:180-11
 msgid "Via the CENO network (private)"
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.form.div.div.label.div:186-11
+#: ./settings.html%2Bhtml.body.form.div.div.label.div:187-11
 msgid "Via the CENO network (public)"
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.form.div.div.label.div:193-11
+#: ./settings.html%2Bhtml.body.form.div.div.label.div:194-11
 msgid "Shared by other CENO users"
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.form.div.p:198-7
+#: ./settings.html%2Bhtml.body.form.div.p:199-7
 msgid "<strong>Public browsing</strong> will fail with current settings."
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.form.div.p:199-7
+#: ./settings.html%2Bhtml.body.form.div.p:200-7
 msgid "<strong>Private browsing</strong> will fail with current settings."
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.div.p:202-3
+#: ./settings.html%2Bhtml.body.div.p:203-3
 msgid "CENO Browser</span><br> <span id=\"ceno_version\">"
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.div.p:205-5
+#: ./settings.html%2Bhtml.body.div.p:206-5
 msgid "CENO Extension</span><br> <span id=\"ceno_extension_version\">"
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.div.p:208-9
+#: ./settings.html%2Bhtml.body.div.p:209-9
 msgid ""
 "Ouinet</span><br> <span id=\"ouinet_version\"> </span> <span id=\""
 "ouinet_build_id\">"
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.div.p:211-9
+#: ./settings.html%2Bhtml.body.div.p:212-9
 msgid "Ouinet protocol</span><br> <span id=\"ouinet_protocol\">"
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.div.p:214-9
+#: ./settings.html%2Bhtml.body.div.p:215-9
 msgid "Local UDP endpoint(s)</span><br> <span id=\"local_udp_endpoints\">"
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.div.p:217-9
+#: ./settings.html%2Bhtml.body.div.p:218-9
 msgid "UPnP status</span><br> <span id=\"is_upnp_active\">"
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.div.p:220-9
+#: ./settings.html%2Bhtml.body.div.p:221-9
 msgid "Reachability status</span><br> <span id=\"udp_world_reachable\">"
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.div.p:223-9
+#: ./settings.html%2Bhtml.body.div.p:224-9
 msgid ""
 "<span class=\"name\">Local cache size</span><br> <span id=\""
 "local_cache_size\"> </span> <button class=\"action\" type=\"button\" id=\""
@@ -90,6 +91,6 @@ msgid ""
 "groups.txt\" class=\"download\" target=\"_blank\">Content shared by you</a>"
 msgstr ""
 
-#: ./settings.html%2Bhtml.body.form.div.label.div:236-9
+#: ./settings.html%2Bhtml.body.form.div.label.div:237-9
 msgid "Enable log file"
 msgstr ""

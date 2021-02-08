@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-08 09:41-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 2.5.0\n"
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.div:158-3
+msgid "CENO Settings"
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.p:159-3
+msgid ""
+"Settings on this page are only intended for testing CENO functionality in "
+"various network conditions. See the <a href=\"https://censorship.no/"
+"user-manual/en/browser/settings.html\" title=\"Censorship.no! User Manual – "
+"CENO settings\" target=\"_blank\">manual</a> for more information."
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.form.div.p:163-7
+msgid "Content retrieval sources:"
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.form.div.div.label.div:165-11
+msgid "Direct from website"
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.form.div.div.label.div:169-11
+msgid "Via the CENO network (private)"
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.form.div.div.label.div:173-11
+msgid "Via the CENO network (public)"
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.form.div.div.label.div:177-11
+msgid "Shared by other CENO users"
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.form.div.p:182-7
+msgid "<strong>Public browsing</strong> will fail with current settings."
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.form.div.p:183-7
+msgid "<strong>Private browsing</strong> will fail with current settings."
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.div.p:186-3
+msgid "CENO Browser</span><br> <span id=\"ceno_version\">"
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.div.p:187-5
+msgid "CENO Extension</span><br> <span id=\"ceno_extension_version\">"
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.div.p:189-9
+msgid ""
+"Ouinet</span><br> <span id=\"ouinet_version\"> </span> <span id=\""
+"ouinet_build_id\">"
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.div.p:191-9
+msgid "Ouinet protocol</span><br> <span id=\"ouinet_protocol\">"
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.div.p:193-9
+msgid "Local UDP endpoint(s)</span><br> <span id=\"local_udp_endpoints\">"
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.div.p:195-9
+msgid "UPnP status</span><br> <span id=\"is_upnp_active\">"
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.div.p:197-9
+msgid "Reachability status</span><br> <span id=\"udp_world_reachable\">"
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.div.p:199-9
+msgid ""
+"<span class=\"name\">Local cache size</span><br> <span id=\""
+"local_cache_size\"> </span> <button class=\"action\" type=\"button\" id=\""
+"purge_cache\" disabled>Purge now</button> <a href=\"http://127.0.0.1:8078/"
+"groups.txt\" class=\"download\" target=\"_blank\">Content shared by you</a>"
+msgstr ""
+
+#: ./i18n/html/ru/settings.html%2Bhtml.body.form.div.label.div:206-9
+msgid "Enable log file"
+msgstr ""
