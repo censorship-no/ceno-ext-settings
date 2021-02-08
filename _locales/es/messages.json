@@ -3,6 +3,6 @@
         "message": "Extensión CENO"
     },
     "extDesc": {
-        "message": "Proporciona integración con CENO y Ouinet: copia y agrupado de páginas, información de la procedencia de la página, parámetros y otras funciones."
+        "message": "Proporciona integración con CENO y Ouinet: copia y agrupado de páginas, información de la procedencia de la página, parámetros y otras funciones. Incluye código de Localizer de rugk bajo licencia MIT."
     }
 }
