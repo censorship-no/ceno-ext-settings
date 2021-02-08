@@ -16,28 +16,6 @@ const UNIQUE_REPLACEMENT_SPLIT = "$i18nSplit$";
 const UNIQUE_REPLACEMENT_ID = "i18nKeepChildren#";
 
 /**
- * Splits the _MSG__*__ format and returns the actual tag.
- *
- * The format is defined in {@link https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/i18n/Locale-Specific_Message_reference#name}.
- *
- * @private
- * @param  {string} tag
- * @returns {string}
- * @throws {Error} if pattern does not match
- */
-function getMessageTag(tag) {
-    /** {@link https://regex101.com/r/LAC5Ib/2} **/
-    const splitMessage = tag.split(/^__MSG_([\w@]+)__$/);
-
-    // throw custom exception if input is invalid
-    if (splitMessage.length < 2) {
-        throw new Error(`invalid message tag pattern "${tag}"`);
-    }
-
-    return splitMessage[1];
-}
-
-/**
  * Converts a dataset value back to a real attribute.
  *
  * This is intended for substrings of datasets too, i.e. it does not add the "data" prefix
@@ -237,7 +215,7 @@ function replaceI18n(elem, tag) {
     // localize main content
     if (tag !== "") {
         try {
-            const translatedMessage = getTranslatedMessage(getMessageTag(tag), subsContainer.substitutions);
+            const translatedMessage = getTranslatedMessage(tag, subsContainer.substitutions);
 
             // if we have substrings to replace
             if (subsContainer.substitutions) {
@@ -264,7 +242,7 @@ function replaceI18n(elem, tag) {
         const replaceAttribute = convertDatasetToAttribute(dataAttribute.slice(I18N_DATASET_INT));
 
         try {
-            const translatedMessage = getTranslatedMessage(getMessageTag(dataValue));
+            const translatedMessage = getTranslatedMessage(dataValue);
             replaceWith(elem, replaceAttribute, translatedMessage);
         } catch (error) {
             // log error but continue translating as it was likely just one problem in one translation
