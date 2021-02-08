@@ -4,5 +4,21 @@
     },
     "extDesc": {
         "message": "Proporciona integración con CENO y Ouinet: copia y agrupado de páginas, información de la procedencia de la página, parámetros y otras funciones. Incluye código de Localizer de rugk bajo licencia MIT."
+    },
+
+    "settingsTitle": {
+        "message": "Parámetros de CENO"
+    },
+    "settingsWarn": {
+        "message": "Los ajustes de esta página son sólo para probar las funciones de CENO bajo condiciones diversas de conectividad. $1 al detener CENO. Consulte el $2 para más información."
+    },
+    "settingsWarnNotsaved": {
+        "message": "No se guardan"
+    },
+    "settingsWarnMan": {
+        "message": "manual"
+    },
+    "settingsWarnManTI": {
+        "message": "Manual de usuario de Censorship.no! – Parámetros de CENO"
     }
 }
