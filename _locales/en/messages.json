@@ -1,1 +1,10 @@
-{}
+{
+    "extName": {
+        "message": "CENO Extension",
+        "description": "Name of the extension."
+    },
+    "extDesc": {
+        "message": "Provides integration with CENO and Ouinet: page caching and grouping, page source information, settings and other functionality.",
+        "description": "Description of the extension."
+    }
+}
