@@ -20,5 +20,36 @@
     },
     "settingsWarnManTI": {
         "message": "Manual de usuario de Censorship.no! – Parámetros de CENO"
+    },
+
+    "popupTitle": {
+        "message": "Fuentes de CENO"
+    },
+    "popupHead": {
+        "message": "Número de elementos de la página por fuente:"
+    },
+    "popupSrcOrigin": {
+        "message": "Directo del sitio web"
+    },
+    "popupSrcProxy": {
+        "message": "Vía la red CENO (privado)"
+    },
+    "popupSrcInjector": {
+        "message": "Vía la red CENO (público)"
+    },
+    "popupSrcDcache": {
+        "message": "Compartido por otros usuarios de CENO"
+    },
+    "popupSrcLcache": {
+        "message": "Compartido por usted"
+    },
+    "popupFoot": {
+        "message": "Consulte el $1 para más información sobre fuentes de contenido."
+    },
+    "popupFootMan": {
+        "message": "manual"
+    },
+    "popupFootManTI": {
+        "message": "Manual de usuario de Censorship.no! – Parámetros de CENO"
     }
 }
