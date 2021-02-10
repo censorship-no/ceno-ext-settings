@@ -22,3 +22,19 @@ I18n of the CENO Extension uses both [WebExtension i18n][webext-i18n] (for JavaS
 To make a new HTML element/attribute localizable, a camel-case identifier like `somethingSomesubpartSomeother` is added as the value of the `data-i18n` or `data-i18n-<attribute>` attribute, and the string is added to `_locales/en/messages.json`. See Localizer's documentation for more information. Please note that identifiers in HTML files do not use the `__MSG_*__` format in this project.
 
 Although the values of localizable HTML texts and attributes need not be in the HTML file, we choose to keep them to ease reading and testing the HTML file, in spite of the redundancy introduced and the need to keep the JSON and HTML texts in sync.
+
+## Localization/translation (l10n)
+
+When localizing a string with placeholders in the default language, like this one:
+
+    "something": {
+        "message": "This is a $TEST_STRING$ mentioned in $THIS_FILE$."
+    }
+
+You should just refer to the placeholders by their position in the original string. This allows you to reorder them if needed:
+
+    "something": {
+        "message": "Esta cadena se menciona en $2 y es una $1."
+    }
+
+You should not define the placeholders again in your JSON localized messages file (in spite of some translation tools complaining about it).
