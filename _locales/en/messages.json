@@ -46,6 +46,24 @@
     "settingsSrcDcache": {
         "message": "Shared by other CENO users"
     },
+    "settingsPubwarn": {
+        "message": "$PUBLIC_BROWSING$ will fail with current settings.",
+        "placeholders": {
+            "public_browsing": { "content": "$1" }
+        }
+    },
+    "settingsPubwarnPub": {
+        "message": "Public browsing"
+    },
+    "settingsPrivwarn": {
+        "message": "$PRIVATE_BROWSING$ will fail with current settings.",
+        "placeholders": {
+            "private_browsing": { "content": "$1" }
+        }
+    },
+    "settingsPrivwarnPriv": {
+        "message": "Private browsing"
+    },
 
     "popupTitle": {
         "message": "CENO Sources"
