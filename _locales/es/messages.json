@@ -21,6 +21,21 @@
     "settingsWarnManTI": {
         "message": "Manual de usuario de Censorship.no! – Parámetros de CENO"
     },
+    "settingsSources": {
+        "message": "Fuentes de descarga de contenidos:"
+    },
+    "settingsSrcOrigin": {
+        "message": "Directo del sitio web"
+    },
+    "settingsSrcProxy": {
+        "message": "Vía la red CENO (privado)"
+    },
+    "settingsSrcInjector": {
+        "message": "Vía la red CENO (público)"
+    },
+    "settingsSrcDcache": {
+        "message": "Compartido por otros usuarios de CENO"
+    },
 
     "popupTitle": {
         "message": "Fuentes de CENO"
