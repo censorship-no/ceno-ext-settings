@@ -31,6 +31,21 @@
     "settingsWarnManTI": {
         "message": "Censorship.no! User Manual – CENO settings"
     },
+    "settingsSources": {
+        "message": "Content retrieval sources:"
+    },
+    "settingsSrcOrigin": {
+        "message": "Direct from website"
+    },
+    "settingsSrcProxy": {
+        "message": "Via the CENO network (private)"
+    },
+    "settingsSrcInjector": {
+        "message": "Via the CENO network (public)"
+    },
+    "settingsSrcDcache": {
+        "message": "Shared by other CENO users"
+    },
 
     "popupTitle": {
         "message": "CENO Sources"
