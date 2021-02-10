@@ -30,5 +30,43 @@
     },
     "settingsWarnManTI": {
         "message": "Censorship.no! User Manual – CENO settings"
+    },
+
+    "popupTitle": {
+        "message": "CENO Sources"
+    },
+    "popupHead": {
+        "message": "Number of page elements per source:"
+    },
+    "popupSrcOrigin": {
+        "message": "Direct from website"
+    },
+    "popupSrcProxy": {
+        "message": "Via the CENO network (private)"
+    },
+    "popupSrcInjector": {
+        "message": "Via the CENO network (public)"
+    },
+    "popupSrcDcache": {
+        "message": "Shared by other CENO users"
+    },
+    "popupSrcLcache": {
+        "message": "Shared by you"
+    },
+    "popupFoot": {
+        "message": "See the $MANUAL$ for more information on content sources.",
+        "placeholders": {
+            "manual": { "content": "$1"}
+        }
+    },
+    "popupFootMan": {
+        "message": "manual"
+    },
+    "popupFootManLN": {
+        "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
+        "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Do not translate unless the section has been translated."
+    },
+    "popupFootManTI": {
+        "message": "Censorship.no! User Manual – CENO settings"
     }
 }
