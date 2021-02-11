@@ -1,0 +1,141 @@
+{
+    "extName": {
+        "message": "Extensión CENO"
+    },
+    "extDesc": {
+        "message": "Proporciona integración con CENO y Ouinet: copia y agrupado de páginas, información de la procedencia de la página, parámetros y otras funciones. Incluye código de Localizer de rugk bajo licencia MIT."
+    },
+
+    "bgCenoWarning": {
+        "message": "Aviso de CENO"
+    },
+
+    "settingsTitle": {
+        "message": "Parámetros de CENO"
+    },
+    "settingsWarn": {
+        "message": "Los ajustes de esta página son sólo para probar las funciones de CENO bajo condiciones diversas de conectividad. $1 al detener CENO. Consulte el $2 para más información."
+    },
+    "settingsWarnNotsaved": {
+        "message": "No se guardan"
+    },
+    "settingsWarnMan": {
+        "message": "manual"
+    },
+    "settingsWarnManTI": {
+        "message": "Manual de usuario de Censorship.no! – Parámetros de CENO"
+    },
+    "settingsSources": {
+        "message": "Fuentes de descarga de contenidos:"
+    },
+    "settingsSrcOrigin": {
+        "message": "Directo del sitio web"
+    },
+    "settingsSrcProxy": {
+        "message": "Vía la red CENO (privado)"
+    },
+    "settingsSrcInjector": {
+        "message": "Vía la red CENO (público)"
+    },
+    "settingsSrcDcache": {
+        "message": "Compartido por otros usuarios de CENO"
+    },
+    "settingsPubwarn": {
+        "message": "La $1 fallará con los ajustes actuales."
+    },
+    "settingsPubwarnPub": {
+        "message": "navegación pública"
+    },
+    "settingsPrivwarn": {
+        "message": "La $1 fallará con los ajustes actuales."
+    },
+    "settingsPrivwarnPriv": {
+        "message": "navegación privada"
+    },
+    "settingsStatusBrowser": {
+        "message": "Navegador CENO"
+    },
+    "settingsStatusExtension": {
+        "message": "Extensión CENO"
+    },
+    "settingsStatusOuinet": {
+        "message": "Ouinet"
+    },
+    "settingsStatusProtocol": {
+        "message": "Protocolo Ouinet"
+    },
+    "settingsStatusEndpoints": {
+        "message": "Direcciones UDP locales"
+    },
+    "settingsStatusUpnp": {
+        "message": "Estado de UPnP"
+    },
+    "settingsStatusReachability": {
+        "message": "Estado de alcanzabilidad"
+    },
+    "settingsStatusCacheSize": {
+        "message": "Tamaño de caché local"
+    },
+    "settingsStatusCachePurge": {
+        "message": "Vaciar ahora"
+    },
+    "settingsStatusCacheList": {
+        "message": "Contenido compartido por usted"
+    },
+    "settingsLogEnable": {
+        "message": "Activar registro"
+    },
+    "settingsLogDownload": {
+        "message": "Descargar"
+    },
+
+    "popupTitle": {
+        "message": "Fuentes de CENO"
+    },
+    "popupHead": {
+        "message": "Número de elementos de la página por fuente:"
+    },
+    "popupSrcOrigin": {
+        "message": "Directo del sitio web"
+    },
+    "popupSrcProxy": {
+        "message": "Vía la red CENO (privado)"
+    },
+    "popupSrcInjector": {
+        "message": "Vía la red CENO (público)"
+    },
+    "popupSrcDcache": {
+        "message": "Compartido por otros usuarios de CENO"
+    },
+    "popupSrcLcache": {
+        "message": "Compartido por usted"
+    },
+    "popupFoot": {
+        "message": "Consulte el $1 para más información sobre fuentes de contenido."
+    },
+    "popupFootMan": {
+        "message": "manual"
+    },
+    "popupFootManTI": {
+        "message": "Manual de usuario de Censorship.no! – Parámetros de CENO"
+    },
+
+    "updateTitle": {
+        "message": "Actualización de CENO"
+    },
+    "updateMetacontent": {
+        "message": "Actualización de CENO"
+    },
+    "updateHead": {
+        "message": "Su Navegador CENO está anticuado."
+    },
+    "updateSubhead": {
+        "message": "Actualice su aplicación vía"
+    },
+    "updateGetgoogleplay": {
+        "message": "Disponible en Google Play"
+    },
+    "updateGetpaskoocheh": {
+        "message": "Disponible en Paskoocheh"
+    }
+}

@@ -2,231 +2,87 @@
 <html>
 <head>
   <meta charset="utf-8">
-<style>
-body {
-  font-family: 'Arial', 'Helvetica', 'sans-serif';
-  margin:0;
-  padding:0;
-}
-#test-warning {
-  font-size: 2.75em;
-  padding: 16px 50px;
-  margin:0;
-  background: #fc4;
-}
-#test-warning:before {
-  content: "⚠ ";
-  color: red;
-}
-#header {
-  height: 120px;
-  line-height: 120px;
-  display: flex;
-  justify-content: flex-start;
-  font-size: 3em;
-  color: #fff;
-  background: #333;
-  padding-left: 50px;
-}
-#back {
-  padding: 25px;
-  padding-right: 50px;
-  height: 50px;
-  width: 50px;
-}
-.cb_form {
-  color: #333;
-  font-size: 3em;
-  border-top: 2px solid #b2b2b2;
-  padding: 50px;
-}
-.cb_form .row {
-  height: 80px;
-  line-height: 80px;
-}
-#access-mechanisms .row {
-  font-size: 85%;
-}
-.cb_form .group + .group {
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 2px solid #b2b2b2;
-}
-.cb_form .group p {
-  margin:0;
-}
-.cb_container {
-  display: block;
-  position: relative;
-  padding-left: 80px;
-}
-/* Hide the browser's default checkbox */
-.cb_container input {
-  position: absolute;
-  opacity: 0;
-  height: 0;
-  width: 0;
-  border:1px solid gray;
-}
-.checkmark {
-  position: absolute;
-  top: 16px;
-  left: 0px;
-  height: 40px;
-  width: 40px;
-  border: #aaa solid 5px;
-  border-radius: 15px;
-}
-/* When the checkbox is checked, add a blue background */
-.cb_container input:checked ~ .checkmark {
-  background-color: #2196f3;
-  border-color: #2196f3;
-}
-/* When the checkbox is display, gray out */
-.cb_container input:disabled ~ .checkmark {
-  background-color: #eaeaea;
-  border-color: #aaa;
-}
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-/* Show the checkmark when checked */
-.cb_container input:checked ~ .checkmark:after {
-  display: block;
-}
-.download {
-  float:right;
-  display:inline-block;
-  padding-right:50px;
-}
-/* Hide the download link */
-.cb_container input:not(:checked) ~ .download {
-  opacity:0;
-}
-/* Style the checkmark/indicator */
-.cb_container .checkmark:after {
-  left: 10px;
-  top: 0px;
-  width: 12px;
-  height: 24px;
-  border: solid white;
-  border-width: 0 8px 8px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.cb_label {
-  display: inline-block;
-}
-.cb_container input:disabled ~ .cb_label {
-  color: #aaa;
-}
-/* Warnings may only be shown after successfully contacting the client. */
-#am-warnings {
-  display: none;
-}
-[id^="am-warning-"] {
-  display: none;
-  margin: 8px 0 0 0;
-  padding: 16px;
-  font-size: 80%;
-  background: #fc4;
-}
-[id^="am-warning-"]:before {
-  content: "⚠ ";
-  color: red;
-}
-#about {
-  padding: 50px;
-  font-size: 2em;
-  color: #999;
-  border-top: 2px solid #b2b2b2;
-}
-.action {
-  font-size: inherit;
-}
-.name {
-  font-weight: bold;
-}
-</style>
+  <link rel="stylesheet" href="settings.css">
+<script type="module" src="localizer/Localizer.js"></script>
 <script src="settings.js"></script>
 </head>
 <body>
-  <div id="header">CENO Settings</div>
-  <p id="test-warning">Settings on this page are only intended for testing CENO functionality in various network conditions.
-    These are <strong>not saved</strong> when stopping CENO.
+  <div data-i18n="settingsTitle" id="header">CENO Settings</div>
+  <p data-i18n="settingsWarn" data-opt-i18n-keep-children
+     id="test-warning">Settings on this page are only intended for testing CENO functionality in various network conditions.
+    These are <strong data-i18n="settingsWarnNotsaved">not saved</strong> when stopping CENO.
     See the
-    <a href="https://censorship.no/user-manual/en/browser/settings.html"
-       title="Censorship.no! User Manual – CENO settings" target="_blank">manual</a>
-    for more information.
-  </p>
+    <a data-i18n="settingsWarnMan" data-i18n-href="settingsWarnManLN" data-i18n-title="settingsWarnManTI"
+       href="https://censorship.no/user-manual/en/browser/settings.html"
+       title="Censorship.no! User Manual – CENO settings" target="_blank">manual</a> for more information.</p>
   <form class="cb_form" id="access-mechanisms">
     <div class="group">
-      <p>Content retrieval sources:</p>
+      <p data-i18n="settingsSources">Content retrieval sources:</p>
       <div class="row">
         <label class="cb_container">
           <input type="checkbox" id="origin_access" disabled>
           <span class="checkmark"></span>
-          <div class="cb_label">Direct from website</div>
+          <div data-i18n="settingsSrcOrigin" class="cb_label">Direct from website</div>
         </label>
       </div>
       <div class="row">
         <label class="cb_container">
           <input type="checkbox" id="proxy_access" disabled>
           <span class="checkmark"></span>
-          <div class="cb_label">Via the CENO network (private)</div>
+          <div data-i18n="settingsSrcProxy" class="cb_label">Via the CENO network (private)</div>
         </label>
       </div>
       <div class="row">
         <label class="cb_container">
           <input type="checkbox" id="injector_access" disabled>
           <span class="checkmark"></span>
-          <div class="cb_label">Via the CENO network (public)</div>
+          <div data-i18n="settingsSrcInjector" class="cb_label">Via the CENO network (public)</div>
         </label>
       </div>
       <div class="row">
         <label class="cb_container">
           <input type="checkbox" id="distributed_cache" disabled>
           <span class="checkmark"></span>
-          <div class="cb_label">Shared by other CENO users</div>
+          <div data-i18n="settingsSrcDcache" class="cb_label">Shared by other CENO users</div>
         </label>
       </div>
     </div>
     <div id="am-warnings">
-      <p id="am-warning-public"><strong>Public browsing</strong> will fail with current settings.</p>
-      <p id="am-warning-private"><strong>Private browsing</strong> will fail with current settings.</p>
+      <p data-i18n="settingsPubwarn" data-opt-i18n-keep-children
+         id="am-warning-public"><strong data-i18n="settingsPubwarnPub">Public browsing</strong> will fail with current settings.</p>
+      <p data-i18n="settingsPrivwarn" data-opt-i18n-keep-children
+         id="am-warning-private"><strong data-i18n="settingsPrivwarnPriv">Private browsing</strong> will fail with current settings.</p>
     </div>
   </form>
   <div id="about">
-    <span class="name">CENO Browser</span><br>
+    <span data-i18n="settingsStatusBrowser" class="name">CENO Browser</span><br>
     <span id="ceno_version"> </span>
     <p>
-    <span class="name">CENO Extension</span><br>
+    <span data-i18n="settingsStatusExtension" class="name">CENO Extension</span><br>
     <span id="ceno_extension_version"> </span>
     <p>
-    <span class="name">Ouinet</span><br>
+    <span data-i18n="settingsStatusOuinet" class="name">Ouinet</span><br>
     <span id="ouinet_version"> </span> <span id="ouinet_build_id"> </span>
     <p>
-    <span class="name">Ouinet protocol</span><br>
+    <span data-i18n="settingsStatusProtocol" class="name">Ouinet protocol</span><br>
     <span id="ouinet_protocol"> </span>
     <p>
-    <span class="name">Local UDP endpoint(s)</span><br>
+    <span data-i18n="settingsStatusEndpoints" class="name">Local UDP endpoints</span><br>
     <span id="local_udp_endpoints"> </span>
     <p>
-    <span class="name">UPnP status</span><br>
+    <span data-i18n="settingsStatusUpnp" class="name">UPnP status</span><br>
     <span id="is_upnp_active"> </span>
     <p>
-    <span class="name">Reachability status</span><br>
+    <span data-i18n="settingsStatusReachability" class="name">Reachability status</span><br>
     <span id="udp_world_reachable"> </span>
     <p>
     <form>
-      <span class="name">Local cache size</span><br>
+      <span data-i18n="settingsStatusCacheSize" class="name">Local cache size</span><br>
       <span id="local_cache_size"> </span>
-      <button class="action" type="button" id="purge_cache" disabled>Purge now</button>
-        <a href="http://127.0.0.1:8078/groups.txt" class="download" target="_blank">Content shared by you</a>
+      <button data-i18n="settingsStatusCachePurge"
+              class="action" type="button" id="purge_cache" disabled>Purge now</button>
+      <a data-i18n="settingsStatusCacheList"
+         href="http://127.0.0.1:8078/groups.txt" class="download" target="_blank">Content shared by you</a>
     </form>
   </div>
   <form class="cb_form">
@@ -234,8 +90,9 @@ body {
       <label class="cb_container">
         <input type="checkbox" id="logfile" disabled>
         <span class="checkmark"></span>
-        <div class="cb_label">Enable log file</div>
-        <a href="http://127.0.0.1:8078/logfile.txt" class="download" download="ceno-logfile.txt" target="_blank">Download</a>
+        <div data-i18n="settingsLogEnable" class="cb_label">Enable log file</div>
+        <a data-i18n="settingsLogDownload"
+           href="http://127.0.0.1:8078/logfile.txt" class="download" download="ceno-logfile.txt" target="_blank">Download</a>
       </label>
     </div>
   </form>
