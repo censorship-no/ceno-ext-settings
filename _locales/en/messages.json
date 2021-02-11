@@ -94,6 +94,12 @@
     "settingsStatusCacheList": {
         "message": "Content shared by you"
     },
+    "settingsLogEnable": {
+        "message": "Enable log file"
+    },
+    "settingsLogDownload": {
+        "message": "Download"
+    },
 
     "popupTitle": {
         "message": "CENO Sources"
