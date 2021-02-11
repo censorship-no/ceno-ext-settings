@@ -6,6 +6,10 @@
         "message": "Proporciona integración con CENO y Ouinet: copia y agrupado de páginas, información de la procedencia de la página, parámetros y otras funciones. Incluye código de Localizer de rugk bajo licencia MIT."
     },
 
+    "bgCenoWarning": {
+        "message": "Aviso de CENO"
+    },
+
     "settingsTitle": {
         "message": "Parámetros de CENO"
     },
@@ -114,5 +118,24 @@
     },
     "popupFootManTI": {
         "message": "Manual de usuario de Censorship.no! – Parámetros de CENO"
+    },
+
+    "updateTitle": {
+        "message": "Actualización de CENO"
+    },
+    "updateMetacontent": {
+        "message": "Actualización de CENO"
+    },
+    "updateHead": {
+        "message": "Su Navegador CENO está anticuado."
+    },
+    "updateSubhead": {
+        "message": "Actualice su aplicación vía"
+    },
+    "updateGetgoogleplay": {
+        "message": "Disponible en Google Play"
+    },
+    "updateGetpaskoocheh": {
+        "message": "Disponible en Paskoocheh"
     }
 }
