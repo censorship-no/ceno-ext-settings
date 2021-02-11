@@ -141,5 +141,27 @@
     },
     "popupFootManTI": {
         "message": "Censorship.no! User Manual – CENO settings"
+    },
+
+    "updateTitle": {
+        "message": "CENO update"
+    },
+    "updateMetacontent": {
+        "message": "CENO update"
+    },
+    "updateHead": {
+        "message": "Your CENO Browser is out of date"
+    },
+    "updateSubhead": {
+        "message": "Please update your app via",
+        "description": "Update hint for user, followed by graphical update badge links."
+    },
+    "updateGetgoogleplay": {
+        "message": "Get it on Google Play",
+        "description": "Alt text for Google Play badge."
+    },
+    "updateGetpaskoocheh": {
+        "message": "Get it on Paskoocheh",
+        "description": "Alt text for Paskoocheh badge."
     }
 }
