@@ -48,6 +48,42 @@
     "settingsPrivwarnPriv": {
         "message": "navegación privada"
     },
+    "settingsStatusBrowser": {
+        "message": "Navegador CENO"
+    },
+    "settingsStatusExtension": {
+        "message": "Extensión CENO"
+    },
+    "settingsStatusOuinet": {
+        "message": "Ouinet"
+    },
+    "settingsStatusProtocol": {
+        "message": "Protocolo Ouinet"
+    },
+    "settingsStatusEndpoints": {
+        "message": "Direcciones UDP locales"
+    },
+    "settingsStatusUpnp": {
+        "message": "Estado de UPnP"
+    },
+    "settingsStatusReachability": {
+        "message": "Estado de alcanzabilidad"
+    },
+    "settingsStatusCacheSize": {
+        "message": "Tamaño de caché local"
+    },
+    "settingsStatusCachePurge": {
+        "message": "Vaciar ahora"
+    },
+    "settingsStatusCacheList": {
+        "message": "Contenido compartido por usted"
+    },
+    "settingsLogEnable": {
+        "message": "Activar registro"
+    },
+    "settingsLogDownload": {
+        "message": "Descargar"
+    },
 
     "popupTitle": {
         "message": "Fuentes de CENO"
