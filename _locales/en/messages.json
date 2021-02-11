@@ -8,6 +8,10 @@
         "description": "Description of the extension."
     },
 
+    "bgCenoWarning": {
+        "message": "CENO warning"
+    },
+
     "settingsTitle": {
         "message": "CENO Settings"
     },
