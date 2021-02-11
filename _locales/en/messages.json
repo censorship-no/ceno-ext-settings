@@ -150,7 +150,7 @@
         "message": "CENO update"
     },
     "updateHead": {
-        "message": "Your CENO Browser is out of date"
+        "message": "Your CENO Browser is out of date."
     },
     "updateSubhead": {
         "message": "Please update your app via",
