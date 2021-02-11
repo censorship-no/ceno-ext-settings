@@ -64,6 +64,36 @@
     "settingsPrivwarnPriv": {
         "message": "Private browsing"
     },
+    "settingsStatusBrowser": {
+        "message": "CENO Browser"
+    },
+    "settingsStatusExtension": {
+        "message": "CENO Extension"
+    },
+    "settingsStatusOuinet": {
+        "message": "Ouinet"
+    },
+    "settingsStatusProtocol": {
+        "message": "Ouinet protocol"
+    },
+    "settingsStatusEndpoints": {
+        "message": "Local UDP endpoints"
+    },
+    "settingsStatusUpnp": {
+        "message": "UPnP status"
+    },
+    "settingsStatusReachability": {
+        "message": "Reachability status"
+    },
+    "settingsStatusCacheSize": {
+        "message": "Local cache size"
+    },
+    "settingsStatusCachePurge": {
+        "message": "Purge now"
+    },
+    "settingsStatusCacheList": {
+        "message": "Content shared by you"
+    },
 
     "popupTitle": {
         "message": "CENO Sources"
