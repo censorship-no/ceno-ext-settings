@@ -22,6 +22,9 @@
     "settingsWarnMan": {
         "message": "manual"
     },
+    "settingsWarnManLN": {
+        "message": "https://censorship.no/user-manual/en/browser/settings.html"
+    },
     "settingsWarnManTI": {
         "message": "Manual de usuario de Censorship.no! – Parámetros de CENO"
     },
@@ -115,6 +118,9 @@
     },
     "popupFootMan": {
         "message": "manual"
+    },
+    "popupFootManLN": {
+        "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms"
     },
     "popupFootManTI": {
         "message": "Manual de usuario de Censorship.no! – Parámetros de CENO"
