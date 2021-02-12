@@ -4,6 +4,11 @@
 DEFINES['MOZ_APP_VERSION'] = CONFIG['MOZ_APP_VERSION']
 DEFINES['MOZ_APP_MAXVERSION'] = CONFIG['MOZ_APP_MAXVERSION']
 
+# Please list each single file which needs to be included in the build.
+# Each subdirectory needs its own block, with entries sorted alphabetically.
+# Blocks themselves also need to be sorted alphabetically.
+# There is no need to include intermediate directories with no files.
+
 FINAL_TARGET_FILES.features['ceno@equalit.ie'] += [
   'background.js',
   'button.js',
