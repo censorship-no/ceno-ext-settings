@@ -46,16 +46,25 @@ class Text {
   set(value) {
     if (!this.elem) return;
 
-    if (Array.isArray(value)) {
-      this.elem.innerHTML = value.join('<br>');
-    } else {
-      this.elem.innerHTML = value;
+    if (!Array.isArray(value)) {
+      this.elem.innerText = value;
+      return;
     }
+
+    var children = [];
+    var first = true;
+    for (var i in value) {
+      var v = value[i];
+      if (!first) { children.push(document.createElement("br")); }
+      children.push(document.createTextNode(v));
+      first = false;
+    }
+    this.elem.replaceChildren(...children);
   }
 
   disable() {
     if (!this.elem) return;
-    this.elem.innerHTML = "---";
+    this.elem.innerText = "---";
   }
 }
 
@@ -67,14 +76,14 @@ class DataSizeText extends Text {
   set(value) {
     var b = Number(value);
     if (isNaN(b) || b < 1024) {
-      super.set(b + "&nbsp;B");
+      super.set(b + " B");
       return;
     }
     // See <https://stackoverflow.com/a/42408230>.
     var i = Math.floor(Math.log2(b) / 10);
     var v = b / Math.pow(1024, i);
     var u = "KMGTPEZY"[i-1] + "iB";
-    super.set(`${v.toFixed(2)}&nbsp;${u}`);
+    super.set(`${v.toFixed(2)} ${u}`);
   }
 }
 
@@ -200,12 +209,12 @@ class State {
   setCenoVersion() {
     this.ceno_version = new Text("ceno_version");
     browser.runtime.getBrowserInfo().then(info =>
-      this.ceno_version.elem.innerHTML = `${info.version} Build ID ${info.buildID}`);
+      this.ceno_version.elem.innerText = `${info.version} Build ID ${info.buildID}`);
   }
 
   setCenoExtensionVersion() {
     this.ceno_extension_version = new Text("ceno_extension_version");
-    this.ceno_extension_version.elem.innerHTML = browser.runtime.getManifest().version;
+    this.ceno_extension_version.elem.innerText = browser.runtime.getManifest().version;
   }
 
   enable() {
