@@ -27,6 +27,12 @@ FINAL_TARGET_FILES.features['ceno@equalit.ie']['icons'] += [
   'icons/ceno-logo-48.png'
 ]
 
+FINAL_TARGET_FILES.features['ceno@equalit.ie']['localizer'] += [
+  'localizer/LICENSE.md',
+  'localizer/Localizer.js',
+  'localizer/replaceInnerContent.js',
+]
+
 FINAL_TARGET_FILES.features['ceno@equalit.ie']['update-page'] += [
   'update-page/index.html',
   'update-page/style.css',
