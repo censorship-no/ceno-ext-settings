@@ -14,8 +14,10 @@ FINAL_TARGET_FILES.features['ceno@equalit.ie'] += [
   'button.js',
   'content.js',
   'manifest.json',
+  'popup.css',
   'popup.html',
   'popup.js',
+  'settings.css',
   'settings.html',
   'settings.js',
 ]
