@@ -1,6 +1,6 @@
 {
     "extName": {
-        "message": "",
+        "message": "CENO Extension",
         "description": "Name of the extension."
     },
     "extDesc": {
@@ -8,10 +8,10 @@
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": ""
+        "message": "تحذير متصفح CENO"
     },
     "settingsTitle": {
-        "message": ""
+        "message": "إعدادات متصفح CENO"
     },
     "settingsWarn": {
         "message": "",
