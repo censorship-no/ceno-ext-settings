@@ -1,20 +1,20 @@
 {
     "extName": {
-        "message": "",
+        "message": "Extension CENO",
         "description": "Name of the extension."
     },
     "extDesc": {
-        "message": "",
+        "message": "Fournit une intégration avec CENO et Ouinet : mise en cache et regroupement de pages, informations sur la source des pages, paramètres et autres fonctionnalités. Inclut le code de Localizer par rugk sous licence MIT.",
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": ""
+        "message": "Avertissement CENO"
     },
     "settingsTitle": {
-        "message": ""
+        "message": "Paramètres CENO"
     },
     "settingsWarn": {
-        "message": "",
+        "message": "Les paramètres de cette page sont uniquement destinés à tester la fonctionnalité CENO dans diverses conditions de réseau. Ce sont $NOT_SAVED$ lors de l’arrêt de CENO. Voir le $MANUAL$ pour plus d’informations.",
         "placeholders": {
             "not_saved": {
                 "content": "$1"
@@ -25,35 +25,35 @@
         }
     },
     "settingsWarnNotsaved": {
-        "message": ""
+        "message": "non enregistré"
     },
     "settingsWarnMan": {
-        "message": ""
+        "message": "manuel"
     },
     "settingsWarnManLN": {
-        "message": "",
+        "message": "https://censorship.no/user-manual/en/browser/settings.html",
         "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "settingsWarnManTI": {
-        "message": ""
+        "message": "Censorship.no! Manuel d’utilisation – Paramètres CENO"
     },
     "settingsSources": {
-        "message": ""
+        "message": "Sources de récupération de contenu :"
     },
     "settingsSrcOrigin": {
-        "message": ""
+        "message": "Directement depuis le site Web"
     },
     "settingsSrcProxy": {
-        "message": ""
+        "message": "Via le réseau CENO (privé)"
     },
     "settingsSrcInjector": {
-        "message": ""
+        "message": "Via le réseau CENO (public)"
     },
     "settingsSrcDcache": {
-        "message": ""
+        "message": "Partagé par d’autres utilisateurs CENO"
     },
     "settingsPubwarn": {
-        "message": "",
+        "message": "$PUBLIC_BROWSING$ échouera avec les paramètres actuels.",
         "placeholders": {
             "public_browsing": {
                 "content": "$1"
@@ -61,10 +61,10 @@
         }
     },
     "settingsPubwarnPub": {
-        "message": ""
+        "message": "Navigation publique"
     },
     "settingsPrivwarn": {
-        "message": "",
+        "message": "$PRIVATE_BROWSING$ échouera avec les paramètres actuels.",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
@@ -72,67 +72,67 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": ""
+        "message": "Navigation privée"
     },
     "settingsStatusBrowser": {
-        "message": ""
+        "message": "Navigateur CENO"
     },
     "settingsStatusExtension": {
-        "message": ""
+        "message": "Extension CENO"
     },
     "settingsStatusOuinet": {
-        "message": ""
+        "message": "Ouinet"
     },
     "settingsStatusProtocol": {
-        "message": ""
+        "message": "Protocole Ouinet"
     },
     "settingsStatusEndpoints": {
-        "message": ""
+        "message": "Points de terminaison UDP locaux"
     },
     "settingsStatusUpnp": {
-        "message": ""
+        "message": "État UPnP"
     },
     "settingsStatusReachability": {
-        "message": ""
+        "message": "Statut d’accessibilité"
     },
     "settingsStatusCacheSize": {
-        "message": ""
+        "message": "Taille du cache local"
     },
     "settingsStatusCachePurge": {
-        "message": ""
+        "message": "Purger maintenant"
     },
     "settingsStatusCacheList": {
-        "message": ""
+        "message": "Contenu partagé par vous"
     },
     "settingsLogEnable": {
-        "message": ""
+        "message": "Activer le fichier journal"
     },
     "settingsLogDownload": {
-        "message": ""
+        "message": "Télécharger"
     },
     "popupTitle": {
-        "message": ""
+        "message": "Sources CENO"
     },
     "popupHead": {
-        "message": ""
+        "message": "Nombre d’éléments de page par source :"
     },
     "popupSrcOrigin": {
-        "message": ""
+        "message": "Directement depuis le site Web"
     },
     "popupSrcProxy": {
-        "message": ""
+        "message": "Via le réseau CENO (privé)"
     },
     "popupSrcInjector": {
-        "message": ""
+        "message": "Via le réseau CENO (public)"
     },
     "popupSrcDcache": {
-        "message": ""
+        "message": "Partagé par d’autres utilisateurs CENO"
     },
     "popupSrcLcache": {
-        "message": ""
+        "message": "Partagé par vous"
     },
     "popupFoot": {
-        "message": "",
+        "message": "Voir le $MANUAL$ pour plus d’informations sur les sources de contenu.",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -140,34 +140,34 @@
         }
     },
     "popupFootMan": {
-        "message": ""
+        "message": "manuel"
     },
     "popupFootManLN": {
-        "message": "",
+        "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
         "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "popupFootManTI": {
-        "message": ""
+        "message": "Censorship.no! Manuel d’utilisation – Paramètres CENO"
     },
     "updateTitle": {
-        "message": ""
+        "message": "Mise à jour CENO"
     },
     "updateMetacontent": {
-        "message": ""
+        "message": "Mise à jour CENO"
     },
     "updateHead": {
-        "message": ""
+        "message": "Votre navigateur CENO n’est pas à jour."
     },
     "updateSubhead": {
-        "message": "",
+        "message": "Veuillez mettre à jour votre application via",
         "description": "Update hint for user, followed by graphical update badge links."
     },
     "updateGetgoogleplay": {
-        "message": "",
+        "message": "Télécharger sur Google Play",
         "description": "Alt text for Google Play badge."
     },
     "updateGetpaskoocheh": {
-        "message": "",
+        "message": "Télécharger sur Paskoocheh",
         "description": "Alt text for Paskoocheh badge."
     }
 }
