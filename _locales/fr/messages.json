@@ -8,13 +8,13 @@
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": "Avertissement CENO"
+        "message": "Avertissement de CENO"
     },
     "settingsTitle": {
-        "message": "Paramètres CENO"
+        "message": "Paramètres de CENO"
     },
     "settingsWarn": {
-        "message": "Les paramètres de cette page sont uniquement destinés à tester la fonctionnalité CENO dans diverses conditions de réseau. Ce sont $NOT_SAVED$ lors de l’arrêt de CENO. Voir le $MANUAL$ pour plus d’informations.",
+        "message": "Les paramètres de cette page sont uniquement destinés à tester la fonctionnalité de CENO dans diverses conditions de réseau. Ce sont $1 lors de l’arrêt de CENO. Voir le $2 pour plus d’informations.",
         "placeholders": {
             "not_saved": {
                 "content": "$1"
