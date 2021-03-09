@@ -1,6 +1,6 @@
 {
     "extName": {
-        "message": "",
+        "message": "CENO 扩展",
         "description": "Name of the extension."
     },
     "extDesc": {
@@ -8,10 +8,10 @@
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": ""
+        "message": "CENO 警告"
     },
     "settingsTitle": {
-        "message": ""
+        "message": "CENO 设置"
     },
     "settingsWarn": {
         "message": "",
@@ -25,32 +25,32 @@
         }
     },
     "settingsWarnNotsaved": {
-        "message": ""
+        "message": "未保存"
     },
     "settingsWarnMan": {
-        "message": ""
+        "message": "手册"
     },
     "settingsWarnManLN": {
-        "message": "",
+        "message": "https://censorship.no/user-manual/en/browser/settings.html",
         "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "settingsWarnManTI": {
         "message": ""
     },
     "settingsSources": {
-        "message": ""
+        "message": "内容检索来源："
     },
     "settingsSrcOrigin": {
-        "message": ""
+        "message": "直接来自网站"
     },
     "settingsSrcProxy": {
         "message": ""
     },
     "settingsSrcInjector": {
-        "message": ""
+        "message": "通过 CENO 网络（公共）"
     },
     "settingsSrcDcache": {
-        "message": ""
+        "message": "由其他 CENO 用户分享"
     },
     "settingsPubwarn": {
         "message": "",
