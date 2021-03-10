@@ -14,7 +14,7 @@
         "message": "Paramètres de CENO"
     },
     "settingsWarn": {
-        "message": "Les paramètres de cette page sont uniquement destinés à tester la fonctionnalité de CENO dans diverses conditions de réseau. Ce ne sont $1 lors de l’arrêt de CENO. Voir le $2 pour plus d’informations.",
+        "message": "Les paramètres de cette page sont uniquement destinés à tester la fonctionnalité de CENO dans diverses conditions de réseau. Ce ne sont $NOT_SAVED$ lors de l’arrêt de CENO. Voir le $MANUAL$ pour plus d’informations.",
         "placeholders": {
             "not_saved": {
                 "content": "$1"
@@ -53,7 +53,7 @@
         "message": "Partagé par d’autres utilisateurs de CENO"
     },
     "settingsPubwarn": {
-        "message": "La $1 échouera avec les paramètres actuels.",
+        "message": "La $PUBLIC_BROWSING$ échouera avec les paramètres actuels.",
         "placeholders": {
             "public_browsing": {
                 "content": "$1"
@@ -64,7 +64,7 @@
         "message": "navigation publique"
     },
     "settingsPrivwarn": {
-        "message": "La $1 échouera avec les paramètres actuels.",
+        "message": "La $PRIVATE_BROWSING$ échouera avec les paramètres actuels.",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
@@ -132,7 +132,7 @@
         "message": "Partagé par vous"
     },
     "popupFoot": {
-        "message": "Voir le $1 pour plus d’informations sur les sources de contenu.",
+        "message": "Voir le $MANUAL$ pour plus d’informations sur les sources de contenu.",
         "placeholders": {
             "manual": {
                 "content": "$1"
