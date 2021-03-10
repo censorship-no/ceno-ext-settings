@@ -12,7 +12,15 @@
         "message": "Parámetros de CENO"
     },
     "settingsWarn": {
-        "message": "Los ajustes de esta página son sólo para probar las funciones de CENO bajo condiciones diversas de conectividad. $NOT_SAVED$ al detener CENO. Consulte el $MANUAL$ para más información."
+        "message": "Los ajustes de esta página son sólo para probar las funciones de CENO bajo condiciones diversas de conectividad. $NOT_SAVED$ al detener CENO. Consulte el $MANUAL$ para más información.",
+        "placeholders": {
+            "not_saved": {
+                "content": "$1"
+            },
+            "manual": {
+                "content": "$2"
+            }
+        }
     },
     "settingsWarnNotsaved": {
         "message": "No se guardan"
@@ -42,13 +50,23 @@
         "message": "Compartido por otros usuarios de CENO"
     },
     "settingsPubwarn": {
-        "message": "La $PUBLIC_BROWSING$ fallará con los ajustes actuales."
+        "message": "La $PUBLIC_BROWSING$ fallará con los ajustes actuales.",
+        "placeholders": {
+            "public_browsing": {
+                "content": "$1"
+            }
+        }
     },
     "settingsPubwarnPub": {
         "message": "navegación pública"
     },
     "settingsPrivwarn": {
-        "message": "La $PRIVATE_BROWSING$ fallará con los ajustes actuales."
+        "message": "La $PRIVATE_BROWSING$ fallará con los ajustes actuales.",
+        "placeholders": {
+            "private_browsing": {
+                "content": "$1"
+            }
+        }
     },
     "settingsPrivwarnPriv": {
         "message": "navegación privada"
@@ -111,7 +129,12 @@
         "message": "Compartido por usted"
     },
     "popupFoot": {
-        "message": "Consulte el $MANUAL$ para más información sobre fuentes de contenido."
+        "message": "Consulte el $MANUAL$ para más información sobre fuentes de contenido.",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
     },
     "popupFootMan": {
         "message": "manual"
