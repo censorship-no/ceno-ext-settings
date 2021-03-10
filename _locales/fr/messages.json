@@ -1,0 +1,173 @@
+{
+    "extName": {
+        "message": "Extension CENO",
+        "description": "Name of the extension."
+    },
+    "extDesc": {
+        "message": "Fournit une intégration avec CENO et Ouinet : mise en cache et regroupement de pages, informations sur la source des pages, paramètres et autres fonctionnalités. Inclut le code de Localizer par rugk sous licence MIT.",
+        "description": "Description of the extension."
+    },
+    "bgCenoWarning": {
+        "message": "Avertissement de CENO"
+    },
+    "settingsTitle": {
+        "message": "Paramètres de CENO"
+    },
+    "settingsWarn": {
+        "message": "Les paramètres de cette page sont uniquement destinés à tester la fonctionnalité de CENO dans diverses conditions de réseau. Ce ne sont $NOT_SAVED$ lors de l’arrêt de CENO. Voir le $MANUAL$ pour plus d’informations.",
+        "placeholders": {
+            "not_saved": {
+                "content": "$1"
+            },
+            "manual": {
+                "content": "$2"
+            }
+        }
+    },
+    "settingsWarnNotsaved": {
+        "message": "pas enregistrés"
+    },
+    "settingsWarnMan": {
+        "message": "manuel"
+    },
+    "settingsWarnManLN": {
+        "message": "https://censorship.no/user-manual/en/browser/settings.html",
+        "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "settingsWarnManTI": {
+        "message": "Censorship.no! Manuel d’utilisation – Paramètres de CENO"
+    },
+    "settingsSources": {
+        "message": "Sources de récupération de contenu :"
+    },
+    "settingsSrcOrigin": {
+        "message": "Directement depuis le site Web"
+    },
+    "settingsSrcProxy": {
+        "message": "Via le réseau CENO (privé)"
+    },
+    "settingsSrcInjector": {
+        "message": "Via le réseau CENO (public)"
+    },
+    "settingsSrcDcache": {
+        "message": "Partagé par d’autres utilisateurs de CENO"
+    },
+    "settingsPubwarn": {
+        "message": "La $PUBLIC_BROWSING$ échouera avec les paramètres actuels.",
+        "placeholders": {
+            "public_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPubwarnPub": {
+        "message": "navigation publique"
+    },
+    "settingsPrivwarn": {
+        "message": "La $PRIVATE_BROWSING$ échouera avec les paramètres actuels.",
+        "placeholders": {
+            "private_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPrivwarnPriv": {
+        "message": "navigation privée"
+    },
+    "settingsStatusBrowser": {
+        "message": "Navigateur CENO"
+    },
+    "settingsStatusExtension": {
+        "message": "Extension CENO"
+    },
+    "settingsStatusOuinet": {
+        "message": "Ouinet"
+    },
+    "settingsStatusProtocol": {
+        "message": "Protocole Ouinet"
+    },
+    "settingsStatusEndpoints": {
+        "message": "Points de terminaison UDP locaux"
+    },
+    "settingsStatusUpnp": {
+        "message": "État d’UPnP"
+    },
+    "settingsStatusReachability": {
+        "message": "État d’accessibilité"
+    },
+    "settingsStatusCacheSize": {
+        "message": "Taille du cache local"
+    },
+    "settingsStatusCachePurge": {
+        "message": "Purger maintenant"
+    },
+    "settingsStatusCacheList": {
+        "message": "Contenu partagé par vous"
+    },
+    "settingsLogEnable": {
+        "message": "Activer le fichier journal"
+    },
+    "settingsLogDownload": {
+        "message": "Télécharger"
+    },
+    "popupTitle": {
+        "message": "Sources de CENO"
+    },
+    "popupHead": {
+        "message": "Nombre d’éléments de page par source :"
+    },
+    "popupSrcOrigin": {
+        "message": "Directement depuis le site Web"
+    },
+    "popupSrcProxy": {
+        "message": "Via le réseau CENO (privé)"
+    },
+    "popupSrcInjector": {
+        "message": "Via le réseau CENO (public)"
+    },
+    "popupSrcDcache": {
+        "message": "Partagé par d’autres utilisateurs de CENO"
+    },
+    "popupSrcLcache": {
+        "message": "Partagé par vous"
+    },
+    "popupFoot": {
+        "message": "Voir le $MANUAL$ pour plus d’informations sur les sources de contenu.",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "popupFootMan": {
+        "message": "manuel"
+    },
+    "popupFootManLN": {
+        "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
+        "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "popupFootManTI": {
+        "message": "Censorship.no! Manuel d’utilisation – Paramètres de CENO"
+    },
+    "updateTitle": {
+        "message": "Mise à jour de CENO"
+    },
+    "updateMetacontent": {
+        "message": "Mise à jour de CENO"
+    },
+    "updateHead": {
+        "message": "Votre Navigateur CENO n’est pas à jour."
+    },
+    "updateSubhead": {
+        "message": "Veuillez mettre à jour votre application via",
+        "description": "Update hint for user, followed by graphical update badge links."
+    },
+    "updateGetgoogleplay": {
+        "message": "Télécharger sur Google Play",
+        "description": "Alt text for Google Play badge."
+    },
+    "updateGetpaskoocheh": {
+        "message": "Télécharger sur Paskoocheh",
+        "description": "Alt text for Paskoocheh badge."
+    }
+}
