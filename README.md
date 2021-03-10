@@ -30,13 +30,21 @@ When adding a new locale, remember to add the `_locales/<locale>/messages.json` 
 When localizing a string with placeholders in the default language, like this one:
 
     "something": {
-        "message": "This is a $TEST_STRING$ mentioned in $THIS_FILE$."
+        "message": "This is a $TEST_STRING$ mentioned in $THIS_FILE$.",
+        "placeholders": {
+            "test_string": { "content": "$1" },
+            "this_file": { "content": "$2"}
+        }
     }
 
-You should just refer to the placeholders by their position in the original string. This allows you to reorder them if needed:
+You may reorder them if needed:
 
     "something": {
-        "message": "Esta cadena se menciona en $2 y es una $1."
+        "message": "Esta cadena se menciona en $THIS_FILE$ y es una $TEST_STRING$."
+        "placeholders": {
+            "test_string": { "content": "$1" },
+            "this_file": { "content": "$2"}
+        }
     }
 
-You should not define the placeholders again in your JSON localized messages file (in spite of some translation tools complaining about it).
+You can copy the definitions of the placeholders from the original English message entry (some translation tools do this automatically).
