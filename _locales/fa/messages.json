@@ -1,0 +1,173 @@
+{
+    "extName": {
+        "message": "افزونه‌های مرورگر CENO",
+        "description": "Name of the extension."
+    },
+    "extDesc": {
+        "message": "ادغام و هم‌پیوندی CENO و Ouinet را فراهم می‌کند: ذخیره صفحه‌ها و گروه‌بندی، اطلاعات مرتبط با منبع صفحه، تنظیمات و دیگر ویژگی‌ها. شامل کدهای بومی شده توسط rugk تحت مجوز MIT است.",
+        "description": "Description of the extension."
+    },
+    "bgCenoWarning": {
+        "message": "اخطار CENO"
+    },
+    "settingsTitle": {
+        "message": "تنظیمات CENO"
+    },
+    "settingsWarn": {
+        "message": "cتنظیمات این صفحه فقط برای آزمایش عملکرد «سنو» در شرایط مختلف شبکه در نظر گرفته شده است. این‌ها $NOT_SAVED$ جزو مواردی است که هنگام توقف سنو، ذخیره نمی‌شوند. برای اطلاعات بیشتر به بخش تنظیمات دستی $MANUAL$ مراجعه کنید.",
+        "placeholders": {
+            "not_saved": {
+                "content": "$1"
+            },
+            "manual": {
+                "content": "$2"
+            }
+        }
+    },
+    "settingsWarnNotsaved": {
+        "message": "ذخیره نشد"
+    },
+    "settingsWarnMan": {
+        "message": "تنظیمات دستی"
+    },
+    "settingsWarnManLN": {
+        "message": "https://censorship.no/user-manual/en/browser/settings.html",
+        "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "settingsWarnManTI": {
+        "message": "نه به سانسور! تنظیمات دستی کاربر - تنظیمات «سنو»"
+    },
+    "settingsSources": {
+        "message": "منابع بازیابی محتوا:"
+    },
+    "settingsSrcOrigin": {
+        "message": "به طور مستقیم از وب‌سایت"
+    },
+    "settingsSrcProxy": {
+        "message": "از طریق شبکه «سنو» (خصوصی)"
+    },
+    "settingsSrcInjector": {
+        "message": "از طریق شبکه «سنو» (عمومی)"
+    },
+    "settingsSrcDcache": {
+        "message": "به اشتراک گذاشته شده توسط دیگر کاربران «سنو»"
+    },
+    "settingsPubwarn": {
+        "message": "مرورگری عمومی ($PUBLIC_BROWSING$ ) با تنظیمات فعلی موفق نخواهد بود.",
+        "placeholders": {
+            "public_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPubwarnPub": {
+        "message": "مرورگری عمومی"
+    },
+    "settingsPrivwarn": {
+        "message": "مرورگریِ خصوصی $PRIVATE_BROWSING$ با تنظیمات فعلی موفق نخواهد بود.",
+        "placeholders": {
+            "private_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPrivwarnPriv": {
+        "message": "مرورگری خصوصی"
+    },
+    "settingsStatusBrowser": {
+        "message": "مرورگر «سنو»"
+    },
+    "settingsStatusExtension": {
+        "message": "افزونه‌های «سنو»"
+    },
+    "settingsStatusOuinet": {
+        "message": "کوی‌نت"
+    },
+    "settingsStatusProtocol": {
+        "message": "پروتکل «کوی‌نت»"
+    },
+    "settingsStatusEndpoints": {
+        "message": "نقطه‌های انتهایی «یو‌دی‌پی UDP» محلی"
+    },
+    "settingsStatusUpnp": {
+        "message": "وضعیت «یوپی‌ان‌پی UPnP»"
+    },
+    "settingsStatusReachability": {
+        "message": "وضعیت مرتبط با قابلیت دسترسی"
+    },
+    "settingsStatusCacheSize": {
+        "message": "اندازه «حافظه پنهان» محلی"
+    },
+    "settingsStatusCachePurge": {
+        "message": "اکنون پاک‌سازی کن"
+    },
+    "settingsStatusCacheList": {
+        "message": "محتوای به اشتراک گذاشته شده توسط شما"
+    },
+    "settingsLogEnable": {
+        "message": "فایل ورودی را فعال کن"
+    },
+    "settingsLogDownload": {
+        "message": "دانلود (بارگذاری)"
+    },
+    "popupTitle": {
+        "message": "منابع «سنو»"
+    },
+    "popupHead": {
+        "message": "تعداد عناصر (المنت‌های) صفحه به ازای هر منبع:"
+    },
+    "popupSrcOrigin": {
+        "message": "مستقیم از وب‌سایت"
+    },
+    "popupSrcProxy": {
+        "message": "از طریق شبکه «سنو» (خصوصی)"
+    },
+    "popupSrcInjector": {
+        "message": "از طریق شبکه «سنو» (عمومی)"
+    },
+    "popupSrcDcache": {
+        "message": "به اشتراک گذاشته شده توسط کاربران «سنو»"
+    },
+    "popupSrcLcache": {
+        "message": "به اشتراک گذاشته شده توسط شما"
+    },
+    "popupFoot": {
+        "message": "برای کسب اطلاعات بیشتر در مورد منابع محتوا به بخش تنظیمات دستی($MANUAL$) مراجعه کنید.",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "popupFootMan": {
+        "message": "تنظیمات دستی"
+    },
+    "popupFootManLN": {
+        "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
+        "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "popupFootManTI": {
+        "message": "نه به سانسور! تنظیمات دستی کاربر - تنظیمات «سنو»"
+    },
+    "updateTitle": {
+        "message": "به‌روز‌رسانی «سنو»"
+    },
+    "updateMetacontent": {
+        "message": "به‌روزرسانی «سنو»"
+    },
+    "updateHead": {
+        "message": "مرورگر «سنو» شما به‌روز نیست."
+    },
+    "updateSubhead": {
+        "message": "لطفا اپلکیشن خود را از طریق ... به‌روزرسانی کنید",
+        "description": "Update hint for user, followed by graphical update badge links."
+    },
+    "updateGetgoogleplay": {
+        "message": "از گوگل‌پلی دریافت کنید",
+        "description": "Alt text for Google Play badge."
+    },
+    "updateGetpaskoocheh": {
+        "message": "از پس‌کوچه دریافت کنید",
+        "description": "Alt text for Paskoocheh badge."
+    }
+}

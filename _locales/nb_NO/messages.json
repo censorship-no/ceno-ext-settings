@@ -1,0 +1,173 @@
+{
+    "extName": {
+        "message": "CENO-utvidelse",
+        "description": "Name of the extension."
+    },
+    "extDesc": {
+        "message": "Tilbyr integrasjon med CENO og Ouinet: sidehurtiglagring og -gruppering, sidekilde-info, innstillinger og annen funksjonalitet. Har kode fra Localizer av rugk under MIT-lisens.",
+        "description": "Description of the extension."
+    },
+    "bgCenoWarning": {
+        "message": "CENO-advarsel"
+    },
+    "settingsTitle": {
+        "message": "CENO-innstillinger"
+    },
+    "settingsWarn": {
+        "message": "Innstillinger for denne siden er kun myntet på testing av CENO-funksjonalitet under forskjellige nettverksforhold. Disse blir $NOT_SAVED$ når CENO stoppes. Sjekk $MANUAL$ for mer info.",
+        "placeholders": {
+            "not_saved": {
+                "content": "$1"
+            },
+            "manual": {
+                "content": "$2"
+            }
+        }
+    },
+    "settingsWarnNotsaved": {
+        "message": "ikke lagret"
+    },
+    "settingsWarnMan": {
+        "message": "manualen"
+    },
+    "settingsWarnManLN": {
+        "message": "",
+        "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "settingsWarnManTI": {
+        "message": "Censorship.no! Brukermanual – CENO-innstillinger"
+    },
+    "settingsSources": {
+        "message": "Kilder for innholdshenting:"
+    },
+    "settingsSrcOrigin": {
+        "message": "Direkte fra nettside"
+    },
+    "settingsSrcProxy": {
+        "message": "Via CENO-nettverket (privat)"
+    },
+    "settingsSrcInjector": {
+        "message": "Via CENO-nettverket (offentlig)"
+    },
+    "settingsSrcDcache": {
+        "message": "Delta av andre CENO-brukere"
+    },
+    "settingsPubwarn": {
+        "message": "$PUBLIC_BROWSING$ vil ikke fungere med nåværende innstillinger.",
+        "placeholders": {
+            "public_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPubwarnPub": {
+        "message": "Offentlig surfing"
+    },
+    "settingsPrivwarn": {
+        "message": "$PRIVATE_BROWSING$ vil ikke fungere med nåværende innstillinger.",
+        "placeholders": {
+            "private_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPrivwarnPriv": {
+        "message": "Privat surfing"
+    },
+    "settingsStatusBrowser": {
+        "message": "CENO-nettleser"
+    },
+    "settingsStatusExtension": {
+        "message": "CENO-tillegg"
+    },
+    "settingsStatusOuinet": {
+        "message": "Ouinet"
+    },
+    "settingsStatusProtocol": {
+        "message": "Ouinet-protokoll"
+    },
+    "settingsStatusEndpoints": {
+        "message": "Lokale UDP-endepunkter"
+    },
+    "settingsStatusUpnp": {
+        "message": "UPnP-status"
+    },
+    "settingsStatusReachability": {
+        "message": "Tilgjengelighetsstatus"
+    },
+    "settingsStatusCacheSize": {
+        "message": "Lokal hurtiglagersstørrelse"
+    },
+    "settingsStatusCachePurge": {
+        "message": "Tøm nå"
+    },
+    "settingsStatusCacheList": {
+        "message": "Innhold delt av deg"
+    },
+    "settingsLogEnable": {
+        "message": "Skru på loggføring til fil"
+    },
+    "settingsLogDownload": {
+        "message": "Last ned"
+    },
+    "popupTitle": {
+        "message": "CENO-kilder"
+    },
+    "popupHead": {
+        "message": "Antall sideelementer per kilde:"
+    },
+    "popupSrcOrigin": {
+        "message": "Direkte fra nettside"
+    },
+    "popupSrcProxy": {
+        "message": "Via CENO-nettverket (privat)"
+    },
+    "popupSrcInjector": {
+        "message": "Via CENO-nettverket (offentlig)"
+    },
+    "popupSrcDcache": {
+        "message": "Delt av andre CENO-brukere"
+    },
+    "popupSrcLcache": {
+        "message": "Delt av deg"
+    },
+    "popupFoot": {
+        "message": "Sjekk $MANUAL$ for mer info om innholdskilder.",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "popupFootMan": {
+        "message": "manualen"
+    },
+    "popupFootManLN": {
+        "message": "",
+        "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "popupFootManTI": {
+        "message": "Censorship.no! Brukermanual – CENO-innstillinger"
+    },
+    "updateTitle": {
+        "message": "CENO-oppgradering"
+    },
+    "updateMetacontent": {
+        "message": "CENO-oppgradering"
+    },
+    "updateHead": {
+        "message": "Din CENO-nettleser er utdatert."
+    },
+    "updateSubhead": {
+        "message": "Oppdater programmet ditt via",
+        "description": "Update hint for user, followed by graphical update badge links."
+    },
+    "updateGetgoogleplay": {
+        "message": "Hent det på Google Play",
+        "description": "Alt text for Google Play badge."
+    },
+    "updateGetpaskoocheh": {
+        "message": "Hent det på Paskoocheh",
+        "description": "Alt text for Paskoocheh badge."
+    }
+}

@@ -1,0 +1,173 @@
+{
+    "extName": {
+        "message": "CENO 扩展",
+        "description": "Name of the extension."
+    },
+    "extDesc": {
+        "message": "",
+        "description": "Description of the extension."
+    },
+    "bgCenoWarning": {
+        "message": "CENO 警告"
+    },
+    "settingsTitle": {
+        "message": "CENO 设置"
+    },
+    "settingsWarn": {
+        "message": "",
+        "placeholders": {
+            "not_saved": {
+                "content": "$1"
+            },
+            "manual": {
+                "content": "$2"
+            }
+        }
+    },
+    "settingsWarnNotsaved": {
+        "message": "未保存"
+    },
+    "settingsWarnMan": {
+        "message": "手册"
+    },
+    "settingsWarnManLN": {
+        "message": "https://censorship.no/user-manual/en/browser/settings.html",
+        "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "settingsWarnManTI": {
+        "message": ""
+    },
+    "settingsSources": {
+        "message": "内容检索来源："
+    },
+    "settingsSrcOrigin": {
+        "message": "直接来自网站"
+    },
+    "settingsSrcProxy": {
+        "message": ""
+    },
+    "settingsSrcInjector": {
+        "message": "通过 CENO 网络（公共）"
+    },
+    "settingsSrcDcache": {
+        "message": "由其他 CENO 用户分享"
+    },
+    "settingsPubwarn": {
+        "message": "",
+        "placeholders": {
+            "public_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPubwarnPub": {
+        "message": ""
+    },
+    "settingsPrivwarn": {
+        "message": "",
+        "placeholders": {
+            "private_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPrivwarnPriv": {
+        "message": ""
+    },
+    "settingsStatusBrowser": {
+        "message": ""
+    },
+    "settingsStatusExtension": {
+        "message": ""
+    },
+    "settingsStatusOuinet": {
+        "message": ""
+    },
+    "settingsStatusProtocol": {
+        "message": ""
+    },
+    "settingsStatusEndpoints": {
+        "message": ""
+    },
+    "settingsStatusUpnp": {
+        "message": ""
+    },
+    "settingsStatusReachability": {
+        "message": ""
+    },
+    "settingsStatusCacheSize": {
+        "message": ""
+    },
+    "settingsStatusCachePurge": {
+        "message": ""
+    },
+    "settingsStatusCacheList": {
+        "message": ""
+    },
+    "settingsLogEnable": {
+        "message": ""
+    },
+    "settingsLogDownload": {
+        "message": ""
+    },
+    "popupTitle": {
+        "message": ""
+    },
+    "popupHead": {
+        "message": ""
+    },
+    "popupSrcOrigin": {
+        "message": ""
+    },
+    "popupSrcProxy": {
+        "message": ""
+    },
+    "popupSrcInjector": {
+        "message": ""
+    },
+    "popupSrcDcache": {
+        "message": ""
+    },
+    "popupSrcLcache": {
+        "message": ""
+    },
+    "popupFoot": {
+        "message": "",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "popupFootMan": {
+        "message": ""
+    },
+    "popupFootManLN": {
+        "message": "",
+        "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "popupFootManTI": {
+        "message": ""
+    },
+    "updateTitle": {
+        "message": ""
+    },
+    "updateMetacontent": {
+        "message": ""
+    },
+    "updateHead": {
+        "message": ""
+    },
+    "updateSubhead": {
+        "message": "",
+        "description": "Update hint for user, followed by graphical update badge links."
+    },
+    "updateGetgoogleplay": {
+        "message": "",
+        "description": "Alt text for Google Play badge."
+    },
+    "updateGetpaskoocheh": {
+        "message": "",
+        "description": "Alt text for Paskoocheh badge."
+    }
+}
