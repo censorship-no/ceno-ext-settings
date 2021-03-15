@@ -154,7 +154,7 @@
     },
     "updateSubhead": {
         "message": "Please update your app via",
-        "description": "Update hint for user, followed by graphical update badge links."
+        "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
     },
     "updateGetgoogleplay": {
         "message": "Get it on Google Play",
