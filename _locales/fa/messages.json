@@ -14,7 +14,7 @@
         "message": "تنظیمات CENO"
     },
     "settingsWarn": {
-        "message": "cتنظیمات این صفحه فقط برای آزمایش عملکرد «سنو» در شرایط مختلف شبکه در نظر گرفته شده است. این‌ها $NOT_SAVED$ جزو مواردی است که هنگام توقف سنو، ذخیره نمی‌شوند. برای اطلاعات بیشتر به بخش تنظیمات دستی $MANUAL$ مراجعه کنید.",
+        "message": "تنظیمات این صفحه فقط برای آزمایش عملکرد CENO در شرایط مختلف شبکه در نظر گرفته شده است. این‌ها $NOT_SAVED$ جزو مواردی است که هنگام توقف CENO، ذخیره نمی‌شوند. برای اطلاعات بیشتر به بخش تنظیمات دستی $MANUAL$ مراجعه کنید.",
         "placeholders": {
             "not_saved": {
                 "content": "$1"
@@ -35,7 +35,7 @@
         "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "settingsWarnManTI": {
-        "message": "نه به سانسور! تنظیمات دستی کاربر - تنظیمات «سنو»"
+        "message": "نه به سانسور! تنظیمات دستی کاربر - تنظیمات CENO"
     },
     "settingsSources": {
         "message": "منابع بازیابی محتوا:"
@@ -44,16 +44,16 @@
         "message": "به طور مستقیم از وب‌سایت"
     },
     "settingsSrcProxy": {
-        "message": "از طریق شبکه «سنو» (خصوصی)"
+        "message": "از طریق شبکه CENO (خصوصی)"
     },
     "settingsSrcInjector": {
-        "message": "از طریق شبکه «سنو» (عمومی)"
+        "message": "از طریق شبکه CENO (عمومی)"
     },
     "settingsSrcDcache": {
-        "message": "به اشتراک گذاشته شده توسط دیگر کاربران «سنو»"
+        "message": "به اشتراک گذاشته شده توسط دیگر کاربران CENO"
     },
     "settingsPubwarn": {
-        "message": "مرورگری عمومی ($PUBLIC_BROWSING$ ) با تنظیمات فعلی موفق نخواهد بود.",
+        "message": "$PUBLIC_BROWSING$ با تنظیمات فعلی موفق نخواهد بود.",
         "placeholders": {
             "public_browsing": {
                 "content": "$1"
@@ -64,7 +64,7 @@
         "message": "مرورگری عمومی"
     },
     "settingsPrivwarn": {
-        "message": "مرورگریِ خصوصی $PRIVATE_BROWSING$ با تنظیمات فعلی موفق نخواهد بود.",
+        "message": "$PRIVATE_BROWSING$ با تنظیمات فعلی موفق نخواهد بود.",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
@@ -75,16 +75,16 @@
         "message": "مرورگری خصوصی"
     },
     "settingsStatusBrowser": {
-        "message": "مرورگر «سنو»"
+        "message": "مرورگر CENO"
     },
     "settingsStatusExtension": {
-        "message": "افزونه‌های «سنو»"
+        "message": "افزونه‌های CENO"
     },
     "settingsStatusOuinet": {
-        "message": "کوی‌نت"
+        "message": "Ouinet"
     },
     "settingsStatusProtocol": {
-        "message": "پروتکل «کوی‌نت»"
+        "message": "پروتکل Ouinet"
     },
     "settingsStatusEndpoints": {
         "message": "نقطه‌های انتهایی «یو‌دی‌پی UDP» محلی"
@@ -96,37 +96,37 @@
         "message": "وضعیت مرتبط با قابلیت دسترسی"
     },
     "settingsStatusCacheSize": {
-        "message": "اندازه «حافظه پنهان» محلی"
+        "message": "اندازه «حافظه نهان» محلی"
     },
     "settingsStatusCachePurge": {
-        "message": "اکنون پاک‌سازی کن"
+        "message": "پاک‌سازی کن"
     },
     "settingsStatusCacheList": {
         "message": "محتوای به اشتراک گذاشته شده توسط شما"
     },
     "settingsLogEnable": {
-        "message": "فایل ورودی را فعال کن"
+        "message": "رخدادنگاری را فعال کن"
     },
     "settingsLogDownload": {
         "message": "دانلود (بارگذاری)"
     },
     "popupTitle": {
-        "message": "منابع «سنو»"
+        "message": "منابع CENO"
     },
     "popupHead": {
-        "message": "تعداد عناصر (المنت‌های) صفحه به ازای هر منبع:"
+        "message": "تعداد المنت‌های صفحه به ازای هر منبع:"
     },
     "popupSrcOrigin": {
         "message": "مستقیم از وب‌سایت"
     },
     "popupSrcProxy": {
-        "message": "از طریق شبکه «سنو» (خصوصی)"
+        "message": "از طریق شبکه CENO (خصوصی)"
     },
     "popupSrcInjector": {
-        "message": "از طریق شبکه «سنو» (عمومی)"
+        "message": "از طریق شبکه CENO (عمومی)"
     },
     "popupSrcDcache": {
-        "message": "به اشتراک گذاشته شده توسط کاربران «سنو»"
+        "message": "به اشتراک گذاشته شده توسط کاربران CENO"
     },
     "popupSrcLcache": {
         "message": "به اشتراک گذاشته شده توسط شما"
@@ -147,19 +147,19 @@
         "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "popupFootManTI": {
-        "message": "نه به سانسور! تنظیمات دستی کاربر - تنظیمات «سنو»"
+        "message": "نه به سانسور! تنظیمات دستی کاربر - تنظیمات CENO"
     },
     "updateTitle": {
-        "message": "به‌روز‌رسانی «سنو»"
+        "message": "به‌روز‌رسانی CENO"
     },
     "updateMetacontent": {
-        "message": "به‌روزرسانی «سنو»"
+        "message": "به‌روزرسانی CENO"
     },
     "updateHead": {
-        "message": "مرورگر «سنو» شما به‌روز نیست."
+        "message": "مرورگر CENO شما به‌روز نیست."
     },
     "updateSubhead": {
-        "message": "لطفا اپلکیشن خود را از طریق ... به‌روزرسانی کنید",
+        "message": "لطفا برنامه خود را از طریق کانال‌های زیر به روز کنید:",
         "description": "Update hint for user, followed by graphical update badge links."
     },
     "updateGetgoogleplay": {
