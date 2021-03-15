@@ -159,7 +159,7 @@
         "message": "مرورگر CENO شما به‌روز نیست."
     },
     "updateSubhead": {
-        "message": "لطفا اپلکیشن خود را از طریق <something> به‌روزرسانی کنید",
+        "message": "لطفا برنامه خود را از طریق کانال‌های زیر به روز کنید:",
         "description": "Update hint for user, followed by graphical update badge links."
     },
     "updateGetgoogleplay": {
