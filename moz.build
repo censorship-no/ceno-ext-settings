@@ -30,6 +30,14 @@ FINAL_TARGET_FILES.features['ceno@equalit.ie']['_locales']['es'] += [
   '_locales/es/messages.json',
 ]
 
+FINAL_TARGET_FILES.features['ceno@equalit.ie']['_locales']['fa'] += [
+  '_locales/fa/messages.json',
+]
+
+FINAL_TARGET_FILES.features['ceno@equalit.ie']['_locales']['fr'] += [
+  '_locales/fr/messages.json',
+]
+
 FINAL_TARGET_FILES.features['ceno@equalit.ie']['icons'] += [
   'icons/ceno-logo-32.png',
   'icons/ceno-logo-48.png'
