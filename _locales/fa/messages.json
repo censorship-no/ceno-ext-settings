@@ -53,7 +53,7 @@
         "message": "به اشتراک گذاشته شده توسط دیگر کاربران CENO"
     },
     "settingsPubwarn": {
-        "message": "مرورگری عمومی ($PUBLIC_BROWSING$ ) با تنظیمات فعلی موفق نخواهد بود.",
+        "message": "$PUBLIC_BROWSING$ با تنظیمات فعلی موفق نخواهد بود.",
         "placeholders": {
             "public_browsing": {
                 "content": "$1"
@@ -64,7 +64,7 @@
         "message": "مرورگری عمومی"
     },
     "settingsPrivwarn": {
-        "message": "مرورگریِ خصوصی $PRIVATE_BROWSING$ با تنظیمات فعلی موفق نخواهد بود.",
+        "message": "$PRIVATE_BROWSING$ با تنظیمات فعلی موفق نخواهد بود.",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
