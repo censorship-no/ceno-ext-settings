@@ -22,7 +22,7 @@ async function updatePage() {
   const set = (name) => {
     var value = data.stats[tabId][name];
     if (!value) value = 0;
-    document.getElementById(name).innerText = value;
+    document.getElementById(name).textContent = value;
   };
 
   set('origin');

@@ -47,7 +47,7 @@ class Text {
     if (!this.elem) return;
 
     if (!Array.isArray(value)) {
-      this.elem.innerText = value;
+      this.elem.textContent = value;
       return;
     }
 
@@ -64,7 +64,7 @@ class Text {
 
   disable() {
     if (!this.elem) return;
-    this.elem.innerText = "---";
+    this.elem.textContent = "---";
   }
 }
 
@@ -209,12 +209,12 @@ class State {
   setCenoVersion() {
     this.ceno_version = new Text("ceno_version");
     browser.runtime.getBrowserInfo().then(info =>
-      this.ceno_version.elem.innerText = `${info.version} Build ID ${info.buildID}`);
+      this.ceno_version.elem.textContent = `${info.version} Build ID ${info.buildID}`);
   }
 
   setCenoExtensionVersion() {
     this.ceno_extension_version = new Text("ceno_extension_version");
-    this.ceno_extension_version.elem.innerText = browser.runtime.getManifest().version;
+    this.ceno_extension_version.elem.textContent = browser.runtime.getManifest().version;
   }
 
   enable() {
