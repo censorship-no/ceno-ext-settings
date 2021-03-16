@@ -59,7 +59,7 @@ class Text {
       children.push(document.createTextNode(v));
       first = false;
     }
-    this.elem.replaceChildren(...children);
+    this.elem.replaceChildren.apply(this.elem, children);
   }
 
   disable() {
