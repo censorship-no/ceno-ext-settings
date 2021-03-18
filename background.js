@@ -17,6 +17,10 @@ function escapeHtml(s) {
   return s.replace(/[&<>"']/g, (c) => htmlEscapes[c]);
 }
 
+function removeFragmentFromURL(url) {
+    return url.replace(/#.*$/, "");
+}
+
 function removeSchemeFromURL(url) {
     var index = url.indexOf('://');
     if (index > -1) {
@@ -38,6 +42,7 @@ function getDhtGroup(e) {
     // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders
     let url = e.documentUrl ? e.documentUrl : e.url;
     if (!url) return url;
+    url = removeFragmentFromURL(url);
     url = removeSchemeFromURL(url);
     url = removeTrailingSlashes(url);
     url = removeLeadingWWW(url);
