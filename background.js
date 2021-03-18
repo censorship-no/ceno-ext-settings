@@ -35,7 +35,7 @@ function removeTrailingSlashes(s) {
 }
 
 function removeLeadingWWW(s) {
-    return s.replace(/^www\./, "");
+    return s.replace(/^www\./i, "");
 }
 
 function getDhtGroup(e) {
