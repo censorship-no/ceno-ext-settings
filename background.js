@@ -30,7 +30,7 @@ function removeTrailingSlashes(s) {
     return s.replace(/\/+$/, "");
 }
 
-function removeTrailingWWW(s) {
+function removeLeadingWWW(s) {
     return s.replace(/^www\./, "");
 }
 
@@ -40,7 +40,7 @@ function getDhtGroup(e) {
     if (!url) return url;
     url = removeSchemeFromURL(url);
     url = removeTrailingSlashes(url);
-    url = removeTrailingWWW(url);
+    url = removeLeadingWWW(url);
     return url;
 }
 
