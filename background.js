@@ -22,12 +22,7 @@ function removeFragmentFromURL(url) {
 }
 
 function removeSchemeFromURL(url) {
-    var index = url.indexOf('://');
-    if (index > -1) {
-      return url.substr(index + 3);
-    } else {
-      return url.substr(0);
-    }
+    return url.replace(/^[a-z][-+.0-9a-z]*:\/\//i, "");
 }
 
 function removeTrailingSlashes(s) {
