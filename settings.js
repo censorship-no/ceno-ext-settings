@@ -51,15 +51,21 @@ class Text {
       return;
     }
 
-    var children = [];
+    // `ParentNode.replaceChildren` requires a recent browser,
+    // so construct a new element with same tag and id,
+    // then replace the one we have.
+    var newElem = document.createElement(this.elem.tagName);
+    newElem.id = this.elem.id;
+
     var first = true;
     for (var i in value) {
-      var v = value[i];
-      if (!first) { children.push(document.createElement("br")); }
-      children.push(document.createTextNode(v));
+      if (!first) { newElem.appendChild(document.createElement("br")); }
+      newElem.appendChild(document.createTextNode(value[i]));
       first = false;
     }
-    this.elem.replaceChildren.apply(this.elem, children);
+
+    this.elem.replaceWith(newElem);
+    this.elem = newElem;
   }
 
   disable() {
