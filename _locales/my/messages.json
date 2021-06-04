@@ -1,20 +1,20 @@
 {
     "extName": {
-        "message": "",
+        "message": "CENO အဆက်",
         "description": "Name of the extension."
     },
     "extDesc": {
-        "message": "",
+        "message": "CENO နှင့် Ouinet ဖြင့် ပေါင်းစပ်ပေးသည်- စာမျက်နှာ ယာယီသိမ်းဆည်းခြင်းနှင့် အုပ်စုဖွဲ့ခြင်း၊ စာမျက်နှာ အရင်းအမြစ် အချက်အလက်၊ ဆက်တင်များနှင့် အခြား လုပ်ဆောင်ချက်။ MIT လိုင်စင်အောက်ရှိ Localizer by rugk မှ ကုဒ် ပါဝင်သည်။",
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": ""
+        "message": "CENO သတိပေးချက်"
     },
     "settingsTitle": {
-        "message": ""
+        "message": "CENO ဆက်တင်များ"
     },
     "settingsWarn": {
-        "message": "",
+        "message": "ဤစာမျက်နှာရှိ ဆက်တင်များကို ကွန်ရက် အခြေအနေ အမျိုးမျိုးတွင် CENO လုပ်ဆောင်ချက်ကို စမ်းသပ်ရန်အတွက်သာ ရည်ရွယ်သည်။ CENO ကို ရပ်လိုက်ချိန်တွင် ၎င်းတို့ကို $NOT_SAVED$။ နောက်ထပ် အချက်အလက်များအတွက် $MANUAL$ ကို ကြည့်ပါ။",
         "placeholders": {
             "not_saved": {
                 "content": "$1"
@@ -25,35 +25,35 @@
         }
     },
     "settingsWarnNotsaved": {
-        "message": ""
+        "message": "သိမ်းဆည်းမထားပါ"
     },
     "settingsWarnMan": {
-        "message": ""
+        "message": "လက်စွဲ"
     },
     "settingsWarnManLN": {
-        "message": "",
+        "message": "https://censorship.no/user-manual/en/browser/settings.html",
         "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "settingsWarnManTI": {
-        "message": ""
+        "message": "Censorship.no! သုံးစွဲသူ လက်စွဲ– CENO ဆက်တင်များ"
     },
     "settingsSources": {
-        "message": ""
+        "message": "အကြောင်းအရာ ပြန်ရယူမှု ရင်းမြစ်များ-"
     },
     "settingsSrcOrigin": {
-        "message": ""
+        "message": "ဝက်ဘ်ဆိုက်မှ တိုက်ရိုက်"
     },
     "settingsSrcProxy": {
-        "message": ""
+        "message": "CENO ကွန်ရက်မှတစ်ဆင့် (သီးသန့်)"
     },
     "settingsSrcInjector": {
-        "message": ""
+        "message": "CENO ကွန်ရက်မှတစ်ဆင့် (အများသုံး)"
     },
     "settingsSrcDcache": {
-        "message": ""
+        "message": "အခြား CENO သုံးစွဲသူများက မျှဝေထားသည်"
     },
     "settingsPubwarn": {
-        "message": "",
+        "message": "$PUBLIC_BROWSING$ သည် လက်ရှိ ဆက်တင်များတွင် မအောင်မြင်နိုင်ပါ။",
         "placeholders": {
             "public_browsing": {
                 "content": "$1"
@@ -61,10 +61,10 @@
         }
     },
     "settingsPubwarnPub": {
-        "message": ""
+        "message": "အများသုံး ရှာဖွေမှု"
     },
     "settingsPrivwarn": {
-        "message": "",
+        "message": "$PRIVATE_BROWSING$ သည် လက်ရှိ ဆက်တင်များတွင် မအောင်မြင်နိုင်ပါ။",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
@@ -72,67 +72,67 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": ""
+        "message": "သီးသန့် ရှာဖွေမှု"
     },
     "settingsStatusBrowser": {
-        "message": ""
+        "message": "CENO ဘရောက်ဇာ"
     },
     "settingsStatusExtension": {
-        "message": ""
+        "message": "CENO အဆက်"
     },
     "settingsStatusOuinet": {
-        "message": ""
+        "message": "Ouinet"
     },
     "settingsStatusProtocol": {
-        "message": ""
+        "message": "Ouinet ပရိုတိုကောလ်"
     },
     "settingsStatusEndpoints": {
-        "message": ""
+        "message": "စက်တွင်း UDP အဆုံးမှတ်များ"
     },
     "settingsStatusUpnp": {
-        "message": ""
+        "message": "UPnP အခြေအနေ"
     },
     "settingsStatusReachability": {
-        "message": ""
+        "message": "ရောက်ရှိနိုင်မှု အခြေအနေ"
     },
     "settingsStatusCacheSize": {
-        "message": ""
+        "message": "စက်တွင်း ယာယီသိမ်းဆည်းထားသော မှတ်ဉာဏ် အရွယ်အစား"
     },
     "settingsStatusCachePurge": {
-        "message": ""
+        "message": "ယခု ထုတ်ပယ်ပါ"
     },
     "settingsStatusCacheList": {
-        "message": ""
+        "message": "သင် မျှဝေထားသော အကြောင်းအရာ"
     },
     "settingsLogEnable": {
-        "message": ""
+        "message": "စာရင်း ဖိုင်ကို ဖွင့်ပါ"
     },
     "settingsLogDownload": {
-        "message": ""
+        "message": "ဒေါင်းလုဒ်လုပ်ပါ"
     },
     "popupTitle": {
-        "message": ""
+        "message": "CENO အရင်းအမြစ်များ"
     },
     "popupHead": {
-        "message": ""
+        "message": "ရင်းမြစ်တစ်ခုစီရှိ စာမျက်နှာ အစိတ်အပိုင်း အရေအတွက်-"
     },
     "popupSrcOrigin": {
-        "message": ""
+        "message": "ဝက်ဘ်ဆိုက်မှ တိုက်ရိုက်"
     },
     "popupSrcProxy": {
-        "message": ""
+        "message": "CENO ကွန်ရက်မှတစ်ဆင့် (သီးသန့်)"
     },
     "popupSrcInjector": {
-        "message": ""
+        "message": "CENO ကွန်ရက်မှတစ်ဆင့် (အများသုံး)"
     },
     "popupSrcDcache": {
-        "message": ""
+        "message": "အခြား CENO သုံးစွဲသူများက မျှဝေထားသည်"
     },
     "popupSrcLcache": {
-        "message": ""
+        "message": "သင် မျှဝေထားသည်"
     },
     "popupFoot": {
-        "message": "",
+        "message": "အကြောင်းအရာ ရင်းမြစ်များအကြောင်း နောက်ထပ် အချက်အလက်များအတွက် $MANUAL$ ကို ကြည့်ပါ။",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -140,34 +140,34 @@
         }
     },
     "popupFootMan": {
-        "message": ""
+        "message": "လက်စွဲ"
     },
     "popupFootManLN": {
-        "message": "",
+        "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
         "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "popupFootManTI": {
-        "message": ""
+        "message": "Censorship.no! သုံးစွဲသူ လက်စွဲ– CENO ဆက်တင်များ"
     },
     "updateTitle": {
-        "message": ""
+        "message": "CENO အပ်ဒိတ်"
     },
     "updateMetacontent": {
-        "message": ""
+        "message": "CENO အပ်ဒိတ်"
     },
     "updateHead": {
-        "message": ""
+        "message": "သင့် CENO ဘရောက်ဇာသည် ဟောင်းနေပြီ။"
     },
     "updateSubhead": {
-        "message": "",
+        "message": "သင့်အက်ပ်ကို အောက်ပါတို့မှတစ်ဆင့် အပ်ဒိတ်လုပ်ပါ",
         "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
     },
     "updateGetgoogleplay": {
-        "message": "",
+        "message": "Google Play တွင် ရယူပါ",
         "description": "Alt text for Google Play badge."
     },
     "updateGetpaskoocheh": {
-        "message": "",
+        "message": "Paskoocheh တွင် ရယူပါ",
         "description": "Alt text for Paskoocheh badge."
     }
 }
