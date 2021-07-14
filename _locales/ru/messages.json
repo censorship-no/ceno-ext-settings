@@ -41,7 +41,7 @@
         "message": "Источники загружаемого контента:"
     },
     "settingsSrcOrigin": {
-        "message": "На прямую с сайта"
+        "message": "Напрямую с сайта"
     },
     "settingsSrcProxy": {
         "message": "Через сеть CENO (приватно)"
@@ -61,7 +61,7 @@
         }
     },
     "settingsPubwarnPub": {
-        "message": "Публичное просматривание веб-страниц"
+        "message": "Открытый просмотр веб-страниц"
     },
     "settingsPrivwarn": {
         "message": "$PRIVATE_BROWSING$ не будет возможным с текущими настройками.",
@@ -72,7 +72,7 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": "Приватное просматривание веб-страниц"
+        "message": "Приватный просмотр веб-страниц"
     },
     "settingsStatusBrowser": {
         "message": "Браузер CENO"
