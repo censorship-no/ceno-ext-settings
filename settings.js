@@ -47,24 +47,30 @@ class Text {
     if (!this.elem) return;
 
     if (!Array.isArray(value)) {
-      this.elem.innerText = value;
+      this.elem.textContent = value;
       return;
     }
 
-    var children = [];
+    // `ParentNode.replaceChildren` requires a recent browser,
+    // so construct a new element with same tag and id,
+    // then replace the one we have.
+    var newElem = document.createElement(this.elem.tagName);
+    newElem.id = this.elem.id;
+
     var first = true;
     for (var i in value) {
-      var v = value[i];
-      if (!first) { children.push(document.createElement("br")); }
-      children.push(document.createTextNode(v));
+      if (!first) { newElem.appendChild(document.createElement("br")); }
+      newElem.appendChild(document.createTextNode(value[i]));
       first = false;
     }
-    this.elem.replaceChildren(...children);
+
+    this.elem.replaceWith(newElem);
+    this.elem = newElem;
   }
 
   disable() {
     if (!this.elem) return;
-    this.elem.innerText = "---";
+    this.elem.textContent = "---";
   }
 }
 
@@ -209,12 +215,12 @@ class State {
   setCenoVersion() {
     this.ceno_version = new Text("ceno_version");
     browser.runtime.getBrowserInfo().then(info =>
-      this.ceno_version.elem.innerText = `${info.version} Build ID ${info.buildID}`);
+      this.ceno_version.elem.textContent = `${info.version} Build ID ${info.buildID}`);
   }
 
   setCenoExtensionVersion() {
     this.ceno_extension_version = new Text("ceno_extension_version");
-    this.ceno_extension_version.elem.innerText = browser.runtime.getManifest().version;
+    this.ceno_extension_version.elem.textContent = browser.runtime.getManifest().version;
   }
 
   enable() {

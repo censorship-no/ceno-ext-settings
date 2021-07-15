@@ -4,6 +4,12 @@ const CACHE_MAX_ENTRIES = 500;
 const OUINET_RESPONSE_VERSION_MIN = 1  // protocol versions accepted
 const OUINET_RESPONSE_VERSION_MAX = 6
 
+// Requests for URLs matching the following regular expressions
+// will always be considered private (thus non-cacheable).
+const NO_CACHE_URL_REGEXPS = [
+    /^https?:\/\/(www\.)?google\.com\/complete\//,  // Google Search completion
+]
+
 
 // <https://stackoverflow.com/a/4835406>
 const htmlEscapes = {
@@ -17,30 +23,37 @@ function escapeHtml(s) {
   return s.replace(/[&<>"']/g, (c) => htmlEscapes[c]);
 }
 
+function removeFragmentFromURL(url) {
+    return url.replace(/#.*$/, "");
+}
+
 function removeSchemeFromURL(url) {
-    var index = url.indexOf('://');
-    if (index > -1) {
-      return url.substr(index + 3);
-    } else {
-      return url.substr(0);
-    }
+    return url.replace(/^[a-z][-+.0-9a-z]*:\/\//i, "");
 }
 
 function removeTrailingSlashes(s) {
     return s.replace(/\/+$/, "");
 }
 
-function removeTrailingWWW(s) {
-    return s.replace(/^www\./, "");
+function removeLeadingWWW(s) {
+    return s.replace(/^www\./i, "");
+}
+
+function isUrlCacheable(url) {
+    for (const rx of NO_CACHE_URL_REGEXPS)
+        if (rx.test(url))
+            return false;
+    return true;
 }
 
 function getDhtGroup(e) {
     // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders
     let url = e.documentUrl ? e.documentUrl : e.url;
     if (!url) return url;
+    url = removeFragmentFromURL(url);
     url = removeSchemeFromURL(url);
     url = removeTrailingSlashes(url);
-    url = removeTrailingWWW(url);
+    url = removeLeadingWWW(url);
     return url;
 }
 
@@ -55,10 +68,10 @@ function onBeforeSendHeaders(e) {
       // The `tab` structure is described here:
       // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab
 
-      let is_private = tab.incognito ? "True" : "False";
-      e.requestHeaders.push({name: "X-Ouinet-Private", value: is_private});
+      let is_private = tab.incognito || !isUrlCacheable(e.url);
+      e.requestHeaders.push({name: "X-Ouinet-Private", value: (is_private ? "True" : "False")});
 
-      if (!tab.incognito) {
+      if (!is_private) {
         e.requestHeaders.push({name: "X-Ouinet-Group", value: getDhtGroup(e)});
       }
 
