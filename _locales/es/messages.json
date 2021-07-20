@@ -23,7 +23,7 @@
         }
     },
     "settingsWarnNotsaved": {
-        "message": "No se guardan"
+        "message": "No se guardó"
     },
     "settingsWarnMan": {
         "message": "manual"
@@ -32,7 +32,7 @@
         "message": "https://censorship.no/user-manual/es/browser/settings.html"
     },
     "settingsWarnManTI": {
-        "message": "Manual de usuario de Censorship.no! – Parámetros de CENO"
+        "message": "Manual de usuario de Censorship.no! – Ajustes de CENO"
     },
     "settingsSources": {
         "message": "Fuentes de descarga de contenidos:"
@@ -58,7 +58,7 @@
         }
     },
     "settingsPubwarnPub": {
-        "message": "navegación pública"
+        "message": "Navegación pública"
     },
     "settingsPrivwarn": {
         "message": "La $PRIVATE_BROWSING$ fallará con los ajustes actuales.",
@@ -69,7 +69,7 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": "navegación privada"
+        "message": "Navegación privada"
     },
     "settingsStatusBrowser": {
         "message": "Navegador CENO"
@@ -84,7 +84,7 @@
         "message": "Protocolo Ouinet"
     },
     "settingsStatusEndpoints": {
-        "message": "Direcciones UDP locales"
+        "message": "Terminales UDP locales"
     },
     "settingsStatusUpnp": {
         "message": "Estado de UPnP"
@@ -96,10 +96,10 @@
         "message": "Tamaño de caché local"
     },
     "settingsStatusCachePurge": {
-        "message": "Vaciar ahora"
+        "message": "Limpiar ahora"
     },
     "settingsStatusCacheList": {
-        "message": "Contenido compartido por usted"
+        "message": "Contenido compartido por ti"
     },
     "settingsLogEnable": {
         "message": "Activar registro"
@@ -126,10 +126,10 @@
         "message": "Compartido por otros usuarios de CENO"
     },
     "popupSrcLcache": {
-        "message": "Compartido por usted"
+        "message": "Compartido por ti"
     },
     "popupFoot": {
-        "message": "Consulte el $MANUAL$ para más información sobre fuentes de contenido.",
+        "message": "Consulta el $MANUAL$ para más información sobre fuentes de contenido.",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -143,7 +143,7 @@
         "message": "https://censorship.no/user-manual/es/browser/settings.html#choosing-access-mechanisms"
     },
     "popupFootManTI": {
-        "message": "Manual de usuario de Censorship.no! – Parámetros de CENO"
+        "message": "Manual de usuario de Censorship.no! – Ajustes de CENO"
     },
     "updateTitle": {
         "message": "Actualización de CENO"
@@ -152,10 +152,10 @@
         "message": "Actualización de CENO"
     },
     "updateHead": {
-        "message": "Su Navegador CENO está anticuado."
+        "message": "Tu Navegador CENO no está actualizado."
     },
     "updateSubhead": {
-        "message": "Actualice su aplicación vía"
+        "message": "Actualiza tu aplicación vía"
     },
     "updateGetgoogleplay": {
         "message": "Disponible en Google Play"
