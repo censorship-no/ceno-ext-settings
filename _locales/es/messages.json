@@ -3,7 +3,7 @@
         "message": "Extensión CENO"
     },
     "extDesc": {
-        "message": "Proporciona integración con CENO y Ouinet: caché y agrupado de páginas, información de la fuente de la página, parámetros y otras funciones. Incluye código de Localizer de rugk bajo licencia MIT."
+        "message": "Proporciona integración con CENO y Ouinet: caché y agrupado de páginas, información de la fuente de la página, configuración y otras funciones. Incluye código de Localizer de rugk bajo licencia MIT."
     },
     "bgCenoWarning": {
         "message": "Aviso de CENO"
@@ -23,7 +23,7 @@
         }
     },
     "settingsWarnNotsaved": {
-        "message": "No se guardó"
+        "message": "No se guardan"
     },
     "settingsWarnMan": {
         "message": "manual"
@@ -32,7 +32,7 @@
         "message": "https://censorship.no/user-manual/es/browser/settings.html"
     },
     "settingsWarnManTI": {
-        "message": "Manual de usuario de Censorship.no! – Ajustes de CENO"
+        "message": "Manual de usuario de Censorship.no! – Configuración de CENO"
     },
     "settingsSources": {
         "message": "Fuentes de descarga de contenidos:"
@@ -50,7 +50,7 @@
         "message": "Compartido por otros usuarios de CENO"
     },
     "settingsPubwarn": {
-        "message": "La $PUBLIC_BROWSING$ fallará con los ajustes actuales.",
+        "message": "La $PUBLIC_BROWSING$ fallará con la configuración actual.",
         "placeholders": {
             "public_browsing": {
                 "content": "$1"
@@ -58,10 +58,10 @@
         }
     },
     "settingsPubwarnPub": {
-        "message": "Navegación pública"
+        "message": "navegación pública"
     },
     "settingsPrivwarn": {
-        "message": "La $PRIVATE_BROWSING$ fallará con los ajustes actuales.",
+        "message": "La $PRIVATE_BROWSING$ fallará con la configuración actual.",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
@@ -69,7 +69,7 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": "Navegación privada"
+        "message": "navegación privada"
     },
     "settingsStatusBrowser": {
         "message": "Navegador CENO"
@@ -143,7 +143,7 @@
         "message": "https://censorship.no/user-manual/es/browser/settings.html#choosing-access-mechanisms"
     },
     "popupFootManTI": {
-        "message": "Manual de usuario de Censorship.no! – Ajustes de CENO"
+        "message": "Manual de usuario de Censorship.no! – Configuración de CENO"
     },
     "updateTitle": {
         "message": "Actualización de CENO"
