@@ -84,7 +84,7 @@
         "message": "Protocolo Ouinet"
     },
     "settingsStatusEndpoints": {
-        "message": "Terminales UDP locales"
+        "message": "Puntos finales UDP locales"
     },
     "settingsStatusUpnp": {
         "message": "Estado de UPnP"
