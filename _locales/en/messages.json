@@ -80,6 +80,9 @@
     "settingsStatusProtocol": {
         "message": "Ouinet protocol"
     },
+    "settingsStatusClientState": {
+        "message": "Ouinet client state"
+    },
     "settingsStatusEndpoints": {
         "message": "Local UDP endpoints"
     },
