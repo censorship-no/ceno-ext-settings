@@ -61,7 +61,7 @@
         }
     },
     "settingsPubwarnPub": {
-        "message": ""
+        "message": "公共浏览"
     },
     "settingsPrivwarn": {
         "message": "此配置下 $PRIVATE_BROWSING$ 会失败。",
@@ -72,7 +72,7 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": ""
+        "message": "隐私浏览"
     },
     "settingsStatusBrowser": {
         "message": "CENO 浏览器"
