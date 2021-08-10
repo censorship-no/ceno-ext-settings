@@ -169,5 +169,8 @@
     "updateGetpaskoocheh": {
         "message": "Paskoocheh တွင် ရယူပါ",
         "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusClientState": {
+        "message": "Ouinet အသုံးပြုသူ အခြေအနေ"
     }
 }
