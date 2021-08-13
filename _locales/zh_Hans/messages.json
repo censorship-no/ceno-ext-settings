@@ -81,7 +81,7 @@
         "message": "CENO 扩展"
     },
     "settingsStatusOuinet": {
-        "message": ""
+        "message": "Ouinet"
     },
     "settingsStatusProtocol": {
         "message": "Ouinet 协议"
@@ -169,5 +169,8 @@
     "updateGetpaskoocheh": {
         "message": "在Paskoocheh上获取",
         "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusClientState": {
+        "message": "Ouinet客户端状态"
     }
 }
