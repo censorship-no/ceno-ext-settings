@@ -169,5 +169,8 @@
     "updateGetpaskoocheh": {
         "message": "Paskoocheh'den indirin",
         "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusClientState": {
+        "message": "Ouinet istemci durumu"
     }
 }
