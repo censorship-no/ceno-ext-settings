@@ -169,5 +169,8 @@
     "updateGetpaskoocheh": {
         "message": "از پس‌کوچه دریافت کنید",
         "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusClientState": {
+        "message": "حالت مخاطب در «وی‌نت»"
     }
 }
