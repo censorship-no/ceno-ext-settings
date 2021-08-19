@@ -1,0 +1,176 @@
+{
+    "extName": {
+        "message": "Расширение CENO",
+        "description": "Name of the extension."
+    },
+    "extDesc": {
+        "message": "Обеспечивает интеграцию с CENO и Ouinet: кэширование и группировку страниц, информацию об источнике страницы, настройки и другие функции. Включает код проекта Localizer от пользователя rugk под лицензией MIT.",
+        "description": "Description of the extension."
+    },
+    "bgCenoWarning": {
+        "message": "Предупреждение CENO"
+    },
+    "settingsTitle": {
+        "message": "Настройки CENO"
+    },
+    "settingsWarn": {
+        "message": "Настройки на этой странице предназначены только для тестирования функциональности CENO в различных сетевых условиях. Они $NOT_SAVED$ при остановке CENO. Ознакомьтесь с $MANUAL$ для получения дополнительной информации.",
+        "placeholders": {
+            "not_saved": {
+                "content": "$1"
+            },
+            "manual": {
+                "content": "$2"
+            }
+        }
+    },
+    "settingsWarnNotsaved": {
+        "message": "не сохраняются"
+    },
+    "settingsWarnMan": {
+        "message": "руководством"
+    },
+    "settingsWarnManLN": {
+        "message": "https://censorship.no/user-manual/ru/browser/settings.html",
+        "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "settingsWarnManTI": {
+        "message": "Руководство пользователя Censorship.no! – Настройки CENO"
+    },
+    "settingsSources": {
+        "message": "Источники загружаемого контента:"
+    },
+    "settingsSrcOrigin": {
+        "message": "Напрямую с сайта"
+    },
+    "settingsSrcProxy": {
+        "message": "Через сеть CENO (приватно)"
+    },
+    "settingsSrcInjector": {
+        "message": "Через сеть CENO (публично)"
+    },
+    "settingsSrcDcache": {
+        "message": "Предоставлен другими пользователями CENO"
+    },
+    "settingsPubwarn": {
+        "message": "$PUBLIC_BROWSING$ не будет возможным с текущими настройками.",
+        "placeholders": {
+            "public_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPubwarnPub": {
+        "message": "Открытый просмотр веб-страниц"
+    },
+    "settingsPrivwarn": {
+        "message": "$PRIVATE_BROWSING$ не будет возможным с текущими настройками.",
+        "placeholders": {
+            "private_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPrivwarnPriv": {
+        "message": "Приватный просмотр веб-страниц"
+    },
+    "settingsStatusBrowser": {
+        "message": "Браузер CENO"
+    },
+    "settingsStatusExtension": {
+        "message": "Расширение CENO"
+    },
+    "settingsStatusOuinet": {
+        "message": "Ouinet"
+    },
+    "settingsStatusProtocol": {
+        "message": "Протокол Ouinet"
+    },
+    "settingsStatusEndpoints": {
+        "message": "Локальные конечные точки UDP"
+    },
+    "settingsStatusUpnp": {
+        "message": "Состояние UPnP"
+    },
+    "settingsStatusReachability": {
+        "message": "Состояние доступности"
+    },
+    "settingsStatusCacheSize": {
+        "message": "Размер локального кэша"
+    },
+    "settingsStatusCachePurge": {
+        "message": "Очистить сейчас"
+    },
+    "settingsStatusCacheList": {
+        "message": "Предоставленный вами контент"
+    },
+    "settingsLogEnable": {
+        "message": "Включить ведение журнала"
+    },
+    "settingsLogDownload": {
+        "message": "Скачать"
+    },
+    "popupTitle": {
+        "message": "Источники CENO"
+    },
+    "popupHead": {
+        "message": "Количество элементов страницы на источник:"
+    },
+    "popupSrcOrigin": {
+        "message": "Напрямую с сайта"
+    },
+    "popupSrcProxy": {
+        "message": "Через сеть CENO (приватно)"
+    },
+    "popupSrcInjector": {
+        "message": "Через сеть CENO (публично)"
+    },
+    "popupSrcDcache": {
+        "message": "Предоставлен другими пользователями CENO"
+    },
+    "popupSrcLcache": {
+        "message": "Предоставлен вами"
+    },
+    "popupFoot": {
+        "message": "Ознакомьтесь с $MANUAL$ для получения дополнительной информации об источниках контента.",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "popupFootMan": {
+        "message": "руководством"
+    },
+    "popupFootManLN": {
+        "message": "https://censorship.no/user-manual/ru/browser/settings.html#%D0%92%D1%8B%D0%B1%D0%BE%D1%80-%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D0%BE%D0%B2-%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0",
+        "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "popupFootManTI": {
+        "message": "Руководство пользователя Censorship.no! – Настройки CENO"
+    },
+    "updateTitle": {
+        "message": "Обновление CENO"
+    },
+    "updateMetacontent": {
+        "message": "Обновление CENO"
+    },
+    "updateHead": {
+        "message": "Ваш браузер CENO устарел."
+    },
+    "updateSubhead": {
+        "message": "Обновите приложение через",
+        "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
+    },
+    "updateGetgoogleplay": {
+        "message": "Скачайте в Google Play",
+        "description": "Alt text for Google Play badge."
+    },
+    "updateGetpaskoocheh": {
+        "message": "Скачайте в Paskoocheh",
+        "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusClientState": {
+        "message": "Состояние клиента Ouinet"
+    }
+}
