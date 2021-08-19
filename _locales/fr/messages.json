@@ -169,5 +169,8 @@
     "updateGetpaskoocheh": {
         "message": "Télécharger sur Paskoocheh",
         "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusClientState": {
+        "message": "État du client Ouinet"
     }
 }
