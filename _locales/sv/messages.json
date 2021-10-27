@@ -1,6 +1,6 @@
 {
     "extName": {
-        "message": "",
+        "message": "CENO-tillägget",
         "description": "Name of the extension."
     },
     "extDesc": {
@@ -11,7 +11,7 @@
         "message": ""
     },
     "settingsTitle": {
-        "message": ""
+        "message": "CENO-inställningar"
     },
     "settingsWarn": {
         "message": "",
@@ -25,10 +25,10 @@
         }
     },
     "settingsWarnNotsaved": {
-        "message": ""
+        "message": "har inte sparats"
     },
     "settingsWarnMan": {
-        "message": ""
+        "message": "manual"
     },
     "settingsWarnManLN": {
         "message": "",
