@@ -89,6 +89,9 @@
     "settingsStatusUpnp": {
         "message": "UPnP status"
     },
+    "settingsStatusExtEndpoints": {
+        "message": "External UDP endpoints"
+    },
     "settingsStatusReachability": {
         "message": "Reachability status"
     },
