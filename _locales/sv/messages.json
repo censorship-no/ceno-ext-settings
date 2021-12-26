@@ -8,7 +8,7 @@
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": ""
+        "message": "CENO-varning"
     },
     "settingsTitle": {
         "message": "CENO-inställningar"
@@ -31,29 +31,29 @@
         "message": "manual"
     },
     "settingsWarnManLN": {
-        "message": "",
+        "message": "https://censorship.no/user-manual/en/browser/settings.html",
         "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "settingsWarnManTI": {
-        "message": ""
+        "message": "Censorship.no! Användarmanual - CENO-inställningar"
     },
     "settingsSources": {
         "message": ""
     },
     "settingsSrcOrigin": {
-        "message": ""
+        "message": "Direkt från hemsida"
     },
     "settingsSrcProxy": {
-        "message": ""
+        "message": "Via CENO-nätverket (privat)"
     },
     "settingsSrcInjector": {
-        "message": ""
+        "message": "Via CENO-nätverket (publikt)"
     },
     "settingsSrcDcache": {
-        "message": ""
+        "message": "Delad av andra CENO-användare"
     },
     "settingsPubwarn": {
-        "message": "",
+        "message": "$PUBLIC_BROWSING$ kommer att misslyckas med nuvarande inställningar.",
         "placeholders": {
             "public_browsing": {
                 "content": "$1"
@@ -61,10 +61,10 @@
         }
     },
     "settingsPubwarnPub": {
-        "message": ""
+        "message": "Publik surfning"
     },
     "settingsPrivwarn": {
-        "message": "",
+        "message": "$PRIVATE_BROWSING$ kommer att misslyckas med nuvarande inställningar.",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
@@ -72,13 +72,13 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": ""
+        "message": "Privat surfning"
     },
     "settingsStatusBrowser": {
-        "message": ""
+        "message": "Webbläsaren CENO"
     },
     "settingsStatusExtension": {
-        "message": ""
+        "message": "Tillägg för CENO"
     },
     "settingsStatusOuinet": {
         "message": ""
@@ -90,49 +90,49 @@
         "message": ""
     },
     "settingsStatusUpnp": {
-        "message": ""
+        "message": "UPnP-status"
     },
     "settingsStatusReachability": {
         "message": ""
     },
     "settingsStatusCacheSize": {
-        "message": ""
+        "message": "Lokal cache-storlek"
     },
     "settingsStatusCachePurge": {
-        "message": ""
+        "message": "Töm nu"
     },
     "settingsStatusCacheList": {
-        "message": ""
+        "message": "Innehåll som delats av dig"
     },
     "settingsLogEnable": {
-        "message": ""
+        "message": "Aktivera logg-fil"
     },
     "settingsLogDownload": {
-        "message": ""
+        "message": "Ladda ner"
     },
     "popupTitle": {
-        "message": ""
+        "message": "CENO-källor"
     },
     "popupHead": {
-        "message": ""
+        "message": "Antalet sid-element per källa:"
     },
     "popupSrcOrigin": {
-        "message": ""
+        "message": "Direkt från hemsidan"
     },
     "popupSrcProxy": {
-        "message": ""
+        "message": "Via CENO-nätverk (privat)"
     },
     "popupSrcInjector": {
-        "message": ""
+        "message": "Via CENO-nätverket (publikt)"
     },
     "popupSrcDcache": {
-        "message": ""
+        "message": "Delade av andra CENO-användare"
     },
     "popupSrcLcache": {
-        "message": ""
+        "message": "Delad av dig"
     },
     "popupFoot": {
-        "message": "",
+        "message": "Se $MANUAL$ för mer information om innehållskällor.",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -140,34 +140,34 @@
         }
     },
     "popupFootMan": {
-        "message": ""
+        "message": "manual"
     },
     "popupFootManLN": {
         "message": "",
         "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "popupFootManTI": {
-        "message": ""
+        "message": "Cenorship.no! Användarmanual - CENO-inställningar"
     },
     "updateTitle": {
-        "message": ""
+        "message": "CENO-uppdatering"
     },
     "updateMetacontent": {
-        "message": ""
+        "message": "CENO-uppdatering"
     },
     "updateHead": {
-        "message": ""
+        "message": "Din CENO-webbläsare är utdaterad."
     },
     "updateSubhead": {
-        "message": "",
+        "message": "Vänligen uppdatera din app via",
         "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
     },
     "updateGetgoogleplay": {
-        "message": "",
+        "message": "Hämta den på Google Play",
         "description": "Alt text for Google Play badge."
     },
     "updateGetpaskoocheh": {
-        "message": "",
+        "message": "Hämta den på Paskoochech",
         "description": "Alt text for Paskoocheh badge."
     }
 }
