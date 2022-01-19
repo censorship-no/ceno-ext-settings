@@ -1,6 +1,6 @@
 {
     "extName": {
-        "message": "CENO Extension",
+        "message": "إضافة متصفح CENO",
         "description": "Name of the extension."
     },
     "extDesc": {
@@ -25,10 +25,10 @@
         }
     },
     "settingsWarnNotsaved": {
-        "message": ""
+        "message": "لم يتم الحفظ"
     },
     "settingsWarnMan": {
-        "message": ""
+        "message": "دليل"
     },
     "settingsWarnManLN": {
         "message": "",
@@ -38,19 +38,19 @@
         "message": ""
     },
     "settingsSources": {
-        "message": ""
+        "message": "مصادر استرجاع المحتوى:"
     },
     "settingsSrcOrigin": {
-        "message": ""
+        "message": "مباشر من الموقع"
     },
     "settingsSrcProxy": {
-        "message": ""
+        "message": "عن طريق شبكه CENO (خاص)"
     },
     "settingsSrcInjector": {
-        "message": ""
+        "message": "عن طريق شبكه CENO (عام)"
     },
     "settingsSrcDcache": {
-        "message": ""
+        "message": "مشارك من قبل مستخدمي CENO الآخرين"
     },
     "settingsPubwarn": {
         "message": "",
