@@ -2,7 +2,7 @@
   "description": "__MSG_extDesc__",
   "manifest_version": 2,
   "name": "__MSG_extName__",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "homepage_url": "https://censorship.no/",
 
   "icons": {
