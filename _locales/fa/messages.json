@@ -172,5 +172,11 @@
     },
     "settingsStatusClientState": {
         "message": "وضعیت کلاینت Ouinet"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "نقطه‌های انتهایی «یو‌دی‌پی UDP» خارجی"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "نقطه‌های انتهایی «یو‌دی‌پی UDP» عمومی"
     }
 }
