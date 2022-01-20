@@ -172,5 +172,11 @@
     },
     "settingsStatusClientState": {
         "message": "Состояние клиента Ouinet"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "Публичные конечные точки UDP"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "Внешние конечные точки UDP"
     }
 }
