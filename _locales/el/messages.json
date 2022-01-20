@@ -172,5 +172,11 @@
     },
     "settingsStatusClientState": {
         "message": "Κατάσταση προγράμματος πελάτη Ouinet"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "Δημόσιο τελικό σημείο UDP"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "Εξωτερικό τελικό σημείο UDP"
     }
 }
