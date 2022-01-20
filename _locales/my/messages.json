@@ -172,5 +172,11 @@
     },
     "settingsStatusClientState": {
         "message": "Ouinet အသုံးပြုသူ အခြေအနေ"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "အများသုံး UDP အဆုံးမှတ်များ"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "ပြင်ပ UDP အဆုံးမှတ်များ"
     }
 }
