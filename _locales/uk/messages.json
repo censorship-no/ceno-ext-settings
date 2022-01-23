@@ -1,20 +1,20 @@
 {
     "extName": {
-        "message": "",
+        "message": "Розширення CENO",
         "description": "Name of the extension."
     },
     "extDesc": {
-        "message": "",
+        "message": "Забезпечує інтеграцію з CENO та Ouinet: кешування та групування сторінок, інформацію про джерело сторінки, налаштування та інші функції. Включає в себе код Localizer від rugk під ліцензією MIT.",
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": ""
+        "message": "Попередження CENO"
     },
     "settingsTitle": {
-        "message": ""
+        "message": "Налаштування CENO"
     },
     "settingsWarn": {
-        "message": "",
+        "message": "Налаштування на цій сторінці призначені для тестування функціональності CENO у різних мережевих умовах. Вони $NOT_SAVED$ під час зупинки CENO. Ознайомтеся з $MANUAL$ для отримання додаткової інформації.",
         "placeholders": {
             "not_saved": {
                 "content": "$1"
@@ -25,35 +25,35 @@
         }
     },
     "settingsWarnNotsaved": {
-        "message": ""
+        "message": "не зберігаються"
     },
     "settingsWarnMan": {
-        "message": ""
+        "message": "посібником"
     },
     "settingsWarnManLN": {
-        "message": "",
+        "message": "https://censorship.no/user-manual/ua/browser/settings.html",
         "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "settingsWarnManTI": {
-        "message": ""
+        "message": "Посібник користувача Censorship.no! — Налаштування CENO"
     },
     "settingsSources": {
-        "message": ""
+        "message": "Джерела завантажуваного контенту:"
     },
     "settingsSrcOrigin": {
-        "message": ""
+        "message": "Безпосередньо з сайту"
     },
     "settingsSrcProxy": {
-        "message": ""
+        "message": "Через мережу CENO (приватно)"
     },
     "settingsSrcInjector": {
-        "message": ""
+        "message": "Через мережу CENO (публічно)"
     },
     "settingsSrcDcache": {
-        "message": ""
+        "message": "Наданий іншими користувачами CENO"
     },
     "settingsPubwarn": {
-        "message": "",
+        "message": "$PUBLIC_BROWSING$ не буде можливим із поточними налаштуваннями.",
         "placeholders": {
             "public_browsing": {
                 "content": "$1"
@@ -61,10 +61,10 @@
         }
     },
     "settingsPubwarnPub": {
-        "message": ""
+        "message": "Відкритий перегляд веб-страниц"
     },
     "settingsPrivwarn": {
-        "message": "",
+        "message": "$PRIVATE_BROWSING$ не буде можливим із поточними налаштуваннями.",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
@@ -72,76 +72,76 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": ""
+        "message": "Приватний перегляд веб-сторінок"
     },
     "settingsStatusBrowser": {
-        "message": ""
+        "message": "Браузер CENO"
     },
     "settingsStatusExtension": {
-        "message": ""
+        "message": "Розширення CENO"
     },
     "settingsStatusOuinet": {
-        "message": ""
+        "message": "Ouinet"
     },
     "settingsStatusProtocol": {
-        "message": ""
+        "message": "Протокол Ouinet"
     },
     "settingsStatusClientState": {
-        "message": ""
+        "message": "Стан клієнта Ouinet"
     },
     "settingsStatusEndpoints": {
-        "message": ""
+        "message": "Локальні кінцеві точки UDP"
     },
     "settingsStatusUpnp": {
-        "message": ""
+        "message": "Стан UPnP"
     },
     "settingsStatusExtEndpoints": {
-        "message": ""
+        "message": "Зовнішні кінцеві точки UDP"
     },
     "settingsStatusPubEndpoints": {
-        "message": ""
+        "message": "Публічні кінцеві точки UDP"
     },
     "settingsStatusReachability": {
-        "message": ""
+        "message": "Стан доступності"
     },
     "settingsStatusCacheSize": {
-        "message": ""
+        "message": "Розмір локального кешу"
     },
     "settingsStatusCachePurge": {
-        "message": ""
+        "message": "Очистити зараз"
     },
     "settingsStatusCacheList": {
-        "message": ""
+        "message": "Наданий вами контент"
     },
     "settingsLogEnable": {
-        "message": ""
+        "message": "Увімкнути ведення журналу"
     },
     "settingsLogDownload": {
-        "message": ""
+        "message": "Завантажити"
     },
     "popupTitle": {
-        "message": ""
+        "message": "Джерела CENO"
     },
     "popupHead": {
-        "message": ""
+        "message": "Кількість елементів сторінки на джерело:"
     },
     "popupSrcOrigin": {
-        "message": ""
+        "message": "Безпосередньо з сайту"
     },
     "popupSrcProxy": {
-        "message": ""
+        "message": "Через мережу CENO (приватно)"
     },
     "popupSrcInjector": {
-        "message": ""
+        "message": "Через мережу CENO (публічно)"
     },
     "popupSrcDcache": {
-        "message": ""
+        "message": "Наданий іншими користувачами CENO"
     },
     "popupSrcLcache": {
-        "message": ""
+        "message": "Наданий вами"
     },
     "popupFoot": {
-        "message": "",
+        "message": "Ознайомтеся з $MANUAL$ для отримання додаткової інформації про джерела контенту.",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -149,34 +149,34 @@
         }
     },
     "popupFootMan": {
-        "message": ""
+        "message": "посібником"
     },
     "popupFootManLN": {
-        "message": "",
+        "message": "https://censorship.no/user-manual/ua/browser/settings.html#choosing-access-mechanisms",
         "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "popupFootManTI": {
-        "message": ""
+        "message": "Посібник користувача Censorship.no! — Налаштування CENO"
     },
     "updateTitle": {
-        "message": ""
+        "message": "Оновлення CENO"
     },
     "updateMetacontent": {
-        "message": ""
+        "message": "Оновлення CENO"
     },
     "updateHead": {
-        "message": ""
+        "message": "Ваш браузер CENO застарів."
     },
     "updateSubhead": {
-        "message": "",
+        "message": "Будь ласка, оновіть програму через",
         "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
     },
     "updateGetgoogleplay": {
-        "message": "",
+        "message": "Завантажте з Google Play",
         "description": "Alt text for Google Play badge."
     },
     "updateGetpaskoocheh": {
-        "message": "",
+        "message": "Завантажте з Paskoocheh",
         "description": "Alt text for Paskoocheh badge."
     }
 }
