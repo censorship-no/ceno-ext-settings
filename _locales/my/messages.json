@@ -38,7 +38,7 @@
         "message": "Censorship.no! သုံးစွဲသူ လက်စွဲ– CENO ဆက်တင်များ"
     },
     "settingsSources": {
-        "message": "အကြောင်းအရာ ပြန်ရယူမှု ရင်းမြစ်များ-"
+        "message": "အကြောင်းအရာ ပြန်ရယူမှု ရင်းမြစ်များ -"
     },
     "settingsSrcOrigin": {
         "message": "ဝက်ဘ်ဆိုက်မှ တိုက်ရိုက်"
@@ -114,7 +114,7 @@
         "message": "CENO အရင်းအမြစ်များ"
     },
     "popupHead": {
-        "message": "ရင်းမြစ်တစ်ခုစီရှိ စာမျက်နှာ အစိတ်အပိုင်း အရေအတွက်-"
+        "message": "ရင်းမြစ်တစ်ခုစီရှိ စာမျက်နှာ အစိတ်အပိုင်း အရေအတွက် -"
     },
     "popupSrcOrigin": {
         "message": "ဝက်ဘ်ဆိုက်မှ တိုက်ရိုက်"
@@ -172,5 +172,11 @@
     },
     "settingsStatusClientState": {
         "message": "Ouinet အသုံးပြုသူ အခြေအနေ"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "အများသုံး UDP အဆုံးမှတ်များ"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "ပြင်ပ UDP အဆုံးမှတ်များ"
     }
 }

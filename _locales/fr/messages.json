@@ -169,5 +169,14 @@
     "updateGetpaskoocheh": {
         "message": "Télécharger sur Paskoocheh",
         "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusClientState": {
+        "message": "État du client Ouinet"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "Points de terminaison UDP publics"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "Points de terminaison UDP externes"
     }
 }
