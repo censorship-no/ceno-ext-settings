@@ -1,20 +1,20 @@
 {
     "extName": {
-        "message": "",
+        "message": "Επέκταση CENO",
         "description": "Name of the extension."
     },
     "extDesc": {
-        "message": "",
+        "message": "Παρέχει ενσωμάτωση του CENO με το Ouinet: προσωρινή αποθήκευση και ομαδοποίηση σελίδων, πληροφορίες πηγής, ρυθμίσεις και άλλες λειτουργίες. Περιλαμβάνει κώδικα από το Localizer του rugk με άδεια χρήσης MIT.",
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": ""
+        "message": "Προειδοποίηση CENO"
     },
     "settingsTitle": {
-        "message": ""
+        "message": "Ρυθμίσεις CENO"
     },
     "settingsWarn": {
-        "message": "",
+        "message": "Οι ρυθμίσεις σε αυτήν τη σελίδα αφορούν μόνο τη δοκιμή λειτουργικότητας του CENO σε διάφορες συνθήκες δικτύου. Αυτές είναι οι $NOT_SAVED$ όταν σταματάτε το CENO. Δείτε το $MANUAL$ για περισσότερες πληροφορίες.",
         "placeholders": {
             "not_saved": {
                 "content": "$1"
@@ -25,35 +25,35 @@
         }
     },
     "settingsWarnNotsaved": {
-        "message": ""
+        "message": "χωρίς αποθήκευση"
     },
     "settingsWarnMan": {
-        "message": ""
+        "message": "εγχειρίδιο"
     },
     "settingsWarnManLN": {
-        "message": "",
+        "message": "https://censorship.no/user-manual/en/browser/settings.html",
         "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "settingsWarnManTI": {
-        "message": ""
+        "message": "Censorship.no! Εγχειρίδιο χρήσης - Ρυθμίσεις CENO"
     },
     "settingsSources": {
-        "message": ""
+        "message": "Πηγές ανάκτησης περιεχομένου:"
     },
     "settingsSrcOrigin": {
-        "message": ""
+        "message": "Απευθείας από τον ιστότοπο"
     },
     "settingsSrcProxy": {
-        "message": ""
+        "message": "Μέσω του δικτύου CENO (ιδιωτικό)"
     },
     "settingsSrcInjector": {
-        "message": ""
+        "message": "Μέσω του δικτύου CENO (δημόσιο)"
     },
     "settingsSrcDcache": {
-        "message": ""
+        "message": "Από διαμοιρασμό άλλων χρηστών CENO"
     },
     "settingsPubwarn": {
-        "message": "",
+        "message": "Το $PUBLIC_BROWSING$ θα αποτύχει με τις τρέχουσες ρυθμίσεις.",
         "placeholders": {
             "public_browsing": {
                 "content": "$1"
@@ -61,10 +61,10 @@
         }
     },
     "settingsPubwarnPub": {
-        "message": ""
+        "message": "Δημόσια περιήγηση"
     },
     "settingsPrivwarn": {
-        "message": "",
+        "message": "Το $PRIVATE_BROWSING$ θα αποτύχει με τις τρέχουσες ρυθμίσεις.",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
@@ -72,67 +72,67 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": ""
+        "message": "Ιδιωτική περιήγηση"
     },
     "settingsStatusBrowser": {
-        "message": ""
+        "message": "Περιηγητής CENO"
     },
     "settingsStatusExtension": {
-        "message": ""
+        "message": "Επέκταση CENO"
     },
     "settingsStatusOuinet": {
-        "message": ""
+        "message": "Ouinet"
     },
     "settingsStatusProtocol": {
-        "message": ""
+        "message": "Πρωτόκολλο Ouinet"
     },
     "settingsStatusEndpoints": {
-        "message": ""
+        "message": "Τοπικά άκρα UDP"
     },
     "settingsStatusUpnp": {
-        "message": ""
+        "message": "Κατάσταση UPnP"
     },
     "settingsStatusReachability": {
-        "message": ""
+        "message": "Κατάσταση προσβασιμότητας"
     },
     "settingsStatusCacheSize": {
-        "message": ""
+        "message": "Μέγεθος τοπικής προσωρινής μνήμης"
     },
     "settingsStatusCachePurge": {
-        "message": ""
+        "message": "Εκκαθάριση τώρα"
     },
     "settingsStatusCacheList": {
-        "message": ""
+        "message": "Περιεχόμενο που μοιράζεστε"
     },
     "settingsLogEnable": {
-        "message": ""
+        "message": "Ενεργοποίηση αρχείου καταγραφής"
     },
     "settingsLogDownload": {
-        "message": ""
+        "message": "Λήψη"
     },
     "popupTitle": {
-        "message": ""
+        "message": "Πηγές CENO"
     },
     "popupHead": {
-        "message": ""
+        "message": "Αριθμός στοιχείων σελίδας ανά πηγή:"
     },
     "popupSrcOrigin": {
-        "message": ""
+        "message": "Απευθείας από τον ιστότοπο"
     },
     "popupSrcProxy": {
-        "message": ""
+        "message": "Μέσω του δικτύου CENO (ιδιωτικό)"
     },
     "popupSrcInjector": {
-        "message": ""
+        "message": "Μέσω του δικτύου CENO (δημόσιο)"
     },
     "popupSrcDcache": {
-        "message": ""
+        "message": "Από διαμοιρασμό άλλων χρηστών CENO"
     },
     "popupSrcLcache": {
-        "message": ""
+        "message": "Σε κοινή χρήση από εσάς"
     },
     "popupFoot": {
-        "message": "",
+        "message": "Δείτε το $MANUAL$ για περισσότερες πληροφορίες των πηγών περιεχομένου.",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -140,34 +140,43 @@
         }
     },
     "popupFootMan": {
-        "message": ""
+        "message": "εγχειρίδιο"
     },
     "popupFootManLN": {
-        "message": "",
+        "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
         "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "popupFootManTI": {
-        "message": ""
+        "message": "Censorship.no! Εγχειρίδιο χρήσης - Ρυθμίσεις CENO"
     },
     "updateTitle": {
-        "message": ""
+        "message": "Ενημέρωση CENO"
     },
     "updateMetacontent": {
-        "message": ""
+        "message": "Ενημέρωση CENO"
     },
     "updateHead": {
-        "message": ""
+        "message": "Το πρόγραμμα περιήγησής σας CENO δεν είναι ενημερωμένο."
     },
     "updateSubhead": {
-        "message": "",
+        "message": "Παρακαλούμε ενημερώστε την εφαρμογή μέσω",
         "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
     },
     "updateGetgoogleplay": {
-        "message": "",
+        "message": "Λήψη από Google Play",
         "description": "Alt text for Google Play badge."
     },
     "updateGetpaskoocheh": {
-        "message": "",
+        "message": "Λήψη από Paskoocheh",
         "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusClientState": {
+        "message": "Κατάσταση προγράμματος πελάτη Ouinet"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "Δημόσιο τελικό σημείο UDP"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "Εξωτερικό τελικό σημείο UDP"
     }
 }

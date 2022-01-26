@@ -165,5 +165,11 @@
     },
     "settingsStatusClientState": {
         "message": "Estado del cliente Ouinet"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "Puntos finales UDP externos"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "Puntos finales UDP públicos"
     }
 }

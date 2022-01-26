@@ -38,7 +38,7 @@
         "message": "Censorship.no! သုံးစွဲသူ လက်စွဲ– CENO ဆက်တင်များ"
     },
     "settingsSources": {
-        "message": "အကြောင်းအရာ ပြန်ရယူမှု ရင်းမြစ်များ-"
+        "message": "အကြောင်းအရာ ပြန်ရယူမှု ရင်းမြစ်များ -"
     },
     "settingsSrcOrigin": {
         "message": "ဝက်ဘ်ဆိုက်မှ တိုက်ရိုက်"
@@ -114,7 +114,7 @@
         "message": "CENO အရင်းအမြစ်များ"
     },
     "popupHead": {
-        "message": "ရင်းမြစ်တစ်ခုစီရှိ စာမျက်နှာ အစိတ်အပိုင်း အရေအတွက်-"
+        "message": "ရင်းမြစ်တစ်ခုစီရှိ စာမျက်နှာ အစိတ်အပိုင်း အရေအတွက် -"
     },
     "popupSrcOrigin": {
         "message": "ဝက်ဘ်ဆိုက်မှ တိုက်ရိုက်"
@@ -143,7 +143,7 @@
         "message": "လက်စွဲ"
     },
     "popupFootManLN": {
-        "message": "https://censorship.no/user-manual/my/browser/settings.html#%E1%80%9D%E1%80%84%E1%80%9B%E1%80%B1%E1%80%AC%E1%80%80%E1%80%9E%E1%80%AF%E1%80%B6%E1%80%B8%E1%80%85%E1%80%BD%E1%80%B2%E1%80%99%E1%80%BE%E1%80%AF-%E1%80%85%E1%80%80%E1%80%80%E1%80%AD%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%AC%E1%80%80%E1%80%AD%E1%80%AF-%E1%80%9B%E1%80%BD%E1%80%B1%E1%80%B8%E1%80%81%E1%80%BB%E1%80%9A%E1%80%81%E1%80%BC%E1%80%84%E1%80%B8",
+        "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
         "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "popupFootManTI": {
@@ -172,5 +172,11 @@
     },
     "settingsStatusClientState": {
         "message": "Ouinet အသုံးပြုသူ အခြေအနေ"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "အများသုံး UDP အဆုံးမှတ်များ"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "ပြင်ပ UDP အဆုံးမှတ်များ"
     }
 }
