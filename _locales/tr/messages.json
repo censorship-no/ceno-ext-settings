@@ -172,5 +172,11 @@
     },
     "settingsStatusClientState": {
         "message": "Ouinet istemci durumu"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "Harici UDP uçnoktaları"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "Genel UDP uçnoktaları"
     }
 }
