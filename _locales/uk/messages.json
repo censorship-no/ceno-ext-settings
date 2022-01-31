@@ -4,7 +4,7 @@
         "description": "Name of the extension."
     },
     "extDesc": {
-        "message": "Забезпечує інтеграцію з CENO та Ouinet, а саме: кешування та групування сторінок, інформацію про джерело сторінки, налаштування та інші функції. Включає в себе код Localizer від rugk під ліцензією MIT.",
+        "message": "Забезпечує інтеграцію з CENO та Ouinet, а саме: кешування та групування сторінок, інформацію про джерело сторінки, налаштування та інші функції. Включає в себе код від Localizer вставки rugk за ліцензією Массачусетського технологічного інституту (MIT).",
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
@@ -14,7 +14,7 @@
         "message": "Налаштування CENO"
     },
     "settingsWarn": {
-        "message": "Налаштування на цій сторінці призначені для тестування функціональності CENO у різних мережевих умовах. Вони $NOT_SAVED$ під час зупинки CENO. Ознайомтеся з $MANUAL$ для отримання додаткової інформації.",
+        "message": "Налаштування на цій сторінці призначені тільки для тестування функціональності CENO у різних мережевих умовах. Налаштування $NOT_SAVED$ під час призупинки CENO. Ознайомтеся з $MANUAL$ для отримання додаткової інформації.",
         "placeholders": {
             "not_saved": {
                 "content": "$1"
@@ -28,7 +28,7 @@
         "message": "не зберігаються"
     },
     "settingsWarnMan": {
-        "message": "посібником"
+        "message": "посібник з використання"
     },
     "settingsWarnManLN": {
         "message": "https://censorship.no/user-manual/uk/browser/settings.html",
@@ -168,7 +168,7 @@
         "message": "Ваш браузер CENO застарів."
     },
     "updateSubhead": {
-        "message": "Будь ласка, оновіть програму через",
+        "message": "Будь ласка, оновіть ваш браузер через",
         "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
     },
     "updateGetgoogleplay": {
