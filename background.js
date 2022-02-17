@@ -350,6 +350,15 @@ function clearLocalStorage() {
   });
 }
 
+// Configure the Ouinet client as a proxy ASAP.
+browser.proxy.settings.set({value: {
+    proxyType: "manual",
+    http: "127.0.0.1:8077",
+    ssl: "127.0.0.1:8077",
+}}).then(function() {
+    console.log("Ouinet client configured as proxy for HTTP and HTTPS.");
+});
+
 browser.browserAction.onClicked.addListener(function() {
   var url = browser.extension.getURL("settings.html");
   browser.tabs.create({url: url});
