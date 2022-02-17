@@ -17,6 +17,7 @@
 
   "permissions": [
     "notifications",
+    "proxy",
     "storage",
     "tabs",
     "webRequest",
