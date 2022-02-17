@@ -3,6 +3,8 @@ const CENO_ICON = "icons/ceno-logo-32.png";
 const CACHE_MAX_ENTRIES = 500;
 const OUINET_RESPONSE_VERSION_MIN = 1  // protocol versions accepted
 const OUINET_RESPONSE_VERSION_MAX = 6
+const OUINET_PROXY_HOST = "127.0.0.1"
+const OUINET_PROXY_PORT = 8077
 
 // Requests for URLs matching the following regular expressions
 // will always be considered private (thus non-cacheable).
@@ -350,14 +352,22 @@ function clearLocalStorage() {
   });
 }
 
-// Configure the Ouinet client as a proxy ASAP.
-browser.proxy.settings.set({value: {
+/**
+ * Configure the Ouinet client as a proxy.
+ */
+function setOuinetClientAsProxy() {
+  var proxyEndpoint = OUINET_PROXY_HOST + ":" + OUINET_PROXY_PORT;
+  browser.proxy.settings.set({value: {
     proxyType: "manual",
-    http: "127.0.0.1:8077",
-    ssl: "127.0.0.1:8077",
-}}).then(function() {
+    http: proxyEndpoint,
+    ssl: proxyEndpoint,
+  }}).then(function() {
     console.log("Ouinet client configured as proxy for HTTP and HTTPS.");
-});
+  });
+}
+
+
+setOuinetClientAsProxy();
 
 browser.browserAction.onClicked.addListener(function() {
   var url = browser.extension.getURL("settings.html");
