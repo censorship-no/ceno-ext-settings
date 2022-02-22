@@ -3,8 +3,6 @@ const CENO_ICON = "icons/ceno-logo-32.png";
 const CACHE_MAX_ENTRIES = 500;
 const OUINET_RESPONSE_VERSION_MIN = 1  // protocol versions accepted
 const OUINET_RESPONSE_VERSION_MAX = 6
-const OUINET_PROXY_HOST = "127.0.0.1"
-const OUINET_PROXY_PORT = 8077
 
 // Requests for URLs matching the following regular expressions
 // will always be considered private (thus non-cacheable).
@@ -360,7 +358,7 @@ function clearLocalStorage() {
  * this only works on Desktop Firefox >= 60.
  */
 function setOuinetClientAsProxy() {
-  var proxyEndpoint = OUINET_PROXY_HOST + ":" + OUINET_PROXY_PORT;
+  var proxyEndpoint = `${config.ouinet_client.host}:${config.ouinet_client.proxy.port}`;
   browser.proxy.settings.set({value: {
     proxyType: "manual",
     http: proxyEndpoint,
