@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="settings.css">
 <script type="module" src="localizer/Localizer.js"></script>
+<script src="config.js"></script>
 <script src="settings.js"></script>
 </head>
 <body>
@@ -90,8 +91,8 @@
       <span id="local_cache_size"> </span>
       <button data-i18n="settingsStatusCachePurge"
               class="action" type="button" id="purge_cache" disabled>Purge now</button>
-      <a data-i18n="settingsStatusCacheList"
-         href="http://127.0.0.1:8078/groups.txt" class="download" target="_blank">Content shared by you</a>
+      <a data-i18n="settingsStatusCacheList" id="fe-link-cache-list"
+         href="#" class="download" target="_blank">Content shared by you</a>
     </form>
   </div>
   <form class="cb_form">
@@ -100,8 +101,8 @@
         <input type="checkbox" id="logfile" disabled>
         <span class="checkmark"></span>
         <div data-i18n="settingsLogEnable" class="cb_label">Enable log file</div>
-        <a data-i18n="settingsLogDownload"
-           href="http://127.0.0.1:8078/logfile.txt" class="download" download="ceno-logfile.txt" target="_blank">Download</a>
+        <a data-i18n="settingsLogDownload" id="fe-link-log-file"
+           href="#" class="download" download="ceno-logfile.txt" target="_blank">Download</a>
       </label>
     </div>
   </form>

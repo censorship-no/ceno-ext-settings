@@ -1,5 +1,6 @@
-const STATUS_ENDPOINT = "http://127.0.0.1:8078/api/status";
-const SET_VALUE_ENDPOINT = "http://127.0.0.1:8078/";
+const FRONT_END_BASE = `http://${config.ouinet_client.host}:${config.ouinet_client.front_end.port}`;
+const STATUS_ENDPOINT = FRONT_END_BASE + "/api/status";
+const SET_VALUE_ENDPOINT = FRONT_END_BASE + "/";
 
 class Button {
   constructor(id) {
@@ -247,7 +248,19 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function setFrontEndLinks() {
+  for (const [id, path] of [ ["fe-link-cache-list", "/groups.txt"],
+                             ["fe-link-log-file", "/logfile.txt"],
+                           ]) {
+    var elem = document.getElementById(id);
+    if (!elem) continue;
+    elem.href = FRONT_END_BASE + path;
+  }
+}
+
 window.addEventListener("load", async () => {
+  setFrontEndLinks();
+
   let state = new State();
 
   while (true) {
