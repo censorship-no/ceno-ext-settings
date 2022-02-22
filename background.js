@@ -363,6 +363,8 @@ function setOuinetClientAsProxy() {
     ssl: proxyEndpoint,
   }}).then(function() {
     console.log("Ouinet client configured as proxy for HTTP and HTTPS.");
+  }).catch(function(e) {
+    console.log("Failed to configure HTTP and HTTPS proxies: " + e);
   });
 }
 
