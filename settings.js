@@ -247,7 +247,20 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function setFrontEndLinks() {
+  const frontEndBase = `http://${config.ouinet_client.host}:${config.ouinet_client.front_end.port}`;
+  for (const [id, path] of [ ["fe-link-cache-list", "/groups.txt"],
+                             ["fe-link-log-file", "/logfile.txt"],
+                           ]) {
+    var elem = document.getElementById(id);
+    if (!elem) continue;
+    elem.href = frontEndBase + path;
+  }
+}
+
 window.addEventListener("load", async () => {
+  setFrontEndLinks();
+
   let state = new State();
 
   while (true) {
