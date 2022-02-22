@@ -1,5 +1,5 @@
-const STATUS_ENDPOINT = "http://127.0.0.1:8078/api/status";
-const SET_VALUE_ENDPOINT = "http://127.0.0.1:8078/";
+const STATUS_ENDPOINT = `http://${config.ouinet_client.host}:${config.ouinet_client.front_end.port}/api/status`;
+const SET_VALUE_ENDPOINT = `http://${config.ouinet_client.host}:${config.ouinet_client.front_end.port}/`;
 
 class Button {
   constructor(id) {
