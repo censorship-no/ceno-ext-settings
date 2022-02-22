@@ -259,11 +259,11 @@ window.addEventListener("load", async () => {
         Object.entries(json).map(([k,v]) => state.set(k, v))
         state.enable();
       } else {
-        console.log("Error: " + error);
+        console.error("Failed to parse client status JSON:", error);
         state.disable();
       }
     } catch (err) {
-      console.log("Error: " + err.message);
+      console.error("Failed to fetch client status JSON:", err);
       state.disable();
     }
 

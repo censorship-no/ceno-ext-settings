@@ -371,7 +371,7 @@ function setOuinetClientAsProxy() {
     // This does not work on Android:
     // check occurrences of "proxy.settings is not supported on android"
     // in `gecko-dev/toolkit/components/extensions/parent/ext-proxy.js`.
-    console.log("Failed to configure HTTP and HTTPS proxies: " + e);
+    console.error("Failed to configure HTTP and HTTPS proxies:", e);
   });
 }
 
