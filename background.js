@@ -354,6 +354,10 @@ function clearLocalStorage() {
 
 /**
  * Configure the Ouinet client as a proxy.
+ *
+ * As of 2022-02-22, and according
+ * to @url{https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/proxy/settings},
+ * this only works on Desktop Firefox >= 60.
  */
 function setOuinetClientAsProxy() {
   var proxyEndpoint = OUINET_PROXY_HOST + ":" + OUINET_PROXY_PORT;
@@ -364,6 +368,9 @@ function setOuinetClientAsProxy() {
   }}).then(function() {
     console.log("Ouinet client configured as proxy for HTTP and HTTPS.");
   }).catch(function(e) {
+    // This does not work on Android:
+    // check occurrences of "proxy.settings is not supported on android"
+    // in `gecko-dev/toolkit/components/extensions/parent/ext-proxy.js`.
     console.log("Failed to configure HTTP and HTTPS proxies: " + e);
   });
 }
