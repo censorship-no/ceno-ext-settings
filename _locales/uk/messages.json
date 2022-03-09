@@ -4,17 +4,17 @@
         "description": "Name of the extension."
     },
     "extDesc": {
-        "message": "Забезпечує інтеграцію з CENO та Ouinet, а саме: кешування та групування сторінок, інформацію про джерело сторінки, налаштування та інші функції. Включає в себе код від Localizer вставки rugk за ліцензією Массачусетського технологічного інституту (MIT).",
+        "message": "Забезпечує інтеграцію з CENO та Ouinet, а саме: кешування і групування сторінок, інформацію про джерело сторінки, налаштування та іншу функціональність. Містить код із Localizer від rugk під ліцензією MIT.",
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": "Попередження CENO"
+        "message": "Застереження CENO"
     },
     "settingsTitle": {
         "message": "Налаштування CENO"
     },
     "settingsWarn": {
-        "message": "Налаштування на цій сторінці призначені тільки для тестування функціональності CENO у різних мережевих умовах. Налаштування $NOT_SAVED$ під час призупинки CENO. Ознайомтеся з $MANUAL$ для отримання додаткової інформації.",
+        "message": "Налаштування на цій сторінці призначені лише для тестування функціональності CENO в різних мережевих умовах. Налаштування $NOT_SAVED$ під час зупинки CENO. Детальніше дивіться $MANUAL$.",
         "placeholders": {
             "not_saved": {
                 "content": "$1"
@@ -28,7 +28,7 @@
         "message": "не зберігаються"
     },
     "settingsWarnMan": {
-        "message": "посібник з використання"
+        "message": "посібник"
     },
     "settingsWarnManLN": {
         "message": "https://censorship.no/user-manual/uk/browser/settings.html",
@@ -38,7 +38,7 @@
         "message": "Посібник користувача Censorship.no! — Налаштування CENO"
     },
     "settingsSources": {
-        "message": "Джерела завантажуваного контенту:"
+        "message": "Джерела поверненого вмісту:"
     },
     "settingsSrcOrigin": {
         "message": "Безпосередньо з сайту"
@@ -61,10 +61,10 @@
         }
     },
     "settingsPubwarnPub": {
-        "message": "Відкритий перегляд веб-страниц"
+        "message": "Публічний перегляд"
     },
     "settingsPrivwarn": {
-        "message": "$PRIVATE_BROWSING$ не буде можливим із поточними налаштуваннями.",
+        "message": "$PRIVATE_BROWSING$ не вдасться з поточними налаштуваннями.",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
@@ -72,10 +72,10 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": "Приватний перегляд веб-сторінок"
+        "message": "Приватний перегляд"
     },
     "settingsStatusBrowser": {
-        "message": "Браузер CENO"
+        "message": "Оглядач CENO"
     },
     "settingsStatusExtension": {
         "message": "Розширення CENO"
@@ -111,10 +111,10 @@
         "message": "Очистити зараз"
     },
     "settingsStatusCacheList": {
-        "message": "Наданий вами контент"
+        "message": "Вміст, який Ви поширили"
     },
     "settingsLogEnable": {
-        "message": "Увімкнути ведення журналу"
+        "message": "Дозволити файл журналу"
     },
     "settingsLogDownload": {
         "message": "Завантажити"
@@ -135,13 +135,13 @@
         "message": "Через мережу CENO (публічно)"
     },
     "popupSrcDcache": {
-        "message": "Наданий іншими користувачами CENO"
+        "message": "Поширений іншими користувачами CENO"
     },
     "popupSrcLcache": {
-        "message": "Наданий вами"
+        "message": "Поширений Вами"
     },
     "popupFoot": {
-        "message": "Ознайомтеся з $MANUAL$ для отримання додаткової інформації про джерела контенту.",
+        "message": "Перегляньте $MANUAL$ для отримання додаткової інформації про джерела вмісту.",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -152,7 +152,7 @@
         "message": "посібником"
     },
     "popupFootManLN": {
-        "message": "https://censorship.no/user-manual/uk/browser/settings.html#%D0%92%D0%B8%D0%B1%D1%96%D1%80-%D0%B2%D0%B0%D1%80%D1%96%D0%B0%D0%BD%D1%82%D1%96%D0%B2-%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D1%83",
+        "message": "https://censorship.no/user-manual/uk/browser/settings.html#Вибір-варіантів-доступу",
         "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "popupFootManTI": {
@@ -165,18 +165,18 @@
         "message": "Оновлення CENO"
     },
     "updateHead": {
-        "message": "Ваш браузер CENO застарів."
+        "message": "Ваш Оглядач CENO застарів."
     },
     "updateSubhead": {
-        "message": "Будь ласка, оновіть ваш браузер через",
+        "message": "Будь ласка, оновіть свій застосунок через",
         "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
     },
     "updateGetgoogleplay": {
-        "message": "Завантажте з Google Play",
+        "message": "Отримати з Google Play",
         "description": "Alt text for Google Play badge."
     },
     "updateGetpaskoocheh": {
-        "message": "Завантажте з Paskoocheh",
+        "message": "Отримати з Paskoocheh",
         "description": "Alt text for Paskoocheh badge."
     }
 }
