@@ -8,10 +8,10 @@
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": ""
+        "message": "Peringatan CENO"
     },
     "settingsTitle": {
-        "message": ""
+        "message": "Pengaturan CENO"
     },
     "settingsWarn": {
         "message": "",
@@ -25,7 +25,7 @@
         }
     },
     "settingsWarnNotsaved": {
-        "message": ""
+        "message": "tidak tersimpan"
     },
     "settingsWarnMan": {
         "message": ""
@@ -38,19 +38,19 @@
         "message": ""
     },
     "settingsSources": {
-        "message": ""
+        "message": "Sumber pengambilan konten:"
     },
     "settingsSrcOrigin": {
-        "message": ""
+        "message": "Langsung dari situs web"
     },
     "settingsSrcProxy": {
-        "message": ""
+        "message": "Melalui jaringan CENO (rahasia)"
     },
     "settingsSrcInjector": {
-        "message": ""
+        "message": "Melalui jaringan CENO (publik)"
     },
     "settingsSrcDcache": {
-        "message": ""
+        "message": "Dibagikan oleh pengguna CENO lain"
     },
     "settingsPubwarn": {
         "message": "",
