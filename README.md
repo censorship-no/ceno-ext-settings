@@ -1,4 +1,4 @@
-# ouifennec-ext-settings
+# ceno-ext-settings
 
 A WebExtension frontend for the Ouinet HTTP Settings API, and the CENO update page.
 
