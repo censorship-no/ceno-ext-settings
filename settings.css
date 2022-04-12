@@ -135,14 +135,29 @@ body {
   content: "⚠ ";
   color: red;
 }
-#about {
+.status_items {
   padding: 50px;
   font-size: 2em;
   color: #999;
   border-top: 2px solid #b2b2b2;
 }
-.action {
+.status_items p {
+  margin-bottom: 0;
+}
+button.action {
   font-size: inherit;
+  border: #aaa solid 5px;
+  border-radius: 15px;
+}
+button.action:disabled {
+  color: #aaa;
+  background-color: #eaeaea;
+  border-color: #aaa;
+}
+button.action:enabled {
+  color: white;
+  background-color: #2196f3;
+  border-color: #2196f3;
 }
 .name {
   font-weight: bold;
