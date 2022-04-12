@@ -141,6 +141,9 @@ body {
   color: #999;
   border-top: 2px solid #b2b2b2;
 }
+.status_items p {
+  margin-bottom: 0;
+}
 .action {
   font-size: inherit;
 }
