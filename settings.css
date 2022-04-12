@@ -135,6 +135,12 @@ body {
   content: "⚠ ";
   color: red;
 }
+#status {
+  padding: 50px;
+  font-size: 2em;
+  color: #999;
+  border-top: 2px solid #b2b2b2;
+}
 #about {
   padding: 50px;
   font-size: 2em;
