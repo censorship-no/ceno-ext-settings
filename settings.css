@@ -144,8 +144,20 @@ body {
 .status_items p {
   margin-bottom: 0;
 }
-.action {
+button.action {
   font-size: inherit;
+  border: #aaa solid 5px;
+  border-radius: 15px;
+}
+button.action:disabled {
+  color: #aaa;
+  background-color: #eaeaea;
+  border-color: #aaa;
+}
+button.action:enabled {
+  color: white;
+  background-color: #2196f3;
+  border-color: #2196f3;
 }
 .name {
   font-weight: bold;
