@@ -7,7 +7,8 @@
 
   "icons": {
     "32": "icons/ceno-logo-32.png",
-    "48": "icons/ceno-logo-48.png"
+    "48": "icons/ceno-logo-48.png",
+    "96": "icons/ceno-logo-96.png"
   },
 
   "browser_specific_settings": {
