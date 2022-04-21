@@ -4,6 +4,9 @@ body {
   margin:0;
   padding:0;
 }
+a:link {
+  color: #0ea5e9;
+}
 #test-warning {
   font-size: 2.75em;
   padding: 16px 50px;
