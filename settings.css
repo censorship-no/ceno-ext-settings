@@ -75,8 +75,8 @@ body {
 }
 /* When the checkbox is checked, add a blue background */
 .cb_container input:checked ~ .checkmark {
-  background-color: #2196f3;
-  border-color: #2196f3;
+  background-color: #0ea5e9;
+  border-color: #0ea5e9;
 }
 /* When the checkbox is display, gray out */
 .cb_container input:disabled ~ .checkmark {
@@ -156,8 +156,8 @@ button.action:disabled {
 }
 button.action:enabled {
   color: white;
-  background-color: #2196f3;
-  border-color: #2196f3;
+  background-color: #0ea5e9;
+  border-color: #0ea5e9;
 }
 .name {
   font-weight: bold;
