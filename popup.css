@@ -4,6 +4,9 @@ body {
   margin:0;
   padding:0;
 }
+a:link {
+  color: #0ea5e9;
+}
 #header {
   height: 120px;
   line-height: 120px;
