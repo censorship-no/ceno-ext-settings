@@ -14,7 +14,7 @@
         "message": "CENO Ustawienia"
     },
     "settingsWarn": {
-        "message": "Ustawienia na tej stronie służą jedynie do testowania funkcjonalności CENO w różnych warunkach sieciowych. Zostaną one $NOT_SAVED$ podczas zatrzymywania CENO. Więcej informacji można znaleźć w $MANUAL$.",
+        "message": "Ustawienia na tej stronie służą jedynie do testowania funkcjonalności CENO w różnych warunkach sieciowych. Więcej informacji można znaleźć w $MANUAL$.",
         "placeholders": {
             "not_saved": {
                 "content": "$1"
@@ -23,9 +23,6 @@
                 "content": "$2"
             }
         }
-    },
-    "settingsWarnNotsaved": {
-        "message": "nie zapisane"
     },
     "settingsWarnMan": {
         "message": "instrukcja obsługi"
@@ -172,5 +169,11 @@
     },
     "settingsStatusClientState": {
         "message": "Stan klienta Ouinet"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "Zewnętrzne punkty końcowe UDP"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "Publiczne punkty końcowe UDP"
     }
 }

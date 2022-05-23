@@ -24,9 +24,6 @@
             }
         }
     },
-    "settingsWarnNotsaved": {
-        "message": "সেভ হয় না"
-    },
     "settingsWarnMan": {
         "message": "ম্যানুয়াল"
     },

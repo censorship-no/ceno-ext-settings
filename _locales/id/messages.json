@@ -1,20 +1,20 @@
 {
     "extName": {
-        "message": "CENO-tillägget",
+        "message": "",
         "description": "Name of the extension."
     },
     "extDesc": {
-        "message": "Ger integration med CENO och Ouinet: sidcache och gruppering, information om sidans källa, inställningar och annan funktionalitet. Inkluderar kod från Localizer av rugk under MIT-licens.",
+        "message": "",
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": "CENO-varning"
+        "message": "Peringatan CENO"
     },
     "settingsTitle": {
-        "message": "CENO-inställningar"
+        "message": "Pengaturan CENO"
     },
     "settingsWarn": {
-        "message": "Inställningarna på den här sidan är endast avsedda för att testa CENO-funktionalitet i olika nätverksförhållanden. Dessa är $NOT_SAVED$ när du stoppar CENO. Se $MANUAL$ för mer information.",
+        "message": "",
         "placeholders": {
             "not_saved": {
                 "content": "$1"
@@ -25,32 +25,32 @@
         }
     },
     "settingsWarnMan": {
-        "message": "manual"
+        "message": ""
     },
     "settingsWarnManLN": {
-        "message": "https://censorship.no/user-manual/en/browser/settings.html",
+        "message": "",
         "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "settingsWarnManTI": {
-        "message": "Censorship.no! Användarmanual - CENO-inställningar"
+        "message": ""
     },
     "settingsSources": {
-        "message": "Källor för att hämta innehåll:"
+        "message": "Sumber pengambilan konten:"
     },
     "settingsSrcOrigin": {
-        "message": "Direkt från hemsida"
+        "message": "Langsung dari situs web"
     },
     "settingsSrcProxy": {
-        "message": "Via CENO-nätverket (privat)"
+        "message": "Melalui jaringan CENO (rahasia)"
     },
     "settingsSrcInjector": {
-        "message": "Via CENO-nätverket (publikt)"
+        "message": "Melalui jaringan CENO (publik)"
     },
     "settingsSrcDcache": {
-        "message": "Delad av andra CENO-användare"
+        "message": "Dibagikan oleh pengguna CENO lain"
     },
     "settingsPubwarn": {
-        "message": "$PUBLIC_BROWSING$ kommer att misslyckas med nuvarande inställningar.",
+        "message": "",
         "placeholders": {
             "public_browsing": {
                 "content": "$1"
@@ -58,10 +58,10 @@
         }
     },
     "settingsPubwarnPub": {
-        "message": "Publik surfning"
+        "message": ""
     },
     "settingsPrivwarn": {
-        "message": "$PRIVATE_BROWSING$ kommer att misslyckas med nuvarande inställningar.",
+        "message": "",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
@@ -69,67 +69,76 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": "Privat surfning"
+        "message": ""
     },
     "settingsStatusBrowser": {
-        "message": "Webbläsaren CENO"
+        "message": ""
     },
     "settingsStatusExtension": {
-        "message": "Tillägg för CENO"
+        "message": ""
     },
     "settingsStatusOuinet": {
-        "message": "Ouinet"
+        "message": ""
     },
     "settingsStatusProtocol": {
-        "message": "Ouinet-protokoll"
+        "message": ""
+    },
+    "settingsStatusClientState": {
+        "message": ""
     },
     "settingsStatusEndpoints": {
-        "message": "Lokala UDP-slutpunkter"
+        "message": ""
     },
     "settingsStatusUpnp": {
-        "message": "UPnP-status"
+        "message": ""
+    },
+    "settingsStatusExtEndpoints": {
+        "message": ""
+    },
+    "settingsStatusPubEndpoints": {
+        "message": ""
     },
     "settingsStatusReachability": {
-        "message": "Tillgänglighetsstatus"
+        "message": ""
     },
     "settingsStatusCacheSize": {
-        "message": "Lokal cache-storlek"
+        "message": ""
     },
     "settingsStatusCachePurge": {
-        "message": "Töm nu"
+        "message": ""
     },
     "settingsStatusCacheList": {
-        "message": "Innehåll som delats av dig"
+        "message": ""
     },
     "settingsLogEnable": {
-        "message": "Aktivera logg-fil"
+        "message": ""
     },
     "settingsLogDownload": {
-        "message": "Ladda ner"
+        "message": ""
     },
     "popupTitle": {
-        "message": "CENO-källor"
+        "message": ""
     },
     "popupHead": {
-        "message": "Antalet sid-element per källa:"
+        "message": ""
     },
     "popupSrcOrigin": {
-        "message": "Direkt från hemsidan"
+        "message": ""
     },
     "popupSrcProxy": {
-        "message": "Via CENO-nätverk (privat)"
+        "message": ""
     },
     "popupSrcInjector": {
-        "message": "Via CENO-nätverket (publikt)"
+        "message": ""
     },
     "popupSrcDcache": {
-        "message": "Delade av andra CENO-användare"
+        "message": ""
     },
     "popupSrcLcache": {
-        "message": "Delad av dig"
+        "message": ""
     },
     "popupFoot": {
-        "message": "Se $MANUAL$ för mer information om innehållskällor.",
+        "message": "",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -137,37 +146,34 @@
         }
     },
     "popupFootMan": {
-        "message": "manual"
+        "message": ""
     },
     "popupFootManLN": {
-        "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
+        "message": "",
         "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "popupFootManTI": {
-        "message": "Cenorship.no! Användarmanual - CENO-inställningar"
+        "message": ""
     },
     "updateTitle": {
-        "message": "CENO-uppdatering"
+        "message": ""
     },
     "updateMetacontent": {
-        "message": "CENO-uppdatering"
+        "message": ""
     },
     "updateHead": {
-        "message": "Din CENO-webbläsare är utdaterad."
+        "message": ""
     },
     "updateSubhead": {
-        "message": "Vänligen uppdatera din app via",
+        "message": "",
         "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
     },
     "updateGetgoogleplay": {
-        "message": "Hämta den på Google Play",
+        "message": "",
         "description": "Alt text for Google Play badge."
     },
     "updateGetpaskoocheh": {
-        "message": "Hämta den på Paskoochech",
+        "message": "",
         "description": "Alt text for Paskoocheh badge."
-    },
-    "settingsStatusClientState": {
-        "message": "Skick för Ouinet-klient"
     }
 }
