@@ -16,11 +16,8 @@
     "settingsWarn": {
         "message": "تنظیمات این صفحه فقط برای آزمایش عملکرد CENO در شرایط مختلف شبکه در نظر گرفته شده است. این‌ها هنگام توقف CENO $NOT_SAVED$ . برای اطلاعات بیشتر به بخش $MANUAL$ مراجعه کنید.",
         "placeholders": {
-            "not_saved": {
-                "content": "$1"
-            },
             "manual": {
-                "content": "$2"
+                "content": "$1"
             }
         }
     },
