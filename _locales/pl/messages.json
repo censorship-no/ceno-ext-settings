@@ -24,9 +24,6 @@
             }
         }
     },
-    "settingsWarnNotsaved": {
-        "message": "nie zapisane"
-    },
     "settingsWarnMan": {
         "message": "instrukcja obsługi"
     },

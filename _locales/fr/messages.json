@@ -24,9 +24,6 @@
             }
         }
     },
-    "settingsWarnNotsaved": {
-        "message": "pas enregistrés"
-    },
     "settingsWarnMan": {
         "message": "manuel"
     },

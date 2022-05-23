@@ -24,9 +24,6 @@
             }
         }
     },
-    "settingsWarnNotsaved": {
-        "message": "[Einstellungen] Nicht gespeichert"
-    },
     "settingsWarnMan": {
         "message": "Anleitung"
     },

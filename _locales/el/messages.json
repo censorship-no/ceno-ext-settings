@@ -24,9 +24,6 @@
             }
         }
     },
-    "settingsWarnNotsaved": {
-        "message": "χωρίς αποθήκευση"
-    },
     "settingsWarnMan": {
         "message": "εγχειρίδιο"
     },

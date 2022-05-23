@@ -24,9 +24,6 @@
             }
         }
     },
-    "settingsWarnNotsaved": {
-        "message": "не сохраняются"
-    },
     "settingsWarnMan": {
         "message": "руководством"
     },

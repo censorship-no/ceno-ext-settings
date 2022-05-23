@@ -24,9 +24,6 @@
             }
         }
     },
-    "settingsWarnNotsaved": {
-        "message": "kaydedilmez"
-    },
     "settingsWarnMan": {
         "message": "kılavuz"
     },

@@ -24,9 +24,6 @@
             }
         }
     },
-    "settingsWarnNotsaved": {
-        "message": "لم يتم الحفظ"
-    },
     "settingsWarnMan": {
         "message": "دليل"
     },

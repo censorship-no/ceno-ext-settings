@@ -24,9 +24,6 @@
             }
         }
     },
-    "settingsWarnNotsaved": {
-        "message": "tidak tersimpan"
-    },
     "settingsWarnMan": {
         "message": ""
     },
