@@ -1,17 +1,17 @@
 {
     "extName": {
-        "message": "إضافة متصفح CENO",
+        "message": "",
         "description": "Name of the extension."
     },
     "extDesc": {
-        "message": "دعاء الصم",
+        "message": "",
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": "تحذير متصفح CENO"
+        "message": "Peringatan CENO"
     },
     "settingsTitle": {
-        "message": "إعدادات متصفح CENO"
+        "message": "Pengaturan CENO"
     },
     "settingsWarn": {
         "message": "",
@@ -25,10 +25,10 @@
         }
     },
     "settingsWarnNotsaved": {
-        "message": "لم يتم الحفظ"
+        "message": "tidak tersimpan"
     },
     "settingsWarnMan": {
-        "message": "دليل"
+        "message": ""
     },
     "settingsWarnManLN": {
         "message": "",
@@ -38,19 +38,19 @@
         "message": ""
     },
     "settingsSources": {
-        "message": "مصادر استرجاع المحتوى:"
+        "message": "Sumber pengambilan konten:"
     },
     "settingsSrcOrigin": {
-        "message": "مباشر من الموقع"
+        "message": "Langsung dari situs web"
     },
     "settingsSrcProxy": {
-        "message": "عن طريق شبكه CENO (خاص)"
+        "message": "Melalui jaringan CENO (rahasia)"
     },
     "settingsSrcInjector": {
-        "message": "عن طريق شبكه CENO (عام)"
+        "message": "Melalui jaringan CENO (publik)"
     },
     "settingsSrcDcache": {
-        "message": "مشارك من قبل مستخدمي CENO الآخرين"
+        "message": "Dibagikan oleh pengguna CENO lain"
     },
     "settingsPubwarn": {
         "message": "",
@@ -86,10 +86,19 @@
     "settingsStatusProtocol": {
         "message": ""
     },
+    "settingsStatusClientState": {
+        "message": ""
+    },
     "settingsStatusEndpoints": {
         "message": ""
     },
     "settingsStatusUpnp": {
+        "message": ""
+    },
+    "settingsStatusExtEndpoints": {
+        "message": ""
+    },
+    "settingsStatusPubEndpoints": {
         "message": ""
     },
     "settingsStatusReachability": {
@@ -160,7 +169,7 @@
     },
     "updateSubhead": {
         "message": "",
-        "description": "Update hint for user, followed by graphical update badge links."
+        "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
     },
     "updateGetgoogleplay": {
         "message": "",
