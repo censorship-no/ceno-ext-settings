@@ -16,11 +16,8 @@
     "settingsWarn": {
         "message": "Die Einstellungen auf dieser Seite dienen nur zum Testen der CENO Funktionalität unter verschiedenen Netzwerk-Bedingungen. Für weitere Informationen konsultieren sie die $MANUAL$.",
         "placeholders": {
-            "not_saved": {
-                "content": "$1"
-            },
             "manual": {
-                "content": "$2"
+                "content": "$1"
             }
         }
     },

@@ -16,11 +16,8 @@
     "settingsWarn": {
         "message": "",
         "placeholders": {
-            "not_saved": {
-                "content": "$1"
-            },
             "manual": {
-                "content": "$2"
+                "content": "$1"
             }
         }
     },

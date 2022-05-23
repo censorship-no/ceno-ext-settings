@@ -16,11 +16,8 @@
     "settingsWarn": {
         "message": "此页面上的设置仅用于在各种网络条件下测试CENO功能。 停止CENO时，这些为$NOT_SAVED$。 有关更多信息，请参见$MANUAL$。",
         "placeholders": {
-            "not_saved": {
-                "content": "$1"
-            },
             "manual": {
-                "content": "$2"
+                "content": "$1"
             }
         }
     },

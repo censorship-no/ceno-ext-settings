@@ -16,11 +16,8 @@
     "settingsWarn": {
         "message": "Innstillinger for denne siden er kun myntet på testing av CENO-funksjonalitet under forskjellige nettverksforhold. Disse blir $NOT_SAVED$ når CENO stoppes. Sjekk $MANUAL$ for mer info.",
         "placeholders": {
-            "not_saved": {
-                "content": "$1"
-            },
             "manual": {
-                "content": "$2"
+                "content": "$1"
             }
         }
     },

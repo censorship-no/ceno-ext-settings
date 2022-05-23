@@ -16,11 +16,8 @@
     "settingsWarn": {
         "message": "Bu sayfadaki ayarlar, yalnızca çeşitli ağ koşullarında CENO işlevselliğini test etmeye yöneliktir. Daha fazla bilgi için $MANUAL$ sayfasına bakın.",
         "placeholders": {
-            "not_saved": {
-                "content": "$1"
-            },
             "manual": {
-                "content": "$2"
+                "content": "$1"
             }
         }
     },

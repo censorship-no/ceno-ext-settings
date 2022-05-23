@@ -16,11 +16,8 @@
     "settingsWarn": {
         "message": "এই পাতার সেটিংস্‌ শুধু নেটওয়ার্কের বিভিন্ন অবস্থায় CENO-র কার্যকারিতা পরীক্ষার জন্য। CENO বন্ধ করার সময় এগুলো $NOT_SAVED$। আরো জানতে $MANUAL$ দেখুন।",
         "placeholders": {
-            "not_saved": {
-                "content": "$1"
-            },
             "manual": {
-                "content": "$2"
+                "content": "$1"
             }
         }
     },

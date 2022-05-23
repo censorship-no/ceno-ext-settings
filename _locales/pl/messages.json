@@ -16,11 +16,8 @@
     "settingsWarn": {
         "message": "Ustawienia na tej stronie służą jedynie do testowania funkcjonalności CENO w różnych warunkach sieciowych. Więcej informacji można znaleźć w $MANUAL$.",
         "placeholders": {
-            "not_saved": {
-                "content": "$1"
-            },
             "manual": {
-                "content": "$2"
+                "content": "$1"
             }
         }
     },
