@@ -14,7 +14,7 @@
         "message": "CENO Einstellungen"
     },
     "settingsWarn": {
-        "message": "Die Einstellungen auf dieser Seite dienen nur zum Testen der CENO Funktionalität unter verschiedenen Netzwerk-Bedingungen. Diese sind $NOT_SAVED$ sobald CENO gestoppt wird. Für weitere Informationen konsultieren sie die $MANUAL$.",
+        "message": "Die Einstellungen auf dieser Seite dienen nur zum Testen der CENO Funktionalität unter verschiedenen Netzwerk-Bedingungen. Für weitere Informationen konsultieren sie die $MANUAL$.",
         "placeholders": {
             "not_saved": {
                 "content": "$1"
