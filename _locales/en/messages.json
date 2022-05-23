@@ -16,14 +16,10 @@
         "message": "CENO Settings"
     },
     "settingsWarn": {
-        "message": "Settings on this page are only intended for testing CENO functionality in various network conditions. These are $NOT_SAVED$ when stopping CENO. See the $MANUAL$ for more information.",
+        "message": "Settings on this page are only intended for testing CENO functionality in various network conditions. See the $MANUAL$ for more information.",
         "placeholders": {
-            "not_saved": { "content": "$1" },
-            "manual": { "content": "$2"}
+            "manual": { "content": "$1"}
         }
-    },
-    "settingsWarnNotsaved": {
-        "message": "not saved"
     },
     "settingsWarnMan": {
         "message": "manual"
