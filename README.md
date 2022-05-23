@@ -1,12 +1,24 @@
-# ouifennec-ext-settings
+# ceno-ext-settings
 
 A WebExtension frontend for the Ouinet HTTP Settings API, and the CENO update page.
 
 We use [web-ext](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Getting_started_with_web-ext) for development.
 
+## Prerequisites
+* [NodeJS & npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+* [web-ext](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/)
+
 ## Developing
 
+Clone the repository:
+``git clone git@github.com:censorship-no/ceno-ext-settings.git``
+
+CD into the folder and run:
+``npm install -g npm@8.5.5``
+
 Run `web-ext run` to test in a temporary profile on desktop (with live reload!), and `web-ext run --target=firefox-android` for same on mobile (more details and debugging instructions at [upstream docs](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Getting_started_with_web-ext#Testing_in_Firefox_for_Android)).
+
+Please note that, in Desktop Firefox >= 60, the CENO Extension automatically changes the browser's proxies while enabled. In a different browser, you will need to change proxy settings manually.
 
 ## Distributing
 

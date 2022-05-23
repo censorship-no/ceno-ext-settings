@@ -350,6 +350,32 @@ function clearLocalStorage() {
   });
 }
 
+/**
+ * Configure the Ouinet client as a proxy.
+ *
+ * As of 2022-02-22, and according
+ * to @url{https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/proxy/settings},
+ * this only works on Desktop Firefox >= 60.
+ */
+function setOuinetClientAsProxy() {
+  var proxyEndpoint = `${config.ouinet_client.host}:${config.ouinet_client.proxy.port}`;
+  browser.proxy.settings.set({value: {
+    proxyType: "manual",
+    http: proxyEndpoint,
+    ssl: proxyEndpoint,
+  }}).then(function() {
+    console.log("Ouinet client configured as proxy for HTTP and HTTPS.");
+  }).catch(function(e) {
+    // This does not work on Android:
+    // check occurrences of "proxy.settings is not supported on android"
+    // in `gecko-dev/toolkit/components/extensions/parent/ext-proxy.js`.
+    console.error("Failed to configure HTTP and HTTPS proxies:", e);
+  });
+}
+
+
+setOuinetClientAsProxy();
+
 browser.browserAction.onClicked.addListener(function() {
   var url = browser.extension.getURL("settings.html");
   browser.tabs.create({url: url});

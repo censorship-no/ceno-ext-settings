@@ -12,6 +12,7 @@ DEFINES['MOZ_APP_MAXVERSION'] = CONFIG['MOZ_APP_MAXVERSION']
 FINAL_TARGET_FILES.features['ceno@equalit.ie'] += [
   'background.js',
   'button.js',
+  'config.js',
   'content.js',
   'manifest.json',
   'popup.css',
@@ -44,6 +45,10 @@ FINAL_TARGET_FILES.features['ceno@equalit.ie']['_locales']['my'] += [
 
 FINAL_TARGET_FILES.features['ceno@equalit.ie']['_locales']['ru'] += [
   '_locales/ru/messages.json',
+]
+
+FINAL_TARGET_FILES.features['ceno@equalit.ie']['_locales']['uk'] += [
+  '_locales/uk/messages.json',
 ]
 
 FINAL_TARGET_FILES.features['ceno@equalit.ie']['icons'] += [

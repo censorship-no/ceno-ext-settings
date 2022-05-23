@@ -2,15 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <title data-i18n="settingsTitle">CENO Settings</title>
   <link rel="stylesheet" href="settings.css">
 <script type="module" src="localizer/Localizer.js"></script>
+<script src="config.js"></script>
 <script src="settings.js"></script>
 </head>
 <body>
   <div data-i18n="settingsTitle" id="header">CENO Settings</div>
   <p data-i18n="settingsWarn" data-opt-i18n-keep-children
      id="test-warning">Settings on this page are only intended for testing CENO functionality in various network conditions.
-    These are <strong data-i18n="settingsWarnNotsaved">not saved</strong> when stopping CENO.
     See the
     <a data-i18n="settingsWarnMan" data-i18n-href="settingsWarnManLN" data-i18n-title="settingsWarnManTI"
        href="https://censorship.no/user-manual/en/browser/settings.html"
@@ -54,18 +55,15 @@
          id="am-warning-private"><strong data-i18n="settingsPrivwarnPriv">Private browsing</strong> will fail with current settings.</p>
     </div>
   </form>
-  <div id="about">
-    <span data-i18n="settingsStatusBrowser" class="name">CENO Browser</span><br>
-    <span id="ceno_version"> </span>
-    <p>
-    <span data-i18n="settingsStatusExtension" class="name">CENO Extension</span><br>
-    <span id="ceno_extension_version"> </span>
-    <p>
-    <span data-i18n="settingsStatusOuinet" class="name">Ouinet</span><br>
-    <span id="ouinet_version"> </span> <span id="ouinet_build_id"> </span>
-    <p>
-    <span data-i18n="settingsStatusProtocol" class="name">Ouinet protocol</span><br>
-    <span id="ouinet_protocol"> </span>
+  <div class="status_items">
+    <form>
+      <span data-i18n="settingsStatusCacheSize" class="name">Local cache size</span><br>
+      <span id="local_cache_size"> </span>
+      <button data-i18n="settingsStatusCachePurge"
+              class="action" type="button" id="purge_cache" disabled>Purge now</button>
+      <a data-i18n="settingsStatusCacheList" id="fe-link-cache-list"
+         href="#" class="download" target="_blank">Content shared by you</a>
+    </form>
     <p>
     <span data-i18n="settingsStatusClientState" class="name">Ouinet client state</span><br>
     <span id="state"> </span>
@@ -84,15 +82,19 @@
     <p>
     <span data-i18n="settingsStatusPubEndpoints" class="name">Public UDP endpoints</span><br>
     <span id="public_udp_endpoints"> </span>
+  </div>
+  <div class="status_items">
+    <span data-i18n="settingsStatusBrowser" class="name">CENO Browser</span><br>
+    <span id="ceno_version"> </span>
     <p>
-    <form>
-      <span data-i18n="settingsStatusCacheSize" class="name">Local cache size</span><br>
-      <span id="local_cache_size"> </span>
-      <button data-i18n="settingsStatusCachePurge"
-              class="action" type="button" id="purge_cache" disabled>Purge now</button>
-      <a data-i18n="settingsStatusCacheList"
-         href="http://127.0.0.1:8078/groups.txt" class="download" target="_blank">Content shared by you</a>
-    </form>
+    <span data-i18n="settingsStatusExtension" class="name">CENO Extension</span><br>
+    <span id="ceno_extension_version"> </span>
+    <p>
+    <span data-i18n="settingsStatusOuinet" class="name">Ouinet</span><br>
+    <span id="ouinet_version"> </span> <span id="ouinet_build_id"> </span>
+    <p>
+    <span data-i18n="settingsStatusProtocol" class="name">Ouinet protocol</span><br>
+    <span id="ouinet_protocol"> </span>
   </div>
   <form class="cb_form">
     <div class="row">
@@ -100,8 +102,8 @@
         <input type="checkbox" id="logfile" disabled>
         <span class="checkmark"></span>
         <div data-i18n="settingsLogEnable" class="cb_label">Enable log file</div>
-        <a data-i18n="settingsLogDownload"
-           href="http://127.0.0.1:8078/logfile.txt" class="download" download="ceno-logfile.txt" target="_blank">Download</a>
+        <a data-i18n="settingsLogDownload" id="fe-link-log-file"
+           href="#" class="download" download="ceno-logfile.txt" target="_blank">Download</a>
       </label>
     </div>
   </form>
