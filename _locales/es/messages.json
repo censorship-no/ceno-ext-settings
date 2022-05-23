@@ -12,7 +12,7 @@
         "message": "Configuración de CENO"
     },
     "settingsWarn": {
-        "message": "Los ajustes de esta página son sólo para probar las funciones de CENO bajo condiciones diversas de conectividad. $NOT_SAVED$ al detener CENO. Consulte el $MANUAL$ para más información.",
+        "message": "Los ajustes de esta página son sólo para probar las funciones de CENO bajo condiciones diversas de conectividad. Consulte el $MANUAL$ para más información.",
         "placeholders": {
             "manual": {
                 "content": "$1"
