@@ -14,7 +14,7 @@
         "message": "CENO Ayarları"
     },
     "settingsWarn": {
-        "message": "Bu sayfadaki ayarlar, yalnızca çeşitli ağ koşullarında CENO işlevselliğini test etmeye yöneliktir. Bunlar, CENO'yu durdururken $NOT_SAVED$. Daha fazla bilgi için $MANUAL$ sayfasına bakın.",
+        "message": "Bu sayfadaki ayarlar, yalnızca çeşitli ağ koşullarında CENO işlevselliğini test etmeye yöneliktir. Daha fazla bilgi için $MANUAL$ sayfasına bakın.",
         "placeholders": {
             "not_saved": {
                 "content": "$1"
