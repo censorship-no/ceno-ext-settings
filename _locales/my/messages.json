@@ -21,9 +21,6 @@
             }
         }
     },
-    "settingsWarnNotsaved": {
-        "message": "သိမ်းဆည်းမထားပါ"
-    },
     "settingsWarnMan": {
         "message": "လက်စွဲ"
     },

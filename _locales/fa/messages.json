@@ -21,9 +21,6 @@
             }
         }
     },
-    "settingsWarnNotsaved": {
-        "message": "ذخیره نمی‌شوند"
-    },
     "settingsWarnMan": {
         "message": "تنظیمات دستی"
     },
