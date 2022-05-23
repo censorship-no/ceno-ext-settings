@@ -14,11 +14,8 @@
     "settingsWarn": {
         "message": "Los ajustes de esta página son sólo para probar las funciones de CENO bajo condiciones diversas de conectividad. $NOT_SAVED$ al detener CENO. Consulte el $MANUAL$ para más información.",
         "placeholders": {
-            "not_saved": {
-                "content": "$1"
-            },
             "manual": {
-                "content": "$2"
+                "content": "$1"
             }
         }
     },
