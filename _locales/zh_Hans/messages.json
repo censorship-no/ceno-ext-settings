@@ -24,9 +24,6 @@
             }
         }
     },
-    "settingsWarnNotsaved": {
-        "message": "未保存"
-    },
     "settingsWarnMan": {
         "message": "手册"
     },

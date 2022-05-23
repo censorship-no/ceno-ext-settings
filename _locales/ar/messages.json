@@ -4,7 +4,7 @@
         "description": "Name of the extension."
     },
     "extDesc": {
-        "message": "",
+        "message": "دعاء الصم",
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
@@ -23,9 +23,6 @@
                 "content": "$2"
             }
         }
-    },
-    "settingsWarnNotsaved": {
-        "message": "لم يتم الحفظ"
     },
     "settingsWarnMan": {
         "message": "دليل"
