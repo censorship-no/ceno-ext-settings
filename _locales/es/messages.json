@@ -19,9 +19,6 @@
             }
         }
     },
-    "settingsWarnNotsaved": {
-        "message": "No se guardan"
-    },
     "settingsWarnMan": {
         "message": "manual"
     },

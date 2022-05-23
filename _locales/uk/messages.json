@@ -21,9 +21,6 @@
             }
         }
     },
-    "settingsWarnNotsaved": {
-        "message": "не зберігаються"
-    },
     "settingsWarnMan": {
         "message": "посібник"
     },
