@@ -249,7 +249,8 @@ function sleep(ms) {
 }
 
 function setFrontEndLinks() {
-  for (const [id, path] of [ ["fe-link-cache-list", "/groups.txt"],
+  for (const [id, path] of [ ["fe-link-btbsx-change", "/#input-bt_extra_bootstraps"],
+                             ["fe-link-cache-list", "/groups.txt"],
                              ["fe-link-log-file", "/logfile.txt"],
                            ]) {
     var elem = document.getElementById(id);
