@@ -192,7 +192,7 @@ class State {
 
     var texts = ["ouinet_version", "ouinet_build_id", "ouinet_protocol",
                  "state", "local_udp_endpoints", "external_udp_endpoints", "public_udp_endpoints",
-                 "is_upnp_active", "udp_world_reachable"];
+                 "is_upnp_active", "udp_world_reachable", "bt_extra_bootstraps"];
     texts.map(v => this.items.set(v, new Text(v)));
 
     var dsizes = ["local_cache_size"]
