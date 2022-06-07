@@ -162,6 +162,9 @@ button.action:enabled {
   background-color: #0ea5e9;
   border-color: #0ea5e9;
 }
+input.input {
+  font-size: inherit;
+}
 .name {
   font-weight: bold;
 }
