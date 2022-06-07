@@ -98,6 +98,15 @@
     "settingsStatusCacheList": {
         "message": "Contenu partagé par vous"
     },
+    "settingsStatusBtBootstraps": {
+        "message": ""
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": ""
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": ""
+    },
     "settingsLogEnable": {
         "message": "Activer le fichier journal"
     },
