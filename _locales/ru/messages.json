@@ -98,6 +98,15 @@
     "settingsStatusCacheList": {
         "message": "Предоставленный вами контент"
     },
+    "settingsStatusBtBootstraps": {
+        "message": ""
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": ""
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": ""
+    },
     "settingsLogEnable": {
         "message": "Включить ведение журнала"
     },

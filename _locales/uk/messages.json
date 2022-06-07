@@ -107,6 +107,15 @@
     "settingsStatusCacheList": {
         "message": "Вміст, який Ви поширили"
     },
+    "settingsStatusBtBootstraps": {
+        "message": ""
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": ""
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": ""
+    },
     "settingsLogEnable": {
         "message": "Дозволити файл журналу"
     },
