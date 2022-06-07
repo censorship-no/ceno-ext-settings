@@ -103,6 +103,15 @@
     "settingsStatusCacheList": {
         "message": "Content shared by you"
     },
+    "settingsStatusBtBootstraps": {
+        "message": "Extra BitTorrent bootstraps"
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": "HOST1 HOST2:PORT ..."
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": "Save"
+    },
     "settingsLogEnable": {
         "message": "Enable log file"
     },
