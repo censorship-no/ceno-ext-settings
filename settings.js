@@ -100,6 +100,7 @@ class TextInput extends Text {
     this.id = id;
     this.separator = separator;
     this.button = document.getElementById("change-" + id);
+    this.changedHint = document.getElementById("changed-" + id);
 
     this.elem.form.addEventListener('submit', event => {
       this.doChange();
@@ -110,6 +111,8 @@ class TextInput extends Text {
 
   set(value) {
     if (!this.elem) return;
+    this.changedHint.style.display = "none";
+
     // Do not refresh a field which is being edited.
     if (document.activeElement === this.elem) return;
 
@@ -132,7 +135,9 @@ class TextInput extends Text {
     if (!this.elem) return;
     const name = this.id;
     const newValue = this.elem.value.replace(/ /g, "+");
-    fetch(SET_VALUE_ENDPOINT + `?${name}=${newValue}`);
+    fetch(SET_VALUE_ENDPOINT + `?${name}=${newValue}`)
+      .then(_ => { this.changedHint.style.display = ""; })  // until next refresh
+    ;
   }
 }
 
