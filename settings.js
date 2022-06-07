@@ -97,8 +97,15 @@ class DataSizeText extends Text {
 class TextInput extends Text {
   constructor(id, separator=" ") {
     super(id);
+    this.id = id;
     this.separator = separator;
     this.button = document.getElementById("change-" + id);
+
+    this.elem.form.addEventListener('submit', event => {
+      this.doChange();
+      event.preventDefault();
+    });
+    this.button.addEventListener('click', event => this.doChange());
   }
 
   set(value) {
@@ -119,6 +126,13 @@ class TextInput extends Text {
     this.elem.value = "";
     this.elem.disabled = true;
     this.button.disabled = true;
+  }
+
+  doChange() {
+    if (!this.elem) return;
+    const name = this.id;
+    const newValue = this.elem.value.replace(/ /g, "+");
+    fetch(SET_VALUE_ENDPOINT + `?${name}=${newValue}`);
   }
 }
 
