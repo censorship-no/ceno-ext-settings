@@ -99,19 +99,19 @@ class TextInput extends Text {
     super(id);
     this.id = id;
     this.separator = separator;
-    this.button = document.getElementById("change-" + id);
-    this.changedHint = document.getElementById("changed-" + id);
+    this.button = document.getElementById("save-" + id);
+    this.savedHint = document.getElementById("saved-" + id);
 
     this.elem.form.addEventListener('submit', event => {
-      this.doChange();
+      this.doSave();
       event.preventDefault();
     });
-    this.button.addEventListener('click', event => this.doChange());
+    this.button.addEventListener('click', event => this.doSave());
   }
 
   set(value) {
     if (!this.elem) return;
-    this.changedHint.style.display = "none";
+    this.savedHint.style.display = "none";
 
     // Do not refresh a field which is being edited.
     if (document.activeElement === this.elem) return;
@@ -131,12 +131,12 @@ class TextInput extends Text {
     this.button.disabled = true;
   }
 
-  doChange() {
+  doSave() {
     if (!this.elem) return;
     const name = this.id;
     const newValue = this.elem.value.replace(/ /g, "+");
     fetch(SET_VALUE_ENDPOINT + `?${name}=${newValue}`)
-      .then(_ => { this.changedHint.style.display = ""; })  // until next refresh
+      .then(_ => { this.savedHint.style.display = ""; })  // until next refresh
     ;
   }
 }
