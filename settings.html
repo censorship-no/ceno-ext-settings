@@ -83,10 +83,13 @@
     <span data-i18n="settingsStatusPubEndpoints" class="name">Public UDP endpoints</span><br>
     <span id="public_udp_endpoints"> </span>
     <p>
-    <span data-i18n="settingsStatusBtBootstraps" class="name">Extra BitTorrent bootstraps</span>
-    <a data-i18n="settingsStatusBtBootstrapsChange" id="fe-link-bt-bootstraps"
-       href="#" class="download" target="_blank">Change</a><br>
-    <span id="bt_extra_bootstraps"> </span>
+    <form>
+      <span data-i18n="settingsStatusBtBootstraps" class="name">Extra BitTorrent bootstraps</span><br>
+      <input data-i18n-placeholder="settingsStatusBtBootstrapsPlaceholder"
+             type="text" id="bt_extra_bootstraps" placeholder="HOST1 HOST2:PORT ..." disabled>
+      <button data-i18n="settingsStatusBtBootstrapsChange"
+              class="action" type="button" disabled>Change</button>
+    </form>
   </div>
   <div class="status_items">
     <span data-i18n="settingsStatusBrowser" class="name">CENO Browser</span><br>
