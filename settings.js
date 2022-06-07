@@ -94,6 +94,34 @@ class DataSizeText extends Text {
   }
 }
 
+class TextInput extends Text {
+  constructor(id, separator=" ") {
+    super(id);
+    this.separator = separator;
+    this.button = document.getElementById("change-" + id);
+  }
+
+  set(value) {
+    if (!this.elem) return;
+    // Do not refresh a field which is being edited.
+    if (document.activeElement === this.elem) return;
+
+    this.elem.value = Array.isArray(value)
+      ? value.join(this.separator)
+      : value;
+
+    this.elem.disabled = false;
+    this.button.disabled = false;
+  }
+
+  disable() {
+    if (!this.elem) return;
+    this.elem.value = "";
+    this.elem.disabled = true;
+    this.button.disabled = true;
+  }
+}
+
 class LogControl {
   constructor(id) {
     var elem = document.getElementById(id);
@@ -197,6 +225,9 @@ class State {
 
     var dsizes = ["local_cache_size"]
     dsizes.map(v => this.items.set(v, new DataSizeText(v)));
+
+    var text_inputs_sp = ["bt_extra_bootstraps"]
+    text_inputs_sp.map(v => this.items.set(v, new TextInput(v, " ")));
 
     this.setCenoVersion();
     this.setCenoExtensionVersion();
