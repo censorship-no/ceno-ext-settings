@@ -96,13 +96,13 @@
         "message": "Contenido compartido por ti"
     },
     "settingsStatusBtBootstraps": {
-        "message": ""
+        "message": "Servidores extra de arranque de BitTorrent"
     },
     "settingsStatusBtBootstrapsPlaceholder": {
-        "message": ""
+        "message": "ANFITRIÓN1 ANFITRIÓN2:PUERTO …"
     },
     "settingsStatusBtBootstrapsSave": {
-        "message": ""
+        "message": "Guardar"
     },
     "settingsLogEnable": {
         "message": "Activar registro"
