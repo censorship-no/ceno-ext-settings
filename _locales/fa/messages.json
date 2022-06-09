@@ -98,6 +98,15 @@
     "settingsStatusCacheList": {
         "message": "محتوای به اشتراک گذاشته شده توسط شما"
     },
+    "settingsStatusBtBootstraps": {
+        "message": ""
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": ""
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": ""
+    },
     "settingsLogEnable": {
         "message": "رخدادنگاری را فعال کن"
     },

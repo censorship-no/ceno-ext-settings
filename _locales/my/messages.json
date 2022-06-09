@@ -98,6 +98,15 @@
     "settingsStatusCacheList": {
         "message": "သင်မျှဝေထားသော အကြောင်းအရာ"
     },
+    "settingsStatusBtBootstraps": {
+        "message": ""
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": ""
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": ""
+    },
     "settingsLogEnable": {
         "message": "စာရင်းဖိုင်ကို ဖွင့်ပါ"
     },
