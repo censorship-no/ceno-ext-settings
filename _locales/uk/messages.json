@@ -108,13 +108,13 @@
         "message": "Вміст, який Ви поширили"
     },
     "settingsStatusBtBootstraps": {
-        "message": ""
+        "message": "Додаткове завантаження BitTorrent"
     },
     "settingsStatusBtBootstrapsPlaceholder": {
-        "message": ""
+        "message": "HOST1 HOST2:ПОРТ ..."
     },
     "settingsStatusBtBootstrapsSave": {
-        "message": ""
+        "message": "Зберегти"
     },
     "settingsLogEnable": {
         "message": "Дозволити файл журналу"
