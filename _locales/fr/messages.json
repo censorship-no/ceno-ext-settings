@@ -102,7 +102,7 @@
         "message": ""
     },
     "settingsStatusBtBootstrapsPlaceholder": {
-        "message": "HÔTE1 HÔTE2:PORT ..."
+        "message": "HÔTE1 HÔTE2:PORT …"
     },
     "settingsStatusBtBootstrapsSave": {
         "message": "Sauvegarder"
