@@ -102,10 +102,10 @@
         "message": ""
     },
     "settingsStatusBtBootstrapsPlaceholder": {
-        "message": ""
+        "message": "HÔTE1 HÔTE2:PORT ..."
     },
     "settingsStatusBtBootstrapsSave": {
-        "message": ""
+        "message": "Sauvegarder"
     },
     "settingsLogEnable": {
         "message": "Activer le fichier journal"
