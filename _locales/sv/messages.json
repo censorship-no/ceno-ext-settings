@@ -172,5 +172,14 @@
     },
     "settingsStatusPubEndpoints": {
         "message": "Publika UDP-slutpunkter"
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": "Spara"
+    },
+    "settingsStatusBtBootstraps": {
+        "message": "Extra BitTorrent-suplement"
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": "VÄRD1 VÄRD2:PORT ..."
     }
 }
