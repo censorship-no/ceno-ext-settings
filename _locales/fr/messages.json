@@ -105,7 +105,7 @@
         "message": "HÔTE1 HÔTE2:PORT …"
     },
     "settingsStatusBtBootstrapsSave": {
-        "message": "Sauvegarder"
+        "message": "Enregistrer"
     },
     "settingsLogEnable": {
         "message": "Activer le fichier journal"
