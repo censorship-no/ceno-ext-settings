@@ -1,6 +1,6 @@
 {
     "extName": {
-        "message": "CENO 扩展",
+        "message": "CENO扩展",
         "description": "Name of the extension."
     },
     "extDesc": {
@@ -8,13 +8,13 @@
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": "CENO 警告"
+        "message": "CENO警告"
     },
     "settingsTitle": {
-        "message": "CENO 设置"
+        "message": "CENO设置"
     },
     "settingsWarn": {
-        "message": "此页面上的设置仅用于在各种网络条件下测试CENO功能。 停止CENO时，这些为$NOT_SAVED$。 有关更多信息，请参见$MANUAL$。",
+        "message": "此页面上的设置仅用于在各种网络条件下测试CENO的功能。有关更多信息，请参见$MANUAL$。",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -38,7 +38,7 @@
         "message": "直接来自网站"
     },
     "settingsSrcProxy": {
-        "message": "经由 CENO 网络 (private)"
+        "message": "经由 CENO 网络 （隐私）"
     },
     "settingsSrcInjector": {
         "message": "通过 CENO 网络（公共）"
@@ -114,10 +114,10 @@
         "message": "直接从网站"
     },
     "popupSrcProxy": {
-        "message": "经由 CENO 网络 (private)"
+        "message": "经由 CENO 网络 （隐私）"
     },
     "popupSrcInjector": {
-        "message": "经由 CENO 网络 (public)"
+        "message": "经由 CENO 网络 （公共）"
     },
     "popupSrcDcache": {
         "message": "由其他CENO用户共享"
@@ -144,7 +144,7 @@
         "message": "Censorship.no! 用户文档 – CENO 设置"
     },
     "updateTitle": {
-        "message": "CENO 更新"
+        "message": "CENO更新"
     },
     "updateMetacontent": {
         "message": "CENO 更新"
@@ -166,5 +166,11 @@
     },
     "settingsStatusClientState": {
         "message": "Ouinet客户端状态"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "公共UDP endpoints"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "外部UDP endpoints"
     }
 }

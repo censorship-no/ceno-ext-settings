@@ -14,7 +14,7 @@
         "message": "CENO-inställningar"
     },
     "settingsWarn": {
-        "message": "Inställningarna på den här sidan är endast avsedda för att testa CENO-funktionalitet i olika nätverksförhållanden. Dessa är $NOT_SAVED$ när du stoppar CENO. Se $MANUAL$ för mer information.",
+        "message": "Inställningarna på den här sidan är endast avsedda för att testa CENO-funktionalitet i olika nätverksförhållanden. Se $MANUAL$ för mer information.",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -166,5 +166,20 @@
     },
     "settingsStatusClientState": {
         "message": "Skick för Ouinet-klient"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "Externa UDP-slutpunkter"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "Publika UDP-slutpunkter"
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": "Spara"
+    },
+    "settingsStatusBtBootstraps": {
+        "message": "Extra BitTorrent-suplement"
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": "VÄRD1 VÄRD2:PORT ..."
     }
 }

@@ -69,7 +69,7 @@
         "message": "Приватний перегляд"
     },
     "settingsStatusBrowser": {
-        "message": "Оглядач CENO"
+        "message": "Браузер CENO"
     },
     "settingsStatusExtension": {
         "message": "Розширення CENO"
@@ -108,13 +108,13 @@
         "message": "Вміст, який Ви поширили"
     },
     "settingsStatusBtBootstraps": {
-        "message": ""
+        "message": "Додаткове завантаження BitTorrent"
     },
     "settingsStatusBtBootstrapsPlaceholder": {
-        "message": ""
+        "message": "HOST1 HOST2:ПОРТ ..."
     },
     "settingsStatusBtBootstrapsSave": {
-        "message": ""
+        "message": "Зберегти"
     },
     "settingsLogEnable": {
         "message": "Дозволити файл журналу"
@@ -168,7 +168,7 @@
         "message": "Оновлення CENO"
     },
     "updateHead": {
-        "message": "Ваш Оглядач CENO застарів."
+        "message": "Ваш браузер CENO застарів."
     },
     "updateSubhead": {
         "message": "Будь ласка, оновіть свій застосунок через",
