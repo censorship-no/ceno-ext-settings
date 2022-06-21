@@ -99,13 +99,13 @@
         "message": "Предоставленный вами контент"
     },
     "settingsStatusBtBootstraps": {
-        "message": ""
+        "message": "Дополнительные загрузчики BitTorrent"
     },
     "settingsStatusBtBootstrapsPlaceholder": {
-        "message": ""
+        "message": "HOST1 HOST2:ПОРТ ..."
     },
     "settingsStatusBtBootstrapsSave": {
-        "message": ""
+        "message": "Сохранить"
     },
     "settingsLogEnable": {
         "message": "Включить ведение журнала"

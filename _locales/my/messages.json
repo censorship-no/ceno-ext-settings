@@ -99,13 +99,13 @@
         "message": "သင်မျှဝေထားသော အကြောင်းအရာ"
     },
     "settingsStatusBtBootstraps": {
-        "message": ""
+        "message": "အပို BitTorrent bootstrap များ"
     },
     "settingsStatusBtBootstrapsPlaceholder": {
-        "message": ""
+        "message": "HOST1 HOST2:PORT ..."
     },
     "settingsStatusBtBootstrapsSave": {
-        "message": ""
+        "message": "သိမ်းပါ"
     },
     "settingsLogEnable": {
         "message": "စာရင်းဖိုင်ကို ဖွင့်ပါ"

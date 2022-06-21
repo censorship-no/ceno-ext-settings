@@ -99,13 +99,13 @@
         "message": "Contenu partagé par vous"
     },
     "settingsStatusBtBootstraps": {
-        "message": ""
+        "message": "Bootstraps BitTorrent supplémentaires"
     },
     "settingsStatusBtBootstrapsPlaceholder": {
-        "message": ""
+        "message": "HÔTE1 HÔTE2:PORT …"
     },
     "settingsStatusBtBootstrapsSave": {
-        "message": ""
+        "message": "Enregistrer"
     },
     "settingsLogEnable": {
         "message": "Activer le fichier journal"

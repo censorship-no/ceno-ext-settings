@@ -99,13 +99,13 @@
         "message": "محتوای به اشتراک گذاشته شده توسط شما"
     },
     "settingsStatusBtBootstraps": {
-        "message": ""
+        "message": "بوت‌استرپ‌های اضافی بیت‌تورنت"
     },
     "settingsStatusBtBootstrapsPlaceholder": {
-        "message": ""
+        "message": "هاست ۱ - هاست ۲: پورت ..."
     },
     "settingsStatusBtBootstrapsSave": {
-        "message": ""
+        "message": "ذخیره"
     },
     "settingsLogEnable": {
         "message": "رخدادنگاری را فعال کن"
