@@ -8,6 +8,7 @@ const OUINET_RESPONSE_VERSION_MAX = 6
 // will always be considered private (thus non-cacheable).
 const NO_CACHE_URL_REGEXPS = [
     /^https?:\/\/(www\.)?google\.com\/complete\//,  // Google Search completion
+    /^https?:\/\/(www\.)?duckduckgo\.com\/ac\//,  // DuckDuckGo Search completion
 ]
 
 
