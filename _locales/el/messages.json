@@ -172,5 +172,14 @@
     },
     "settingsStatusExtEndpoints": {
         "message": "Εξωτερικό τελικό σημείο UDP"
+    },
+    "settingsStatusBtBootstraps": {
+        "message": "Επιπλέον διακομιστές bootstraps BitTorrent"
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": "HOST1 HOST2:PORT ..."
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": "Αποθήκευση"
     }
 }
