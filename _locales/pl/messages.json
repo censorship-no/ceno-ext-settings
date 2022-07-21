@@ -172,5 +172,14 @@
     },
     "settingsStatusPubEndpoints": {
         "message": "Publiczne punkty końcowe UDP"
+    },
+    "settingsStatusBtBootstraps": {
+        "message": "Dodatkowe bootstrapy BitTorrent"
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": "Zapisz"
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": "HOST1 HOST2:PORT ..."
     }
 }
