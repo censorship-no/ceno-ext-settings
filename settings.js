@@ -308,18 +308,18 @@ function setFrontEndLinks() {
   }
 }
 
-/* TODO: Should select tab matching href if already open, and refresh the tab so contents are updated */
-document.addEventListener("click", (e) => {
-    if (e.target.href) {
-        browser.tabs.create({
-            url: e.target.href,
-            active: true
-            });
-        window.close();
-    }
-})
-
 window.addEventListener("load", async () => {
+  /* TODO: Should select tab matching href if already open, and refresh the tab so contents are updated */
+  document.addEventListener("click", (e) => {
+    if (e.target.href) {
+      browser.tabs.create({
+        url: e.target.href,
+        active: true
+      });
+      window.close();
+    }
+  })
+
   setFrontEndLinks();
 
   let state = new State();

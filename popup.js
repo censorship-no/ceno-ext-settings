@@ -32,18 +32,17 @@ async function updatePage() {
   set('local-cache');
 }
 
-/* TODO: settings.js uses same listener, should be shared code */
-document.addEventListener("click", (e) => {
-    if (e.target.href) {
-        browser.tabs.create({
-            url: e.target.href,
-            active: true
-            });
-        window.close();
-    }
-})
-
 (async function start() {
+  /* TODO: settings.js uses same listener, should be shared code */
+  document.addEventListener("click", (e) => {
+    if (e.target.href) {
+      browser.tabs.create({
+        url: e.target.href,
+        active: true
+        });
+      window.close();
+    }
+  })
   while (true) {
     await updatePage();
     await sleep(0.5);
