@@ -14,7 +14,7 @@
         "message": "Pengaturan CENO"
     },
     "settingsWarn": {
-        "message": "",
+        "message": "Pengaturan di halaman ini hanya untuk uji coba fungsi CENO di berbagai kondisi jaringan. Lihat $MANUAL$ untuk informasi lebih lanjut.",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -22,14 +22,14 @@
         }
     },
     "settingsWarnMan": {
-        "message": ""
+        "message": "manual"
     },
     "settingsWarnManLN": {
-        "message": "",
+        "message": "https://censorship.no/user-manual/en/browser/settings.html",
         "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "settingsWarnManTI": {
-        "message": ""
+        "message": "Petunjuk Pengguna Censorship.no! - Pengaturan CENO"
     },
     "settingsSources": {
         "message": "Sumber pengambilan konten:"
@@ -47,7 +47,7 @@
         "message": "Dibagikan oleh pengguna CENO lain"
     },
     "settingsPubwarn": {
-        "message": "",
+        "message": "$PUBLIC_BROWSING$ akan gagal dengan pengaturan saat ini.",
         "placeholders": {
             "public_browsing": {
                 "content": "$1"
@@ -58,7 +58,7 @@
         "message": ""
     },
     "settingsPrivwarn": {
-        "message": "",
+        "message": "$PRIVATE_BROWSING$ akan gagal dengan pengaturan saat ini.",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
@@ -69,43 +69,43 @@
         "message": ""
     },
     "settingsStatusBrowser": {
-        "message": ""
+        "message": "Browser CENO"
     },
     "settingsStatusExtension": {
-        "message": ""
+        "message": "Ekstensi CENO"
     },
     "settingsStatusOuinet": {
-        "message": ""
+        "message": "Ouinet"
     },
     "settingsStatusProtocol": {
-        "message": ""
+        "message": "Protokol Ouinet"
     },
     "settingsStatusClientState": {
-        "message": ""
+        "message": "Status klien Ouinet"
     },
     "settingsStatusEndpoints": {
-        "message": ""
+        "message": "Endpoint UDP Lokal"
     },
     "settingsStatusUpnp": {
-        "message": ""
+        "message": "Status UPnP"
     },
     "settingsStatusExtEndpoints": {
-        "message": ""
+        "message": "Endpoint UDP Eksternal"
     },
     "settingsStatusPubEndpoints": {
-        "message": ""
+        "message": "Endpoint UDP Publik"
     },
     "settingsStatusReachability": {
         "message": ""
     },
     "settingsStatusCacheSize": {
-        "message": ""
+        "message": "Ukuran cache lokal"
     },
     "settingsStatusCachePurge": {
         "message": ""
     },
     "settingsStatusCacheList": {
-        "message": ""
+        "message": "Konten yang dibagikan olehmu"
     },
     "settingsLogEnable": {
         "message": ""
