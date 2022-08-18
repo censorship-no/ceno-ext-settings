@@ -172,5 +172,11 @@
     "updateGetpaskoocheh": {
         "message": "Hol es dir von Paskoocheh",
         "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusBtBootstraps": {
+        "message": "Zusätzliche BitTorrent-Bootstraps"
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": "Speichern"
     }
 }
