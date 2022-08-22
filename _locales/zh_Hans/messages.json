@@ -172,5 +172,14 @@
     },
     "settingsStatusExtEndpoints": {
         "message": "外部UDP endpoints"
+    },
+    "settingsStatusBtBootstraps": {
+        "message": "附加的BT框架"
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": "主机1 主机2:端口 ..."
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": "保存"
     }
 }
