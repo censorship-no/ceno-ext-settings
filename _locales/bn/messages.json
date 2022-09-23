@@ -14,7 +14,7 @@
         "message": "CENO-র সেটিংস্‌"
     },
     "settingsWarn": {
-        "message": "এই পাতার সেটিংস্‌ শুধু নেটওয়ার্কের বিভিন্ন অবস্থায় CENO-র কার্যকারিতা পরীক্ষার জন্য। CENO বন্ধ করার সময় এগুলো $NOT_SAVED$। আরো জানতে $MANUAL$ দেখুন।",
+        "message": "এই পৃষ্ঠার সেটিংস শুধুমাত্র বিভিন্ন নেটওয়ার্ক অবস্থার মধ্যে CENO কার্যকারিতা পরীক্ষা করার উদ্দেশ্যে। আরও তথ্যের জন্য $MANUAL$ দেখুন।",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -87,7 +87,7 @@
         "message": "UPnP-র অবস্থা"
     },
     "settingsStatusReachability": {
-        "message": ""
+        "message": "নাগালের অবস্থা"
     },
     "settingsStatusCacheSize": {
         "message": "লোকাল ক্যাশের পরিমাণ"
@@ -163,5 +163,23 @@
     "updateGetpaskoocheh": {
         "message": "Paskoocheh থেকে",
         "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "বাহ্যিক UDP শেষ পয়েন্ট"
+    },
+    "settingsStatusClientState": {
+        "message": "Ouinet ক্লায়েন্ট রাষ্ট্র"
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": "সংরক্ষণ"
+    },
+    "settingsStatusBtBootstraps": {
+        "message": "অতিরিক্ত BitTorrent বুটস্ট্র্যাপ"
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": "HOST1 HOST2:পোর্ট..."
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "পাবলিক UDP শেষ পয়েন্ট"
     }
 }
