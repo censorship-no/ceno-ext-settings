@@ -11,7 +11,7 @@ We use [web-ext](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExt
 ## Developing
 
 Clone the repository:
-``git clone git@github.com:censorship-no/ceno-ext-settings.git``
+``git clone git@gitlab.com:censorship-no/ceno-ext-settings.git``
 
 CD into the folder and run:
 ``npm install -g npm@8.5.5``
