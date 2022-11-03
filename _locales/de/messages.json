@@ -178,5 +178,8 @@
     },
     "settingsStatusBtBootstrapsSave": {
         "message": "Speichern"
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": "HOST1 HOST2:PORT ..."
     }
 }
