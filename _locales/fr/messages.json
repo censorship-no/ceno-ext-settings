@@ -25,7 +25,7 @@
         "message": "manuel"
     },
     "settingsWarnManLN": {
-        "message": "https://censorship.no/user-manual/en/browser/settings.html",
+        "message": "https://censorship.no/user-manual/fr/browser/settings.html",
         "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "settingsWarnManTI": {
