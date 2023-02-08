@@ -1,5 +1,5 @@
 var openSettingsTab = function() {
-  var url = browser.extension.getURL("settings.html");
+  var url = browser.runtime.getURL("settings.html");
   browser.tabs.create({url: url});
 }
 browser.browserAction.onClicked.addListener(openSettingsTab);

@@ -266,7 +266,8 @@ class State {
 
   setCenoVersion() {
     this.ceno_version = new Text("ceno_version");
-    browser.runtime.getBrowserInfo().then(info =>
+    // TODO: getBrowserInfo is only supported on Firefox, need alternative for Chrome!
+    browser.runtime.getBrowserInfo && browser.runtime.getBrowserInfo().then(info =>
       this.ceno_version.elem.textContent = `${info.version} Build ID ${info.buildID}`);
   }
 

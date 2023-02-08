@@ -9,7 +9,8 @@ function queryTabs(query) {
 }
 
 function getCacheEntry(what) {
-  return new Promise(resolve => { browser.storage.local.get(what, resolve); });
+  return new Promise(resolve => { browser.storage.local.get(what).then(resolve); });
+  // return browser.storage.local.get(what); // TODO: or should it be this?
 }
 
 async function updatePage() {

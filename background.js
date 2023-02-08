@@ -110,7 +110,7 @@ function redirectWhenUpdateRequired(e) {
   }
   if (versionError && !isAppStoreUrl(e.url)) {
     return {
-      redirectUrl: browser.extension.getURL("update-page/index.html"),
+      redirectUrl: browser.runtime.getURL("update-page/index.html"),
     };
   }
 }
@@ -189,7 +189,7 @@ function updateCenoStats(e) {
     gOuinetStats[tabId][src] += 1;
   }
 
-  browser.storage.local.get('stats', function(data) {
+  browser.storage.local.get('stats').then((data) => {
     if (!data.stats) { data.stats = {}; }
     if (!data.stats[tabId]) { data.stats[tabId] = {}; }
 
@@ -251,7 +251,7 @@ function getOuinetDetails(headers) {
 }
 
 function insertCacheEntry(tabId, url, details) {
-  browser.storage.local.get('cache', function(data) {
+  browser.storage.local.get('cache').then((data) => {
     if (!data.cache) {
       data.cache = {};
     }
@@ -283,11 +283,13 @@ function size(o) {
 }
 
 function setPageActionIcon(tabId, isUsingOuinet) {
+  /* TODO: can't use both browserAction and pageAction
   if (isUsingOuinet) {
     browser.pageAction.show(tabId);
   } else {
     browser.pageAction.hide(tabId);
   }
+  */
 }
 
 /**
@@ -302,7 +304,7 @@ function setPageActionForTab(tabId) {
 }
 
 function getCacheEntry(tabId, callback) {
-  return browser.storage.local.get('cache', function(data) {
+  return browser.storage.local.get('cache').then((data) => {
     if (!data.cache || !data.cache[tabId]) {
       callback(undefined);
       return;
@@ -324,7 +326,7 @@ function getCacheEntry(tabId, callback) {
  * Remove entries from local storage when tab is removed.
  */
 function removeCacheForTab(tabId) {
-  browser.storage.local.get('cache', function(data) {
+  browser.storage.local.get('cache').then((data) => {
     if (!data.cache) {
       return;
     }
@@ -335,7 +337,7 @@ function removeCacheForTab(tabId) {
 };
 
 function clearLocalStorage() {
-  browser.storage.local.get('cache', function(data) {
+  browser.storage.local.get('cache').then((data) => {
     if (!data.cache) {
       return;
     }
@@ -359,6 +361,7 @@ function clearLocalStorage() {
  * this only works on Desktop Firefox >= 60.
  */
 function setOuinetClientAsProxy() {
+/* TODO: replace proxy for Chrome
   var proxyEndpoint = `${config.ouinet_client.host}:${config.ouinet_client.proxy.port}`;
   browser.proxy.settings.set({value: {
     proxyType: "manual",
@@ -372,13 +375,14 @@ function setOuinetClientAsProxy() {
     // in `gecko-dev/toolkit/components/extensions/parent/ext-proxy.js`.
     console.error("Failed to configure HTTP and HTTPS proxies:", e);
   });
+*/
 }
 
 
 setOuinetClientAsProxy();
 
 browser.browserAction.onClicked.addListener(function() {
-  var url = browser.extension.getURL("settings.html");
+  var url = browser.runtime.getURL("settings.html");
   browser.tabs.create({url: url});
 })
 
@@ -437,4 +441,5 @@ browser.tabs.query({}).then(
 browser.tabs.onRemoved.addListener(
   (id) => removeCacheForTab(id));
 
-browser.pageAction.onClicked.addListener(browser.pageAction.openPopup);
+// TODO: can't use both browserAction and pageAction
+//browser.pageAction.onClicked.addListener(browser.pageAction.openPopup);

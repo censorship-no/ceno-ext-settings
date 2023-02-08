@@ -33,11 +33,11 @@
     "default_title": "CENO"
   },
 
-  "page_action": {
-    "default_icon": "icons/ceno-logo-32.png",
-    "default_title": "CENO",
-    "default_popup": "popup.html"
-  },
+  //"page_action": {
+  //  "default_icon": "icons/ceno-logo-32.png",
+  //  "default_title": "CENO",
+  //  "default_popup": "popup.html"
+  //},
 
   "options_ui": {
     "page": "settings.html",
