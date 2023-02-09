@@ -157,6 +157,7 @@ function warnWhenUpdateDetected(e) {
       warningLastShownOn[hv] = now
       browser.notifications.create("", {
         type: "basic",
+        iconUrl: "icons/ceno.png",
         title: browser.i18n.getMessage("bgCenoWarning"),
         message: escapeHtml(hv)})
     }
@@ -361,23 +362,44 @@ function clearLocalStorage() {
  * this only works on Desktop Firefox >= 60.
  */
 function setOuinetClientAsProxy() {
-/* TODO: replace proxy for Chrome
-  var proxyEndpoint = `${config.ouinet_client.host}:${config.ouinet_client.proxy.port}`;
-  browser.proxy.settings.set({value: {
-    proxyType: "manual",
-    http: proxyEndpoint,
-    ssl: proxyEndpoint,
-  }}).then(function() {
-    console.log("Ouinet client configured as proxy for HTTP and HTTPS.");
-  }).catch(function(e) {
-    // This does not work on Android:
-    // check occurrences of "proxy.settings is not supported on android"
-    // in `gecko-dev/toolkit/components/extensions/parent/ext-proxy.js`.
-    console.error("Failed to configure HTTP and HTTPS proxies:", e);
-  });
-*/
-}
+  // TODO: check that browser.extension.isAllowedIncognitoAccess() is true
 
+  // Since Firefox's proxy API is only available thru the 'browser' namespace,
+  // testing this should only pass on Chrome:
+  if (chrome && chrome.proxy) {
+    // Chrome
+    let config = {
+      mode: "fixed_servers",
+      rules: {
+        singleProxy: {
+          // TODO: Uncaught ReferenceError: Cannot access 'config' before initialization.
+          // host: config.ouinet_client.host,
+          // port: config.ouinet_client.proxy.port
+          host: "127.0.0.1",
+          port: 8077
+        }
+      }
+    };
+    chrome.proxy.settings.set({ value: config, scope: 'regular' }, () => {
+      console.log("Ouinet client configured as proxy.");
+    });
+  } else {
+    // Firefox
+    let proxyEndpoint = `${config.ouinet_client.host}:${config.ouinet_client.proxy.port}`;
+    browser.proxy.settings.set({value: {
+      proxyType: "manual",
+      http: proxyEndpoint,
+      ssl: proxyEndpoint,
+    }}).then(function() {
+      console.log("Ouinet client configured as proxy for HTTP and HTTPS.");
+    }).catch(function(e) {
+      // This does not work on Android:
+      // check occurrences of "proxy.settings is not supported on android"
+      // in `gecko-dev/toolkit/components/extensions/parent/ext-proxy.js`.
+      console.error("Failed to configure HTTP and HTTPS proxies:", e);
+    });
+  }
+}
 
 setOuinetClientAsProxy();
 
