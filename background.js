@@ -47,6 +47,19 @@ function isUrlCacheable(url) {
     return true;
 }
 
+function getBrowser() {
+  // The order these are in is important
+  if (navigator.brave) { return 'brave' }
+  else if (navigator.userAgent.indexOf('Edg') !== -1) { return 'edge' }
+  else if (navigator.userAgent.indexOf('OPR') !== -1) { return 'opera' }
+  else if (navigator.userAgent.indexOf('Firefox') !== -1) { return 'firefox' }
+  else if (navigator.userAgent.indexOf('Chromium') !== -1) { return 'chromium' }
+  else if (navigator.userAgent.indexOf('Chrome') !== -1) { return 'chrome' }
+  else if (navigator.userAgent.indexOf('Safari') !== -1) { return 'safari' }
+  else if ((navigator.userAgent.indexOf('Trident') !== -1) || (navigator.userAgent.indexOf('MSIE'))) { return 'ie' }
+  else { return '' }
+}
+
 function getDhtGroup(e) {
     // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders
     let url = e.documentUrl ? e.documentUrl : e.url;
@@ -360,44 +373,65 @@ function clearLocalStorage() {
  * As of 2022-02-22, and according
  * to @url{https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/proxy/settings},
  * this only works on Desktop Firefox >= 60.
+ * It now also works in Chrome.
  */
 function setOuinetClientAsProxy() {
-  // TODO: check that browser.extension.isAllowedIncognitoAccess() is true
 
-  // Since Firefox's proxy API is only available thru the 'browser' namespace,
-  // testing this should only pass on Chrome:
-  if (chrome && chrome.proxy) {
-    // Chrome
-    let config = {
-      mode: "fixed_servers",
-      rules: {
-        singleProxy: {
-          // TODO: Uncaught ReferenceError: Cannot access 'config' before initialization.
-          // host: config.ouinet_client.host,
-          // port: config.ouinet_client.proxy.port
-          host: "127.0.0.1",
-          port: 8077
+  // The proxy API is different on Firefox and Chrome, but there is no
+  // reliable way to detect which one we are working with, so instead
+  // we check what browser is being used.
+  let whatBrowser = getBrowser();
+  console.log(`Setting up proxy on ${whatBrowser}...`);
+
+  switch (whatBrowser) {
+    case 'chrome': {
+      let config = {
+        mode: "fixed_servers",
+        rules: {
+          singleProxy: {
+            // TODO: Uncaught ReferenceError: Cannot access 'config' before initialization.
+            // host: config.ouinet_client.host,
+            // port: config.ouinet_client.proxy.port
+            host: "127.0.0.1",
+            port: 8077
+          }
         }
-      }
-    };
-    chrome.proxy.settings.set({ value: config, scope: 'regular' }, () => {
-      console.log("Ouinet client configured as proxy.");
-    });
-  } else {
-    // Firefox
-    let proxyEndpoint = `${config.ouinet_client.host}:${config.ouinet_client.proxy.port}`;
-    browser.proxy.settings.set({value: {
-      proxyType: "manual",
-      http: proxyEndpoint,
-      ssl: proxyEndpoint,
-    }}).then(function() {
-      console.log("Ouinet client configured as proxy for HTTP and HTTPS.");
-    }).catch(function(e) {
-      // This does not work on Android:
-      // check occurrences of "proxy.settings is not supported on android"
-      // in `gecko-dev/toolkit/components/extensions/parent/ext-proxy.js`.
-      console.error("Failed to configure HTTP and HTTPS proxies:", e);
-    });
+      };
+      chrome.proxy.settings.set({ value: config, scope: 'regular' }, () => {
+        console.log("Ouinet client proxy configured.");
+      });
+      break;
+    }
+    case 'firefox': {
+      // On Firefox we can only config proxy settings when private access is true.
+      // On Chrome setting proxy will still work without incognito access.
+      let isAllowed = browser.extension.isAllowedIncognitoAccess();
+      isAllowed.then((allowed) => {
+        // console.log(`Private browsing access: ${allowed}`);
+        if (allowed) {
+          // set up the proxy
+          let proxyEndpoint = `${config.ouinet_client.host}:${config.ouinet_client.proxy.port}`;
+          browser.proxy.settings.set({value: {
+            proxyType: "manual",
+            http: proxyEndpoint,
+            ssl: proxyEndpoint,
+          }}).then(function() {
+            console.log("Ouinet client proxy configured for HTTP and HTTPS.");
+          }).catch(function(e) {
+            // This does not work on Android:
+            // check occurrences of "proxy.settings is not supported on android"
+            // in `gecko-dev/toolkit/components/extensions/parent/ext-proxy.js`.
+            console.error("Failed to configure HTTP and HTTPS proxies:", e);
+          });
+        } else {
+          console.error("CENO Extension needs private access to set up proxy!");
+          console.log("Go to 'about:addons', click on 'CENO Extension', under Details set 'Run in Private Windows' to Allow.");
+        }
+      });
+      break;
+    }
+    default:
+      console.error(`Ouinet client is not yet supported on ${whatBrowser}.`);
   }
 }
 
