@@ -314,7 +314,7 @@ window.addEventListener("load", async () => {
 
   let state = new State();
 
-  while (true) {
+  // while (true) { // turn off continuous checking for proxy server (for now) TODO
     try {
       let response = await fetch(STATUS_ENDPOINT);
 
@@ -323,15 +323,15 @@ window.addEventListener("load", async () => {
         Object.entries(json).map(([k,v]) => state.set(k, v))
         state.enable();
       } else {
-        console.error("Failed to parse client status JSON:", error);
+        console.log("Failed to parse client status JSON:", error);
         state.disable();
       }
     } catch (err) {
-      console.error("Failed to fetch client status JSON:", err);
+      console.log("Failed to fetch client status JSON:", err);
       state.disable();
     }
 
-    await sleep(5000);
-  }
+  //  await sleep(5000);
+  // }
 
 });

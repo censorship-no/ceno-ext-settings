@@ -3,12 +3,15 @@ const CENO_ICON = "icons/ceno-logo-32.png";
 const CACHE_MAX_ENTRIES = 500;
 const OUINET_RESPONSE_VERSION_MIN = 1  // protocol versions accepted
 const OUINET_RESPONSE_VERSION_MAX = 6
+const WT_CACHE_EXPIRES_AFTER = 1000 * 60; // in millisecs = 1 min
 
 // Requests for URLs matching the following regular expressions
 // will always be considered private (thus non-cacheable).
 const NO_CACHE_URL_REGEXPS = [
     /^https?:\/\/(www\.)?google\.com\/complete\//,  // Google Search completion
     /^https?:\/\/(www\.)?duckduckgo\.com\/ac\//,  // DuckDuckGo Search completion
+    /^https?:\/\/127\.0\.0\.1/,  // localhost
+    /^https?:\/\/localhost/,  // localhost
 ]
 
 
@@ -71,6 +74,119 @@ function getDhtGroup(e) {
     return url;
 }
 
+
+// --- WebTorrent ------------------------------------------------------------
+
+function getSwarm(group) {
+  const OUI_PROTO = "6";
+  const INJ_PUBKEY = "zh6ylt6dghu6swhhje2j66icmjnonv53tstxxvj6acu64sc62fnq";
+  let swarm = `ed25519:${INJ_PUBKEY}/v${OUI_PROTO}/uri/${group}`;
+  return swarm;
+}
+
+// Return hex string of SHA-1 hash of swarm.
+async function getInfoHash(swarm) {
+  if (crypto && ('subtle' in crypto)) {
+    // only works in secure contexts
+    const encoder = new TextEncoder();
+    const data = encoder.encode(swarm);
+    const hashBuffer = await crypto.subtle.digest('SHA-1', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
+    return hashHex;
+  } else {
+    console.warn("Can't use crypto in insecure context!");
+  }
+}
+
+// NOT DONE
+function lookupWebtorrent(group) {
+
+  console.log("Lookup DHT URL: " + group); // DEBUG
+
+  wtCacheRemoveAllExpired();
+  wtCacheGet(group)
+    .then((details) => {
+      console.log("  already in cache: ", details); // DEBUG
+    })
+    .catch(() => {
+      // not in cache
+      let swarm = getSwarm(group);
+      console.log("     swarm: " + swarm); // DEBUG
+      getInfoHash(swarm).then((hashHex) => {
+        console.log("  infohash: " + hashHex); // DEBUG
+        wtCacheSet(group, { swarm: swarm, hash: hashHex });
+      });
+    });
+
+}
+
+// Insert a URL group into the WT cache.
+function wtCacheSet(group, details) {
+  browser.storage.local.get('wt_cache').then((data) => {
+    if (!data.wt_cache) {
+      data.wt_cache = {};
+    }
+    if (!details) {
+      details = {};
+    }
+    details.created = Date.now();
+    data.wt_cache[group] = details;
+    browser.storage.local.set(data);
+  });
+}
+
+// Retrieve object if URL group is in the WT cache. Returns a Promise.
+function wtCacheGet(group) {
+  return new Promise((resolve, reject) => {
+    browser.storage.local.get('wt_cache').then((data) => {
+      if (data.wt_cache && data.wt_cache[group]) {
+        resolve(data.wt_cache[group]);
+      } else {
+        reject();
+      }
+    });
+  });
+}
+
+// Remove single item from WT cache.
+function wtCacheRemove(group) {
+  browser.storage.local.get('wt_cache').then((data) => {
+    if (data.wt_cache && data.wt_cache[group]) {
+      delete data.wt_cache[group];
+    }
+    browser.storage.local.set(data);
+  });
+}
+
+// Clears the entire WT cache.
+function wtCacheRemoveAll() {
+  browser.storage.local.get('wt_cache').then((data) => {
+    if (data.wt_cache) {
+      delete data.wt_cache;
+    }
+    browser.storage.local.set(data);
+  });
+}
+
+// Removes all items in the WT cache that are older than given millisecs from now.
+function wtCacheRemoveAllExpired(millisecs = WT_CACHE_EXPIRES_AFTER) {
+  browser.storage.local.get('wt_cache').then((data) => {
+    if (data.wt_cache) {
+      const now = Date.now();
+      for (let [k, v] of Object.entries(data.wt_cache)) {
+        if (v.created && (((now - v.created) > millisecs))) {
+          delete data.wt_cache[k];
+        }
+      }
+    }
+    browser.storage.local.set(data);
+  });
+}
+
+
+// --- General ------------------------------------------------------------
+
 // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders
 function onBeforeSendHeaders(e) {
   if (e.tabId < 0) {
@@ -86,7 +202,9 @@ function onBeforeSendHeaders(e) {
       e.requestHeaders.push({name: "X-Ouinet-Private", value: (is_private ? "True" : "False")});
 
       if (!is_private) {
-        e.requestHeaders.push({name: "X-Ouinet-Group", value: getDhtGroup(e)});
+        let dht_group = getDhtGroup(e);
+        e.requestHeaders.push({name: "X-Ouinet-Group", value: dht_group});
+        lookupWebtorrent(dht_group); // TEST
       }
 
       return {requestHeaders: e.requestHeaders};

@@ -86,7 +86,7 @@ function innerTranslateTextNodes(parent, translatedMessage, subsContainer) {
     // We also trigger for =, because we assume we have at least one text node, which
     // is also returned in splitTranslatedMessage
     if (splitTranslatedMessage.length <= subsContainer.substitutions.length) {
-        console.warn(
+        console.log(
             "You used only", splitTranslatedMessage.length, "message blocks, altghough you could use",
             subsContainer.substitutions.length, "substitutions. Possibly you did not include all substitutions in your translation?",
             "Check for typos in the placeholder name e.g.",
@@ -122,7 +122,7 @@ function innerTranslateTextNodes(parent, translatedMessage, subsContainer) {
 
             // if we have no more text elements
             if (nextText.done) {
-                console.warn("Translation contained more text then HTML template. We now add a note. Triggered for translation: ", message);
+                console.log("Translation contained more text then HTML template. We now add a note. Triggered for translation: ", message);
                 // just create & add a new one
                 const newTextNode = document.createTextNode(message);
 
@@ -226,7 +226,7 @@ function replaceI18n(elem, tag) {
             }
         } catch (error) {
             // log error but continue translating as it was likely just one problem in one translation
-            console.error(error.message, "for element", elem);
+            console.log(error.message, "for element", elem);
         }
     }
 
@@ -246,7 +246,7 @@ function replaceI18n(elem, tag) {
             replaceWith(elem, replaceAttribute, translatedMessage);
         } catch (error) {
             // log error but continue translating as it was likely just one problem in one translation
-            console.error(error.message, "for element", elem, "while replacing attribute", replaceAttribute);
+            console.log(error.message, "for element", elem, "while replacing attribute", replaceAttribute);
         }
     }
 }
