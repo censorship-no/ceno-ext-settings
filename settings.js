@@ -1,4 +1,4 @@
-const FRONT_END_BASE = `http://${config.ouinet_client.host}:${config.ouinet_client.front_end.port}`;
+const FRONT_END_BASE = `http://${APP_CONFIG.ouinet_client.host}:${APP_CONFIG.ouinet_client.front_end.port}`;
 const STATUS_ENDPOINT = FRONT_END_BASE + "/api/status";
 const SET_VALUE_ENDPOINT = FRONT_END_BASE + "/";
 

@@ -100,24 +100,28 @@ async function getInfoHash(swarm) {
 }
 
 // NOT DONE
-function lookupWebtorrent(group) {
+async function lookupWebtorrent(group) {
 
+  // NOTE: Difference in group between Firefox & Chrome,
+  //   Firefox groups are same domain, Chrome groups are varying URLs.
+  // TODO: Figure out why this is! (Chrome seems correct)
+
+  // console.log('BEFORE wtCacheRemoveAllExpired()'); // DEBUG
+  await wtCacheRemoveAllExpired();
+  // console.log('AFTER wtCacheRemoveAllExpired()'); // DEBUG
+  let details = await wtCacheGet(group);
+  // console.log('AFTER wtCacheGet()'); // DEBUG
   console.log("Lookup DHT URL: " + group); // DEBUG
-
-  wtCacheRemoveAllExpired();
-  wtCacheGet(group)
-    .then((details) => {
-      console.log("  already in cache: ", details); // DEBUG
-    })
-    .catch(() => {
-      // not in cache
-      let swarm = getSwarm(group);
-      console.log("     swarm: " + swarm); // DEBUG
-      getInfoHash(swarm).then((hashHex) => {
-        console.log("  infohash: " + hashHex); // DEBUG
-        wtCacheSet(group, { swarm: swarm, hash: hashHex });
-      });
-    });
+  if (details) {
+    console.log("  already in cache: ", details); // DEBUG
+  } else {
+    // not in cache
+    let swarm = getSwarm(group);
+    let hashHex = await getInfoHash(swarm);
+    console.log("         swarm: " + swarm); // DEBUG
+    console.log("      infohash: " + hashHex); // DEBUG
+    wtCacheSet(group, { swarm: swarm, hash: hashHex });
+  }
 
 }
 
@@ -138,49 +142,53 @@ function wtCacheSet(group, details) {
 
 // Retrieve object if URL group is in the WT cache. Returns a Promise.
 function wtCacheGet(group) {
+  // console.log('BEGIN wtCacheGet()'); // DEBUG
   return new Promise((resolve, reject) => {
     browser.storage.local.get('wt_cache').then((data) => {
       if (data.wt_cache && data.wt_cache[group]) {
         resolve(data.wt_cache[group]);
       } else {
-        reject();
+        resolve(null);
       }
     });
   });
 }
 
-// Remove single item from WT cache.
+// Remove single item from WT cache. Returns a Promise.
 function wtCacheRemove(group) {
-  browser.storage.local.get('wt_cache').then((data) => {
+  return browser.storage.local.get('wt_cache').then((data) => {
     if (data.wt_cache && data.wt_cache[group]) {
       delete data.wt_cache[group];
     }
-    browser.storage.local.set(data);
+    return browser.storage.local.set(data);
   });
 }
 
-// Clears the entire WT cache.
+// Clears the entire WT cache. Returns a Promise.
 function wtCacheRemoveAll() {
-  browser.storage.local.get('wt_cache').then((data) => {
+  return browser.storage.local.get('wt_cache').then((data) => {
     if (data.wt_cache) {
       delete data.wt_cache;
     }
-    browser.storage.local.set(data);
+    return browser.storage.local.set(data);
   });
 }
 
-// Removes all items in the WT cache that are older than given millisecs from now.
+// Removes all items in the WT cache that are older than given millisecs from now. Returns a Promise.
 function wtCacheRemoveAllExpired(millisecs = WT_CACHE_EXPIRES_AFTER) {
-  browser.storage.local.get('wt_cache').then((data) => {
+  // console.log('BEGIN wtCacheRemoveAllExpired()'); // DEBUG
+  return browser.storage.local.get('wt_cache').then((data) => {
     if (data.wt_cache) {
       const now = Date.now();
       for (let [k, v] of Object.entries(data.wt_cache)) {
         if (v.created && (((now - v.created) > millisecs))) {
           delete data.wt_cache[k];
+          console.log("deleted: " + k); // DEBUG
         }
       }
     }
-    browser.storage.local.set(data);
+    // console.log('END wtCacheRemoveAllExpired()'); // DEBUG
+    return browser.storage.local.set(data);
   });
 }
 
@@ -492,8 +500,17 @@ function clearLocalStorage() {
  * to @url{https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/proxy/settings},
  * this only works on Desktop Firefox >= 60.
  * It now also works in Chrome.
+ * Proxy settings persist after browser close whenever extension is running.
  */
-function setOuinetClientAsProxy() {
+function setOuinetClientAsProxy({config, reset = false }) {
+
+  if (!config) { config = APP_CONFIG; } // doesn't work in function params
+  if (reset) {
+    chrome.proxy.settings.clear({ scope: 'regular' }, () => {
+      console.log("Proxy reset.");
+    });
+    return;
+  }
 
   // The proxy API is different on Firefox and Chrome, but there is no
   // reliable way to detect which one we are working with, so instead
@@ -503,19 +520,17 @@ function setOuinetClientAsProxy() {
 
   switch (whatBrowser) {
     case 'chrome': {
-      let config = {
+      // set up the proxy
+      chrome.proxy.settings.set({ scope: 'regular', value: {
         mode: "fixed_servers",
         rules: {
           singleProxy: {
-            // TODO: Uncaught ReferenceError: Cannot access 'config' before initialization.
-            // host: config.ouinet_client.host,
-            // port: config.ouinet_client.proxy.port
-            host: "127.0.0.1",
-            port: 8077
-          }
+            host: config.ouinet_client.host,
+            port: config.ouinet_client.proxy.port
+          },
+          bypassList: ['<local>']
         }
-      };
-      chrome.proxy.settings.set({ value: config, scope: 'regular' }, () => {
+      }}, () => {
         console.log("Ouinet client proxy configured.");
       });
       break;
@@ -525,21 +540,21 @@ function setOuinetClientAsProxy() {
       // On Chrome setting proxy will still work without incognito access.
       let isAllowed = browser.extension.isAllowedIncognitoAccess();
       isAllowed.then((allowed) => {
-        // console.log(`Private browsing access: ${allowed}`);
         if (allowed) {
           // set up the proxy
           let proxyEndpoint = `${config.ouinet_client.host}:${config.ouinet_client.proxy.port}`;
-          browser.proxy.settings.set({value: {
+          let proxySettings = {
             proxyType: "manual",
             http: proxyEndpoint,
             ssl: proxyEndpoint,
-          }}).then(function() {
-            console.log("Ouinet client proxy configured for HTTP and HTTPS.");
+          };
+          browser.proxy.settings.set({ value: proxySettings }).then(function() {
+            console.log("Ouinet client proxy configured.");
           }).catch(function(e) {
             // This does not work on Android:
             // check occurrences of "proxy.settings is not supported on android"
             // in `gecko-dev/toolkit/components/extensions/parent/ext-proxy.js`.
-            console.error("Failed to configure HTTP and HTTPS proxies:", e);
+            console.error("Failed to configure proxy: ", e);
           });
         } else {
           console.error("CENO Extension needs private access to set up proxy!");
@@ -553,7 +568,8 @@ function setOuinetClientAsProxy() {
   }
 }
 
-setOuinetClientAsProxy();
+// setOuinetClientAsProxy({ config: APP_CONFIG }); // TODO: reenable this later
+setOuinetClientAsProxy({ reset: true });
 
 browser.browserAction.onClicked.addListener(function() {
   var url = browser.runtime.getURL("settings.html");

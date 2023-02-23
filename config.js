@@ -1,4 +1,4 @@
-var config = {
+const APP_CONFIG = {
   ouinet_client: {
     host: "127.0.0.1",
     proxy: { port: 8077 },
