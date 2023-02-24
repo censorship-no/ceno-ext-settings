@@ -80,7 +80,7 @@ function getTranslatedMessage(messageName, substitutions) {
 function innerTranslateTextNodes(parent, translatedMessage, subsContainer) {
     const splitTranslatedMessage = translatedMessage.split(UNIQUE_REPLACEMENT_SPLIT);
 
-    console.log("Replacing text nodes for", parent, ", message:", translatedMessage, "detected elements:", subsContainer);
+    // console.log("Replacing text nodes for", parent, ", message:", translatedMessage, "detected elements:", subsContainer);
 
     // sanity check whether all translations were used
     // We also trigger for =, because we assume we have at least one text node, which
@@ -122,7 +122,7 @@ function innerTranslateTextNodes(parent, translatedMessage, subsContainer) {
 
             // if we have no more text elements
             if (nextText.done) {
-                console.log("Translation contained more text then HTML template. We now add a note. Triggered for translation: ", message);
+                // console.log("Translation contained more text then HTML template. We now add a note. Triggered for translation: ", message);
                 // just create & add a new one
                 const newTextNode = document.createTextNode(message);
 
