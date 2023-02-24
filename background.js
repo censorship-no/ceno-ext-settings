@@ -50,9 +50,8 @@ function isUrlCacheable(url) {
     return true;
 }
 
-function getDhtGroup(e) {
+function getDhtGroup(url) {
     // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders
-    let url = e.documentUrl ? e.documentUrl : e.url;
     if (!url) return url;
     url = removeFragmentFromURL(url);
     url = removeSchemeFromURL(url);
@@ -89,27 +88,31 @@ async function getInfoHash(swarm) {
 // NOT DONE
 async function lookupWebtorrent(group) {
 
-  // NOTE: Difference in group between Firefox & Chrome,
-  //   Firefox groups are same domain, Chrome groups are varying URLs.
-  // TODO: Figure out why this is! (Chrome seems correct)
-
-  // console.log('BEFORE wtCacheRemoveAllExpired()'); // DEBUG
   await wtCacheRemoveAllExpired();
-  // console.log('AFTER wtCacheRemoveAllExpired()'); // DEBUG
   let details = await wtCacheGet(group);
-  // console.log('AFTER wtCacheGet()'); // DEBUG
-  console.log("Lookup DHT URL: " + group); // DEBUG
+  console.log("Lookup group: " + group); // DEBUG
   if (details) {
-    console.log("  already in cache: ", details); // DEBUG
+    console.log("    in cache: ", details); // DEBUG
   } else {
     // not in cache
     let swarm = getSwarm(group);
     let hashHex = await getInfoHash(swarm);
-    console.log("         swarm: " + swarm); // DEBUG
-    console.log("      infohash: " + hashHex); // DEBUG
+    console.log("       swarm: " + swarm); // DEBUG
+    console.log("    infohash: " + hashHex); // DEBUG
     wtCacheSet(group, { swarm: swarm, hash: hashHex });
+    // send to dashboard
+    wtPort.postMessage({ message: 'wt_fetch', group: group, swarm: swarm, infohash: hashHex });
   }
+}
 
+ // Send URL group to Webtorrent dashboard whenever webpage updates.
+function wtOnUpdatedListener(tabId, info, tab) {
+  const url = tab.url;
+  if (!tab.incognito && (info.status === 'loading') && isWebUrl(url) && isUrlCacheable(url)) {
+    // only lookup valid main web pages (no embed URLs)
+    let group = getDhtGroup(url);
+    lookupWebtorrent(group);
+  }
 }
 
 // Insert a URL group into the WT cache.
@@ -129,7 +132,6 @@ function wtCacheSet(group, details) {
 
 // Retrieve object if URL group is in the WT cache. Returns a Promise.
 function wtCacheGet(group) {
-  // console.log('BEGIN wtCacheGet()'); // DEBUG
   return new Promise((resolve, reject) => {
     browser.storage.local.get('wt_cache').then((data) => {
       if (data.wt_cache && data.wt_cache[group]) {
@@ -163,7 +165,6 @@ function wtCacheRemoveAll() {
 
 // Removes all items in the WT cache that are older than given millisecs from now. Returns a Promise.
 function wtCacheRemoveAllExpired(millisecs = WT_CACHE_EXPIRES_AFTER) {
-  // console.log('BEGIN wtCacheRemoveAllExpired()'); // DEBUG
   return browser.storage.local.get('wt_cache').then((data) => {
     if (data.wt_cache) {
       const now = Date.now();
@@ -174,10 +175,18 @@ function wtCacheRemoveAllExpired(millisecs = WT_CACHE_EXPIRES_AFTER) {
         }
       }
     }
-    // console.log('END wtCacheRemoveAllExpired()'); // DEBUG
     return browser.storage.local.set(data);
   });
 }
+
+// Setting up a port to talk with webtorrent dashboard.
+let wtPort;
+browser.runtime.onConnect.addListener((port) => {
+  wtPort = port;
+  // port.onMessage.addListener((msg) => {
+  //   to add later to receive dashboard messages...
+  // });
+});
 
 
 // --- General ------------------------------------------------------------
@@ -197,9 +206,9 @@ function onBeforeSendHeaders(e) {
       e.requestHeaders.push({name: "X-Ouinet-Private", value: (is_private ? "True" : "False")});
 
       if (!is_private) {
-        let dht_group = getDhtGroup(e);
+        let url = e.documentUrl || e.url; // Chrome only has e.url
+        let dht_group = getDhtGroup(url);
         e.requestHeaders.push({name: "X-Ouinet-Group", value: dht_group});
-        lookupWebtorrent(dht_group); // TEST
       }
 
       return {requestHeaders: e.requestHeaders};
@@ -533,6 +542,9 @@ browser.runtime.onStartup.addListener(clearLocalStorage);
  */
 browser.tabs.onUpdated.addListener(
   (id, changeInfo, tab) => setPageActionForTab(id));
+
+// When URL updates, send it to Webtorrent dashboard.
+browser.tabs.onUpdated.addListener(wtOnUpdatedListener);
 
 /**
  * Initialize all tabs.

@@ -13,6 +13,11 @@ function getBrowser() {
   else { return '' }
 }
 
+// Given url string, return true if it is a valid http or https URL.
+function isWebUrl(url) {
+  return ((typeof url) === 'string' && (url.indexOf('http://') === 0 || url.indexOf('https://') === 0));
+}
+
 /**
  * Configure the Ouinet client as a proxy.
  *

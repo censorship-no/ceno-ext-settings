@@ -320,7 +320,7 @@ function setupWebtorrent() {
       if (proxy_elem && (proxy_elem.checked === true)) { proxy_elem.click() }
       // open webtorrent dashboard
       let url = browser.runtime.getURL('dashboard.html');
-      browser.windows.create({ url: url, width: 600, height: 400, type: 'popup' }).then((win) => {
+      browser.windows.create({ url: url, width: 800, height: 600, type: 'popup' }).then((win) => {
         browser.storage.local.set({ dashboardId: win.id });
       })
     } else {

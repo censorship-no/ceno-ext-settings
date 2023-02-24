@@ -9,10 +9,16 @@
 <script src="dashboard.js"></script>
 </head>
 <body>
-  <h2>WebTorrent Dashboard</h2>
-  <p>Keep this window open to keep WebTorrent running.</p>
-  <div>
-
+  <div class="body-container">
+    <div class="header-container">
+      <h2>WebTorrent Dashboard</h2>
+      <p>Keep this window open to keep WebTorrent running...</p>
+    </div>
+    <div class="outer-container">
+      <div id="log-container">
+        <textarea id="log-area" class="container-scrollbar" readonly></textarea>
+      </div>
+    </div>
   </div>
 </body>
 </html>
