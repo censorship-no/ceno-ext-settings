@@ -309,29 +309,82 @@ function setFrontEndLinks() {
   }
 }
 
-window.addEventListener("load", async () => {
-  setFrontEndLinks();
+// TODO: clear Webtorrent setting when dashboard window closed (do in dashboard.js ?)
+function setupWebtorrent() {
+  let elem = document.getElementById('webtorrent_transport');
+  if (!elem) { return }
+  elem.addEventListener('change', (event) => {
+    if (elem.checked) {
+      // turn off proxy first
+      let proxy_elem = document.getElementById('proxy_transport');
+      if (proxy_elem && (proxy_elem.checked === true)) { proxy_elem.click() }
+      // open webtorrent dashboard
+      let url = browser.runtime.getURL('dashboard.html');
+      browser.windows.create({ url: url, width: 600, height: 400, type: 'popup' }).then((win) => {
+        browser.storage.local.set({ dashboardId: win.id });
+      })
+    } else {
+      // close webtorrent dashboard
+      browser.storage.local.get('dashboardId').then((data) => {
+        if (data.dashboardId) {
+          browser.windows.remove(data.dashboardId).catch((err) => {
+            // need this catch to prevent log error
+          });
+        }
+      });
+    }
+  });
+}
 
-  let state = new State();
-
-  // while (true) { // turn off continuous checking for proxy server (for now) TODO
-    try {
-      let response = await fetch(STATUS_ENDPOINT);
-
-      if (response.ok) {
-        let json = await response.json();
-        Object.entries(json).map(([k,v]) => state.set(k, v))
-        state.enable();
-      } else {
-        console.log("Failed to parse client status JSON:", error);
-        state.disable();
-      }
-    } catch (err) {
-      console.log("Failed to fetch client status JSON:", err);
+function setupProxy() {
+  let elem = document.getElementById('proxy_transport');
+  if (!elem) { return }
+  elem.addEventListener('change', (event) => {
+    let state = new State();
+    if (elem.checked) {
+      // close webtorrent dashboard first
+      let wt_elem = document.getElementById('webtorrent_transport');
+      if (wt_elem && (wt_elem.checked === true)) { wt_elem.click() }
+      // turn on proxy
+      setOuinetClientAsProxy({ config: APP_CONFIG });
+      checkProxy(state);
+    } else {
+      // turn off proxy
+      setOuinetClientAsProxy({ reset: true });
       state.disable();
     }
+  });
+}
 
-  //  await sleep(5000);
-  // }
+async function checkProxy(state) {
+  try {
+    let response = await fetch(STATUS_ENDPOINT);
+    if (response.ok) {
+      let json = await response.json();
+      Object.entries(json).map(([k,v]) => state.set(k, v))
+      state.enable();
+    } else {
+      console.log("Failed to parse client status JSON:", error);
+      state.disable();
+    }
+  } catch (err) {
+    console.log("Failed to fetch client status JSON:", err);
+    state.disable();
+  }
+}
 
+// main onload
+window.addEventListener("load", async () => {
+
+  setFrontEndLinks();
+  setupWebtorrent();
+  setupProxy();
+
+  /*
+  let state = new State();
+  while (true) {
+    checkProxy(state);
+    await sleep(5000);
+  }
+  */
 });

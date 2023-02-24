@@ -46,7 +46,7 @@
   },
 
   "background": {
-    "scripts": [ "libs/browser-polyfill.js", "config.js", "background.js" ]
+    "scripts": [ "libs/browser-polyfill.js", "config.js", "utils.js", "background.js" ]
   },
 
   "content_scripts": [{

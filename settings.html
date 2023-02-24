@@ -7,6 +7,7 @@
 <script src="libs/browser-polyfill.js"></script>
 <script type="module" src="localizer/Localizer.js"></script>
 <script src="config.js"></script>
+<script src="utils.js"></script>
 <script src="settings.js"></script>
 </head>
 <body>
@@ -18,6 +19,25 @@
        href="https://censorship.no/user-manual/en/browser/settings.html"
        title="Censorship.no! User Manual – CENO settings" target="_blank">manual</a> for more information.</p>
   <form class="cb_form" id="access-mechanisms">
+
+    <div class="group">
+      <p>Transport:</p>
+      <div class="row">
+        <label class="cb_container">
+          <input type="checkbox" id="webtorrent_transport">
+          <span class="checkmark"></span>
+          <div class="cb_label">Via WebTorrent</div>
+        </label>
+      </div>
+      <div class="row">
+        <label class="cb_container">
+          <input type="checkbox" id="proxy_transport">
+          <span class="checkmark"></span>
+          <div class="cb_label">Via Proxy</div>
+        </label>
+      </div>
+    </div>
+
     <div class="group">
       <p data-i18n="settingsSources">Content retrieval sources:</p>
       <div class="row">
@@ -48,14 +68,8 @@
           <div data-i18n="settingsSrcDcache" class="cb_label">Shared by other CENO users</div>
         </label>
       </div>
-      <div class="row">
-        <label class="cb_container">
-          <input type="checkbox" id="webtorrent_access">
-          <span class="checkmark"></span>
-          <div data-i18n="settingsSrcWebtorrent" class="cb_label">WebTorrent</div>
-        </label>
-      </div>
     </div>
+
     <div id="am-warnings">
       <p data-i18n="settingsPubwarn" data-opt-i18n-keep-children
          id="am-warning-public"><strong data-i18n="settingsPubwarnPub">Public browsing</strong> will fail with current settings.</p>
