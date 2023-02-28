@@ -105,7 +105,7 @@ async function lookupWebtorrent(group) {
   }
 }
 
- // Send URL group to Webtorrent dashboard whenever webpage updates.
+// Send URL group to Webtorrent dashboard whenever webpage updates.
 function wtOnUpdatedListener(tabId, info, tab) {
   const url = tab.url;
   if (!tab.incognito && (info.status === 'loading') && isWebUrl(url) && isUrlCacheable(url)) {
