@@ -96,22 +96,37 @@ async function lookupWebtorrent(group) {
   } else {
     // not in cache
     let swarm = getSwarm(group);
-    let hashHex = await getInfoHash(swarm);
+    let ihash = await getInfoHash(swarm);
     console.log("       swarm: " + swarm); // DEBUG
-    console.log("    infohash: " + hashHex); // DEBUG
-    wtCacheSet(group, { swarm: swarm, hash: hashHex });
+    console.log("    infohash: " + ihash); // DEBUG
+    wtCacheSet(group, { swarm: swarm, hash: ihash });
     // send to dashboard
-    wtPort.postMessage({ message: 'wt_fetch', group: group, swarm: swarm, infohash: hashHex });
+    wtPort && wtPort.postMessage({ message: 'wt_fetch', group: group, swarm: swarm, infoHash: ihash });
   }
+}
+
+// Sends a message to the Dashboard to seed webpage with given tabId.
+async function seedWebtorrent(group, tabId) {
+
+  let swarm = getSwarm(group);
+  let ihash = await getInfoHash(swarm);
+  console.log("  Seed group: " + group); // DEBUG
+  console.log("       swarm: " + swarm); // DEBUG
+  console.log("    infohash: " + ihash); // DEBUG
+  console.log("       tabId: " + tabId); // DEBUG
+  // send to dashboard
+  wtPort && wtPort.postMessage({ message: 'wt_seed', group: group, swarm: swarm, infoHash: ihash, tabId: tabId });
 }
 
 // Send URL group to Webtorrent dashboard whenever webpage updates.
 function wtOnUpdatedListener(tabId, info, tab) {
   const url = tab.url;
-  if (!tab.incognito && (info.status === 'loading') && isWebUrl(url) && isUrlCacheable(url)) {
-    // only lookup valid main web pages (no embed URLs)
+  if (!tab.incognito && isWebUrl(url) && isUrlCacheable(url)) {
     let group = getDhtGroup(url);
-    lookupWebtorrent(group);
+    if (info.status === 'loading') {
+      // only lookup valid main web pages (no embed URLs)
+      // lookupWebtorrent(group);
+    }
   }
 }
 
@@ -557,3 +572,27 @@ browser.tabs.onRemoved.addListener(
 
 // TODO: can't use both browserAction and pageAction
 //browser.pageAction.onClicked.addListener(browser.pageAction.openPopup);
+
+// Set up right-click context menu inside the web page.
+if (browser.contextMenus) {
+  browser.contextMenus.create({
+    'id': 'seed_page',
+    'title': 'Seed Page on WebTorrent',
+    'contexts': ['page', 'frame'],
+    'documentUrlPatterns': ['http://*/*', 'https://*/*']
+  });
+  browser.contextMenus.onClicked.addListener((click) => {
+    if (click.menuItemId === 'seed_page') {
+      browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+        const tab = tabs[0];
+        // may want to test !tab.incognito
+        if (tab && isUrlCacheable(tab.url)) {
+          // seed contents of page as a WebTorrent
+          let group = getDhtGroup(tab.url);
+          seedWebtorrent(group, tab.id);
+          return true;
+        }
+      });
+    }
+  });
+}
