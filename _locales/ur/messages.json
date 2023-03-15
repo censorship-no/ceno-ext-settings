@@ -1,20 +1,20 @@
 {
     "extName": {
-        "message": "",
+        "message": "CENO ایکسٹینشن",
         "description": "Name of the extension."
     },
     "extDesc": {
-        "message": "",
+        "message": "CENO اور Ouinet کے ساتھ انضمام فراہم کرتا ہے: صفحہ کیشنگ اور گروپ بندی، صفحہ کے ماخذ کی معلومات، ترتیبات اور دیگر فعالیت۔ MIT لائسنس کے تحت rugk کے ذریعے لوکلائزر کا کوڈ شامل ہے۔",
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": ""
+        "message": "CENO انتباہ"
     },
     "settingsTitle": {
-        "message": ""
+        "message": "CENO ترتیبات"
     },
     "settingsWarn": {
-        "message": "",
+        "message": "اس صفحہ پر ترتیبات کا مقصد صرف نیٹ ورک کے مختلف حالات میں CENO کی فعالیت کو جانچنا ہے۔مزید معلومات کے لیے $MANUAL$ دیکھیں۔",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -22,32 +22,32 @@
         }
     },
     "settingsWarnMan": {
-        "message": ""
+        "message": "مینوئل"
     },
     "settingsWarnManLN": {
-        "message": "",
+        "message": "https://censorship.no/user-manual/en/browser/settings.html",
         "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "settingsWarnManTI": {
-        "message": ""
+        "message": "Censorship.no!یوزر مینوئل – CENO ترتیبات"
     },
     "settingsSources": {
-        "message": ""
+        "message": "مواد کی بازیافت کے ذرائع:"
     },
     "settingsSrcOrigin": {
-        "message": ""
+        "message": "ویب سائٹ سے براہ راست"
     },
     "settingsSrcProxy": {
-        "message": ""
+        "message": "CENO نیٹ ورک کے ذریعے (پرائیویٹ)"
     },
     "settingsSrcInjector": {
-        "message": ""
+        "message": "CENO نیٹ ورک کے ذریعے (پبلک)"
     },
     "settingsSrcDcache": {
-        "message": ""
+        "message": "دوسرے CENO صارفین کے ذریعہ اشتراک کردہ"
     },
     "settingsPubwarn": {
-        "message": "",
+        "message": "موجودہ ترتیبات کے ساتھ $PUBLIC_BROWSING$ ناکام ہو جائے گا۔",
         "placeholders": {
             "public_browsing": {
                 "content": "$1"
@@ -55,10 +55,10 @@
         }
     },
     "settingsPubwarnPub": {
-        "message": ""
+        "message": "پبلک براؤزنگ"
     },
     "settingsPrivwarn": {
-        "message": "",
+        "message": "موجودہ ترتیبات کے ساتھ $PRIVATE_BROWSING$ ناکام ہو جائے گا۔",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
@@ -66,85 +66,85 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": ""
+        "message": "پرائیویٹ براؤزنگ"
     },
     "settingsStatusBrowser": {
-        "message": ""
+        "message": "CENO براؤزر"
     },
     "settingsStatusExtension": {
-        "message": ""
+        "message": "CENO ایکسٹینشن"
     },
     "settingsStatusOuinet": {
-        "message": ""
+        "message": "Ouinet"
     },
     "settingsStatusProtocol": {
-        "message": ""
+        "message": "Ouinet پروٹوکول"
     },
     "settingsStatusClientState": {
-        "message": ""
+        "message": "Ouinet کلائنٹ کی حالت"
     },
     "settingsStatusEndpoints": {
-        "message": ""
+        "message": "لوكل UDP endpoints"
     },
     "settingsStatusUpnp": {
-        "message": ""
+        "message": "UPnP سٹيٹس"
     },
     "settingsStatusExtEndpoints": {
-        "message": ""
+        "message": "بیرونی UDP endpoints"
     },
     "settingsStatusPubEndpoints": {
-        "message": ""
+        "message": "پبلک UDP endpoints"
     },
     "settingsStatusReachability": {
-        "message": ""
+        "message": "قابل رسائی سٹيٹس"
     },
     "settingsStatusCacheSize": {
-        "message": ""
+        "message": "لوكل کیشے کا سائز"
     },
     "settingsStatusCachePurge": {
-        "message": ""
+        "message": "ابھی صاف کریں"
     },
     "settingsStatusCacheList": {
-        "message": ""
+        "message": "آپ کے ذریعہ اشتراک کردہ مواد"
     },
     "settingsStatusBtBootstraps": {
-        "message": ""
+        "message": "اضافی BitTorrent بوٹسٹریپس"
     },
     "settingsStatusBtBootstrapsPlaceholder": {
-        "message": ""
+        "message": "HOST1 HOST2:PORT ..."
     },
     "settingsStatusBtBootstrapsSave": {
-        "message": ""
+        "message": "محفوظ کریں"
     },
     "settingsLogEnable": {
-        "message": ""
+        "message": "لاگ فائل کو فعال کریں"
     },
     "settingsLogDownload": {
-        "message": ""
+        "message": "ڈاؤن لوڈ کریں"
     },
     "popupTitle": {
-        "message": ""
+        "message": "CENO ذرائع"
     },
     "popupHead": {
-        "message": ""
+        "message": "فی ماخذ صفحہ عناصر کی تعداد:"
     },
     "popupSrcOrigin": {
-        "message": ""
+        "message": "ویب سائٹ سے براہ راست"
     },
     "popupSrcProxy": {
-        "message": ""
+        "message": "CENO نیٹ ورک کے ذریعے (پرائیویٹ)"
     },
     "popupSrcInjector": {
-        "message": ""
+        "message": "CENO نیٹ ورک کے ذریعے (پبلک)"
     },
     "popupSrcDcache": {
-        "message": ""
+        "message": "دوسرے CENO صارفین کے ذریعہ اشتراک کردہ"
     },
     "popupSrcLcache": {
-        "message": ""
+        "message": "آپ کے ذریعہ اشتراک کردہ"
     },
     "popupFoot": {
-        "message": "",
+        "message": "مواد کے ذرائع کے بارے میں مزید معلومات کے لیے $MANUAL$ دیکھیں۔",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -152,34 +152,34 @@
         }
     },
     "popupFootMan": {
-        "message": ""
+        "message": "مینوئل"
     },
     "popupFootManLN": {
-        "message": "",
+        "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
         "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "popupFootManTI": {
-        "message": ""
+        "message": "Censorship.no!یوزر مینوئل - CENO ترتیبات"
     },
     "updateTitle": {
-        "message": ""
+        "message": "CENO اپ ڈیٹ"
     },
     "updateMetacontent": {
-        "message": ""
+        "message": "CENO اپ ڈیٹ"
     },
     "updateHead": {
-        "message": ""
+        "message": "آپ کا CENO براؤزر پرانا ہے۔"
     },
     "updateSubhead": {
-        "message": "",
+        "message": "براہ کرم اپنی ایپ کو اپ ڈیٹ کریں بذریعہ",
         "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
     },
     "updateGetgoogleplay": {
-        "message": "",
+        "message": "اسے Google Play پر حاصل کریں",
         "description": "Alt text for Google Play badge."
     },
     "updateGetpaskoocheh": {
-        "message": "",
+        "message": "اسے Paskoocheh پر حاصل کریں",
         "description": "Alt text for Paskoocheh badge."
     }
 }
