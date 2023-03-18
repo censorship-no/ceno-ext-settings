@@ -125,7 +125,7 @@ function wtOnUpdatedListener(tabId, info, tab) {
     let group = getDhtGroup(url);
     if (info.status === 'loading') {
       // only lookup valid main web pages (no embed URLs)
-      // lookupWebtorrent(group);
+      lookupWebtorrent(group);
     }
   }
 }

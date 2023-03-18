@@ -1,6 +1,6 @@
 'use strict';
 
-import WebTorrent from './libs/webtorrent.min.js';
+import WebTorrent from './libs/webtorrent.js';
 
 let wtClient;
 
@@ -34,10 +34,42 @@ function initWebtorrent() {
   });
 
   wtClient.on('torrent', (torrent) => {
-    dlog("WT on torrent event:"); // DEBUG
-    onTorrentTest(torrent); // TEST
+    // dlog("WT on torrent event:"); // DEBUG
+    // onTorrentTest(torrent); // TEST
   });
 
+}
+
+// Open Blob of HTML in a new tab or window.
+function openHTML(blob) {
+
+  console.log('openHTML: ', blob); // DEBUG
+
+  let blobUrl = URL.createObjectURL(blob);
+  const win = window.open(blobUrl);
+
+  // 'noopener' useful for security, but causes an error if trying to access win.document.
+  // const win = window.open(blobUrl, '_blank', 'noopener,noreferrer');
+  // console.log(win.document); // DEBUG
+  // if (win.document) { console.log(win.document.styleSheets); } // DEBUG
+
+  // BUG: Chrome inserts "injected stylesheet" where it sets "font-size: 75%".
+  //      We need to either set font-size to 'initial' or '100%' if not set in the body already.
+  //      It also sets "font-family".
+
+  // this didn't do anything
+  // win.document.body.style.fontSize = '100%';
+
+  /*
+  // using an iframe (REMOVE)
+  const win = window.open('blank.html'); // TEST
+  console.log(win); // DEBUG
+  // if (win.document) { win.document.body.innerHTML = '<h2>Test</h2>'; } // TEST doesn't work
+  const iframe = win.document.getElementById('viewer'); // doesn't work, is null
+  if (iframe) { iframe.setAttribute('src', blobUrl); }
+  */
+
+  URL.revokeObjectURL(blobUrl);
 }
 
 // TEST
@@ -65,10 +97,22 @@ async function onTorrentTest(torrent) {
     dlog("torrent ready."); // DEBUG
   });
 
-  torrent.on('done', () => {
+  torrent.on('done', async () => {
     dlog("torrent finished"); // DEBUG
+    // console.log(torrent.files); // DEBUG
     for (const file of torrent.files) {
-      dlog(`  filename: ${file.name}`); // DEBUG
+      dlog(`downloading: ${file.name}`); // DEBUG
+
+      // TODO: some check here prior to downloading the file?
+
+      // const blob = new Blob([await file.arrayBuffer()], { type: "text/html" });
+      const blob = await file.blob(); // this downloads the file
+      dlog(`       size: ${blob.size}  type: ${blob.type}`);
+
+      if (blob.type === 'text/html') {
+        dlog(`opening in window...`);
+        openHTML(blob);
+      }
     }
   });
 }
@@ -89,8 +133,18 @@ bgPort.onMessage.addListener((msg) => {
     if (wtClient) {
       // start downloading a new torrent
       dlog("Fetching torrent..."); // DEBUG
-      wtClient.add(msg.infoHash, onTorrentTest);
-      // TODO: How do we know if it can be found?
+
+      const cOpts = {announce: ["wss://tracker.btorrent.xyz", "wss://tracker.openwebtorrent.com"]};
+      wtClient.add(msg.infoHash, cOpts, onTorrentTest);
+      /*
+      let torrent1 = wtClient.add(msg.infoHash, cOpts, (torrent) => {
+        console.log('torrent2: ', torrent); // DEBUG
+      });
+      onTorrentTest(torrent1);
+      */
+
+    } else {
+      console.log('wtClient is missing');
     }
 
   }
