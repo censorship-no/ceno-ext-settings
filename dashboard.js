@@ -72,6 +72,69 @@ function openHTML(blob) {
   URL.revokeObjectURL(blobUrl);
 }
 
+function saveWACZ(blob) {
+
+  console.log('saveWACZ: ', blob); // DEBUG
+  const filename = 'test.wacz';
+  const file = new File([blob], filename, { type: "application/zip" });
+  let blobUrl = URL.createObjectURL(file);
+  // open a Save dialog instead of viewing in a window
+  window.open(blobUrl);
+  URL.revokeObjectURL(blobUrl);
+}
+
+// NOT WORKING
+function openWACZ1(blob) {
+  console.log('openWACZ: ', blob); // DEBUG
+
+  let waczBlobUrl = URL.createObjectURL(blob);
+  let replayBlob = createReplayBlob(waczBlobUrl);
+  let replayBlobUrl = URL.createObjectURL(replayBlob);
+
+  const win = window.open(replayBlobUrl);
+  console.log(win); // DEBUG
+
+  // URL.revokeObjectURL(replayBlobUrl);
+  // URL.revokeObjectURL(waczBlobUrl);
+}
+
+// This will open a local ReplayWeb window where the user can
+// click on a link to view a page stored in a WACZ file.
+// https://github.com/webrecorder/replayweb.page
+//
+// WORKS
+function openWACZ(blob) {
+  console.log('openWACZ: ', blob); // DEBUG
+
+  let waczBlobUrl = URL.createObjectURL(blob);
+  // do we need to use chrome.runtime.getURL() ?
+  const win = window.open(`replay.html?src=${waczBlobUrl}`);
+  // console.log(win); // DEBUG
+
+  // may need to do this eventually to free memory
+  // URL.revokeObjectURL(waczBlobUrl);
+}
+
+// NOT WORKING
+function openTestWACZ() {
+  dlog('opening example WACZ...'); // DEBUG
+  const win = window.open('replay.html');
+  console.log(win); // DEBUG
+}
+
+// NOT WORKING
+function createReplayBlob(blobUrl) {
+  const html = `<html><head><meta charset="utf-8"><title>Replay Website</title>
+  <script src="ui.js"></script><style>body { background-color: lightgrey; }</style>
+  </head>
+  <body>
+  <h2>Replay Test</h2>
+  <replay-web-page replaybase="./" embed="replay-with-info" src="${blobUrl}"></replay-web-page>
+  </body></html>`;
+  const blob = new Blob([html], { type: "text/html" });
+  return blob;
+}
+
 // TEST
 async function onTorrentTest(torrent) {
 
@@ -110,8 +173,11 @@ async function onTorrentTest(torrent) {
       dlog(`       size: ${blob.size}  type: ${blob.type}`);
 
       if (blob.type === 'text/html') {
-        dlog(`opening in window...`);
+        dlog("opening HTML in window...");
         openHTML(blob);
+      } else /* if (blob.type === 'application/octet-stream') */ {
+        dlog("opening WACZ in window...");
+        openWACZ(blob);
       }
     }
   });
@@ -136,12 +202,6 @@ bgPort.onMessage.addListener((msg) => {
 
       const cOpts = {announce: ["wss://tracker.btorrent.xyz", "wss://tracker.openwebtorrent.com"]};
       wtClient.add(msg.infoHash, cOpts, onTorrentTest);
-      /*
-      let torrent1 = wtClient.add(msg.infoHash, cOpts, (torrent) => {
-        console.log('torrent2: ', torrent); // DEBUG
-      });
-      onTorrentTest(torrent1);
-      */
 
     } else {
       console.log('wtClient is missing');
