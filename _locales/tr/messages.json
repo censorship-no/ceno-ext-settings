@@ -172,5 +172,14 @@
     },
     "settingsStatusPubEndpoints": {
         "message": "Herkese açık UDP uç noktaları"
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": "SUNUCU1 SUNUCU2:BAĞLANTINOKTASI ..."
+    },
+    "settingsStatusBtBootstraps": {
+        "message": "Fazladan BitTorrent ön yükleyicileri"
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": "Kaydet"
     }
 }
