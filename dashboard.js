@@ -50,8 +50,7 @@ function openHTML(blob) {
 
   // 'noopener' useful for security, but causes an error if trying to access win.document.
   // const win = window.open(blobUrl, '_blank', 'noopener,noreferrer');
-  // console.log(win.document); // DEBUG
-  // if (win.document) { console.log(win.document.styleSheets); } // DEBUG
+  // if ('document' in win) { console.log(win.document.styleSheets); } // DEBUG
 
   // BUG: Chrome inserts "injected stylesheet" where it sets "font-size: 75%".
   //      We need to either set font-size to 'initial' or '100%' if not set in the body already.
@@ -59,15 +58,6 @@ function openHTML(blob) {
 
   // this didn't do anything
   // win.document.body.style.fontSize = '100%';
-
-  /*
-  // using an iframe (REMOVE)
-  const win = window.open('blank.html'); // TEST
-  console.log(win); // DEBUG
-  // if (win.document) { win.document.body.innerHTML = '<h2>Test</h2>'; } // TEST doesn't work
-  const iframe = win.document.getElementById('viewer'); // doesn't work, is null
-  if (iframe) { iframe.setAttribute('src', blobUrl); }
-  */
 
   URL.revokeObjectURL(blobUrl);
 }
@@ -83,56 +73,30 @@ function saveWACZ(blob) {
   URL.revokeObjectURL(blobUrl);
 }
 
-// NOT WORKING
-function openWACZ1(blob) {
-  console.log('openWACZ: ', blob); // DEBUG
-
-  let waczBlobUrl = URL.createObjectURL(blob);
-  let replayBlob = createReplayBlob(waczBlobUrl);
-  let replayBlobUrl = URL.createObjectURL(replayBlob);
-
-  const win = window.open(replayBlobUrl);
-  console.log(win); // DEBUG
-
-  // URL.revokeObjectURL(replayBlobUrl);
-  // URL.revokeObjectURL(waczBlobUrl);
-}
-
-// This will open a local ReplayWeb window where the user can
-// click on a link to view a page stored in a WACZ file.
+// This will open the default page in a local ReplayWeb window.
 // https://github.com/webrecorder/replayweb.page
 //
-// WORKS
-function openWACZ(blob) {
+function openWACZ({ blob, url = 'page:0', title = '' }) {
   console.log('openWACZ: ', blob); // DEBUG
 
   let waczBlobUrl = URL.createObjectURL(blob);
-  // do we need to use chrome.runtime.getURL() ?
-  const win = window.open(`replay.html?src=${waczBlobUrl}`);
-  // console.log(win); // DEBUG
+  let eUrl = encodeURIComponent(url);
+  let openUrl = chrome.runtime.getURL('replay.html') + `?src=${waczBlobUrl}&url=${eUrl}&title=${title}`;
+  let win = window.open(openUrl);
 
-  // may need to do this eventually to free memory
-  // URL.revokeObjectURL(waczBlobUrl);
+  // free blob memory on close
+  win.addEventListener('beforeunload', (event) => {
+    console.log(`Free ${waczBlobUrl}`); // DEBUG
+    URL.revokeObjectURL(waczBlobUrl);
+  });
 }
 
 // NOT WORKING
 function openTestWACZ() {
   dlog('opening example WACZ...'); // DEBUG
-  const win = window.open('replay.html');
+  let openUrl = chrome.runtime.getURL('replay.html')
+  let win = window.open(openUrl);
   console.log(win); // DEBUG
-}
-
-// NOT WORKING
-function createReplayBlob(blobUrl) {
-  const html = `<html><head><meta charset="utf-8"><title>Replay Website</title>
-  <script src="ui.js"></script><style>body { background-color: lightgrey; }</style>
-  </head>
-  <body>
-  <h2>Replay Test</h2>
-  <replay-web-page replaybase="./" embed="replay-with-info" src="${blobUrl}"></replay-web-page>
-  </body></html>`;
-  const blob = new Blob([html], { type: "text/html" });
-  return blob;
 }
 
 // TEST
@@ -177,14 +141,13 @@ async function onTorrentTest(torrent) {
         openHTML(blob);
       } else /* if (blob.type === 'application/octet-stream') */ {
         dlog("opening WACZ in window...");
-        openWACZ(blob);
+        openWACZ({ blob, title: "Website from CENO" });
       }
     }
   });
 }
 
 // Set up port to receive messages from background.js
-// let bgPort = browser.runtime.connect({ name: 'wt-port' });
 let bgPort = chrome.runtime.connect({ name: 'wt-port' });
 bgPort.onMessage.addListener((msg) => {
 
