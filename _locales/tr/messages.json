@@ -22,20 +22,20 @@
         }
     },
     "settingsWarnMan": {
-        "message": "kılavuz"
+        "message": "rehber"
     },
     "settingsWarnManLN": {
         "message": "https://censorship.no/user-manual/en/browser/settings.html",
         "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "settingsWarnManTI": {
-        "message": "Censorship.no! Kullanıcı kılavuzu – CENO ayarları"
+        "message": "Censorship.no! Kullanıcı rehberi – CENO ayarları"
     },
     "settingsSources": {
         "message": "İçerik alma kaynakları:"
     },
     "settingsSrcOrigin": {
-        "message": "Doğrudan web sitesinden"
+        "message": "Doğrudan siteden"
     },
     "settingsSrcProxy": {
         "message": "CENO ağı üzerinden (özel)"
@@ -99,19 +99,19 @@
         "message": "Sizin paylaştığınız içerik"
     },
     "settingsLogEnable": {
-        "message": "Günlük dosyasını etkinleştir"
+        "message": "Günlük dosyası kullanılsın"
     },
     "settingsLogDownload": {
         "message": "İndir"
     },
     "popupTitle": {
-        "message": "CENO Kaynakları"
+        "message": "CENO kaynakları"
     },
     "popupHead": {
-        "message": "Kaynak başına sayfa ögesi sayısı:"
+        "message": "Bir kaynaktaki sayfa bileşenleri sayısı:"
     },
     "popupSrcOrigin": {
-        "message": "Doğrudan web sitesinden"
+        "message": "Doğrudan siteden"
     },
     "popupSrcProxy": {
         "message": "CENO ağı üzerinden (özel)"
@@ -120,13 +120,13 @@
         "message": "CENO ağı üzerinden (herkese açık)"
     },
     "popupSrcDcache": {
-        "message": "Diğer CENO kullanıcıları tarafından paylaşılan"
+        "message": "Diğer CENO kullanıcılarının paylaşımlarından"
     },
     "popupSrcLcache": {
-        "message": "Sizin tarafınızdan paylaşılan"
+        "message": "Sizin paylaşımlarınızdan"
     },
     "popupFoot": {
-        "message": "İçerik kaynakları hakkında daha fazla bilgi için $MANUAL$ sayfasına bakın.",
+        "message": "İçerik kaynakları hakkında ayrıntılı bilgi almak için $MANUAL$ bölümüne bakabilirsiniz.",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -134,14 +134,14 @@
         }
     },
     "popupFootMan": {
-        "message": "kılavuz"
+        "message": "rehber"
     },
     "popupFootManLN": {
         "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
         "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "popupFootManTI": {
-        "message": "Censorship.no! Kullanıcı Kılavuzu – CENO ayarları"
+        "message": "Censorship.no! Kullanıcı rehberi – CENO ayarları"
     },
     "updateTitle": {
         "message": "CENO güncelleme"
@@ -150,18 +150,18 @@
         "message": "CENO güncelleme"
     },
     "updateHead": {
-        "message": "CENO Tarayıcınız güncel değil."
+        "message": "Kullandığınız CENO Browser güncel değil."
     },
     "updateSubhead": {
-        "message": "Lütfen uygulamanızı güncelleyin",
+        "message": "Lütfen uygulamanızı şuradan güncelleyin",
         "description": "Update hint for user, followed by graphical update badge links."
     },
     "updateGetgoogleplay": {
-        "message": "Google Play'den indirin",
+        "message": "Google Play üzerinden indirin",
         "description": "Alt text for Google Play badge."
     },
     "updateGetpaskoocheh": {
-        "message": "Paskoocheh'den indirin",
+        "message": "Paskoocheh üzerinden indirin",
         "description": "Alt text for Paskoocheh badge."
     },
     "settingsStatusClientState": {
@@ -177,7 +177,7 @@
         "message": "SUNUCU1 SUNUCU2:BAĞLANTINOKTASI ..."
     },
     "settingsStatusBtBootstraps": {
-        "message": "Fazladan BitTorrent ön yükleyicileri"
+        "message": "Ek BitTorrent ön yükleyicileri"
     },
     "settingsStatusBtBootstrapsSave": {
         "message": "Kaydet"
