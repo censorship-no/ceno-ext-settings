@@ -81,7 +81,7 @@ function openWACZ({ blob, url = 'page:0', title = '' }) {
 
   let waczBlobUrl = URL.createObjectURL(blob);
   let eUrl = encodeURIComponent(url);
-  let openUrl = chrome.runtime.getURL('replay.html') + `?src=${waczBlobUrl}&url=${eUrl}&title=${title}`;
+  let openUrl = chrome.runtime.getURL('replay/replay.html') + `?src=${waczBlobUrl}&url=${eUrl}&title=${title}`;
   let win = window.open(openUrl);
 
   // free blob memory on close
@@ -94,7 +94,7 @@ function openWACZ({ blob, url = 'page:0', title = '' }) {
 // NOT WORKING
 function openTestWACZ() {
   dlog('opening example WACZ...'); // DEBUG
-  let openUrl = chrome.runtime.getURL('replay.html')
+  let openUrl = chrome.runtime.getURL('replay/replay.html')
   let win = window.open(openUrl);
   console.log(win); // DEBUG
 }
@@ -173,6 +173,8 @@ bgPort.onMessage.addListener((msg) => {
   }
   else if (msg.message === 'wt_seed') {
     // seed torrent
+    // NOTE: none of this is ready
+
     dlog(`  Seed group: ${msg.group}`);
     dlog(`    infohash: ${msg.infoHash}`);
     dlog(`       tabId: ${msg.tabId}`);
@@ -202,6 +204,8 @@ bgPort.onMessage.addListener((msg) => {
         // window.open(blobUrl, '_blank', 'noopener,noreferrer');
         URL.revokeObjectURL(blobUrl);
       */
+
+        // TODO: remove the following
 
         // Buffer() is not defined, but only in node.js
         // const img = Buffer.from('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7', 'base64');

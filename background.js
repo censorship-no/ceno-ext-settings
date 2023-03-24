@@ -574,12 +574,14 @@ browser.tabs.onRemoved.addListener(
 //browser.pageAction.onClicked.addListener(browser.pageAction.openPopup);
 
 // Set up right-click context menu inside the web page.
+const DOC_PATTERNS = ['http://*/*', 'https://*/*'];
+/* Temporarily commented out until seeding code is fixed ('wt_seed' in dashboard.js)
 if (browser.contextMenus) {
   browser.contextMenus.create({
     'id': 'seed_page',
     'title': 'Seed Page on WebTorrent',
     'contexts': ['page', 'frame'],
-    'documentUrlPatterns': ['http://*/*', 'https://*/*']
+    'documentUrlPatterns': DOC_PATTERNS
   });
   browser.contextMenus.onClicked.addListener((click) => {
     if (click.menuItemId === 'seed_page') {
@@ -596,3 +598,4 @@ if (browser.contextMenus) {
     }
   });
 }
+*/

@@ -67,9 +67,9 @@
     "update-page/img/ceno-warning-icon.png",
     "update-page/img/google-play-badge-2.png",
     "update-page/img/paskoocheh-download-badge.png",
-    "sw.js",
-    "ui.js",
-    "webmanifest.json"
+    "replay/sw.js",
+    "replay/ui.js",
+    "replay/webmanifest.json"
   ],
 
   "incognito": "spanning",
