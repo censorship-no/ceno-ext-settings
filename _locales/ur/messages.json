@@ -38,10 +38,10 @@
         "message": "ویب سائٹ سے براہ راست"
     },
     "settingsSrcProxy": {
-        "message": "CENO نیٹ ورک کے ذریعے (پرائیویٹ)"
+        "message": "CENO نیٹ ورک کے ذریعے (نجی)"
     },
     "settingsSrcInjector": {
-        "message": "CENO نیٹ ورک کے ذریعے (پبلک)"
+        "message": "CENO نیٹ ورک کے ذریعے (عوامی)"
     },
     "settingsSrcDcache": {
         "message": "دوسرے CENO صارفین کے ذریعہ اشتراک کردہ"
@@ -55,7 +55,7 @@
         }
     },
     "settingsPubwarnPub": {
-        "message": "پبلک براؤزنگ"
+        "message": "عوامی ‏براؤزنگ"
     },
     "settingsPrivwarn": {
         "message": "موجودہ ترتیبات کے ساتھ $PRIVATE_BROWSING$ ناکام ہو جائے گا۔",
@@ -66,7 +66,7 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": "پرائیویٹ براؤزنگ"
+        "message": "نجی براؤزنگ"
     },
     "settingsStatusBrowser": {
         "message": "CENO براؤزر"
@@ -93,13 +93,13 @@
         "message": "بیرونی UDP endpoints"
     },
     "settingsStatusPubEndpoints": {
-        "message": "پبلک UDP endpoints"
+        "message": "عوامی UDP endpoints"
     },
     "settingsStatusReachability": {
         "message": "قابل رسائی سٹيٹس"
     },
     "settingsStatusCacheSize": {
-        "message": "لوكل کیشے کا سائز"
+        "message": "لوكل کیش کا سائز"
     },
     "settingsStatusCachePurge": {
         "message": "ابھی صاف کریں"
@@ -132,10 +132,10 @@
         "message": "ویب سائٹ سے براہ راست"
     },
     "popupSrcProxy": {
-        "message": "CENO نیٹ ورک کے ذریعے (پرائیویٹ)"
+        "message": "CENO نیٹ ورک کے ذریعے (نجی)"
     },
     "popupSrcInjector": {
-        "message": "CENO نیٹ ورک کے ذریعے (پبلک)"
+        "message": "CENO نیٹ ورک کے ذریعے (عوامی)"
     },
     "popupSrcDcache": {
         "message": "دوسرے CENO صارفین کے ذریعہ اشتراک کردہ"
