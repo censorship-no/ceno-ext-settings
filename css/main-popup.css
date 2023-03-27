@@ -1,0 +1,32 @@
+body {
+  width: 220px;
+}
+
+a:link {
+  color: #0ea5e9;
+}
+
+p {
+  margin: 0.5em 0 0 0;
+  font-size: 1em;
+}
+
+.logo {
+  height: 32px;
+  margin: 5px;
+  vertical-align: middle;
+}
+
+.body-container {
+  padding: 0.5em;
+}
+
+.header-container {
+  text-align: center;
+}
+
+.outer-container {
+  display: contents;
+  text-align: center;
+}
+

@@ -1,9 +1,9 @@
 'use strict';
+
 const CENO_ICON = "icons/ceno-logo-32.png";
 const CACHE_MAX_ENTRIES = 500;
 const OUINET_RESPONSE_VERSION_MIN = 1  // protocol versions accepted
 const OUINET_RESPONSE_VERSION_MAX = 6
-const WT_CACHE_EXPIRES_AFTER = 1000 * 60; // in millisecs = 1 min
 
 // Requests for URLs matching the following regular expressions
 // will always be considered private (thus non-cacheable).
@@ -27,22 +27,6 @@ function escapeHtml(s) {
   return s.replace(/[&<>"']/g, (c) => htmlEscapes[c]);
 }
 
-function removeFragmentFromURL(url) {
-    return url.replace(/#.*$/, "");
-}
-
-function removeSchemeFromURL(url) {
-    return url.replace(/^[a-z][-+.0-9a-z]*:\/\//i, "");
-}
-
-function removeTrailingSlashes(s) {
-    return s.replace(/\/+$/, "");
-}
-
-function removeLeadingWWW(s) {
-    return s.replace(/^www\./i, "");
-}
-
 function isUrlCacheable(url) {
     for (const rx of NO_CACHE_URL_REGEXPS)
         if (rx.test(url))
@@ -50,56 +34,23 @@ function isUrlCacheable(url) {
     return true;
 }
 
-function getDhtGroup(url) {
-    // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders
-    if (!url) return url;
-    url = removeFragmentFromURL(url);
-    url = removeSchemeFromURL(url);
-    url = removeTrailingSlashes(url);
-    url = removeLeadingWWW(url);
-    return url;
-}
-
-
 // --- WebTorrent ------------------------------------------------------------
 
-function getSwarm(group) {
-  const OUI_PROTO = "6";
-  const INJ_PUBKEY = "zh6ylt6dghu6swhhje2j66icmjnonv53tstxxvj6acu64sc62fnq";
-  let swarm = `ed25519:${INJ_PUBKEY}/v${OUI_PROTO}/uri/${group}`;
-  return swarm;
-}
-
-// Return hex string of SHA-1 hash of swarm.
-async function getInfoHash(swarm) {
-  if (crypto && ('subtle' in crypto)) {
-    // only works in secure contexts
-    const encoder = new TextEncoder();
-    const data = encoder.encode(swarm);
-    const hashBuffer = await crypto.subtle.digest('SHA-1', data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
-    return hashHex;
-  } else {
-    console.warn("Can't use crypto in insecure context!");
-  }
-}
-
-// NOT DONE
+// Search webtorrent by infohash based on given group if not yet in wtCache.
 async function lookupWebtorrent(group) {
 
   await wtCacheRemoveAllExpired();
-  let details = await wtCacheGet(group);
+  let swarm = getSwarm(group);
+  let ihash = await getInfoHash(swarm);
+  let info = await wtCacheGet(ihash);
   console.log("Lookup group: " + group); // DEBUG
-  if (details) {
-    console.log("    in cache: ", details); // DEBUG
+  console.log("       swarm: " + swarm); // DEBUG
+  console.log("    infohash: " + ihash); // DEBUG
+  if (info) {
+    console.log("    in cache: ", info); // DEBUG
   } else {
     // not in cache
-    let swarm = getSwarm(group);
-    let ihash = await getInfoHash(swarm);
-    console.log("       swarm: " + swarm); // DEBUG
-    console.log("    infohash: " + ihash); // DEBUG
-    wtCacheSet(group, { swarm: swarm, hash: ihash });
+    wtCacheSet(ihash, { group, swarm });
     // send to dashboard
     wtPort && wtPort.postMessage({ message: 'wt_fetch', group: group, swarm: swarm, infoHash: ihash });
   }
@@ -128,70 +79,6 @@ function wtOnUpdatedListener(tabId, info, tab) {
       lookupWebtorrent(group);
     }
   }
-}
-
-// Insert a URL group into the WT cache.
-function wtCacheSet(group, details) {
-  browser.storage.local.get('wt_cache').then((data) => {
-    if (!data.wt_cache) {
-      data.wt_cache = {};
-    }
-    if (!details) {
-      details = {};
-    }
-    details.created = Date.now();
-    data.wt_cache[group] = details;
-    browser.storage.local.set(data);
-  });
-}
-
-// Retrieve object if URL group is in the WT cache. Returns a Promise.
-function wtCacheGet(group) {
-  return new Promise((resolve, reject) => {
-    browser.storage.local.get('wt_cache').then((data) => {
-      if (data.wt_cache && data.wt_cache[group]) {
-        resolve(data.wt_cache[group]);
-      } else {
-        resolve(null);
-      }
-    });
-  });
-}
-
-// Remove single item from WT cache. Returns a Promise.
-function wtCacheRemove(group) {
-  return browser.storage.local.get('wt_cache').then((data) => {
-    if (data.wt_cache && data.wt_cache[group]) {
-      delete data.wt_cache[group];
-    }
-    return browser.storage.local.set(data);
-  });
-}
-
-// Clears the entire WT cache. Returns a Promise.
-function wtCacheRemoveAll() {
-  return browser.storage.local.get('wt_cache').then((data) => {
-    if (data.wt_cache) {
-      delete data.wt_cache;
-    }
-    return browser.storage.local.set(data);
-  });
-}
-
-// Removes all items in the WT cache that are older than given millisecs from now. Returns a Promise.
-function wtCacheRemoveAllExpired(millisecs = WT_CACHE_EXPIRES_AFTER) {
-  return browser.storage.local.get('wt_cache').then((data) => {
-    if (data.wt_cache) {
-      const now = Date.now();
-      for (let [k, v] of Object.entries(data.wt_cache)) {
-        if (v.created && (((now - v.created) > millisecs))) {
-          delete data.wt_cache[k];
-          console.log("deleted: " + k); // DEBUG
-        }
-      }
-    }
-    return browser.storage.local.set(data);
-  });
 }
 
 // Setting up a port to talk with webtorrent dashboard.
@@ -507,10 +394,12 @@ function clearLocalStorage() {
 // setOuinetClientAsProxy({ config: APP_CONFIG }); // TODO: reenable this later
 setOuinetClientAsProxy({ reset: true });
 
+/*
 browser.browserAction.onClicked.addListener(function() {
   var url = browser.runtime.getURL("settings.html");
   browser.tabs.create({url: url});
 })
+*/
 
 browser.webRequest.onBeforeSendHeaders.addListener(
   onBeforeSendHeaders,

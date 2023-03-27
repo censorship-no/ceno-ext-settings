@@ -8,13 +8,14 @@ function dlog(text) {
   const elem = document.getElementById('log-area');
   elem.innerHTML += `${text}\n`;
   elem.scrollTop = elem.scrollHeight;
+  console.log(text);
 }
 
 function initWebtorrent() {
-  dlog("Initializing WebTorrent...");
+  dlog("Initializing...");
 
   if (WebTorrent.WEBRTC_SUPPORT) {
-    dlog("WebRTC supported");
+    dlog("WebRTC supported.");
   }
   else {
     dlog("WebRTC not supported!");
@@ -24,20 +25,12 @@ function initWebtorrent() {
   wtClient = new WebTorrent();
 
   wtClient.on('error', (err) => {
-    dlog(`WT ERROR: ${err.message}`); // DEBUG
-    console.log("WT ERROR:", err);   // DEBUG
+    dlog(`WT ERROR: ${err.message}`);
   });
 
   wtClient.on('warning', (err) => {
-    dlog(`WT WARN: ${err.message}`); // DEBUG
-    console.log("WT WARN:", err);   // DEBUG
+    dlog(`WT WARN: ${err.message}`);
   });
-
-  wtClient.on('torrent', (torrent) => {
-    // dlog("WT on torrent event:"); // DEBUG
-    // onTorrentTest(torrent); // TEST
-  });
-
 }
 
 // Open Blob of HTML in a new tab or window.
@@ -46,6 +39,11 @@ function openHTML(blob) {
   console.log('openHTML: ', blob); // DEBUG
 
   let blobUrl = URL.createObjectURL(blob);
+  openBlobUrlHTML(blobUrl);
+  URL.revokeObjectURL(blobUrl);
+}
+
+function openBlobUrlHTML(blobUrl) {
   const win = window.open(blobUrl);
 
   // 'noopener' useful for security, but causes an error if trying to access win.document.
@@ -58,9 +56,8 @@ function openHTML(blob) {
 
   // this didn't do anything
   // win.document.body.style.fontSize = '100%';
-
-  URL.revokeObjectURL(blobUrl);
 }
+
 
 function saveWACZ(blob) {
 
@@ -80,69 +77,80 @@ function openWACZ({ blob, url = 'page:0', title = '' }) {
   console.log('openWACZ: ', blob); // DEBUG
 
   let waczBlobUrl = URL.createObjectURL(blob);
+  openBlobUrlWACZ({ blobUrl: waczBlobUrl, url, title });
+}
+
+function openBlobUrlWACZ({ blobUrl, url = 'page:0', title = '' }) {
+
   let eUrl = encodeURIComponent(url);
-  let openUrl = chrome.runtime.getURL('replay/replay.html') + `?src=${waczBlobUrl}&url=${eUrl}&title=${title}`;
+  let openUrl = chrome.runtime.getURL('replay/replay.html') + `?src=${blobUrl}&url=${eUrl}&title=${title}`;
   let win = window.open(openUrl);
 
   // free blob memory on close
+  // TODO Later: free all blobs when closing Dashboard
   win.addEventListener('beforeunload', (event) => {
     console.log(`Free ${waczBlobUrl}`); // DEBUG
     URL.revokeObjectURL(waczBlobUrl);
   });
 }
 
-// NOT WORKING
-function openTestWACZ() {
-  dlog('opening example WACZ...'); // DEBUG
-  let openUrl = chrome.runtime.getURL('replay/replay.html')
-  let win = window.open(openUrl);
-  console.log(win); // DEBUG
-}
+async function onTorrentAdd(torrent) {
 
-// TEST
-async function onTorrentTest(torrent) {
-
-  console.log('onTorrentTest: ', torrent); // DEBUG
+  console.log('     torrent: ', torrent); // DEBUG
   if (!torrent) return;
 
-  dlog(`Torrent name: ${torrent.name}`);
-  dlog(`    infohash: ${torrent.infoHash}`);
+  const orighash = torrent.discovery.infoHash;
+
+  dlog(`        name: ${torrent.name}`);
+  dlog(`  infohash A: ${orighash}`);
+  dlog(`  infohash B: ${torrent.infoHash}`);
 
   torrent.on('infoHash', () => {
-    dlog('torrent infoHash has been determined.'); // DEBUG
+    dlog('torrent infoHash has been determined.');
   });
 
   torrent.on('error', (err) => {
-    dlog(`torrent error: ${err.message}`); // DEBUG
+    dlog(`torrent error: ${err.message}`);
   });
 
   torrent.on('warning', (err) => {
-    dlog(`torrent warning:  ${err.message}`); // DEBUG
+    dlog(`torrent warning:  ${err.message}`);
   });
 
   torrent.on('ready', () => {
-    dlog("torrent ready."); // DEBUG
+    dlog("torrent ready.");
   });
 
   torrent.on('done', async () => {
-    dlog("torrent finished"); // DEBUG
-    // console.log(torrent.files); // DEBUG
+
+    // log list of files in torrent
+    let i = 0;
     for (const file of torrent.files) {
-      dlog(`downloading: ${file.name}`); // DEBUG
+      dlog(`      file ${i}: ${file.name}`);
+      i++;
+    }
 
-      // TODO: some check here prior to downloading the file?
+    // Download the first file.
+    // This assumes the first file is what we are displaying.
+    let file1 = torrent.files[0];
+    dlog(` downloading: ${file1.name}`);
+    let blob = await file1.blob(); // download file
+    dlog(`        size: ${blob.size}  type: ${blob.type}`);
 
-      // const blob = new Blob([await file.arrayBuffer()], { type: "text/html" });
-      const blob = await file.blob(); // this downloads the file
-      dlog(`       size: ${blob.size}  type: ${blob.type}`);
-
-      if (blob.type === 'text/html') {
-        dlog("opening HTML in window...");
-        openHTML(blob);
-      } else /* if (blob.type === 'application/octet-stream') */ {
-        dlog("opening WACZ in window...");
-        openWACZ({ blob, title: "Website from CENO" });
-      }
+    // Since we can't store the torrent directly in the cache (can't serialize value to JSON)
+    // we'll store the blob's URL after creating a blob object, which should be freed later.
+    let blobUrl = URL.createObjectURL(blob);
+    let info = await wtCacheGet(orighash);
+    if (info) {
+      // add to existing cache entry
+      info.blobSize = blob.size;
+      info.blobType = blob.type;
+      info.blobUrl = blobUrl;
+      wtCacheSet(orighash, info);
+    }
+    else {
+      // this shouldn't happen
+      dlog("infohash not found in cache!");
     }
   });
 }
@@ -156,24 +164,20 @@ bgPort.onMessage.addListener((msg) => {
   if (msg.message === 'wt_fetch') {
     // fetch torrent
     dlog(`Lookup group: ${msg.group}`);
-    dlog(`    infohash: ${msg.infoHash}`);
+    dlog(`  infohash A: ${msg.infoHash}`);
 
-    // TESTING
     if (wtClient) {
       // start downloading a new torrent
-      dlog("Fetching torrent..."); // DEBUG
-
       const cOpts = {announce: ["wss://tracker.btorrent.xyz", "wss://tracker.openwebtorrent.com"]};
-      wtClient.add(msg.infoHash, cOpts, onTorrentTest);
+      wtClient.add(msg.infoHash, cOpts, onTorrentAdd);
 
-    } else {
-      console.log('wtClient is missing');
     }
-
+    else {
+      dlog('ERROR: wtClient is missing!');
+    }
   }
   else if (msg.message === 'wt_seed') {
-    // seed torrent
-    // NOTE: none of this is ready
+    // seed torrent (NOT READY)
 
     dlog(`  Seed group: ${msg.group}`);
     dlog(`    infohash: ${msg.infoHash}`);
@@ -235,7 +239,7 @@ bgPort.onMessage.addListener((msg) => {
         // WT ERROR: Invalid torrent identifier
         //wtClient && wtClient.seed(fileData, seedOpts, onTorrentTest);
         //wtClient && wtClient.seed(mhtmlData, seedOpts, onTorrentTest);
-        wtClient && wtClient.seed(img, seedOpts, onTorrentTest);
+        //wtClient && wtClient.seed(img, seedOpts, onTorrentTest);
 
         // TEST
         /*
@@ -264,6 +268,25 @@ bgPort.onMessage.addListener((msg) => {
     }
   }
 
+});
+
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (!msg) { return }
+  if (msg.message === 'wt_view') {
+    // view given blob url
+    if (msg.type === 'text/html') {
+      dlog("Opening HTML in window...");
+      openBlobUrlHTML(msg.url);
+
+    }
+    else if (msg.type === 'application/octet-stream') {
+      dlog("Opening WACZ in window...");
+      openBlobUrlWACZ({ blobUrl: msg.url, title: "Website from CENO" });
+    }
+    else {
+      dlog(`Can't View Website: Unknown MIME Type: ${msg.type}`);
+    }
+  }
 });
 
 // main onload

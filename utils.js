@@ -1,5 +1,9 @@
 'use strict';
 
+const WT_CACHE_EXPIRES_AFTER = 1000 * 60; // in millisecs = 1 min
+
+// --- General ------------------------------------------------------------
+
 function getBrowser() {
   // The order these are in is important
   if (navigator.brave) { return 'brave' }
@@ -17,6 +21,126 @@ function getBrowser() {
 function isWebUrl(url) {
   return ((typeof url) === 'string' && (url.indexOf('http://') === 0 || url.indexOf('https://') === 0));
 }
+
+function removeFragmentFromURL(url) {
+    return url.replace(/#.*$/, "");
+}
+
+function removeSchemeFromURL(url) {
+    return url.replace(/^[a-z][-+.0-9a-z]*:\/\//i, "");
+}
+
+function removeTrailingSlashes(s) {
+    return s.replace(/\/+$/, "");
+}
+
+function removeLeadingWWW(s) {
+    return s.replace(/^www\./i, "");
+}
+
+// --- WebTorrent ------------------------------------------------------------
+
+function getDhtGroup(url) {
+    // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders
+    if (!(url && (typeof url === 'string'))) return url;
+    url = removeFragmentFromURL(url);
+    url = removeSchemeFromURL(url);
+    url = removeTrailingSlashes(url);
+    url = removeLeadingWWW(url);
+    return url;
+}
+
+function getSwarm(group) {
+  const OUI_PROTO = "6";
+  const INJ_PUBKEY = "zh6ylt6dghu6swhhje2j66icmjnonv53tstxxvj6acu64sc62fnq";
+  let swarm = `ed25519:${INJ_PUBKEY}/v${OUI_PROTO}/uri/${group}`;
+  return swarm;
+}
+
+// Return hex string of SHA-1 hash of swarm.
+async function getInfoHash(swarm) {
+  if (crypto && ('subtle' in crypto)) {
+    // only works in secure contexts
+    const encoder = new TextEncoder();
+    const data = encoder.encode(swarm);
+    const hashBuffer = await crypto.subtle.digest('SHA-1', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
+    return hashHex;
+  }
+  else {
+    console.warn("Can't use crypto in insecure context!");
+  }
+}
+
+// --- WebTorrent Cache ------------------------------------------------------------
+
+// Insert info into the WT cache.
+function wtCacheSet(key, info) {
+  browser.storage.local.get('wt_cache').then((data) => {
+    if (!data.wt_cache) {
+      data.wt_cache = {};
+    }
+    if (!info) {
+      info = {};
+    }
+    info.updated = Date.now();
+    data.wt_cache[key] = info;
+    browser.storage.local.set(data);
+  });
+}
+
+// Retrieve object if key is in the WT cache. Returns a Promise.
+function wtCacheGet(key) {
+  return new Promise((resolve, reject) => {
+    browser.storage.local.get('wt_cache').then((data) => {
+      if (data.wt_cache && data.wt_cache[key]) {
+        resolve(data.wt_cache[key]);
+      }
+      else {
+        resolve(null);
+      }
+    });
+  });
+}
+
+// Remove single item from WT cache. Returns a Promise.
+function wtCacheRemove(key) {
+  return browser.storage.local.get('wt_cache').then((data) => {
+    if (data.wt_cache && data.wt_cache[key]) {
+      delete data.wt_cache[key];
+    }
+    return browser.storage.local.set(data);
+  });
+}
+
+// Clears the entire WT cache. Returns a Promise.
+function wtCacheRemoveAll() {
+  return browser.storage.local.get('wt_cache').then((data) => {
+    if (data.wt_cache) {
+      delete data.wt_cache;
+    }
+    return browser.storage.local.set(data);
+  });
+}
+
+// Removes all items in the WT cache that are older than given millisecs from now. Returns a Promise.
+function wtCacheRemoveAllExpired(millisecs = WT_CACHE_EXPIRES_AFTER) {
+  return browser.storage.local.get('wt_cache').then((data) => {
+    if (data.wt_cache) {
+      const now = Date.now();
+      for (let [k, v] of Object.entries(data.wt_cache)) {
+        if (v.updated && (((now - v.updated) > millisecs))) {
+          delete data.wt_cache[k];
+          console.log("deleted: " + k); // DEBUG
+        }
+      }
+    }
+    return browser.storage.local.set(data);
+  });
+}
+
+// --- Proxy ------------------------------------------------------------
 
 /**
  * Configure the Ouinet client as a proxy.
@@ -81,7 +205,8 @@ function setOuinetClientAsProxy({config, reset = false }) {
             // in `gecko-dev/toolkit/components/extensions/parent/ext-proxy.js`.
             console.error("Failed to configure proxy: ", e);
           });
-        } else {
+        }
+        else {
           console.error("CENO Extension needs private access to set up proxy!");
           console.log("Go to 'about:addons', click on 'CENO Extension', under Details set 'Run in Private Windows' to Allow.");
         }
