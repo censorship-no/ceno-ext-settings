@@ -33,6 +33,10 @@ function initWebtorrent() {
   });
 }
 
+function openInWindow(url) {
+  return window.open(url, "_blank", "popup,noopener,noreferrer");
+}
+
 // Open Blob of HTML in a new tab or window.
 function openHTML(blob) {
 
@@ -44,7 +48,7 @@ function openHTML(blob) {
 }
 
 function openBlobUrlHTML(blobUrl) {
-  const win = window.open(blobUrl);
+  openInWindow(blobUrl);
 
   // 'noopener' useful for security, but causes an error if trying to access win.document.
   // const win = window.open(blobUrl, '_blank', 'noopener,noreferrer');
@@ -66,7 +70,7 @@ function saveWACZ(blob) {
   const file = new File([blob], filename, { type: "application/zip" });
   let blobUrl = URL.createObjectURL(file);
   // open a Save dialog instead of viewing in a window
-  window.open(blobUrl);
+  openInWindow(blobUrl);
   URL.revokeObjectURL(blobUrl);
 }
 
@@ -84,11 +88,11 @@ function openBlobUrlWACZ({ blobUrl, url = 'page:0', title = '' }) {
 
   let eUrl = encodeURIComponent(url);
   let openUrl = chrome.runtime.getURL('replay/replay.html') + `?src=${blobUrl}&url=${eUrl}&title=${title}`;
-  let win = window.open(openUrl);
+  let win = openInWindow(openUrl);
 
   // free blob memory on close
   // TODO Later: free all blobs when closing Dashboard
-  win.addEventListener('beforeunload', (event) => {
+  win && win.addEventListener('beforeunload', (event) => {
     console.log(`Free ${waczBlobUrl}`); // DEBUG
     URL.revokeObjectURL(waczBlobUrl);
   });

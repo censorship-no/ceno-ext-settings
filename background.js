@@ -77,7 +77,7 @@ function wtOnUpdatedListener(tabId, info, tab) {
     if (info.status === 'loading') {
       // only lookup valid main web pages (no embed URLs)
       // lookupWebtorrent(group);
-      wtCacheRemoveAllExpired();
+      // wtCacheRemoveAllExpired();
     }
   }
 }
@@ -390,6 +390,7 @@ function clearLocalStorage() {
       browser.storage.local.set(data);
     });
   });
+  wtCacheRemoveAll();
 }
 
 // setOuinetClientAsProxy({ config: APP_CONFIG }); // TODO: reenable this later
