@@ -1,5 +1,6 @@
 'use strict';
 
+let gActiveUrl = '';
 let gBlobUrl = '';
 let gBlobSize = '';
 let gBlobType = '';
@@ -11,6 +12,21 @@ function initSettings() {
   });
 }
 
+function initFetch() {
+  let button = document.getElementById("fetch-btn");
+  button.addEventListener('click', () => {
+    if (gActiveUrl) {
+      // send to dashboard
+      browser.runtime.sendMessage({ message: 'wt_fetch2', url: gActiveUrl });
+      let status = document.getElementById("status-text");
+      status.innerText = "Fetching...";
+    }
+    else {
+      console.log("No activeUrl");
+    }
+  });
+}
+
 function initViewWebsite() {
   let button = document.getElementById("view-website-btn");
   button.addEventListener('click', () => {
@@ -19,7 +35,7 @@ function initViewWebsite() {
       browser.runtime.sendMessage({ message: 'wt_view', url: gBlobUrl, size: gBlobSize, type: gBlobType });
     }
     else {
-      console.log("No activeUrl");
+      console.log("No blobUrl");
     }
   });
 }
@@ -29,8 +45,8 @@ function checkTorrentStatus() {
 
   browser.tabs.query({ active: true, currentWindow: true }).then(async (tabs) => {
     if (tabs && tabs[0]) {
-      let url = tabs[0].url;
-      let group = getDhtGroup(url);
+      gActiveUrl = tabs[0].url;
+      let group = getDhtGroup(gActiveUrl);
       let swarm = getSwarm(group);
       let ihash = await getInfoHash(swarm);
       let info = await wtCacheGet(ihash);
@@ -48,7 +64,7 @@ function checkTorrentStatus() {
           button.disabled = false;
         }
         else {
-          status.innerText = "Searching...";
+          status.innerText = "Fetching...";
         }
       }
       else {
@@ -61,6 +77,7 @@ function checkTorrentStatus() {
 // main onload
 window.addEventListener('load', () => {
   initSettings();
+  initFetch();
   initViewWebsite();
   checkTorrentStatus();
 });

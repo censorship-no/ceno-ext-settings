@@ -155,6 +155,18 @@ async function onTorrentAdd(torrent) {
   });
 }
 
+function fetchTorrent(infohash) {
+
+  if (wtClient) {
+    // start downloading a new torrent
+    const cOpts = {announce: ["wss://tracker.btorrent.xyz", "wss://tracker.openwebtorrent.com"]};
+    wtClient.add(infohash, cOpts, onTorrentAdd);
+  }
+  else {
+    dlog('ERROR: wtClient is missing!');
+  }
+}
+
 // Set up port to receive messages from background.js
 let bgPort = chrome.runtime.connect({ name: 'wt-port' });
 bgPort.onMessage.addListener((msg) => {
@@ -165,16 +177,7 @@ bgPort.onMessage.addListener((msg) => {
     // fetch torrent
     dlog(`Lookup group: ${msg.group}`);
     dlog(`  infohash A: ${msg.infoHash}`);
-
-    if (wtClient) {
-      // start downloading a new torrent
-      const cOpts = {announce: ["wss://tracker.btorrent.xyz", "wss://tracker.openwebtorrent.com"]};
-      wtClient.add(msg.infoHash, cOpts, onTorrentAdd);
-
-    }
-    else {
-      dlog('ERROR: wtClient is missing!');
-    }
+    fetchTorrent(msg.infoHash);
   }
   else if (msg.message === 'wt_seed') {
     // seed torrent (NOT READY)
@@ -270,8 +273,8 @@ bgPort.onMessage.addListener((msg) => {
 
 });
 
-chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-  if (!msg) { return }
+chrome.runtime.onMessage.addListener(async (msg, sender, sendResponse) => {
+  if (!(msg && ('message' in msg))) { return }
   if (msg.message === 'wt_view') {
     // view given blob url
     if (msg.type === 'text/html') {
@@ -285,6 +288,25 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     }
     else {
       dlog(`Can't View Website: Unknown MIME Type: ${msg.type}`);
+    }
+  }
+  else if (msg.message === 'wt_fetch2') {
+    if ('url' in msg) {
+      // fetch torrent
+      let group = getDhtGroup(msg.url);
+      let swarm = getSwarm(group);
+      let ihash = await getInfoHash(swarm);
+      let info = await wtCacheGet(ihash);
+      if (info) {
+        dlog(`    In cache: ${group}`);
+      }
+      else {
+        // not in cache
+        dlog(`Lookup group: ${group}`);
+        dlog(`  infohash A: ${ihash}`);
+        wtCacheSet(ihash, { group, swarm });
+        fetchTorrent(ihash);
+      }
     }
   }
 });
