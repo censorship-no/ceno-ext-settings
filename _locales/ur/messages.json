@@ -99,7 +99,7 @@
         "message": "قابل رسائی سٹيٹس"
     },
     "settingsStatusCacheSize": {
-        "message": "لوكل کیش کا سائز"
+        "message": "مقامی کیش کا سائز"
     },
     "settingsStatusCachePurge": {
         "message": "ابھی صاف کریں"
@@ -111,7 +111,7 @@
         "message": "اضافی BitTorrent بوٹسٹریپس"
     },
     "settingsStatusBtBootstrapsPlaceholder": {
-        "message": "HOST1 HOST2:PORT ..."
+        "message": "HOST1 HOST2: پورٹ ..."
     },
     "settingsStatusBtBootstrapsSave": {
         "message": "محفوظ کریں"
