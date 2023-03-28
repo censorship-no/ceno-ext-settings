@@ -84,7 +84,7 @@
         "message": "Ouinet کلائنٹ کی حالت"
     },
     "settingsStatusEndpoints": {
-        "message": "لوكل UDP اینڈ پوائنٹس"
+        "message": "مقامی UDP اینڈ پوائنٹس"
     },
     "settingsStatusUpnp": {
         "message": "UPnP سٹيٹس"
