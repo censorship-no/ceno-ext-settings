@@ -47,7 +47,7 @@
         "message": "دوسرے CENO صارفین کے ذریعہ اشتراک کردہ"
     },
     "settingsPubwarn": {
-        "message": "موجودہ ترتیبات کے ساتھ $PUBLIC_BROWSING$ ناکام ہو جائے گا۔",
+        "message": "موجودہ ترتیبات کے ساتھ $PUBLIC_BROWSING$ ناکام ہو جائے گی۔",
         "placeholders": {
             "public_browsing": {
                 "content": "$1"
