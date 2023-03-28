@@ -38,10 +38,10 @@
         "message": "ویب سائٹ سے براہ راست"
     },
     "settingsSrcProxy": {
-        "message": "CENO نیٹ ورک کے ذریعے (نجی)"
+        "message": "بذریعہ CENO نیٹ ورک (نجی)"
     },
     "settingsSrcInjector": {
-        "message": "CENO نیٹ ورک کے ذریعے (عوامی)"
+        "message": "بذریعہ CENO نیٹ ورک (عوامی)"
     },
     "settingsSrcDcache": {
         "message": "دوسرے CENO صارفین کے ذریعہ اشتراک کردہ"
@@ -58,7 +58,7 @@
         "message": "عوامی ‏براؤزنگ"
     },
     "settingsPrivwarn": {
-        "message": "موجودہ ترتیبات کے ساتھ $PRIVATE_BROWSING$ ناکام ہو جائے گا۔",
+        "message": "موجودہ ترتیبات کے ساتھ $PRIVATE_BROWSING$ ناکام ہو جائے گی۔",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
@@ -84,16 +84,16 @@
         "message": "Ouinet کلائنٹ کی حالت"
     },
     "settingsStatusEndpoints": {
-        "message": "لوكل UDP endpoints"
+        "message": "لوكل UDP اینڈ پوائنٹس"
     },
     "settingsStatusUpnp": {
         "message": "UPnP سٹيٹس"
     },
     "settingsStatusExtEndpoints": {
-        "message": "بیرونی UDP endpoints"
+        "message": "بیرونی UDP اینڈ پوائنٹس"
     },
     "settingsStatusPubEndpoints": {
-        "message": "عوامی UDP endpoints"
+        "message": "عوامی UDP اینڈ پوائنٹس"
     },
     "settingsStatusReachability": {
         "message": "قابل رسائی سٹيٹس"
