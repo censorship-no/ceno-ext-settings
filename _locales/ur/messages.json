@@ -132,10 +132,10 @@
         "message": "ویب سائٹ سے براہ راست"
     },
     "popupSrcProxy": {
-        "message": "CENO نیٹ ورک کے ذریعے (نجی)"
+        "message": "بذریعہ CENO نیٹ ورک (نجی)"
     },
     "popupSrcInjector": {
-        "message": "CENO نیٹ ورک کے ذریعے (عوامی)"
+        "message": "بذریعہ CENO نیٹ ورک (عوامی)"
     },
     "popupSrcDcache": {
         "message": "دوسرے CENO صارفین کے ذریعہ اشتراک کردہ"
