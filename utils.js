@@ -115,10 +115,13 @@ function wtCacheRemove(key) {
 }
 
 // Clears the entire WT cache. Returns a Promise.
+// FIXME: Doesn't work
 function wtCacheRemoveAll() {
   return browser.storage.local.get('wt_cache').then((data) => {
     if (data.wt_cache) {
+      data.wt_cache = {};
       delete data.wt_cache;
+      console.log("wtCacheRemoveAll: Cache cleared.");
     }
     return browser.storage.local.set(data);
   });

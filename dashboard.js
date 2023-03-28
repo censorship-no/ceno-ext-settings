@@ -2,13 +2,42 @@
 
 import WebTorrent from './libs/webtorrent.js';
 
+const DEFAULT_TRACKERS = ["wss://tracker.btorrent.xyz", "wss://tracker.openwebtorrent.com"];
+let gCurrentTrackers = DEFAULT_TRACKERS;
 let wtClient;
+let gTimeTests = {}; // key is infohash, value is object of keys { t1, t2, t3 } values of Date()
 
 function dlog(text) {
   const elem = document.getElementById('log-area');
   elem.innerHTML += `${text}\n`;
   elem.scrollTop = elem.scrollHeight;
   console.log(text);
+}
+
+function initTrackersInput() {
+  let input = document.getElementById("trackers-input");
+  input.value = gCurrentTrackers.join(' ');
+  input.addEventListener('change', () => {
+    gCurrentTrackers = input.value.split(' ');
+    dlog(`Trackers changed to: ${gCurrentTrackers}`);
+  });
+}
+
+function initResetTrackers() {
+  let input = document.getElementById("trackers-input");
+  let button = document.getElementById("reset-trackers-btn");
+  button.addEventListener('click', () => {
+    gCurrentTrackers = DEFAULT_TRACKERS;
+    input.value = gCurrentTrackers.join(' ');
+    dlog(`Trackers changed to: ${gCurrentTrackers}`);
+  });
+}
+
+function initClearCache() {
+  let button = document.getElementById("clear-cache-btn");
+  button.addEventListener('click', () => {
+    wtCacheRemoveAllExpired(0).then(() => { dlog("Cache cleared.") });
+  });
 }
 
 function initWebtorrent() {
@@ -110,22 +139,31 @@ async function onTorrentAdd(torrent) {
   dlog(`  infohash B: ${torrent.infoHash}`);
 
   torrent.on('infoHash', () => {
-    dlog('torrent infoHash has been determined.');
+    dlog('Torrent infoHash has been determined.');
   });
 
   torrent.on('error', (err) => {
-    dlog(`torrent error: ${err.message}`);
+    dlog(`Torrent error: ${err.message}`);
   });
 
   torrent.on('warning', (err) => {
-    dlog(`torrent warning:  ${err.message}`);
+    dlog(`Torrent warning:  ${err.message}`);
   });
 
   torrent.on('ready', () => {
-    dlog("torrent ready.");
+    dlog("Torrent ready.");
   });
 
   torrent.on('done', async () => {
+    dlog("Torrent fetched.");
+
+    const t2 = new Date();
+    dlog(`        time: ${t2}`);
+    if (gTimeTests[orighash] && gTimeTests[orighash].t1) {
+      gTimeTests[orighash].t2 = t2;
+      let tdiff1 = (t2 - gTimeTests[orighash].t1) / 1000;
+      dlog(`        span: ${tdiff1} secs`);
+    }
 
     // log list of files in torrent
     let i = 0;
@@ -139,7 +177,13 @@ async function onTorrentAdd(torrent) {
     let file1 = torrent.files[0];
     dlog(` downloading: ${file1.name}`);
     let blob = await file1.blob(); // download file
+    const t3 = new Date();
+    const tdiff2 = (t3 - t2) / 1000;
+    dlog("File downloaded.");
     dlog(`        size: ${blob.size}  type: ${blob.type}`);
+    dlog(`        time: ${t3}`);
+    dlog(`        span: ${tdiff2} secs`);
+    if (gTimeTests[orighash]) { gTimeTests[orighash].t3 = t3 }
 
     // Since we can't store the torrent directly in the cache (can't serialize value to JSON)
     // we'll store the blob's URL after creating a blob object, which should be freed later.
@@ -163,7 +207,11 @@ function fetchTorrent(infohash) {
 
   if (wtClient) {
     // start downloading a new torrent
-    const cOpts = {announce: ["wss://tracker.btorrent.xyz", "wss://tracker.openwebtorrent.com"]};
+    const t1 = new Date();
+    gTimeTests[infohash] = { t1 };
+    dlog(`    trackers: ${gCurrentTrackers}`);
+    dlog(`       start: ${t1}`);
+    const cOpts = {announce: gCurrentTrackers};
     wtClient.add(infohash, cOpts, onTorrentAdd);
   }
   else {
@@ -297,6 +345,7 @@ chrome.runtime.onMessage.addListener(async (msg, sender, sendResponse) => {
   else if (msg.message === 'wt_fetch2') {
     if ('url' in msg) {
       // fetch torrent
+      // await wtCacheRemoveAllExpired();
       let group = getDhtGroup(msg.url);
       let swarm = getSwarm(group);
       let ihash = await getInfoHash(swarm);
@@ -317,9 +366,10 @@ chrome.runtime.onMessage.addListener(async (msg, sender, sendResponse) => {
 
 // main onload
 window.addEventListener('load', async () => {
-
   initWebtorrent();
-
+  initTrackersInput();
+  initResetTrackers();
+  initClearCache();
 });
 
 // before window closes

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>CENO Lite Dashboard</title>
+  <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/dashboard.css">
   <script src="libs/browser-polyfill.js"></script>
 <!-- <script src="libs/base64.js"></script> -->
@@ -17,6 +18,12 @@
       <p>Keep this window open to preserve connection to WebTorrent.</p>
     </div>
     <div class="outer-container">
+      <div class="btn-flex-block">
+        <label for="trackers-input"><i>Trackers:</i></label>
+        <input type="text" style="flex:2" id="trackers-input" value="">
+        <button class="btn btn-auto btn-blue" id="reset-trackers-btn">Reset</button>
+        <button class="btn btn-auto btn-blue" id="clear-cache-btn">Clear Cache</button>
+      </div>
       <div id="log-container">
         <textarea id="log-area" class="container-scrollbar" readonly></textarea>
       </div>

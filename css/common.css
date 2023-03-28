@@ -85,11 +85,13 @@ button {
 
 .btn-auto {
   min-width: 60px;
+  height: 30px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
 .btn-equal {
+  height: 30px;
   height: 30px;
   flex-grow: 1;
   flex-basis: 0;
