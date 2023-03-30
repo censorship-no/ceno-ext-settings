@@ -3,7 +3,7 @@
         "message": "Extensión CENO"
     },
     "extDesc": {
-        "message": "Proporciona integración con CENO y Ouinet: caché y agrupado de páginas, información de la fuente de la página, configuración y otras funciones. Incluye código de Localizer de rugk bajo licencia MIT."
+        "message": "Proporciona integración con CENO y Ouinet: caché y agrupado de páginas, información de la fuente de la página, configuración y otras funcionalidades. Incluye código de Localizer de rugk bajo licencia MIT."
     },
     "bgCenoWarning": {
         "message": "Aviso de CENO"
@@ -12,7 +12,7 @@
         "message": "Configuración de CENO"
     },
     "settingsWarn": {
-        "message": "Los ajustes de esta página son sólo para probar las funciones de CENO bajo condiciones diversas de conectividad. Consulte el $MANUAL$ para más información.",
+        "message": "Los ajustes de esta página están solo destinados para probar las funcionalidades de CENO en varias condiciones de conectividad. Vea el $MANUAL$ para más información.",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -26,7 +26,7 @@
         "message": "https://censorship.no/user-manual/es/browser/settings.html"
     },
     "settingsWarnManTI": {
-        "message": "Manual de usuario de Censorship.no! – Configuración de CENO"
+        "message": "Manual de Usuario de Censorship.no! – Configuración de CENO"
     },
     "settingsSources": {
         "message": "Fuentes de descarga de contenidos:"
@@ -52,7 +52,7 @@
         }
     },
     "settingsPubwarnPub": {
-        "message": "navegación pública"
+        "message": "Navegación pública"
     },
     "settingsPrivwarn": {
         "message": "La $PRIVATE_BROWSING$ fallará con la configuración actual.",
@@ -63,7 +63,7 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": "navegación privada"
+        "message": "Navegación privada"
     },
     "settingsStatusBrowser": {
         "message": "Navegador CENO"
@@ -78,13 +78,13 @@
         "message": "Protocolo Ouinet"
     },
     "settingsStatusEndpoints": {
-        "message": "Puntos finales UDP locales"
+        "message": "Puntos de conexión UDP locales"
     },
     "settingsStatusUpnp": {
         "message": "Estado de UPnP"
     },
     "settingsStatusReachability": {
-        "message": "Estado de alcanzabilidad"
+        "message": "Estado de alcance"
     },
     "settingsStatusCacheSize": {
         "message": "Tamaño de caché local"
@@ -105,7 +105,7 @@
         "message": "Guardar"
     },
     "settingsLogEnable": {
-        "message": "Activar registro"
+        "message": "Activar archivo de registro"
     },
     "settingsLogDownload": {
         "message": "Descargar"
@@ -132,7 +132,7 @@
         "message": "Compartido por ti"
     },
     "popupFoot": {
-        "message": "Consulta el $MANUAL$ para más información sobre fuentes de contenido.",
+        "message": "Vea el $MANUAL$ para más información sobre fuentes de contenido.",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -161,18 +161,18 @@
         "message": "Actualiza tu aplicación vía"
     },
     "updateGetgoogleplay": {
-        "message": "Disponible en Google Play"
+        "message": "Obtenlo en Google Play"
     },
     "updateGetpaskoocheh": {
-        "message": "Disponible en Paskoocheh"
+        "message": "Obtenlo en Paskoocheh"
     },
     "settingsStatusClientState": {
         "message": "Estado del cliente Ouinet"
     },
     "settingsStatusExtEndpoints": {
-        "message": "Puntos finales UDP externos"
+        "message": "Puntos de conexión UDP externos"
     },
     "settingsStatusPubEndpoints": {
-        "message": "Puntos finales UDP públicos"
+        "message": "Puntos de conexión UDP públicos"
     }
 }
