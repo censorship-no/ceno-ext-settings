@@ -38,7 +38,7 @@
         "message": "Doğrudan siteden"
     },
     "settingsSrcProxy": {
-        "message": "CENO ağı üzerinden (özel)"
+        "message": "CENO ağı üzerinden (gizli)"
     },
     "settingsSrcInjector": {
         "message": "CENO ağı üzerinden (herkese açık)"
@@ -114,7 +114,7 @@
         "message": "Doğrudan siteden"
     },
     "popupSrcProxy": {
-        "message": "CENO ağı üzerinden (özel)"
+        "message": "CENO ağı üzerinden (gizli)"
     },
     "popupSrcInjector": {
         "message": "CENO ağı üzerinden (herkese açık)"
