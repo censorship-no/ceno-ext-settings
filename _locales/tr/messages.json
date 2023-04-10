@@ -14,7 +14,7 @@
         "message": "CENO ayarları"
     },
     "settingsWarn": {
-        "message": "Bu sayfadaki ayarlar, yalnızca çeşitli ağ koşullarında CENO işlevselliğini sınamak içindir. Ayrıntılı bilgi almak için $MANUAL$ bölümüne bakabilirsiniz.",
+        "message": "Bu bölümdeki ayarlar, yalnızca çeşitli ağ koşullarında CENO işlevselliğini sınamak içindir. Ayrıntılı bilgi almak için $MANUAL$ bölümüne bakabilirsiniz.",
         "placeholders": {
             "manual": {
                 "content": "$1"
