@@ -12,7 +12,7 @@
         "message": "Configuración de CENO"
     },
     "settingsWarn": {
-        "message": "Los ajustes de esta página están solo destinados para probar las funcionalidades de CENO en varias condiciones de conectividad. Vea el $MANUAL$ para más información.",
+        "message": "Ajustes en esta página están solo destinados para probar las funcionalidades de CENO en varias condiciones de conectividad. Vea el $MANUAL$ para más información.",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -26,7 +26,7 @@
         "message": "https://censorship.no/user-manual/es/browser/settings.html"
     },
     "settingsWarnManTI": {
-        "message": "Manual de Usuario de Censorship.no! – Configuración de CENO"
+        "message": "Manual de Usuario de Censorship.no! – Configuraciones de CENO"
     },
     "settingsSources": {
         "message": "Fuentes de descarga de contenidos:"
@@ -41,7 +41,7 @@
         "message": "Vía la red CENO (público)"
     },
     "settingsSrcDcache": {
-        "message": "Compartido por otros usuarios de CENO"
+        "message": "Compartido por otra(o)s usuaria(o)s de CENO"
     },
     "settingsPubwarn": {
         "message": "La $PUBLIC_BROWSING$ fallará con la configuración actual.",
@@ -55,7 +55,7 @@
         "message": "Navegación pública"
     },
     "settingsPrivwarn": {
-        "message": "La $PRIVATE_BROWSING$ fallará con la configuración actual.",
+        "message": "La $PRIVATE_BROWSING$ fallará con las configuraciones actuales.",
         "placeholders": {
             "private_browsing": {
                 "content": "$1"
@@ -126,7 +126,7 @@
         "message": "Vía la red CENO (público)"
     },
     "popupSrcDcache": {
-        "message": "Compartido por otros usuarios de CENO"
+        "message": "Compartido por otra(o)s usuaria(o)s de CENO"
     },
     "popupSrcLcache": {
         "message": "Compartido por ti"
