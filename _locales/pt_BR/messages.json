@@ -44,7 +44,7 @@
         "message": "Via rede do CENO (pública)"
     },
     "settingsSrcDcache": {
-        "message": "Compartilhada por outros usuários CENO"
+        "message": "Compartilhado por outros usuários CENO"
     },
     "settingsPubwarn": {
         "message": "$PUBLIC_BROWSING$ com as configurações atuais irá falhar.",
@@ -96,7 +96,7 @@
         "message": ""
     },
     "settingsStatusReachability": {
-        "message": "Status de alcance"
+        "message": "Estado de acessibilidade"
     },
     "settingsStatusCacheSize": {
         "message": "Tamanho do cache local"
