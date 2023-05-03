@@ -171,7 +171,7 @@
         "message": "Seu navegador CENO está desatualizado."
     },
     "updateSubhead": {
-        "message": "Por favor, atualize seu app via",
+        "message": "Por favor, atualize seu aplicativo via",
         "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
     },
     "updateGetgoogleplay": {
