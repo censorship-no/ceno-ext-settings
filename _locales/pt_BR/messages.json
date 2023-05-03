@@ -84,16 +84,16 @@
         "message": "Estado do cliente Ouinet"
     },
     "settingsStatusEndpoints": {
-        "message": ""
+        "message": "Endpoints UDP locais"
     },
     "settingsStatusUpnp": {
         "message": "Estado do UPnP"
     },
     "settingsStatusExtEndpoints": {
-        "message": ""
+        "message": "Endpoints UDP externos"
     },
     "settingsStatusPubEndpoints": {
-        "message": ""
+        "message": "Endpoints UDP públicos"
     },
     "settingsStatusReachability": {
         "message": "Estado de acessibilidade"
