@@ -81,46 +81,46 @@
         "message": ""
     },
     "settingsStatusClientState": {
-        "message": ""
+        "message": "Ouinet 클라이언트 상태"
     },
     "settingsStatusEndpoints": {
-        "message": ""
+        "message": "로컬 UDP 엔드 포인트"
     },
     "settingsStatusUpnp": {
-        "message": ""
+        "message": "UPnP 상태"
     },
     "settingsStatusExtEndpoints": {
-        "message": ""
+        "message": "외부 UDP 엔드포인트"
     },
     "settingsStatusPubEndpoints": {
-        "message": ""
+        "message": "공용 UDP 엔드포인트"
     },
     "settingsStatusReachability": {
-        "message": ""
+        "message": "접근성 상황"
     },
     "settingsStatusCacheSize": {
-        "message": ""
+        "message": "로컬 캐시 크기"
     },
     "settingsStatusCachePurge": {
         "message": ""
     },
     "settingsStatusCacheList": {
-        "message": ""
+        "message": "공유한 콘텐츠"
     },
     "settingsLogEnable": {
-        "message": ""
+        "message": "로그 파일 활성화"
     },
     "settingsLogDownload": {
-        "message": ""
+        "message": "다운로드"
     },
     "popupTitle": {
-        "message": ""
+        "message": "CENO 자료"
     },
     "popupHead": {
         "message": ""
     },
     "popupSrcOrigin": {
-        "message": ""
+        "message": "웹사이트에서 바로"
     },
     "popupSrcProxy": {
         "message": ""
