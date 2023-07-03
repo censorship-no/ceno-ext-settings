@@ -84,7 +84,7 @@
         "message": "Extrémités UDP locales"
     },
     "settingsStatusUpnp": {
-        "message": "État d’UPnP"
+        "message": "État de l’UPnP"
     },
     "settingsStatusReachability": {
         "message": "État d’accessibilité"
