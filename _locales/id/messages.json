@@ -84,16 +84,16 @@
         "message": "Status klien Ouinet"
     },
     "settingsStatusEndpoints": {
-        "message": "Endpoint UDP Lokal"
+        "message": "Titik akhir UDP lokal"
     },
     "settingsStatusUpnp": {
         "message": "Status UPnP"
     },
     "settingsStatusExtEndpoints": {
-        "message": "Endpoint UDP eksternal"
+        "message": "Titik akhir UDP eksternal"
     },
     "settingsStatusPubEndpoints": {
-        "message": "Endpoint UDP publik"
+        "message": "Titik akhir UDP publik"
     },
     "settingsStatusReachability": {
         "message": "Status keterjangkauan"
