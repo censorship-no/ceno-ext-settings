@@ -99,7 +99,7 @@
         "message": "Contenu partagé par vous"
     },
     "settingsStatusBtBootstraps": {
-        "message": "Bootstraps BitTorrent supplémentaires"
+        "message": "Amorçages BitTorrent supplémentaires"
     },
     "settingsStatusBtBootstrapsPlaceholder": {
         "message": "HÔTE1 HÔTE2:PORT …"
