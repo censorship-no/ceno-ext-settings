@@ -4,7 +4,7 @@
         "description": "Name of the extension."
     },
     "extDesc": {
-        "message": "Menyediakan integrasi dengan CENO dan Ouinet: cache dan pengelompokan halaman, informasi sumber halaman, pengaturan, dan fungsionalitas lainnya. Termasuk kode dari Localizer oleh rugk di bawah lisensi MIT.",
+        "message": "Menyediakan integrasi dengan CENO dan Ouinet: tembolok dan pengelompokan halaman, informasi sumber halaman, pengaturan, dan fungsionalitas lainnya. Termasuk kode dari Localizer oleh rugk di bawah lisensi MIT.",
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
@@ -29,7 +29,7 @@
         "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "settingsWarnManTI": {
-        "message": "Petunjuk Pengguna Censorship.no! - Pengaturan CENO"
+        "message": "Petunjuk Pengguna Censorship.no! – Pengaturan CENO"
     },
     "settingsSources": {
         "message": "Sumber pengambilan konten:"
@@ -66,10 +66,10 @@
         }
     },
     "settingsPrivwarnPriv": {
-        "message": "Penjelajahan pribadi"
+        "message": "Penjelajahan privat"
     },
     "settingsStatusBrowser": {
-        "message": "Browser CENO"
+        "message": "Peramban CENO"
     },
     "settingsStatusExtension": {
         "message": "Ekstensi CENO"
@@ -84,31 +84,31 @@
         "message": "Status klien Ouinet"
     },
     "settingsStatusEndpoints": {
-        "message": "Endpoint UDP Lokal"
+        "message": "Titik akhir UDP lokal"
     },
     "settingsStatusUpnp": {
         "message": "Status UPnP"
     },
     "settingsStatusExtEndpoints": {
-        "message": "Endpoint UDP Eksternal"
+        "message": "Titik akhir UDP eksternal"
     },
     "settingsStatusPubEndpoints": {
-        "message": "Endpoint UDP Publik"
+        "message": "Titik akhir UDP publik"
     },
     "settingsStatusReachability": {
         "message": "Status keterjangkauan"
     },
     "settingsStatusCacheSize": {
-        "message": "Ukuran cache lokal"
+        "message": "Ukuran tembolok lokal"
     },
     "settingsStatusCachePurge": {
         "message": "Bersihkan sekarang"
     },
     "settingsStatusCacheList": {
-        "message": "Konten yang dibagikan olehmu"
+        "message": "Konten yang dibagikan oleh Anda"
     },
     "settingsLogEnable": {
-        "message": "Aktifkan file log"
+        "message": "Aktifkan berkas log"
     },
     "settingsLogDownload": {
         "message": "Unduh"
@@ -123,7 +123,7 @@
         "message": "Langsung dari situs web"
     },
     "popupSrcProxy": {
-        "message": "Melalui jaringan CENO (pribadi)"
+        "message": "Melalui jaringan CENO (privat)"
     },
     "popupSrcInjector": {
         "message": "Melalui jaringan CENO (publik)"
@@ -150,7 +150,7 @@
         "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "popupFootManTI": {
-        "message": "Censorship.no! Panduan Pengguna – Pengaturan CENO"
+        "message": "Panduan Pengguna Censorship.no! – Pengaturan CENO"
     },
     "updateTitle": {
         "message": "Pembaruan CENO"
@@ -159,7 +159,7 @@
         "message": "Pembaruan CENO"
     },
     "updateHead": {
-        "message": "Peramban CENO Anda kedaluwarsa."
+        "message": "Peramban CENO Anda sudah usang."
     },
     "updateSubhead": {
         "message": "Harap perbarui aplikasi Anda melalui",

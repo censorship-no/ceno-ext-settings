@@ -81,46 +81,55 @@
         "message": ""
     },
     "settingsStatusClientState": {
-        "message": "Ouinet 클라이언트 상태"
+        "message": ""
     },
     "settingsStatusEndpoints": {
-        "message": "로컬 UDP 엔드 포인트"
+        "message": ""
     },
     "settingsStatusUpnp": {
-        "message": "UPnP 상태"
+        "message": ""
     },
     "settingsStatusExtEndpoints": {
-        "message": "외부 UDP 엔드포인트"
+        "message": ""
     },
     "settingsStatusPubEndpoints": {
-        "message": "공용 UDP 엔드포인트"
+        "message": ""
     },
     "settingsStatusReachability": {
-        "message": "접근성 상황"
+        "message": ""
     },
     "settingsStatusCacheSize": {
-        "message": "로컬 캐시 크기"
+        "message": ""
     },
     "settingsStatusCachePurge": {
         "message": ""
     },
     "settingsStatusCacheList": {
-        "message": "공유한 콘텐츠"
+        "message": ""
+    },
+    "settingsStatusBtBootstraps": {
+        "message": ""
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": ""
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": ""
     },
     "settingsLogEnable": {
-        "message": "로그 파일 활성화"
+        "message": ""
     },
     "settingsLogDownload": {
-        "message": "다운로드"
+        "message": ""
     },
     "popupTitle": {
-        "message": "CENO 자료"
+        "message": ""
     },
     "popupHead": {
         "message": ""
     },
     "popupSrcOrigin": {
-        "message": "웹사이트에서 바로"
+        "message": ""
     },
     "popupSrcProxy": {
         "message": ""
