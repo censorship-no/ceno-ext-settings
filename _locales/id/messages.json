@@ -1,0 +1,185 @@
+{
+    "extName": {
+        "message": "Ekstensi CENO",
+        "description": "Name of the extension."
+    },
+    "extDesc": {
+        "message": "Menyediakan integrasi dengan CENO dan Ouinet: tembolok dan pengelompokan halaman, informasi sumber halaman, pengaturan, dan fungsionalitas lainnya. Termasuk kode dari Localizer oleh rugk di bawah lisensi MIT.",
+        "description": "Description of the extension."
+    },
+    "bgCenoWarning": {
+        "message": "Peringatan CENO"
+    },
+    "settingsTitle": {
+        "message": "Pengaturan CENO"
+    },
+    "settingsWarn": {
+        "message": "Pengaturan di halaman ini hanya untuk uji coba fungsi CENO di berbagai kondisi jaringan. Lihat $MANUAL$ untuk informasi lebih lanjut.",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsWarnMan": {
+        "message": "manual"
+    },
+    "settingsWarnManLN": {
+        "message": "https://censorship.no/user-manual/en/browser/settings.html",
+        "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "settingsWarnManTI": {
+        "message": "Petunjuk Pengguna Censorship.no! – Pengaturan CENO"
+    },
+    "settingsSources": {
+        "message": "Sumber pengambilan konten:"
+    },
+    "settingsSrcOrigin": {
+        "message": "Langsung dari situs web"
+    },
+    "settingsSrcProxy": {
+        "message": "Melalui jaringan CENO (rahasia)"
+    },
+    "settingsSrcInjector": {
+        "message": "Melalui jaringan CENO (publik)"
+    },
+    "settingsSrcDcache": {
+        "message": "Dibagikan oleh pengguna CENO lain"
+    },
+    "settingsPubwarn": {
+        "message": "$PUBLIC_BROWSING$ akan gagal dengan pengaturan saat ini.",
+        "placeholders": {
+            "public_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPubwarnPub": {
+        "message": "Penjelajahan publik"
+    },
+    "settingsPrivwarn": {
+        "message": "$PRIVATE_BROWSING$ akan gagal dengan pengaturan saat ini.",
+        "placeholders": {
+            "private_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPrivwarnPriv": {
+        "message": "Penjelajahan privat"
+    },
+    "settingsStatusBrowser": {
+        "message": "Peramban CENO"
+    },
+    "settingsStatusExtension": {
+        "message": "Ekstensi CENO"
+    },
+    "settingsStatusOuinet": {
+        "message": "Ouinet"
+    },
+    "settingsStatusProtocol": {
+        "message": "Protokol Ouinet"
+    },
+    "settingsStatusClientState": {
+        "message": "Status klien Ouinet"
+    },
+    "settingsStatusEndpoints": {
+        "message": "Titik akhir UDP lokal"
+    },
+    "settingsStatusUpnp": {
+        "message": "Status UPnP"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "Titik akhir UDP eksternal"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "Titik akhir UDP publik"
+    },
+    "settingsStatusReachability": {
+        "message": "Status keterjangkauan"
+    },
+    "settingsStatusCacheSize": {
+        "message": "Ukuran tembolok lokal"
+    },
+    "settingsStatusCachePurge": {
+        "message": "Bersihkan sekarang"
+    },
+    "settingsStatusCacheList": {
+        "message": "Konten yang dibagikan oleh Anda"
+    },
+    "settingsLogEnable": {
+        "message": "Aktifkan berkas log"
+    },
+    "settingsLogDownload": {
+        "message": "Unduh"
+    },
+    "popupTitle": {
+        "message": "Sumber CENO"
+    },
+    "popupHead": {
+        "message": "Jumlah elemen halaman per sumber:"
+    },
+    "popupSrcOrigin": {
+        "message": "Langsung dari situs web"
+    },
+    "popupSrcProxy": {
+        "message": "Melalui jaringan CENO (privat)"
+    },
+    "popupSrcInjector": {
+        "message": "Melalui jaringan CENO (publik)"
+    },
+    "popupSrcDcache": {
+        "message": "Dibagikan oleh pengguna CENO lainnya"
+    },
+    "popupSrcLcache": {
+        "message": "Dibagikan oleh Anda"
+    },
+    "popupFoot": {
+        "message": "Lihat $MANUAL$ untuk informasi lebih lanjut tentang sumber konten.",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "popupFootMan": {
+        "message": "manual"
+    },
+    "popupFootManLN": {
+        "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
+        "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "popupFootManTI": {
+        "message": "Panduan Pengguna Censorship.no! – Pengaturan CENO"
+    },
+    "updateTitle": {
+        "message": "Pembaruan CENO"
+    },
+    "updateMetacontent": {
+        "message": "Pembaruan CENO"
+    },
+    "updateHead": {
+        "message": "Peramban CENO Anda sudah usang."
+    },
+    "updateSubhead": {
+        "message": "Harap perbarui aplikasi Anda melalui",
+        "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
+    },
+    "updateGetgoogleplay": {
+        "message": "Dapatkan di Google Play",
+        "description": "Alt text for Google Play badge."
+    },
+    "updateGetpaskoocheh": {
+        "message": "Dapatkan di Paskoocheh",
+        "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusBtBootstraps": {
+        "message": "Bootstrap BitTorrent ekstra"
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": "HOST1 HOST2:PORT ..."
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": "Simpan"
+    }
+}

@@ -1,0 +1,185 @@
+{
+    "extName": {
+        "message": "Ceno ایکسٹینشن",
+        "description": "Name of the extension."
+    },
+    "extDesc": {
+        "message": "Ceno اور Ouinet کے ساتھ انضمام فراہم کرتا ہے: صفحہ کیشنگ اور گروپ بندی، صفحہ کے ماخذ کی معلومات، ترتیبات اور دیگر فعالیت۔ MIT لائسنس کے تحت rugk کے ذریعے لوکلائزر کا کوڈ شامل ہے۔",
+        "description": "Description of the extension."
+    },
+    "bgCenoWarning": {
+        "message": "Ceno انتباہ"
+    },
+    "settingsTitle": {
+        "message": "Ceno ترتیبات"
+    },
+    "settingsWarn": {
+        "message": "اس صفحہ پر ترتیبات کا مقصد صرف نیٹ ورک کے مختلف حالات میں Ceno کی فعالیت کو جانچنا ہے۔مزید معلومات کے لیے $MANUAL$ دیکھیں۔",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsWarnMan": {
+        "message": "مینوئل"
+    },
+    "settingsWarnManLN": {
+        "message": "https://censorship.no/user-manual/ur/browser/settings.html",
+        "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "settingsWarnManTI": {
+        "message": "Censorship.no!یوزر مینوئل – Ceno ترتیبات"
+    },
+    "settingsSources": {
+        "message": "مواد کی بازیافت کے ذرائع:"
+    },
+    "settingsSrcOrigin": {
+        "message": "ویب سائٹ سے براہ راست"
+    },
+    "settingsSrcProxy": {
+        "message": "بذریعہ Ceno نیٹ ورک (نجی)"
+    },
+    "settingsSrcInjector": {
+        "message": "بذریعہ Ceno نیٹ ورک (عوامی)"
+    },
+    "settingsSrcDcache": {
+        "message": "دوسرے Ceno صارفین کے ذریعہ اشتراک کردہ"
+    },
+    "settingsPubwarn": {
+        "message": "موجودہ ترتیبات کے ساتھ $PUBLIC_BROWSING$ ناکام ہو جائے گی۔",
+        "placeholders": {
+            "public_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPubwarnPub": {
+        "message": "عوامی ‏براؤزنگ"
+    },
+    "settingsPrivwarn": {
+        "message": "موجودہ ترتیبات کے ساتھ $PRIVATE_BROWSING$ ناکام ہو جائے گی۔",
+        "placeholders": {
+            "private_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPrivwarnPriv": {
+        "message": "نجی براؤزنگ"
+    },
+    "settingsStatusBrowser": {
+        "message": "Ceno براؤزر"
+    },
+    "settingsStatusExtension": {
+        "message": "Ceno ایکسٹینشن"
+    },
+    "settingsStatusOuinet": {
+        "message": "Ouinet"
+    },
+    "settingsStatusProtocol": {
+        "message": "Ouinet پروٹوکول"
+    },
+    "settingsStatusClientState": {
+        "message": "Ouinet کلائنٹ کی حالت"
+    },
+    "settingsStatusEndpoints": {
+        "message": "مقامی UDP اینڈ پوائنٹس"
+    },
+    "settingsStatusUpnp": {
+        "message": "UPnP سٹيٹس"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "بیرونی UDP اینڈ پوائنٹس"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "عوامی UDP اینڈ پوائنٹس"
+    },
+    "settingsStatusReachability": {
+        "message": "قابل رسائی سٹيٹس"
+    },
+    "settingsStatusCacheSize": {
+        "message": "مقامی کیش کا سائز"
+    },
+    "settingsStatusCachePurge": {
+        "message": "ابھی صاف کریں"
+    },
+    "settingsStatusCacheList": {
+        "message": "آپ کے ذریعہ اشتراک کردہ مواد"
+    },
+    "settingsStatusBtBootstraps": {
+        "message": "اضافی BitTorrent بوٹسٹریپس"
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": "HOST1 HOST2: پورٹ ..."
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": "محفوظ کریں"
+    },
+    "settingsLogEnable": {
+        "message": "لاگ فائل کو فعال کریں"
+    },
+    "settingsLogDownload": {
+        "message": "ڈاؤن لوڈ کریں"
+    },
+    "popupTitle": {
+        "message": "Ceno ذرائع"
+    },
+    "popupHead": {
+        "message": "فی ماخذ صفحہ عناصر کی تعداد:"
+    },
+    "popupSrcOrigin": {
+        "message": "ویب سائٹ سے براہ راست"
+    },
+    "popupSrcProxy": {
+        "message": "بذریعہ Ceno نیٹ ورک (نجی)"
+    },
+    "popupSrcInjector": {
+        "message": "بذریعہ Ceno نیٹ ورک (عوامی)"
+    },
+    "popupSrcDcache": {
+        "message": "دوسرے Ceno صارفین کے ذریعہ اشتراک کردہ"
+    },
+    "popupSrcLcache": {
+        "message": "آپ کے ذریعہ اشتراک کردہ"
+    },
+    "popupFoot": {
+        "message": "مواد کے ذرائع کے بارے میں مزید معلومات کے لیے $MANUAL$ دیکھیں۔",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "popupFootMan": {
+        "message": "مینوئل"
+    },
+    "popupFootManLN": {
+        "message": "https://censorship.no/user-manual/ur/browser/settings.html#choosing-access-mechanisms",
+        "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "popupFootManTI": {
+        "message": "Censorship.no!یوزر مینوئل - Ceno ترتیبات"
+    },
+    "updateTitle": {
+        "message": "Ceno اپ ڈیٹ"
+    },
+    "updateMetacontent": {
+        "message": "Ceno اپ ڈیٹ"
+    },
+    "updateHead": {
+        "message": "آپ کا Ceno براؤزر پرانا ہے۔"
+    },
+    "updateSubhead": {
+        "message": "براہ کرم اپنی ایپ کو اپ ڈیٹ کریں بذریعہ",
+        "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
+    },
+    "updateGetgoogleplay": {
+        "message": "اسے Google Play پر حاصل کریں",
+        "description": "Alt text for Google Play badge."
+    },
+    "updateGetpaskoocheh": {
+        "message": "اسے Paskoocheh پر حاصل کریں",
+        "description": "Alt text for Paskoocheh badge."
+    }
+}

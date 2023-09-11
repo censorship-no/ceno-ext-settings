@@ -1,0 +1,176 @@
+{
+    "extName": {
+        "message": "",
+        "description": "Name of the extension."
+    },
+    "extDesc": {
+        "message": "",
+        "description": "Description of the extension."
+    },
+    "bgCenoWarning": {
+        "message": ""
+    },
+    "settingsTitle": {
+        "message": ""
+    },
+    "settingsWarn": {
+        "message": "",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsWarnMan": {
+        "message": ""
+    },
+    "settingsWarnManLN": {
+        "message": "",
+        "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "settingsWarnManTI": {
+        "message": ""
+    },
+    "settingsSources": {
+        "message": ""
+    },
+    "settingsSrcOrigin": {
+        "message": ""
+    },
+    "settingsSrcProxy": {
+        "message": ""
+    },
+    "settingsSrcInjector": {
+        "message": ""
+    },
+    "settingsSrcDcache": {
+        "message": ""
+    },
+    "settingsPubwarn": {
+        "message": "",
+        "placeholders": {
+            "public_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPubwarnPub": {
+        "message": ""
+    },
+    "settingsPrivwarn": {
+        "message": "",
+        "placeholders": {
+            "private_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPrivwarnPriv": {
+        "message": ""
+    },
+    "settingsStatusBrowser": {
+        "message": ""
+    },
+    "settingsStatusExtension": {
+        "message": ""
+    },
+    "settingsStatusOuinet": {
+        "message": ""
+    },
+    "settingsStatusProtocol": {
+        "message": ""
+    },
+    "settingsStatusClientState": {
+        "message": "Ouinet 클라이언트 상태"
+    },
+    "settingsStatusEndpoints": {
+        "message": "로컬 UDP 엔드 포인트"
+    },
+    "settingsStatusUpnp": {
+        "message": "UPnP 상태"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "외부 UDP 엔드포인트"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "공용 UDP 엔드포인트"
+    },
+    "settingsStatusReachability": {
+        "message": "접근성 상황"
+    },
+    "settingsStatusCacheSize": {
+        "message": "로컬 캐시 크기"
+    },
+    "settingsStatusCachePurge": {
+        "message": ""
+    },
+    "settingsStatusCacheList": {
+        "message": "공유한 콘텐츠"
+    },
+    "settingsLogEnable": {
+        "message": "로그 파일 활성화"
+    },
+    "settingsLogDownload": {
+        "message": "다운로드"
+    },
+    "popupTitle": {
+        "message": "CENO 자료"
+    },
+    "popupHead": {
+        "message": ""
+    },
+    "popupSrcOrigin": {
+        "message": "웹사이트에서 바로"
+    },
+    "popupSrcProxy": {
+        "message": ""
+    },
+    "popupSrcInjector": {
+        "message": ""
+    },
+    "popupSrcDcache": {
+        "message": ""
+    },
+    "popupSrcLcache": {
+        "message": ""
+    },
+    "popupFoot": {
+        "message": "",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "popupFootMan": {
+        "message": ""
+    },
+    "popupFootManLN": {
+        "message": "",
+        "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "popupFootManTI": {
+        "message": ""
+    },
+    "updateTitle": {
+        "message": ""
+    },
+    "updateMetacontent": {
+        "message": ""
+    },
+    "updateHead": {
+        "message": ""
+    },
+    "updateSubhead": {
+        "message": "",
+        "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
+    },
+    "updateGetgoogleplay": {
+        "message": "",
+        "description": "Alt text for Google Play badge."
+    },
+    "updateGetpaskoocheh": {
+        "message": "",
+        "description": "Alt text for Paskoocheh badge."
+    }
+}

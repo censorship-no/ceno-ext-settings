@@ -1,0 +1,185 @@
+{
+    "extName": {
+        "message": "إضافة متصفح CENO",
+        "description": "Name of the extension."
+    },
+    "extDesc": {
+        "message": "توفر دمجا مع CENO و Ouinet: التخزين المؤقت للصفحة وتجميعها، ومعلومات مصدر الصفحة، والإعدادات والوظائف الأخرى. يتضمن رمزًا من Localizer بواسطة rugk بموجب ترخيص MIT.",
+        "description": "Description of the extension."
+    },
+    "bgCenoWarning": {
+        "message": "تحذير متصفح CENO"
+    },
+    "settingsTitle": {
+        "message": "إعدادات متصفح CENO"
+    },
+    "settingsWarn": {
+        "message": "الإعدادات الموجودة في هذه الصفحة مخصصة فقط لاختبار وظائف CENO في الظروف المختلفة للشبكة . انظر $MANUAL$ للمزيد من المعلومات.",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsWarnMan": {
+        "message": "دليل"
+    },
+    "settingsWarnManLN": {
+        "message": "https://censorship.no/user-manual/ar/browser/settings.html",
+        "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "settingsWarnManTI": {
+        "message": "Censorship.no! دليل المستخدم - إعدادات CENO"
+    },
+    "settingsSources": {
+        "message": "مصادر استرجاع المحتوى:"
+    },
+    "settingsSrcOrigin": {
+        "message": "مباشر من الموقع"
+    },
+    "settingsSrcProxy": {
+        "message": "عن طريق شبكه CENO (خاص)"
+    },
+    "settingsSrcInjector": {
+        "message": "عن طريق شبكه CENO (عام)"
+    },
+    "settingsSrcDcache": {
+        "message": "مشارك من قبل مستخدمي CENO الآخرين"
+    },
+    "settingsPubwarn": {
+        "message": "$PUBLIC_BROWSING$ سيفشل مع الإعدادات الحالية.",
+        "placeholders": {
+            "public_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPubwarnPub": {
+        "message": "التصفح العام"
+    },
+    "settingsPrivwarn": {
+        "message": "$PRIVATE_BROWSING$ سيفشل مع الإعدادات الحالية.",
+        "placeholders": {
+            "private_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPrivwarnPriv": {
+        "message": "التصفح الخاص"
+    },
+    "settingsStatusBrowser": {
+        "message": "متصفح CENO"
+    },
+    "settingsStatusExtension": {
+        "message": "إضافة CENO"
+    },
+    "settingsStatusOuinet": {
+        "message": "Ouinet"
+    },
+    "settingsStatusProtocol": {
+        "message": "بروتوكول Ouinet"
+    },
+    "settingsStatusEndpoints": {
+        "message": "نقاط نهاية UDP المحلية"
+    },
+    "settingsStatusUpnp": {
+        "message": "حالة UPnP"
+    },
+    "settingsStatusReachability": {
+        "message": "حالة إمكانية الوصول"
+    },
+    "settingsStatusCacheSize": {
+        "message": "حجم ذاكرة التخزين المؤقت المحلية"
+    },
+    "settingsStatusCachePurge": {
+        "message": "تطهير الآن"
+    },
+    "settingsStatusCacheList": {
+        "message": "محتوى شاركته أنت"
+    },
+    "settingsLogEnable": {
+        "message": "تفعيل ملف السجل"
+    },
+    "settingsLogDownload": {
+        "message": "تنزيل"
+    },
+    "popupTitle": {
+        "message": "مصادر CENO"
+    },
+    "popupHead": {
+        "message": "عدد عناصر الصفحة لكل مصدر :"
+    },
+    "popupSrcOrigin": {
+        "message": "مباشرة من الموقع الإلكتروني"
+    },
+    "popupSrcProxy": {
+        "message": "عبر شبكة CENO (الخاصة)"
+    },
+    "popupSrcInjector": {
+        "message": "عبر شبكة CENO (العمومية)"
+    },
+    "popupSrcDcache": {
+        "message": "مشاركة من طرف مستخدمي CENO الآخرين"
+    },
+    "popupSrcLcache": {
+        "message": "مشارك من طرفك"
+    },
+    "popupFoot": {
+        "message": "اطلع على $MANUAL$ للمزيد من المعلومات حول مصادر المحتوى.",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "popupFootMan": {
+        "message": "يدوي"
+    },
+    "popupFootManLN": {
+        "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
+        "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "popupFootManTI": {
+        "message": "Censorship.no! دليل المستخدم - إعدادات CENO"
+    },
+    "updateTitle": {
+        "message": "تحديث CENO"
+    },
+    "updateMetacontent": {
+        "message": "تحديث CENO"
+    },
+    "updateHead": {
+        "message": "إن متصفح CENO ليس مُحدَّثا."
+    },
+    "updateSubhead": {
+        "message": "يُرجى تحديث تطبيقك بواسطة",
+        "description": "Update hint for user, followed by graphical update badge links."
+    },
+    "updateGetgoogleplay": {
+        "message": "احصل عليه على جوجل بلاي (Google Play)‏",
+        "description": "Alt text for Google Play badge."
+    },
+    "updateGetpaskoocheh": {
+        "message": "احصل عليه على Paskoocheh",
+        "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": "حفظ"
+    },
+    "settingsStatusBtBootstraps": {
+        "message": "إقلاعات بِتْ تورَنْتْ (BitTorrent) الإضافية"
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": "المضيف1 المضيف2: المنفذ ..."
+    },
+    "settingsStatusClientState": {
+        "message": "حالة العميل Ouinet"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "نقاط نهاية UDP الخارجية"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "نقاط نهاية UDP العامة"
+    }
+}

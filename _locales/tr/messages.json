@@ -1,0 +1,185 @@
+{
+    "extName": {
+        "message": "CENO eklentisi",
+        "description": "Name of the extension."
+    },
+    "extDesc": {
+        "message": "CENO ve Ouinet ile bütünleşme sağlar: Sayfa ön belleğe alma ve gruplama, sayfa kaynak bilgileri, ayarlar ve diğer işlevleri sağlar. MIT lisansı altında, rugk tarafından geliştirilmiş olan Localizer kodlarından alıntılar içerir.",
+        "description": "Description of the extension."
+    },
+    "bgCenoWarning": {
+        "message": "CENO uyarısı"
+    },
+    "settingsTitle": {
+        "message": "CENO ayarları"
+    },
+    "settingsWarn": {
+        "message": "Bu bölümdeki ayarlar, yalnızca çeşitli ağ koşullarında CENO işlevselliğini sınamak içindir. Ayrıntılı bilgi almak için $MANUAL$ bölümüne bakabilirsiniz.",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsWarnMan": {
+        "message": "rehber"
+    },
+    "settingsWarnManLN": {
+        "message": "https://censorship.no/user-manual/tr/browser/settings.html",
+        "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "settingsWarnManTI": {
+        "message": "Censorship.no! Kullanıcı rehberi – CENO ayarları"
+    },
+    "settingsSources": {
+        "message": "İçerik alma kaynakları:"
+    },
+    "settingsSrcOrigin": {
+        "message": "Doğrudan siteden"
+    },
+    "settingsSrcProxy": {
+        "message": "CENO ağı üzerinden (gizli)"
+    },
+    "settingsSrcInjector": {
+        "message": "CENO ağı üzerinden (herkese açık)"
+    },
+    "settingsSrcDcache": {
+        "message": "Diğer CENO kullanıcılarının paylaşımlarından"
+    },
+    "settingsPubwarn": {
+        "message": "$PUBLIC_BROWSING$ geçerli ayarlarla başarısız olacak.",
+        "placeholders": {
+            "public_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPubwarnPub": {
+        "message": "Herkese açık gezinme"
+    },
+    "settingsPrivwarn": {
+        "message": "$PRIVATE_BROWSING$ geçerli ayarlarla başarısız olacak.",
+        "placeholders": {
+            "private_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPrivwarnPriv": {
+        "message": "Gizli gezinme"
+    },
+    "settingsStatusBrowser": {
+        "message": "CENO Browser"
+    },
+    "settingsStatusExtension": {
+        "message": "CENO eklentisi"
+    },
+    "settingsStatusOuinet": {
+        "message": "Ouinet"
+    },
+    "settingsStatusProtocol": {
+        "message": "Ouinet iletişim kuralı"
+    },
+    "settingsStatusEndpoints": {
+        "message": "Yerel UDP uç noktaları"
+    },
+    "settingsStatusUpnp": {
+        "message": "UPnP durumu"
+    },
+    "settingsStatusReachability": {
+        "message": "Erişilebilirlik durumu"
+    },
+    "settingsStatusCacheSize": {
+        "message": "Yerel ön bellek boyutu"
+    },
+    "settingsStatusCachePurge": {
+        "message": "Şimdi temizle"
+    },
+    "settingsStatusCacheList": {
+        "message": "Sizin paylaştığınız içerik"
+    },
+    "settingsLogEnable": {
+        "message": "Günlük dosyası kullanılsın"
+    },
+    "settingsLogDownload": {
+        "message": "İndir"
+    },
+    "popupTitle": {
+        "message": "CENO kaynakları"
+    },
+    "popupHead": {
+        "message": "Bir kaynaktaki sayfa bileşenleri sayısı:"
+    },
+    "popupSrcOrigin": {
+        "message": "Doğrudan siteden"
+    },
+    "popupSrcProxy": {
+        "message": "CENO ağı üzerinden (gizli)"
+    },
+    "popupSrcInjector": {
+        "message": "CENO ağı üzerinden (herkese açık)"
+    },
+    "popupSrcDcache": {
+        "message": "Diğer CENO kullanıcılarının paylaşımlarından"
+    },
+    "popupSrcLcache": {
+        "message": "Sizin paylaşımlarınızdan"
+    },
+    "popupFoot": {
+        "message": "İçerik kaynakları hakkında ayrıntılı bilgi almak için $MANUAL$ bölümüne bakabilirsiniz.",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "popupFootMan": {
+        "message": "rehber"
+    },
+    "popupFootManLN": {
+        "message": "https://censorship.no/user-manual/tr/browser/settings.html#choosing-access-mechanisms",
+        "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "popupFootManTI": {
+        "message": "Censorship.no! Kullanıcı rehberi – CENO ayarları"
+    },
+    "updateTitle": {
+        "message": "CENO güncelleme"
+    },
+    "updateMetacontent": {
+        "message": "CENO güncelleme"
+    },
+    "updateHead": {
+        "message": "Kullandığınız CENO Browser güncel değil."
+    },
+    "updateSubhead": {
+        "message": "Lütfen uygulamanızı şuradan güncelleyin",
+        "description": "Update hint for user, followed by graphical update badge links."
+    },
+    "updateGetgoogleplay": {
+        "message": "Google Play üzerinden edinin",
+        "description": "Alt text for Google Play badge."
+    },
+    "updateGetpaskoocheh": {
+        "message": "Paskoocheh üzerinden edinin",
+        "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusClientState": {
+        "message": "Ouinet istemci durumu"
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "Dış UDP uç noktaları"
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "Herkese açık UDP uç noktaları"
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": "SUNUCU1 SUNUCU2:BAĞLANTINOKTASI ..."
+    },
+    "settingsStatusBtBootstraps": {
+        "message": "Ek BitTorrent ön yükleyicileri"
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": "Kaydet"
+    }
+}

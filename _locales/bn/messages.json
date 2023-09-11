@@ -1,0 +1,185 @@
+{
+    "extName": {
+        "message": "CENO এক্সটেনশন",
+        "description": "Name of the extension."
+    },
+    "extDesc": {
+        "message": "CENO ও Ouinet ব্যবহারের সুযোগ করে দেয়: রয়েছে পেইজ ক্যাশিং ও গ্রুপিং, পেইজ সোর্স সম্পর্কে তথ্য, সেটিংস্‌ এবং অন্যান্য আরো সুবিধা। এতে rugk-র MIT লাইসেন্সের অধীন Localizer-এর কোড রয়েছে।",
+        "description": "Description of the extension."
+    },
+    "bgCenoWarning": {
+        "message": "CENO-র সতর্কবাণী"
+    },
+    "settingsTitle": {
+        "message": "CENO-র সেটিংস্‌"
+    },
+    "settingsWarn": {
+        "message": "এই পৃষ্ঠার সেটিংস শুধুমাত্র বিভিন্ন নেটওয়ার্ক অবস্থার মধ্যে CENO কার্যকারিতা পরীক্ষা করার উদ্দেশ্যে। আরও তথ্যের জন্য $MANUAL$ দেখুন।",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsWarnMan": {
+        "message": "ম্যানুয়াল"
+    },
+    "settingsWarnManLN": {
+        "message": "https://censorship.no/user-manual/en/browser/settings.html",
+        "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "settingsWarnManTI": {
+        "message": "Censorship.no! ব্যবহারকারী ম্যানুয়াল – CENO-র সেটিংস্‌"
+    },
+    "settingsSources": {
+        "message": "কন্টেন্টের উৎস:"
+    },
+    "settingsSrcOrigin": {
+        "message": "সরাসরি ওয়েবসাইট থেকে"
+    },
+    "settingsSrcProxy": {
+        "message": "(একান্ত) CENO নেটওয়ার্কের মাধ্যমে"
+    },
+    "settingsSrcInjector": {
+        "message": "(উন্মুক্ত) CENO নেটওয়ার্কের মাধ্যমে"
+    },
+    "settingsSrcDcache": {
+        "message": "CENO-র অন্য ব্যবহারকারীদের শেয়ার করা"
+    },
+    "settingsPubwarn": {
+        "message": "বর্তমান সেটিংস্‌ দিয়ে $PUBLIC_BROWSING$ করা যাবে না।",
+        "placeholders": {
+            "public_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPubwarnPub": {
+        "message": "উন্মুক্ত (পাবলিক) ব্রাউজিং"
+    },
+    "settingsPrivwarn": {
+        "message": "বর্তমান সেটিংস্‌ দিয়ে $PRIVATE_BROWSING$ করা যাবে না।",
+        "placeholders": {
+            "private_browsing": {
+                "content": "$1"
+            }
+        }
+    },
+    "settingsPrivwarnPriv": {
+        "message": "একান্ত (প্রাইভেট) ব্রাউজিং"
+    },
+    "settingsStatusBrowser": {
+        "message": "CENO ব্রাউজার"
+    },
+    "settingsStatusExtension": {
+        "message": "CENO এক্সটেনশন"
+    },
+    "settingsStatusOuinet": {
+        "message": "Ouinet"
+    },
+    "settingsStatusProtocol": {
+        "message": "Ouinet প্রোটোকল"
+    },
+    "settingsStatusEndpoints": {
+        "message": "লোকাল UDP এন্ডপয়েন্ট"
+    },
+    "settingsStatusUpnp": {
+        "message": "UPnP-র অবস্থা"
+    },
+    "settingsStatusReachability": {
+        "message": "নাগালের অবস্থা"
+    },
+    "settingsStatusCacheSize": {
+        "message": "লোকাল ক্যাশের পরিমাণ"
+    },
+    "settingsStatusCachePurge": {
+        "message": "মুছে ফেলব"
+    },
+    "settingsStatusCacheList": {
+        "message": "আপনার শেয়ার করা কন্টেন্ট"
+    },
+    "settingsLogEnable": {
+        "message": "লগ ফাইল চালু থাকবে"
+    },
+    "settingsLogDownload": {
+        "message": "ডাউনলোড"
+    },
+    "popupTitle": {
+        "message": "CENO-র উৎস"
+    },
+    "popupHead": {
+        "message": "প্রতি উৎসের জন্য পেইজ এলিমেন্টের সংখ্যা:"
+    },
+    "popupSrcOrigin": {
+        "message": "সরাসরি ওয়েবসাইট থেকে"
+    },
+    "popupSrcProxy": {
+        "message": "(একান্ত) CENO নেটওয়ার্কের মাধ্যমে"
+    },
+    "popupSrcInjector": {
+        "message": "(উন্মুক্ত) CENO নেটওয়ার্কের মাধ্যমে"
+    },
+    "popupSrcDcache": {
+        "message": "CENO-র অন্য ব্যবহারকারীদের শেয়ার করা"
+    },
+    "popupSrcLcache": {
+        "message": "আপনার শেয়ার করা"
+    },
+    "popupFoot": {
+        "message": "কন্টেন্টের উৎস সম্পর্কে আরো তথ্য পেতে $MANUAL$ দেখুন।",
+        "placeholders": {
+            "manual": {
+                "content": "$1"
+            }
+        }
+    },
+    "popupFootMan": {
+        "message": "ম্যানুয়াল"
+    },
+    "popupFootManLN": {
+        "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
+        "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
+    },
+    "popupFootManTI": {
+        "message": "Censorship.no! ব্যবহারকারী ম্যানুয়াল – CENO-র সেটিংস্‌"
+    },
+    "updateTitle": {
+        "message": "CENO হালনাগাদকরণ"
+    },
+    "updateMetacontent": {
+        "message": "CENO হালনাগাদকরণ"
+    },
+    "updateHead": {
+        "message": "আপনার CENO ব্রাউজার পুরনো হয়ে গেছে।"
+    },
+    "updateSubhead": {
+        "message": "নিচের কোনো উপায়ে অ্যাপ হালনাগাদ করুন",
+        "description": "Update hint for user, followed by graphical update badge links. If the incomplete sentence can't be properly translated, assume the source string is: 'Please update your app via the following channels:'"
+    },
+    "updateGetgoogleplay": {
+        "message": "Gogole Play থেকে",
+        "description": "Alt text for Google Play badge."
+    },
+    "updateGetpaskoocheh": {
+        "message": "Paskoocheh থেকে",
+        "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusExtEndpoints": {
+        "message": "বাহ্যিক UDP শেষ পয়েন্ট"
+    },
+    "settingsStatusClientState": {
+        "message": "Ouinet ক্লায়েন্ট রাষ্ট্র"
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": "সংরক্ষণ"
+    },
+    "settingsStatusBtBootstraps": {
+        "message": "অতিরিক্ত BitTorrent বুটস্ট্র্যাপ"
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": "HOST1 HOST2:পোর্ট..."
+    },
+    "settingsStatusPubEndpoints": {
+        "message": "পাবলিক UDP শেষ পয়েন্ট"
+    }
+}
