@@ -4,7 +4,7 @@
         "description": "Name of the extension."
     },
     "extDesc": {
-        "message": "توفر دمجاً مع CENO وOuinet: التخزين المؤقت للصفحة وتجميعها، ومعلومات مصدر الصفحة، والإعدادات والوظائف الأخرى. يتضمن رمزًا من Localizer بواسطة rugk بموجب ترخيص MIT.",
+        "message": "توفر دمجاً مع CENO وOuinet: التخزين المؤقت للصفحة وتجميعها، ومعلومات مصدر الصفحة، والإعدادات والوظائف الأخرى. تتضمن شفرة مصدرية من مكتبة Localizer بواسطة rugk وبرخصة MIT.",
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
@@ -32,7 +32,7 @@
         "message": "Censorship.no! دليل المستخدم - إعدادات CENO"
     },
     "settingsSources": {
-        "message": "مصادر استرجاع المحتوى:"
+        "message": "مصادر استرداد المحتوى:"
     },
     "settingsSrcOrigin": {
         "message": "مباشر من الموقع"
@@ -72,7 +72,7 @@
         "message": "متصفح CENO"
     },
     "settingsStatusExtension": {
-        "message": "إضافة CENO"
+        "message": "إضافة متصفح CENO"
     },
     "settingsStatusOuinet": {
         "message": "Ouinet"
@@ -134,7 +134,7 @@
         }
     },
     "popupFootMan": {
-        "message": "يدوي"
+        "message": "دليل"
     },
     "popupFootManLN": {
         "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
@@ -168,10 +168,10 @@
         "message": "حفظ"
     },
     "settingsStatusBtBootstraps": {
-        "message": "إقلاعات بِتْ تورَنْتْ (BitTorrent) الإضافية"
+        "message": "تمهيدات بت تورنت BitTorrent إضافية"
     },
     "settingsStatusBtBootstrapsPlaceholder": {
-        "message": "المضيف1 المضيف2: المنفذ..."
+        "message": "HOST1 HOST2:PORT ..."
     },
     "settingsStatusClientState": {
         "message": "حالة العميل Ouinet"
