@@ -11,10 +11,6 @@
 //  return r;
 //}
 //
-
-// Example for sending native messages
- browser.runtime.sendNativeMessage("browser", "HELLO BROWSER");
-
 //class OneStat {
 //  constructor(parent, label) {
 //    this.currentValue = 0;
