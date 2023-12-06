@@ -4,7 +4,7 @@
         "description": "Name of the extension."
     },
     "extDesc": {
-        "message": "توفر دمجا مع CENO و Ouinet: التخزين المؤقت للصفحة وتجميعها، ومعلومات مصدر الصفحة، والإعدادات والوظائف الأخرى. يتضمن رمزًا من Localizer بواسطة rugk بموجب ترخيص MIT.",
+        "message": "توفر دمجاً مع CENO وOuinet: التخزين المؤقت للصفحة وتجميعها، ومعلومات مصدر الصفحة، والإعدادات والوظائف الأخرى. تتضمن شفرة مصدرية من مكتبة Localizer بواسطة rugk وبرخصة MIT.",
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
@@ -14,7 +14,7 @@
         "message": "إعدادات متصفح CENO"
     },
     "settingsWarn": {
-        "message": "الإعدادات الموجودة في هذه الصفحة مخصصة فقط لاختبار وظائف CENO في الظروف المختلفة للشبكة . انظر $MANUAL$ للمزيد من المعلومات.",
+        "message": "الإعدادات الموجودة في هذه الصفحة مخصصة فقط لاختبار وظائف CENO في الظروف المختلفة للشبكة. انظر $MANUAL$ للمزيد من المعلومات.",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -32,16 +32,16 @@
         "message": "Censorship.no! دليل المستخدم - إعدادات CENO"
     },
     "settingsSources": {
-        "message": "مصادر استرجاع المحتوى:"
+        "message": "مصادر استرداد المحتوى:"
     },
     "settingsSrcOrigin": {
         "message": "مباشر من الموقع"
     },
     "settingsSrcProxy": {
-        "message": "عن طريق شبكه CENO (خاص)"
+        "message": "عن طريق شبكة CENO (خاص)"
     },
     "settingsSrcInjector": {
-        "message": "عن طريق شبكه CENO (عام)"
+        "message": "عن طريق شبكة CENO (عام)"
     },
     "settingsSrcDcache": {
         "message": "مشارك من قبل مستخدمي CENO الآخرين"
@@ -72,7 +72,7 @@
         "message": "متصفح CENO"
     },
     "settingsStatusExtension": {
-        "message": "إضافة CENO"
+        "message": "إضافة متصفح CENO"
     },
     "settingsStatusOuinet": {
         "message": "Ouinet"
@@ -93,10 +93,10 @@
         "message": "حجم ذاكرة التخزين المؤقت المحلية"
     },
     "settingsStatusCachePurge": {
-        "message": "تطهير الآن"
+        "message": "حذف البيانات الآن"
     },
     "settingsStatusCacheList": {
-        "message": "محتوى شاركته أنت"
+        "message": "محتوى قمت بمشاركته"
     },
     "settingsLogEnable": {
         "message": "تفعيل ملف السجل"
@@ -108,7 +108,7 @@
         "message": "مصادر CENO"
     },
     "popupHead": {
-        "message": "عدد عناصر الصفحة لكل مصدر :"
+        "message": "عدد عناصر الصفحة لكل مصدر:"
     },
     "popupSrcOrigin": {
         "message": "مباشرة من الموقع الإلكتروني"
@@ -117,13 +117,13 @@
         "message": "عبر شبكة CENO (الخاصة)"
     },
     "popupSrcInjector": {
-        "message": "عبر شبكة CENO (العمومية)"
+        "message": "عبر شبكة CENO (العامة)"
     },
     "popupSrcDcache": {
         "message": "مشاركة من طرف مستخدمي CENO الآخرين"
     },
     "popupSrcLcache": {
-        "message": "مشارك من طرفك"
+        "message": "مشارك من قِبلك"
     },
     "popupFoot": {
         "message": "اطلع على $MANUAL$ للمزيد من المعلومات حول مصادر المحتوى.",
@@ -134,7 +134,7 @@
         }
     },
     "popupFootMan": {
-        "message": "يدوي"
+        "message": "دليل"
     },
     "popupFootManLN": {
         "message": "https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms",
@@ -150,7 +150,7 @@
         "message": "تحديث CENO"
     },
     "updateHead": {
-        "message": "إن متصفح CENO ليس مُحدَّثا."
+        "message": "نسختك من متصفح CENO غير محدّثة"
     },
     "updateSubhead": {
         "message": "يُرجى تحديث تطبيقك بواسطة",
@@ -168,10 +168,10 @@
         "message": "حفظ"
     },
     "settingsStatusBtBootstraps": {
-        "message": "إقلاعات بِتْ تورَنْتْ (BitTorrent) الإضافية"
+        "message": "تمهيدات بت تورنت BitTorrent إضافية"
     },
     "settingsStatusBtBootstrapsPlaceholder": {
-        "message": "المضيف1 المضيف2: المنفذ ..."
+        "message": "HOST1 HOST2:PORT ..."
     },
     "settingsStatusClientState": {
         "message": "حالة العميل Ouinet"
