@@ -11,6 +11,8 @@ const NO_CACHE_URL_REGEXPS = [
     /^https?:\/\/(www\.)?duckduckgo\.com\/ac\//,  // DuckDuckGo Search completion
 ]
 
+// Establish connection with application
+const port = browser.runtime.connectNative("browser");
 
 // <https://stackoverflow.com/a/4835406>
 const htmlEscapes = {
@@ -163,6 +165,7 @@ function warnWhenUpdateDetected(e) {
   }
 }
 
+var gActiveTabId = 0;
 var gOuinetStats = {};
 const gOuinetSources = ['origin', 'proxy', 'injector', 'dist-cache', 'local-cache'];
 
@@ -206,6 +209,9 @@ function updateCenoStats(e) {
     data.stats[e.tabId] = stats;
     browser.storage.local.set(data);
   });
+
+  // capture current tab id, so stats for it can be sent via native message
+  gActiveTabId = tabId
 }
 
 const APP_STORES = ["play.google.com", "paskoocheh.com", "s3.amazonaws.com"];
@@ -438,3 +444,9 @@ browser.tabs.onRemoved.addListener(
   (id) => removeCacheForTab(id));
 
 browser.pageAction.onClicked.addListener(browser.pageAction.openPopup);
+
+// Set up listener for native messages
+port.onMessage.addListener(response => {
+  // Send back ouinet statistics
+  port.postMessage(`${JSON.stringify(gOuinetStats[gActiveTabId])}`);
+});
