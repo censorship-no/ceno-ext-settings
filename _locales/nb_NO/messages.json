@@ -163,5 +163,23 @@
     "updateGetpaskoocheh": {
         "message": "Hent det på Paskoocheh",
         "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsStatusBtBootstrapsPlaceholder": {
+        "message": ""
+    },
+    "settingsStatusBtBootstrapsSave": {
+        "message": ""
+    },
+    "settingsStatusExtEndpoints": {
+        "message": ""
+    },
+    "settingsStatusPubEndpoints": {
+        "message": ""
+    },
+    "settingsStatusClientState": {
+        "message": ""
+    },
+    "settingsStatusBtBootstraps": {
+        "message": ""
     }
 }
