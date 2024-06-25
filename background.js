@@ -173,6 +173,7 @@ browser.webNavigation.onBeforeNavigate.addListener(details => {
   if (details.frameId != 0) return;
   const tabId = details.tabId;
   gOuinetStats[tabId] = {};
+  gOuinetStats[tabId]['url'] = details.url;
 });
 
 function updateCenoStats(e) {
