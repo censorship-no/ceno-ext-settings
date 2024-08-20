@@ -60,6 +60,7 @@ function getDhtGroup(e) {
     return url;
 }
 
+var gPersonalModeOnly = false;
 // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders
 function onBeforeSendHeaders(e) {
   if (e.tabId < 0) {
@@ -71,7 +72,7 @@ function onBeforeSendHeaders(e) {
       // The `tab` structure is described here:
       // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab
 
-      let is_private = tab.incognito || !isUrlCacheable(e.url);
+      let is_private = tab.incognito || !isUrlCacheable(e.url) || gPersonalModeOnly;
       e.requestHeaders.push({name: "X-Ouinet-Private", value: (is_private ? "True" : "False")});
 
       if (!is_private) {
@@ -449,5 +450,11 @@ browser.pageAction.onClicked.addListener(browser.pageAction.openPopup);
 // Set up listener for native messages
 port.onMessage.addListener(response => {
   // Send back ouinet statistics
-  port.postMessage(`${JSON.stringify(gOuinetStats[gActiveTabId])}`);
+  if (response["requestSources"] == "true") {
+    port.postMessage(`${JSON.stringify(gOuinetStats[gActiveTabId])}`);
+  }
+  // Set personal mode
+  if (response["personalModeOnly"] != "") {
+    gPersonalModeOnly = (response["personalModeOnly"] == "true")
+  }
 });
