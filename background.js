@@ -176,6 +176,23 @@ browser.webNavigation.onBeforeNavigate.addListener(details => {
   gOuinetStats[tabId]['url'] = details.url;
 });
 
+browser.webRequest.onBeforeRedirect.addListener(
+  details => {
+    const tabId = details.tabId;
+    gOuinetStats[tabId]['url'] = details.redirectUrl;
+  },
+  {urls: ["<all_urls>"]}
+)
+
+browser.webNavigation.onHistoryStateUpdated.addListener(
+  details => {
+    const tabId = details.tabId;
+    if (details.url != gOuinetStats[tabId]['url']) {
+      gOuinetStats[tabId]['url'] = details.url;
+    }
+  }
+)
+
 function updateCenoStats(e) {
   const tabId = e.tabId;
 
