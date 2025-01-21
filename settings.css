@@ -25,7 +25,7 @@ a:link {
   font-size: 1em;
   color: #fff;
   background: #333;
-  padding-__MSG_@@bidi_start_edge__: 50px;
+  padding-__MSG_@@bidi_start_edge__: 25px;
 }
 #back {
   padding: 25px;
@@ -122,6 +122,27 @@ a:link {
 }
 .cb_container input:disabled ~ .cb_label {
   color: #aaa;
+}
+.btn_container {
+  position: relative;
+  color: #333;
+  border-top: 2px solid #b2b2b2;
+  padding-__MSG_@@bidi_start_edge__: 20px;
+}
+.btn_group {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  padding: 10px;
+}
+.btn_small {
+  font-size: 1em;
+}
+.btn_med {
+  font-size: 2em;
+}
+.btn_big {
+  font-size: 3em;
 }
 /* Warnings may only be shown after successfully contacting the client. */
 #am-warnings {

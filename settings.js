@@ -174,6 +174,28 @@ class LogControl {
   }
 }
 
+class Selector {
+  constructor(id) {
+    var elem = document.getElementById(id);
+    if (!elem) { return; }
+    if (elem.type !== 'button') { return; }
+
+    elem.addEventListener('click', event => this.onClick(event));
+
+    this.id = id;
+    this.elem = elem;
+    this.cb = null;
+  }
+
+  onClick(event) {
+    if (!this.elem) return;
+    setStyle(this.id)
+    browser.storage.local.set({
+      style: this.id
+    });
+  }
+}
+
 class Action {
   constructor(id) {
     var elem = document.getElementById(id);
@@ -218,6 +240,10 @@ class State {
   constructor() {
     this.items = new Map();
     this.actions = new Array();
+
+    this.resize = new Map();
+    var selectors = ["small_style", "med_style", "big_style"];
+    selectors.map(v => this.resize.set(v, new Selector(v)));
 
     var buttons = ["origin_access", "proxy_access", "injector_access", "distributed_cache"];
     buttons.map(v => this.items.set(v, new Button(v)));
@@ -308,8 +334,99 @@ function setFrontEndLinks() {
   }
 }
 
+const smallStyle = {
+  headerHeight: "60px",
+  fontSize: "1em",
+  formPadding: "25px",
+  rowHeight: "25px",
+  cbPadding: "25px",
+  cbTop: "4px",
+  cbSize: "15px",
+  cbBorder: "#aaa solid 2px",
+  cbBorderRadius: "5px"
+};
+
+const mediumStyle = {
+  headerHeight: "80px",
+  fontSize: "2em",
+  formPadding: "37.5px",
+  rowHeight: "50px",
+  cbPadding: "50px",
+  cbTop: "10px",
+  cbSize: "30px",
+  cbBorder: "#aaa solid 4px",
+  cbBorderRadius: "10px"
+};
+
+const bigStyle = {
+  headerHeight: "120px",
+  fontSize: "3em",
+  formPadding: "50px",
+  rowHeight: "80px",
+  cbPadding: "80px",
+  cbTop: "16px",
+  cbSize: "40px",
+  cbBorder: "#aaa solid 5px",
+  cbBorderRadius: "15px"
+};
+
+function setStyle(size) {
+  if (size == null)
+    return;
+
+  var style = {};
+  if (size == "small_style") {
+    style = smallStyle;
+  }
+  else if (size == "med_style") {
+    style = mediumStyle;
+  }
+  else if (size == "big_style") {
+    style = bigStyle;
+  }
+
+  const h = document.getElementById('header');
+  h.style.height = style.headerHeight;
+  h.style.lineHeight = style.headerHeight;
+  h.style.paddingLeft = style.formPadding;
+  h.style.fontSize = style.fontSize;
+
+  const forms = document.querySelectorAll('.cb_form');
+  Array.from(forms).map(f => {
+    f.style.fontSize = style.fontSize;
+    f.style.padding = style.formPadding;
+  });
+
+  const rows = document.querySelectorAll('.cb_form .row');
+  Array.from(rows).map(r => {
+    r.style.height = style.rowHeight;
+    r.style.lineHeight = style.rowHeight;
+  });
+
+  const containers = document.querySelectorAll('.cb_container');
+  // TODO: account for bi-directional i18n
+  Array.from(containers).map(c => c.style.paddingLeft = style.cbPadding);
+
+  const checkboxs = document.querySelectorAll('.checkmark');
+  Array.from(checkboxs).map(cb => {
+    cb.style.top = style.cbTop;
+    cb.style.height = style.cbSize;
+    cb.style.width = style.cbSize;
+    cb.style.border = style.cbBorder;
+    cb.style.borderRadius = style.cbBorderRadius;
+  });
+
+  const items = document.querySelectorAll('.status_items');
+  Array.from(items).map(f => {
+    f.style.fontSize = style.fontSize;
+    f.style.padding = style.formPadding;
+  });
+}
+
 window.addEventListener("load", async () => {
   setFrontEndLinks();
+
+  browser.storage.local.get("style").then(item => setStyle(item.style));
 
   let state = new State();
 
