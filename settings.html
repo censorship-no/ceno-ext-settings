@@ -10,50 +10,18 @@
 </head>
 <body>
   <div data-i18n="settingsTitle" id="header">CENO Settings</div>
-  <p data-i18n="settingsWarn" data-opt-i18n-keep-children
-     id="test-warning">Settings on this page are only intended for testing CENO functionality in various network conditions.
-    See the
-    <a data-i18n="settingsWarnMan" data-i18n-href="settingsWarnManLN" data-i18n-title="settingsWarnManTI"
-       href="https://censorship.no/user-manual/en/browser/settings.html"
-       title="Censorship.no! User Manual – CENO settings" target="_blank">manual</a> for more information.</p>
-  <form class="cb_form" id="access-mechanisms">
-    <div class="group">
-      <p data-i18n="settingsSources">Content retrieval sources:</p>
-      <div class="row">
-        <label class="cb_container">
-          <input type="checkbox" id="origin_access" disabled>
-          <span class="checkmark"></span>
-          <div data-i18n="settingsSrcOrigin" class="cb_label">Direct from website</div>
-        </label>
-      </div>
-      <div class="row">
-        <label class="cb_container">
-          <input type="checkbox" id="proxy_access" disabled>
-          <span class="checkmark"></span>
-          <div data-i18n="settingsSrcProxy" class="cb_label">Via the CENO network (private)</div>
-        </label>
-      </div>
-      <div class="row">
-        <label class="cb_container">
-          <input type="checkbox" id="injector_access" disabled>
-          <span class="checkmark"></span>
-          <div data-i18n="settingsSrcInjector" class="cb_label">Via the CENO network (public)</div>
-        </label>
-      </div>
-      <div class="row">
-        <label class="cb_container">
-          <input type="checkbox" id="distributed_cache" disabled>
-          <span class="checkmark"></span>
-          <div data-i18n="settingsSrcDcache" class="cb_label">Shared by other CENO users</div>
-        </label>
-      </div>
-    </div>
-    <div id="am-warnings">
-      <p data-i18n="settingsPubwarn" data-opt-i18n-keep-children
-         id="am-warning-public"><strong data-i18n="settingsPubwarnPub">Public browsing</strong> will fail with current settings.</p>
-      <p data-i18n="settingsPrivwarn" data-opt-i18n-keep-children
-         id="am-warning-private"><strong data-i18n="settingsPrivwarnPriv">Private browsing</strong> will fail with current settings.</p>
-    </div>
+  <form class="rd_form" id="browsing-modes">
+    <p data-i18n="settingsMode">Browsing Mode:</p>
+    <label class="rd_container">
+      <input type="radio" id="public_mode" name="mode_radio" value="public" checked>
+      <span class="rd_checkmark"></span>
+      <div data-i18n="settingsModePublic" class="rd_label">Public</div>
+    </label>
+    <label class="rd_container">
+      <input type="radio" id="personal_mode" name="mode_radio" value="personal">
+      <span class="rd_checkmark"></span>
+      <div data-i18n="settingsModePersonal" class="rd_label">Personal</div>
+    </label>
   </form>
   <div class="status_items">
     <form>
@@ -92,6 +60,45 @@
       <span id="saved-bt_extra_bootstraps" style="display: none">✔</span>
     </form>
   </div>
+  <form class="cb_form" id="access-mechanisms">
+    <div class="group">
+      <p data-i18n="settingsSources">Content retrieval sources:</p>
+      <div class="row">
+        <label class="cb_container">
+          <input type="checkbox" id="origin_access" disabled>
+          <span class="checkmark"></span>
+          <div data-i18n="settingsSrcOrigin" class="cb_label">Direct from website</div>
+        </label>
+      </div>
+      <div class="row">
+        <label class="cb_container">
+          <input type="checkbox" id="proxy_access" disabled>
+          <span class="checkmark"></span>
+          <div data-i18n="settingsSrcProxy" class="cb_label">Via the CENO network (personal)</div>
+        </label>
+      </div>
+      <div class="row">
+        <label class="cb_container">
+          <input type="checkbox" id="injector_access" disabled>
+          <span class="checkmark"></span>
+          <div data-i18n="settingsSrcInjector" class="cb_label">Via the CENO network (public)</div>
+        </label>
+      </div>
+      <div class="row">
+        <label class="cb_container">
+          <input type="checkbox" id="distributed_cache" disabled>
+          <span class="checkmark"></span>
+          <div data-i18n="settingsSrcDcache" class="cb_label">Shared by other CENO users</div>
+        </label>
+      </div>
+    </div>
+    <div id="am-warnings">
+      <p data-i18n="settingsPubwarn" data-opt-i18n-keep-children
+         id="am-warning-public"><strong data-i18n="settingsPubwarnPub">Public browsing</strong> will fail with current settings.</p>
+      <p data-i18n="settingsPrivwarn" data-opt-i18n-keep-children
+         id="am-warning-private"><strong data-i18n="settingsPrivwarnPriv">Private browsing</strong> will fail with current settings.</p>
+    </div>
+  </form>
   <div class="status_items">
     <span data-i18n="settingsStatusBrowser" class="name">CENO Browser</span><br>
     <span id="ceno_version"> </span>

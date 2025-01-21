@@ -196,6 +196,27 @@ class Selector {
   }
 }
 
+class Radio {
+  constructor(id) {
+    var elem = document.getElementById(id);
+    if (!elem) { return; }
+    if (elem.type !== 'radio') { return; }
+
+    elem.addEventListener('change', event => this.onChange(event));
+
+    this.id = id;
+    this.elem = elem;
+    this.cb = null;
+  }
+
+  onChange(event) {
+    if (!this.elem) return;
+    browser.storage.local.set({
+      mode: this.elem.value
+    });
+  }
+}
+
 class Action {
   constructor(id) {
     var elem = document.getElementById(id);
@@ -240,6 +261,10 @@ class State {
   constructor() {
     this.items = new Map();
     this.actions = new Array();
+
+    this.radio = new Map();
+    var modes = ["public_mode", "personal_mode"];
+    modes.map(v => this.radio.set(v, new Radio(v)));
 
     this.resize = new Map();
     var selectors = ["small_style", "med_style", "big_style"];

@@ -68,10 +68,10 @@ function onBeforeSendHeaders(e) {
 
   // tabs.get returns a Promise
   return browser.tabs.get(e.tabId).then(tab => {
-      // The `tab` structure is described here:
-      // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab
-
-      let is_private = tab.incognito || !isUrlCacheable(e.url);
+    // The `tab` structure is described here:
+    // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab
+    return browser.storage.local.get("mode").then(item => {
+      let is_private = tab.incognito || !isUrlCacheable(e.url) || item.mode == "personal" ;
       e.requestHeaders.push({name: "X-Ouinet-Private", value: (is_private ? "True" : "False")});
 
       if (!is_private) {
@@ -79,6 +79,7 @@ function onBeforeSendHeaders(e) {
       }
 
       return {requestHeaders: e.requestHeaders};
+    });
   });
 }
 

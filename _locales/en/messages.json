@@ -118,6 +118,12 @@
     "settingsLogDownload": {
         "message": "Download"
     },
+    "settingsModePublic": {
+        "message": "Public"
+    },
+    "settingsModePersonal": {
+        "message": "Personal"
+    },
 
     "popupTitle": {
         "message": "CENO Sources"
