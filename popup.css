@@ -8,29 +8,29 @@ a:link {
   color: #0ea5e9;
 }
 #header {
-  height: 120px;
-  line-height: 120px;
+  height: 60px;
+  line-height: 60px;
   display: flex;
   justify-content: flex-start;
   vertical-align: middle;
-  font-size: 3em;
+  font-size: 1em;
   color: #fff;
   background: #333;
-  padding-__MSG_@@bidi_start_edge__: 40px;
+  padding-__MSG_@@bidi_start_edge__: 20px;
 }
 p {
-  margin: 40px 0 0 0;
-  padding: 0 40px;
-  font-size: 3em;
+  margin: 20px 0 0 0;
+  padding: 0 20px;
+  font-size: 1em;
 }
 #see-manual {
-  margin: 0 0 20px 0;
-  font-size: 1.5em;
+  margin: 0 0 10px 0;
+  font-size: .75em;
 }
 table {
   width: 100%;
-  padding: 40px;
-  font-size: 3em;
+  padding: 20px;
+  font-size: 1em;
   color: #999;
 }
 .value {
