@@ -368,7 +368,10 @@ const smallStyle = {
   cbTop: "4px",
   cbSize: "15px",
   cbBorder: "#aaa solid 2px",
-  cbBorderRadius: "5px"
+  cbBorderRadius: "5px",
+  smallBtnBorder: "#0ea5e9 solid 3px",
+  medBtnBorder: "#aaa solid 3px",
+  bigBtnBorder: "#aaa solid 3px"
 };
 
 const mediumStyle = {
@@ -380,7 +383,10 @@ const mediumStyle = {
   cbTop: "10px",
   cbSize: "30px",
   cbBorder: "#aaa solid 4px",
-  cbBorderRadius: "10px"
+  cbBorderRadius: "10px",
+  smallBtnBorder: "#aaa solid 4px",
+  medBtnBorder: "#0ea5e9 solid 4px",
+  bigBtnBorder: "#aaa solid 4px"
 };
 
 const bigStyle = {
@@ -392,7 +398,10 @@ const bigStyle = {
   cbTop: "16px",
   cbSize: "40px",
   cbBorder: "#aaa solid 5px",
-  cbBorderRadius: "15px"
+  cbBorderRadius: "15px",
+  smallBtnBorder: "#aaa solid 5px",
+  medBtnBorder: "#aaa solid 5px",
+  bigBtnBorder: "#0ea5e9 solid 5px",
 };
 
 function setStyle(size) {
@@ -469,6 +478,16 @@ function setStyle(size) {
     f.style.fontSize = style.fontSize;
     f.style.padding = style.formPadding;
   });
+
+  const smallBtn = document.querySelector('.btn_small');
+  smallBtn.style.border = style.smallBtnBorder
+  smallBtn.style.borderRadium = style.cbBorderRadius
+  const mediumBtn = document.querySelector('.btn_med');
+  mediumBtn.style.border = style.medBtnBorder
+  mediumBtn.style.borderRadium = style.cbBorderRadius
+  const bigBtn = document.querySelector('.btn_big');
+  bigBtn.style.border = style.bigBtnBorder
+  bigBtn.style.borderRadium = style.cbBorderRadius
 }
 
 window.addEventListener("load", async () => {

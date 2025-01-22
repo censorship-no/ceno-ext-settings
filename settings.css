@@ -137,12 +137,18 @@ a:link {
 }
 .btn_small {
   font-size: 1em;
+  border: #aaa solid 3px;
+  border-radius: 5px;
 }
 .btn_med {
   font-size: 2em;
+  border: #aaa solid 3px;
+  border-radius: 5px;
 }
 .btn_big {
   font-size: 3em;
+  border: #aaa solid 3px;
+  border-radius: 5px;
 }
 .rd_form {
   color: #333;
