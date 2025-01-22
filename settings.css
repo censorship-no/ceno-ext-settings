@@ -180,6 +180,7 @@ a:link {
   height: 20px;
   width: 20px;
   background-color: #eee;
+  border: #aaa solid 2px;
   border-radius: 50%;
 }
 
@@ -203,16 +204,6 @@ a:link {
 /* Show the indicator (dot/circle) when checked */
 .rd_container input:checked ~ .rd_checkmark:after {
   display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.rd_container .rd_checkmark:after {
-  top: 6px;
-  left: 6px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: white;
 }
 
 .rd_label {

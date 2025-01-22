@@ -416,6 +416,29 @@ function setStyle(size) {
   h.style.paddingLeft = style.formPadding;
   h.style.fontSize = style.fontSize;
 
+  const radios = document.querySelectorAll('.rd_form');
+  Array.from(radios).map(f => {
+    f.style.fontSize = style.fontSize;
+    f.style.padding = style.formPadding;
+  });
+
+  const rd_rows = document.querySelectorAll('.rd_form .row');
+  Array.from(rd_rows).map(r => {
+    r.style.height = style.rowHeight;
+    r.style.lineHeight = style.rowHeight;
+  });
+
+  const rd_containers = document.querySelectorAll('.rd_container');
+  // TODO: account for bi-directional i18n
+  Array.from(rd_containers).map(c => c.style.paddingLeft = style.cbPadding);
+
+  const rd_checkboxs = document.querySelectorAll('.rd_checkmark');
+  Array.from(rd_checkboxs).map(cb => {
+    cb.style.height = style.cbSize;
+    cb.style.width = style.cbSize;
+    cb.style.border = style.cbBorder;
+  });
+
   const forms = document.querySelectorAll('.cb_form');
   Array.from(forms).map(f => {
     f.style.fontSize = style.fontSize;
