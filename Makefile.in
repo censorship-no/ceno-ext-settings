@@ -1,0 +1,14 @@
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+include $(topsrcdir)/config/rules.mk
+
+# Define the output path for the XPI
+XPI_OUTPUT_PATH = $(OBJDIR)/dist/bin/distribution/extensions/ceno@equalit.ie.xpi
+
+# Target to compress the .xpi
+package-xpi:
+	@echo "Compressing the Ceno .xpi..."
+	@cd $(DIST)/bin/distribution/extensions && $(PYTHON3) package_xpi.py $(XPI_OUTPUT_PATH)
