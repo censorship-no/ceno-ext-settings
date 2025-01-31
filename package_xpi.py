@@ -1,4 +1,5 @@
 import os
+import shutil
 import sys
 import zipfile
 
@@ -11,6 +12,22 @@ def package_xpi(output_path):
                 full_path = os.path.join(root, file)
                 relative_path = os.path.relpath(full_path, ".")
                 xpi.write(full_path, arcname=relative_path)
+        print("Files compressed into `xpi`")
+
+
+def delete_source_files(output_path):
+    # Cleanup all files and directories except the created .xpi
+    for item in os.listdir("."):
+        if item.endswith(".xpi"):
+            continue  # Skip the XPI file
+        path = os.path.join(".", item)
+        try:
+            if os.path.isfile(path) or os.path.islink(path):
+                os.unlink(path)
+            elif os.path.isdir(path):
+                shutil.rmtree(path)
+        except Exception as e:
+            print(f"Error deleting {path}: {e}")
 
 
 def main():
@@ -27,6 +44,11 @@ def main():
         print(f"XPI created at {output_path}.")
     except Exception as e:
         print(f"Error creating XPI: {e}")
+    try:
+        delete_source_files(output_path)
+        print("XPI files deleted after compression.")
+    except Exception as exc:
+        print(f"Error deleting: {exc}")
         sys.exit(1)
 
 
