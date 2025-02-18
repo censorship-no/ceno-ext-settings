@@ -118,6 +118,12 @@ FINAL_TARGET_FILES["distribution/extensions/icons"] += [
     "icons/ceno-logo-48.png",
     "icons/ceno-logo-96.png",
     "icons/ceno.png",
+    "icons/settings-32-light.png",
+    "icons/settings-32.png",
+    "icons/settings-48-light.png",
+    "icons/settings-48.png",
+    "icons/settings-96-light.png",
+    "icons/settings-96.png",
 ]
 
 FINAL_TARGET_FILES["distribution/extensions/localizer"] += [
