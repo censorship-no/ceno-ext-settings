@@ -38,6 +38,7 @@
     },
     "default_title": "Ceno",
     "default_popup": "settings.html",
+    "default_area": "navbar",
     "theme_icons": [{
       "light": "icons/settings-32-light.png",
       "dark" : "icons/settings-32.png",
