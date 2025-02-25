@@ -10,18 +10,10 @@
 </head>
 <body>
   <div data-i18n="settingsTitle" id="header">Ceno Settings</div>
-  <form class="rd_form" id="browsing-modes">
-    <p data-i18n="settingsMode">Browsing Mode:</p>
-    <label class="rd_container">
-      <input type="radio" id="public_mode" name="mode_radio" value="public" checked>
-      <span class="rd_checkmark"></span>
-      <div data-i18n="settingsModePublic" class="rd_label">Public</div>
-    </label>
-    <label class="rd_container">
-      <input type="radio" id="personal_mode" name="mode_radio" value="personal">
-      <span class="rd_checkmark"></span>
-      <div data-i18n="settingsModePersonal" class="rd_label">Personal</div>
-    </label>
+  <form class="rd_form">
+    <p data-18n="settingsMode">Browsing Mode</p>
+    <button type="button" class="mode" id="public" disabled>Public</button>
+    <button type="button" class="mode" id="personal" disabled>Personal</button>
   </form>
   <div class="status_items">
     <form>

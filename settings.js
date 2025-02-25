@@ -174,7 +174,7 @@ class LogControl {
   }
 }
 
-class Selector {
+class StyleSelector {
   constructor(id) {
     var elem = document.getElementById(id);
     if (!elem) { return; }
@@ -196,23 +196,33 @@ class Selector {
   }
 }
 
-class Radio {
+class ModeSelector {
   constructor(id) {
     var elem = document.getElementById(id);
     if (!elem) { return; }
-    if (elem.type !== 'radio') { return; }
+    if (elem.type !== 'button') { return; }
 
-    elem.addEventListener('change', event => this.onChange(event));
+    elem.addEventListener('click', event => this.onClick(event));
 
     this.id = id;
     this.elem = elem;
-    this.cb = null;
   }
 
-  onChange(event) {
+  enable() {
+    if (!this.elem) return;
+    this.elem.disabled = false;
+  }
+
+  disable() {
+    if (!this.elem) return;
+    this.elem.disabled = true;
+  }
+
+  onClick(event) {
+    setSelectedMode(this.id)
     if (!this.elem) return;
     browser.storage.local.set({
-      mode: this.elem.value
+      mode: this.id
     });
   }
 }
@@ -262,13 +272,11 @@ class State {
     this.items = new Map();
     this.actions = new Array();
 
-    this.radio = new Map();
-    var modes = ["public_mode", "personal_mode"];
-    modes.map(v => this.radio.set(v, new Radio(v)));
+    var modes = ["public", "personal"];
+    modes.map(v => this.actions.push(new ModeSelector(v)));
 
-    this.resize = new Map();
     var selectors = ["small_style", "med_style", "big_style"];
-    selectors.map(v => this.resize.set(v, new Selector(v)));
+    selectors.map(v => new StyleSelector(v));
 
     var buttons = ["origin_access", "proxy_access", "injector_access", "distributed_cache"];
     buttons.map(v => this.items.set(v, new Button(v)));
@@ -369,9 +377,9 @@ const smallStyle = {
   cbSize: "15px",
   cbBorder: "#aaa solid 2px",
   cbBorderRadius: "5px",
-  smallBtnBorder: "#0ea5e9 solid 3px",
-  medBtnBorder: "#aaa solid 3px",
-  bigBtnBorder: "#aaa solid 3px"
+  smallBtnBorder: "#0ea5e9",
+  medBtnBorder: "#aaa",
+  bigBtnBorder: "#aaa"
 };
 
 const mediumStyle = {
@@ -384,9 +392,9 @@ const mediumStyle = {
   cbSize: "30px",
   cbBorder: "#aaa solid 4px",
   cbBorderRadius: "10px",
-  smallBtnBorder: "#aaa solid 4px",
-  medBtnBorder: "#0ea5e9 solid 4px",
-  bigBtnBorder: "#aaa solid 4px"
+  smallBtnBorder: "#aaa",
+  medBtnBorder: "#0ea5e9",
+  bigBtnBorder: "#aaa"
 };
 
 const bigStyle = {
@@ -399,9 +407,9 @@ const bigStyle = {
   cbSize: "40px",
   cbBorder: "#aaa solid 5px",
   cbBorderRadius: "15px",
-  smallBtnBorder: "#aaa solid 5px",
-  medBtnBorder: "#aaa solid 5px",
-  bigBtnBorder: "#0ea5e9 solid 5px",
+  smallBtnBorder: "#aaa",
+  medBtnBorder: "#aaa",
+  bigBtnBorder: "#0ea5e9",
 };
 
 function setStyle(size) {
@@ -428,7 +436,6 @@ function setStyle(size) {
   const radios = document.querySelectorAll('.rd_form');
   Array.from(radios).map(f => {
     f.style.fontSize = style.fontSize;
-    f.style.padding = style.formPadding;
   });
 
   const rd_rows = document.querySelectorAll('.rd_form .row');
@@ -436,10 +443,6 @@ function setStyle(size) {
     r.style.height = style.rowHeight;
     r.style.lineHeight = style.rowHeight;
   });
-
-  const rd_containers = document.querySelectorAll('.rd_container');
-  // TODO: account for bi-directional i18n
-  Array.from(rd_containers).map(c => c.style.paddingLeft = style.cbPadding);
 
   const rd_checkboxs = document.querySelectorAll('.rd_checkmark');
   Array.from(rd_checkboxs).map(cb => {
@@ -480,20 +483,35 @@ function setStyle(size) {
   });
 
   const smallBtn = document.querySelector('.btn_small');
-  smallBtn.style.border = style.smallBtnBorder
-  smallBtn.style.borderRadium = style.cbBorderRadius
+  smallBtn.style.borderColor = style.smallBtnBorder
   const mediumBtn = document.querySelector('.btn_med');
-  mediumBtn.style.border = style.medBtnBorder
-  mediumBtn.style.borderRadium = style.cbBorderRadius
+  mediumBtn.style.borderColor = style.medBtnBorder
   const bigBtn = document.querySelector('.btn_big');
-  bigBtn.style.border = style.bigBtnBorder
-  bigBtn.style.borderRadium = style.cbBorderRadius
+  bigBtn.style.borderColor = style.bigBtnBorder
+}
+
+function setSelectedMode(mode) {
+  if (mode == null)
+    return;
+
+  const publicBtn = document.getElementById('public');
+  const personalBtn = document.getElementById('personal');
+
+  if (mode == "public") {
+    publicBtn.style.borderColor = "#0ea5e9";
+    personalBtn.style.borderColor = "#aaa";
+  }
+  else {
+    publicBtn.style.borderColor= "#aaa";
+    personalBtn.style.borderColor = "#0ea5e9";
+  }
 }
 
 window.addEventListener("load", async () => {
   setFrontEndLinks();
 
   browser.storage.local.get("style").then(item => setStyle(item.style));
+  browser.storage.local.get("mode").then(item => setSelectedMode(item.mode));
 
   let state = new State();
 
