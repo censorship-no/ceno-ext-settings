@@ -491,20 +491,10 @@ function setStyle(size) {
 }
 
 function setSelectedMode(mode) {
-  if (mode == null)
-    return;
-
   const publicBtn = document.getElementById('public');
   const personalBtn = document.getElementById('personal');
-
-  if (mode == "public") {
-    publicBtn.style.borderColor = "#0ea5e9";
-    personalBtn.style.borderColor = "#aaa";
-  }
-  else {
-    publicBtn.style.borderColor= "#aaa";
-    personalBtn.style.borderColor = "#0ea5e9";
-  }
+  publicBtn.style.borderColor = (mode == "personal" ? "#aaa" : "#0ea5e9");
+  personalBtn.style.borderColor = (mode == "personal" ? "#0ea5e9" : "#aaa");
 }
 
 window.addEventListener("load", async () => {
