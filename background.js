@@ -193,6 +193,15 @@ browser.webNavigation.onHistoryStateUpdated.addListener(
   }
 )
 
+browser.webNavigation.onCompleted.addListener(
+  details => {
+    const tabId = details.tabId;
+    if (details.url != gOuinetStats[tabId]['url']) {
+      gOuinetStats[tabId]['url'] = details.url;
+    }
+  }
+)
+
 function updateCenoStats(e) {
   const tabId = e.tabId;
 
