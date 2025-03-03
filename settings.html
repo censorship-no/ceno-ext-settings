@@ -9,12 +9,10 @@
 <script src="settings.js"></script>
 </head>
 <body>
-  <div data-i18n="settingsTitle" id="header">Ceno Settings</div>
-  <form class="rd_form">
-    <p data-18n="settingsMode">Browsing Mode</p>
-    <button type="button" class="mode" id="public" disabled>Public</button>
-    <button type="button" class="mode" id="personal" disabled>Personal</button>
-  </form>
+  <div id="header">
+    <span><a href="popup.html" target="_parent" class="back_button"><</a></span>
+    <span data-i18n="settingsTitle">Ceno Settings</span>
+  </div>
   <div class="status_items">
     <form>
       <span data-i18n="settingsStatusCacheSize" class="name">Local cache size</span>
@@ -90,6 +88,13 @@
       <p data-i18n="settingsPrivwarn" data-opt-i18n-keep-children
          id="am-warning-private"><strong data-i18n="settingsPrivwarnPriv">Private browsing</strong> will fail with current settings.</p>
     </div>
+    <p data-i18n="popupFoot" data-opt-i18n-keep-children
+      id="see-manual">See the
+      <a data-i18n="popupFootMan" data-i18n-href="popupFootManLN" data-i18n-title="popupFootManTI"
+        href="https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms"
+        title="Censorship.no! User Manual – Ceno settings" target="_blank">manual</a>
+      for more information on content sources.
+    </p>
   </form>
   <div class="status_items">
     <span data-i18n="settingsStatusBrowser" class="name">Ceno Browser</span><br>

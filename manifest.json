@@ -32,36 +32,13 @@
 
   "browser_action": {
     "default_icon": {
-      "32" : "icons/settings-32.png",
-      "48" : "icons/settings-48.png",
-      "96" : "icons/settings-96.png"
-    },
-    "default_title": "Ceno",
-    "default_popup": "settings.html",
-    "default_area": "navbar",
-    "theme_icons": [{
-      "light": "icons/settings-32-light.png",
-      "dark" : "icons/settings-32.png",
-      "size": 32
-    }, {
-      "light": "icons/settings-48-light.png",
-      "dark" : "icons/settings-48.png",
-      "size": 48
-    }, {
-      "light": "icons/settings-96-light.png",
-      "dark" : "icons/settings-96.png",
-      "size": 96
-    }]
-  },
-
-  "page_action": {
-    "default_icon": {
       "32" : "icons/ceno-logo-32.png",
       "48" : "icons/ceno-logo-48.png",
       "96" : "icons/ceno-logo-96.png"
     },
     "default_title": "Ceno",
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_area": "navbar"
   },
 
   "options_ui": {

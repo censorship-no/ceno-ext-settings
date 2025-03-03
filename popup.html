@@ -23,12 +23,13 @@
           <td data-i18n="popupSrcLcache">Shared by you</td><td class="value" id="local-cache"></td>
       </tr>
   </table>
-  <p data-i18n="popupFoot" data-opt-i18n-keep-children
-     id="see-manual">See the
-    <a data-i18n="popupFootMan" data-i18n-href="popupFootManLN" data-i18n-title="popupFootManTI"
-       href="https://censorship.no/user-manual/en/browser/settings.html#choosing-access-mechanisms"
-       title="Censorship.no! User Manual – Ceno settings" target="_blank">manual</a>
-    for more information on content sources.
-</p>
+  <form class="rd_form">
+    <div data-18n="settingsMode" class="mode_title">Browsing Mode</div>
+    <button type="button" class="mode" id="public" enabled>Public</button>
+    <button type="button" class="mode" id="personal" enabled>Personal</button>
+  </form>
+  <div class="option">
+    <a href="settings.html" title="Ceno settings" target="_parent" class="button">Additional settings <span class="value">></span></a>
+  </div>
 </body>
 </html>

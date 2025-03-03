@@ -16,7 +16,7 @@ a:link {
   font-size: 1em;
   color: #fff;
   background: #333;
-  padding-__MSG_@@bidi_start_edge__: 20px;
+  padding-__MSG_@@bidi_start_edge__: 36px;
 }
 p {
   margin: 20px 0 0 0;
@@ -39,4 +39,35 @@ table {
 }
 .title {
   font-weight: bold;
+}
+.mode_title{
+  padding-bottom: 10px;
+}
+.rd_form {
+  color: #333;
+  font-size: 1em;
+  padding-top: 10px;
+  padding-__MSG_@@bidi_start_edge__: 20px;
+}
+button.mode {
+  font-size: 1em;
+  border-radius: 5px;
+  border: #aaa solid 3px;
+  padding: 10px
+}
+.option {
+  margin: 20px 0 0 0;
+  padding-bottom: 15px;
+  padding-__MSG_@@bidi_start_edge__: 20px;
+}
+a.button {
+  padding: 5px 8px;
+  width: 15px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+}
+a:hover {
+  background-color: #aaa;
 }

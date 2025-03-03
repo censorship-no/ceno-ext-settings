@@ -98,12 +98,100 @@ function setStyle(size) {
   m.style.fontSize = style.fontSize;
 }
 
-(async function start() {
+const selectedStyle = {
+  borderColor: "#0ea5e9",
+  backgroundColor: "#0ea5e9",
+  color: "white",
+}
+const unselectedStyle = {
+  borderColor: "#aaa",
+  backgroundColor: "white",
+  color: "black",
+}
+const hoverStyle = {
+  borderColor: "#aaa",
+  backgroundColor: "#aaa",
+  color: "black",
+}
 
-  browser.storage.local.get("style").then(item => setStyle(item.style));
+function setSelectedMode(mode) {
+  const publicBtn = document.getElementById('public');
+  const personalBtn = document.getElementById('personal');
+  if (mode == "personal") {
+    personalBtn.style.borderColor = selectedStyle.borderColor;
+    personalBtn.style.backgroundColor = selectedStyle.backgroundColor;
+    personalBtn.style.color = selectedStyle.color;
 
-  while (true) {
-    await updatePage();
-    await sleep(0.5);
+    publicBtn.style.borderColor = unselectedStyle.borderColor;
+    publicBtn.style.backgroundColor = unselectedStyle.backgroundColor;
+    publicBtn.style.color = unselectedStyle.color;
   }
-})();
+  else {
+    personalBtn.style.borderColor = unselectedStyle.borderColor;
+    personalBtn.style.backgroundColor = unselectedStyle.backgroundColor;
+    personalBtn.style.color = unselectedStyle.color;
+
+    publicBtn.style.borderColor = selectedStyle.borderColor;
+    publicBtn.style.backgroundColor = selectedStyle.backgroundColor;
+    publicBtn.style.color = selectedStyle.color;
+  }
+}
+
+class ModeSelector {
+  constructor(id) {
+    var elem = document.getElementById(id);
+    if (!elem) { return; }
+    if (elem.type !== 'button') { return; }
+
+    elem.addEventListener('click', event => this.onClick(event));
+    elem.addEventListener('mouseover', event => this.onMouseOver(event));
+    elem.addEventListener('mouseout', event => this.onMouseOut(event));
+
+    this.id = id;
+    this.elem = elem;
+  }
+
+  onMouseOver(event) {
+    browser.storage.local.get("mode").then(item => {
+      if (this.elem.id != item.mode) {
+        this.elem.style.borderColor = hoverStyle.borderColor;
+        this.elem.style.backgroundColor = hoverStyle.backgroundColor;
+        this.elem.style.color = hoverStyle.color;
+      }
+    });
+  }
+
+  onMouseOut(event) {
+    browser.storage.local.get("mode").then(item => {
+      if (this.elem.id != item.mode) {
+        this.elem.style.borderColor = unselectedStyle.borderColor;
+        this.elem.style.backgroundColor = unselectedStyle.backgroundColor;
+        this.elem.style.color = unselectedStyle.color;
+      }
+    });
+  }
+
+  onClick(event) {
+    setSelectedMode(this.id)
+    if (!this.elem) return;
+    browser.storage.local.set({
+      mode: this.id
+    });
+  }
+}
+
+window.addEventListener("load", async () => {
+  new ModeSelector("public")
+  new ModeSelector("personal")
+  browser.storage.local.get("style").then(item => setStyle(item.style));
+  browser.storage.local.get("mode").then(item => {
+    if (item.mode != "public" || item.mode != "personal") {
+      browser.storage.local.set({
+        mode: "public"
+      });
+    }
+    setSelectedMode(item.mode)
+  });
+  await updatePage();
+  await sleep(0.5);
+});

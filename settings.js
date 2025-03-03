@@ -196,37 +196,6 @@ class StyleSelector {
   }
 }
 
-class ModeSelector {
-  constructor(id) {
-    var elem = document.getElementById(id);
-    if (!elem) { return; }
-    if (elem.type !== 'button') { return; }
-
-    elem.addEventListener('click', event => this.onClick(event));
-
-    this.id = id;
-    this.elem = elem;
-  }
-
-  enable() {
-    if (!this.elem) return;
-    this.elem.disabled = false;
-  }
-
-  disable() {
-    if (!this.elem) return;
-    this.elem.disabled = true;
-  }
-
-  onClick(event) {
-    setSelectedMode(this.id)
-    if (!this.elem) return;
-    browser.storage.local.set({
-      mode: this.id
-    });
-  }
-}
-
 class Action {
   constructor(id) {
     var elem = document.getElementById(id);
@@ -271,9 +240,6 @@ class State {
   constructor() {
     this.items = new Map();
     this.actions = new Array();
-
-    var modes = ["public", "personal"];
-    modes.map(v => this.actions.push(new ModeSelector(v)));
 
     var selectors = ["small_style", "med_style", "big_style"];
     selectors.map(v => new StyleSelector(v));
@@ -490,18 +456,10 @@ function setStyle(size) {
   bigBtn.style.borderColor = style.bigBtnBorder
 }
 
-function setSelectedMode(mode) {
-  const publicBtn = document.getElementById('public');
-  const personalBtn = document.getElementById('personal');
-  publicBtn.style.borderColor = (mode == "personal" ? "#aaa" : "#0ea5e9");
-  personalBtn.style.borderColor = (mode == "personal" ? "#0ea5e9" : "#aaa");
-}
-
 window.addEventListener("load", async () => {
   setFrontEndLinks();
 
   browser.storage.local.get("style").then(item => setStyle(item.style));
-  browser.storage.local.get("mode").then(item => setSelectedMode(item.mode));
 
   let state = new State();
 
