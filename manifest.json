@@ -50,11 +50,6 @@
     "scripts": [ "config.js", "background.js" ]
   },
 
-  "content_scripts": [{
-    "matches": ["*://*/*"],
-    "js": [ "content.js" ]
-  }],
-
   "web_accessible_resources": [
     "settings.html",
     "update-page/index.html",

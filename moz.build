@@ -11,12 +11,9 @@ DEFINES["MOZ_APP_MAXVERSION"] = CONFIG["MOZ_APP_MAXVERSION"]
 
 FINAL_TARGET_FILES.features["ceno@equalit.ie"] += [
     "background.js",
-    "button.js",
     "config.js",
-    "content.js",
     "LICENSE",
     "manifest.json",
-    "package_xpi.py",
     "popup.css",
     "popup.html",
     "popup.js",
@@ -117,7 +114,6 @@ FINAL_TARGET_FILES.features["ceno@equalit.ie"]["icons"] += [
     "icons/ceno-logo-32.png",
     "icons/ceno-logo-48.png",
     "icons/ceno-logo-96.png",
-    "icons/ceno.png",
 ]
 
 FINAL_TARGET_FILES.features["ceno@equalit.ie"]["localizer"] += [
