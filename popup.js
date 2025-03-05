@@ -185,7 +185,7 @@ window.addEventListener("load", async () => {
   new ModeSelector("personal")
   browser.storage.local.get("style").then(item => setStyle(item.style));
   browser.storage.local.get("mode").then(item => {
-    if (item.mode != "public" || item.mode != "personal") {
+    if (item.mode != "public" && item.mode != "personal") {
       browser.storage.local.set({
         mode: "public"
       });
