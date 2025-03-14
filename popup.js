@@ -13,7 +13,7 @@ function getCacheEntry(what) {
 }
 
 async function updatePage() {
-  const active_tabs = await queryTabs({active:true});
+  const active_tabs = await queryTabs({currentWindow:true, active:true});
   if (!active_tabs.length) return;
   const tabId = active_tabs[0].id;
   const data = await getCacheEntry('stats');
@@ -113,6 +113,11 @@ const hoverStyle = {
   backgroundColor: "#aaa",
   color: "black",
 }
+const disabledStyle = {
+  borderColor: "#aaa",
+  backgroundColor: "white",
+  color: "#aaa",
+}
 
 function setSelectedMode(mode) {
   const publicBtn = document.getElementById('public');
@@ -121,19 +126,34 @@ function setSelectedMode(mode) {
     personalBtn.style.borderColor = selectedStyle.borderColor;
     personalBtn.style.backgroundColor = selectedStyle.backgroundColor;
     personalBtn.style.color = selectedStyle.color;
+    personalBtn.disabled = false
 
     publicBtn.style.borderColor = unselectedStyle.borderColor;
     publicBtn.style.backgroundColor = unselectedStyle.backgroundColor;
     publicBtn.style.color = unselectedStyle.color;
+    publicBtn.disabled = false
+  }
+  else if (mode == "private") {
+    personalBtn.style.borderColor = selectedStyle.borderColor;
+    personalBtn.style.backgroundColor = selectedStyle.backgroundColor;
+    personalBtn.style.color = selectedStyle.color;
+    personalBtn.disabled = true
+
+    publicBtn.style.borderColor = disabledStyle.borderColor;
+    publicBtn.style.backgroundColor = disabledStyle.backgroundColor;
+    publicBtn.style.color = disabledStyle.color;
+    publicBtn.disabled = true
   }
   else {
     personalBtn.style.borderColor = unselectedStyle.borderColor;
     personalBtn.style.backgroundColor = unselectedStyle.backgroundColor;
     personalBtn.style.color = unselectedStyle.color;
+    personalBtn.disabled = false
 
     publicBtn.style.borderColor = selectedStyle.borderColor;
     publicBtn.style.backgroundColor = selectedStyle.backgroundColor;
     publicBtn.style.color = selectedStyle.color;
+    publicBtn.disabled = false
   }
 }
 
@@ -153,7 +173,7 @@ class ModeSelector {
 
   onMouseOver(event) {
     browser.storage.local.get("mode").then(item => {
-      if (this.elem.id != item.mode) {
+      if ((this.elem.id != item.mode) && !this.elem.disabled) {
         this.elem.style.borderColor = hoverStyle.borderColor;
         this.elem.style.backgroundColor = hoverStyle.backgroundColor;
         this.elem.style.color = hoverStyle.color;
@@ -163,7 +183,7 @@ class ModeSelector {
 
   onMouseOut(event) {
     browser.storage.local.get("mode").then(item => {
-      if (this.elem.id != item.mode) {
+      if ((this.elem.id != item.mode) && !this.elem.disabled) {
         this.elem.style.borderColor = unselectedStyle.borderColor;
         this.elem.style.backgroundColor = unselectedStyle.backgroundColor;
         this.elem.style.color = unselectedStyle.color;
@@ -183,6 +203,8 @@ class ModeSelector {
 window.addEventListener("load", async () => {
   new ModeSelector("public")
   new ModeSelector("personal")
+  const active_tabs = await queryTabs({currentWindow:true, active:true});
+  const tabId = active_tabs[0].id;
   browser.storage.local.get("style").then(item => setStyle(item.style));
   browser.storage.local.get("mode").then(item => {
     if (item.mode != "public" && item.mode != "personal") {
@@ -190,8 +212,21 @@ window.addEventListener("load", async () => {
         mode: "public"
       });
     }
-    setSelectedMode(item.mode)
+    browser.tabs.get(tabId).then(tab => {
+      if(tab.incognito){
+        // Force mode when browsing in private tab
+        setSelectedMode("private");
+      }
+      else {
+        setSelectedMode(item.mode);
+      }
+    });
   });
-  await updatePage();
-  await sleep(0.5);
 });
+
+(async function start() {
+  while (true) {
+    await updatePage();
+    await sleep(0.5);
+  }
+})();
