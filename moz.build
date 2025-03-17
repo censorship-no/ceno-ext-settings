@@ -115,6 +115,9 @@ FINAL_TARGET_FILES.features["ceno@equalit.ie"]["icons"] += [
     "icons/ceno-logo-32.png",
     "icons/ceno-logo-48.png",
     "icons/ceno-logo-96.png",
+    "icons/ceno-personal-logo-32.png",
+    "icons/ceno-personal-logo-48.png",
+    "icons/ceno-personal-logo-96.png",
 ]
 
 FINAL_TARGET_FILES.features["ceno@equalit.ie"]["localizer"] += [
