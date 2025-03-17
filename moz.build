@@ -20,6 +20,7 @@ FINAL_TARGET_FILES.features["ceno@equalit.ie"] += [
     "settings.css",
     "settings.html",
     "settings.js",
+    "utils.js",
 ]
 
 FINAL_TARGET_FILES.features["ceno@equalit.ie"]["_locales"]["ar"] += [
