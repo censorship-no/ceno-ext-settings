@@ -122,6 +122,8 @@ const disabledStyle = {
 function setSelectedMode(mode) {
   const publicBtn = document.getElementById('public');
   const personalBtn = document.getElementById('personal');
+  const proxySrc = document.getElementById('proxyRow');
+  const injectorSrc = document.getElementById('injectorRow');
   setBrowserAction(mode == "personal" || mode == "private")
   if (mode == "personal") {
     personalBtn.style.borderColor = selectedStyle.borderColor;
@@ -132,29 +134,38 @@ function setSelectedMode(mode) {
     publicBtn.style.borderColor = unselectedStyle.borderColor;
     publicBtn.style.backgroundColor = unselectedStyle.backgroundColor;
     publicBtn.style.color = unselectedStyle.color;
-    publicBtn.disabled = false
+    publicBtn.disabled = false;
+
+    proxySrc.style.visibility = "visible";
+    injectorSrc.style.visibility = "collapse";
   }
   else if (mode == "private") {
     personalBtn.style.borderColor = selectedStyle.borderColor;
     personalBtn.style.backgroundColor = selectedStyle.backgroundColor;
     personalBtn.style.color = selectedStyle.color;
-    personalBtn.disabled = true
+    personalBtn.disabled = true;
 
     publicBtn.style.borderColor = disabledStyle.borderColor;
     publicBtn.style.backgroundColor = disabledStyle.backgroundColor;
     publicBtn.style.color = disabledStyle.color;
-    publicBtn.disabled = true
+    publicBtn.disabled = true;
+
+    proxySrc.style.visibility = "visible";
+    injectorSrc.style.visibility = "collapse";
   }
   else {
     personalBtn.style.borderColor = unselectedStyle.borderColor;
     personalBtn.style.backgroundColor = unselectedStyle.backgroundColor;
     personalBtn.style.color = unselectedStyle.color;
-    personalBtn.disabled = false
+    personalBtn.disabled = false;
 
     publicBtn.style.borderColor = selectedStyle.borderColor;
     publicBtn.style.backgroundColor = selectedStyle.backgroundColor;
     publicBtn.style.color = selectedStyle.color;
-    publicBtn.disabled = false
+    publicBtn.disabled = false;
+
+    proxySrc.style.visibility = "collapse";
+    injectorSrc.style.visibility = "visible";
   }
 }
 

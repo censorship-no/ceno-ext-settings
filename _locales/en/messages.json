@@ -38,13 +38,13 @@
         "message": "Direct from website"
     },
     "settingsSrcProxy": {
-        "message": "Via the Ceno network (private)"
+        "message": "Via the Ceno network (personal)"
     },
     "settingsSrcInjector": {
         "message": "Via the Ceno network (public)"
     },
     "settingsSrcDcache": {
-        "message": "Shared by other Ceno users"
+        "message": "From other Ceno users"
     },
     "settingsPubwarn": {
         "message": "$PUBLIC_BROWSING$ will fail with current settings.",
@@ -135,16 +135,16 @@
         "message": "Direct from website"
     },
     "popupSrcProxy": {
-        "message": "Via the Ceno network (private)"
+        "message": "Using Ceno network (personal)"
     },
     "popupSrcInjector": {
-        "message": "Via the Ceno network (public)"
+        "message": "Using Ceno network (public) "
     },
     "popupSrcDcache": {
-        "message": "Shared by other Ceno users"
+        "message": "From other Ceno users"
     },
     "popupSrcLcache": {
-        "message": "Shared by you"
+        "message": "From your local cache"
     },
     "popupFoot": {
         "message": "See the $MANUAL$ for more information on content sources.",
