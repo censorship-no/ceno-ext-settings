@@ -122,6 +122,7 @@ const disabledStyle = {
 function setSelectedMode(mode) {
   const publicBtn = document.getElementById('public');
   const personalBtn = document.getElementById('personal');
+  setBrowserAction(mode == "personal" || mode == "private")
   if (mode == "personal") {
     personalBtn.style.borderColor = selectedStyle.borderColor;
     personalBtn.style.backgroundColor = selectedStyle.backgroundColor;

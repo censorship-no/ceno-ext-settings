@@ -47,7 +47,7 @@
   },
 
   "background": {
-    "scripts": [ "config.js", "background.js" ]
+    "scripts": [ "config.js", "utils.js", "background.js" ]
   },
 
   "web_accessible_resources": [
