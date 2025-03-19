@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title data-i18n="popupTitle">Ceno Sources</title>
+  <link rel="stylesheet" href="themes/default.css">
   <link rel="stylesheet" href="popup.css">
 <script type="module" src="localizer/Localizer.js"></script>
 <script src="utils.js"></script>
@@ -26,8 +27,8 @@
   </table>
   <form class="rd_form">
     <div data-18n="settingsMode" class="mode_title">Browsing Mode</div>
-    <button type="button" class="mode" id="public" enabled>Public</button>
-    <button type="button" class="mode" id="personal" enabled>Personal</button>
+    <button type="button" class="mode selected" id="public" enabled>Public</button>
+    <button type="button" class="mode unselected" id="personal" enabled>Personal</button>
   </form>
   <div class="option">
     <a href="settings.html" title="Ceno settings" target="_parent" class="button">Additional settings <span class="value">></span></a>

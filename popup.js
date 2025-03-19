@@ -98,27 +98,6 @@ function setStyle(size) {
   m.style.fontSize = style.fontSize;
 }
 
-const selectedStyle = {
-  borderColor: "#0ea5e9",
-  backgroundColor: "#0ea5e9",
-  color: "white",
-}
-const unselectedStyle = {
-  borderColor: "#aaa",
-  backgroundColor: "white",
-  color: "black",
-}
-const hoverStyle = {
-  borderColor: "#aaa",
-  backgroundColor: "#aaa",
-  color: "black",
-}
-const disabledStyle = {
-  borderColor: "#aaa",
-  backgroundColor: "white",
-  color: "#aaa",
-}
-
 function setSelectedMode(mode) {
   const publicBtn = document.getElementById('public');
   const personalBtn = document.getElementById('personal');
@@ -126,42 +105,30 @@ function setSelectedMode(mode) {
   const injectorSrc = document.getElementById('injectorRow');
   setBrowserAction(mode == "personal" || mode == "private")
   if (mode == "personal") {
-    personalBtn.style.borderColor = selectedStyle.borderColor;
-    personalBtn.style.backgroundColor = selectedStyle.backgroundColor;
-    personalBtn.style.color = selectedStyle.color;
-    personalBtn.disabled = false
+    personalBtn.className = "mode selected-personal"
+    publicBtn.className = "mode unselected"
 
-    publicBtn.style.borderColor = unselectedStyle.borderColor;
-    publicBtn.style.backgroundColor = unselectedStyle.backgroundColor;
-    publicBtn.style.color = unselectedStyle.color;
+    personalBtn.disabled = false
     publicBtn.disabled = false;
 
     proxySrc.style.visibility = "visible";
     injectorSrc.style.visibility = "collapse";
   }
   else if (mode == "private") {
-    personalBtn.style.borderColor = selectedStyle.borderColor;
-    personalBtn.style.backgroundColor = selectedStyle.backgroundColor;
-    personalBtn.style.color = selectedStyle.color;
-    personalBtn.disabled = true;
+    personalBtn.className = "mode selected-personal"
+    publicBtn.className = "mode disabled"
 
-    publicBtn.style.borderColor = disabledStyle.borderColor;
-    publicBtn.style.backgroundColor = disabledStyle.backgroundColor;
-    publicBtn.style.color = disabledStyle.color;
+    personalBtn.disabled = true;
     publicBtn.disabled = true;
 
     proxySrc.style.visibility = "visible";
     injectorSrc.style.visibility = "collapse";
   }
   else {
-    personalBtn.style.borderColor = unselectedStyle.borderColor;
-    personalBtn.style.backgroundColor = unselectedStyle.backgroundColor;
-    personalBtn.style.color = unselectedStyle.color;
-    personalBtn.disabled = false;
+    personalBtn.className = "mode unselected"
+    publicBtn.className = "mode selected-public"
 
-    publicBtn.style.borderColor = selectedStyle.borderColor;
-    publicBtn.style.backgroundColor = selectedStyle.backgroundColor;
-    publicBtn.style.color = selectedStyle.color;
+    personalBtn.disabled = false;
     publicBtn.disabled = false;
 
     proxySrc.style.visibility = "collapse";
@@ -186,9 +153,7 @@ class ModeSelector {
   onMouseOver(event) {
     browser.storage.local.get("mode").then(item => {
       if ((this.elem.id != item.mode) && !this.elem.disabled) {
-        this.elem.style.borderColor = hoverStyle.borderColor;
-        this.elem.style.backgroundColor = hoverStyle.backgroundColor;
-        this.elem.style.color = hoverStyle.color;
+        this.elem.className = "mode hover"
       }
     });
   }
@@ -196,9 +161,8 @@ class ModeSelector {
   onMouseOut(event) {
     browser.storage.local.get("mode").then(item => {
       if ((this.elem.id != item.mode) && !this.elem.disabled) {
-        this.elem.style.borderColor = unselectedStyle.borderColor;
-        this.elem.style.backgroundColor = unselectedStyle.backgroundColor;
-        this.elem.style.color = unselectedStyle.color;
+        this.elem.className = "mode unselected"
+        console.log(this.elem)
       }
     });
   }

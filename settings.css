@@ -3,9 +3,22 @@ body {
   font-family: 'Arial', 'Helvetica', 'sans-serif';
   margin:0;
   padding:0;
+  color: var(--on-primary);
+  background: var(--primary);
+}
+p {
+  width: 300px;
+  word-wrap: break-word;
 }
 a:link {
-  color: #0ea5e9;
+  text-decoration: none;
+  color: var(--accent-1);
+}
+a:visited {
+  color: var(--accent-1);
+}
+a:hover {
+  background-color: var(--secondary);
 }
 #test-warning {
   font-size: 1em;
@@ -23,8 +36,8 @@ a:link {
   display: flex;
   justify-content: flex-start;
   font-size: 1em;
-  color: #fff;
-  background: #333;
+  color: var(--on-secondary);
+  background: var(--secondary);
   padding-__MSG_@@bidi_start_edge__: 0px;
 }
 #back {
@@ -34,22 +47,19 @@ a:link {
   width: 50px;
 }
 .cb_form {
-  color: #333;
+  color: var(--on-primary);
   font-size: 1em;
-  border-top: 2px solid #b2b2b2;
+  border-top: 2px solid var(--secondary);
   padding: 25px;
 }
 .cb_form .row {
   height: 20px;
   line-height: 20px;
 }
-#access-mechanisms .row {
-  font-size: 85%;
-}
 .cb_form .group + .group {
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 2px solid #b2b2b2;
+  border-top: 2px solid var(--secondary);
 }
 .cb_form .group p {
   margin:0;
@@ -65,7 +75,7 @@ a:link {
   opacity: 0;
   height: 0;
   width: 0;
-  border:1px solid gray;
+  border:1px solid var(--secondary);
 }
 .checkmark {
   position: absolute;
@@ -73,18 +83,18 @@ a:link {
   __MSG_@@bidi_start_edge__: 0px;
   height: 15px;
   width: 15px;
-  border: #aaa solid 2px;
+  border: var(--secondary) solid 2px;
   border-radius: 7px;
 }
 /* When the checkbox is checked, add a blue background */
 .cb_container input:checked ~ .checkmark {
-  background-color: #0ea5e9;
-  border-color: #0ea5e9;
+  background-color: var(--accent-1);
+  border-color: var(--accent-1);
 }
 /* When the checkbox is display, gray out */
 .cb_container input:disabled ~ .checkmark {
-  background-color: #eaeaea;
-  border-color: #aaa;
+  background-color: var(--primary);
+  border-color: var(--tertiary);
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
@@ -121,12 +131,12 @@ a:link {
   display: inline-block;
 }
 .cb_container input:disabled ~ .cb_label {
-  color: #aaa;
+  color: var(--tertiary);
 }
 .btn_container {
   position: relative;
-  color: #333;
-  border-top: 2px solid #b2b2b2;
+  color: var(--on-primary);
+  border-top: 2px solid var(--secondary);
   padding-__MSG_@@bidi_start_edge__: 20px;
 }
 .btn_group {
@@ -137,17 +147,17 @@ a:link {
 }
 .btn_small {
   font-size: 1em;
-  border: #aaa solid 3px;
+  border: var(--secondary) solid 3px;
   border-radius: 5px;
 }
 .btn_med {
   font-size: 2em;
-  border: #aaa solid 3px;
+  border: var(--secondary) solid 3px;
   border-radius: 5px;
 }
 .btn_big {
   font-size: 3em;
-  border: #aaa solid 3px;
+  border: var(--secondary) solid 3px;
   border-radius: 5px;
 }
 /* Warnings may only be shown after successfully contacting the client. */
@@ -168,26 +178,26 @@ a:link {
 .status_items {
   padding: 25px;
   font-size: 1em;
-  color: #999;
-  border-top: 2px solid #b2b2b2;
+  color: var(--on-primary);
+  border-top: 2px solid var(--secondary);
 }
 .status_items p {
   margin-bottom: 0;
 }
 button.action {
   font-size: inherit;
-  border: #aaa solid 2px;
+  border: var(--secondary) solid 2px;
   border-radius: 7px;
 }
 button.action:disabled {
-  color: #aaa;
-  background-color: #eaeaea;
-  border-color: #aaa;
+  color: var(--tertiary);
+  background-color: var(--primary);
+  border-color: var(--tertiary);
 }
 button.action:enabled {
-  color: white;
-  background-color: #0ea5e9;
-  border-color: #0ea5e9;
+  color: var(--on-primary);
+  background-color: var(--accent-1);
+  border-color: var(--accent-1);
 }
 input.input {
   font-size: inherit;
@@ -200,9 +210,9 @@ a.back_button {
   padding: 8px 8px 8px 8px;
   border-radius: 3px;
   text-decoration: none;
-  color: white;
+  color: var(--on-primary);
   font-size: 1.5em;
 }
 a.back_button:hover {
-  background-color: #aaa;
+  background-color: var(--tertiary);
 }
