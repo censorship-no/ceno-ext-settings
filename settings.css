@@ -1,65 +1,27 @@
-body {
-  direction: __MSG_@@bidi_dir__;
-  font-family: 'Arial', 'Helvetica', 'sans-serif';
-  margin:0;
-  padding:0;
-  color: var(--on-primary);
-  background: var(--primary);
-}
-p {
-  width: 300px;
-  word-wrap: break-word;
-}
 a:link {
   text-decoration: none;
   color: var(--accent-1);
 }
+/* Disable color change after clicking link */
 a:visited {
   color: var(--accent-1);
 }
 a:hover {
   background-color: var(--secondary);
 }
-#test-warning {
-  font-size: 1em;
-  padding: 8px 25px;
-  margin:0;
-  background: #fc4;
-}
-#test-warning:before {
-  content: "⚠ ";
-  color: red;
-}
-#header {
-  height: 60px;
-  line-height: 60px;
-  display: flex;
-  justify-content: flex-start;
-  font-size: 1em;
-  color: var(--on-secondary);
-  background: var(--secondary);
-  padding-__MSG_@@bidi_start_edge__: 0px;
-}
-#back {
-  padding: 25px;
-  padding-__MSG_@@bidi_end_edge__: 50px;
-  height: 50px;
-  width: 50px;
-}
 .cb_form {
   color: var(--on-primary);
-  font-size: 1em;
-  border-top: 2px solid var(--secondary);
-  padding: 25px;
+  border-top: var(--line-weight-1) solid var(--secondary);
+  padding: var(--form-padding);
 }
 .cb_form .row {
-  height: 20px;
-  line-height: 20px;
+  height: var(--row-height);
+  line-height: var(--row-height);
 }
 .cb_form .group + .group {
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 2px solid var(--secondary);
+  border-top: var(--line-weight-1) solid var(--secondary);
 }
 .cb_form .group p {
   margin:0;
@@ -67,7 +29,7 @@ a:hover {
 .cb_container {
   display: block;
   position: relative;
-  padding-__MSG_@@bidi_start_edge__: 25px;
+  padding-__MSG_@@bidi_start_edge__: var(--checkbox-padding);
 }
 /* Hide the browser's default checkbox */
 .cb_container input {
@@ -75,16 +37,16 @@ a:hover {
   opacity: 0;
   height: 0;
   width: 0;
-  border:1px solid var(--secondary);
+  border: var(--line-weight-1) solid var(--secondary);
 }
 .checkmark {
   position: absolute;
-  top: 4px;
+  top: var(--checkbox-top);
   __MSG_@@bidi_start_edge__: 0px;
-  height: 15px;
-  width: 15px;
-  border: var(--secondary) solid 2px;
-  border-radius: 7px;
+  height: var(--checkbox-size);
+  width: var(--checkbox-size);
+  border: var(--tertiary) solid var(--line-weight-1);
+  border-radius: var(--button-border-radius);
 }
 /* When the checkbox is checked, add a blue background */
 .cb_container input:checked ~ .checkmark {
@@ -94,7 +56,7 @@ a:hover {
 /* When the checkbox is display, gray out */
 .cb_container input:disabled ~ .checkmark {
   background-color: var(--primary);
-  border-color: var(--tertiary);
+  border-color: var(--secondary);
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
@@ -136,29 +98,25 @@ a:hover {
 .btn_container {
   position: relative;
   color: var(--on-primary);
-  border-top: 2px solid var(--secondary);
-  padding-__MSG_@@bidi_start_edge__: 20px;
+  border-top: var(--line-weight-1) solid var(--secondary);
+  padding-__MSG_@@bidi_start_edge__: var(--form-padding);
 }
-.btn_group {
-  position: absolute;
-  top: 30px;
-  left: 10px;
-  padding: 10px;
+button.setting {
+  padding: var(--button-padding);
+  font-size: 100%;
+  background-color: var(--secondary);
+  color: var(--on-secondary);
+  border: var(--tertiary) solid var(--button-border-width);
+  border-radius: var(--button-border-radius);
 }
-.btn_small {
-  font-size: 1em;
-  border: var(--secondary) solid 3px;
-  border-radius: 5px;
+button.selected {
+  border-color: var(--accent-1);
 }
-.btn_med {
-  font-size: 2em;
-  border: var(--secondary) solid 3px;
-  border-radius: 5px;
+button.unselected {
+  border-color: var(--secondary);
 }
-.btn_big {
-  font-size: 3em;
-  border: var(--secondary) solid 3px;
-  border-radius: 5px;
+button.hover {
+  background-color: var(--tertiary);
 }
 /* Warnings may only be shown after successfully contacting the client. */
 #am-warnings {
@@ -176,17 +134,16 @@ a:hover {
   color: red;
 }
 .status_items {
-  padding: 25px;
-  font-size: 1em;
+  padding: var(--form-padding);
   color: var(--on-primary);
-  border-top: 2px solid var(--secondary);
+  border-top: var(--line-weight-1) solid var(--secondary);
 }
 .status_items p {
   margin-bottom: 0;
 }
 button.action {
-  font-size: inherit;
-  border: var(--secondary) solid 2px;
+  font-size: 100%;
+  border: var(--secondary) solid var(--line-weight-1);
   border-radius: 7px;
 }
 button.action:disabled {
@@ -200,18 +157,18 @@ button.action:enabled {
   border-color: var(--accent-1);
 }
 input.input {
-  font-size: inherit;
+  font-size: 100%;
 }
 .name {
   font-weight: bold;
 }
 a.back_button {
-  margin: 3px 3px;
-  padding: 8px 8px 8px 8px;
-  border-radius: 3px;
+  margin: var(--button-border-width) var(--button-border-width);
+  padding: var(--back-button-padding);
+  border-radius: var(--button-border-radius);
   text-decoration: none;
   color: var(--on-primary);
-  font-size: 1.5em;
+  font-size: 150%;
 }
 a.back_button:hover {
   background-color: var(--tertiary);

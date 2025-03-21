@@ -4,9 +4,11 @@
   <meta charset="utf-8">
   <title data-i18n="settingsTitle">Ceno Settings</title>
   <link rel="stylesheet" href="themes/default.css">
+  <link rel="stylesheet" href="common.css">
   <link rel="stylesheet" href="settings.css">
 <script type="module" src="localizer/Localizer.js"></script>
 <script src="config.js"></script>
+<script src="utils.js"></script>
 <script src="settings.js"></script>
 </head>
 <body>
@@ -124,12 +126,18 @@
     <span id="ouinet_protocol"> </span>
   </div>
   <div class="btn_container">
-    <p class="name">Font:</p>
-    <div class="btn_group">
-      <button type="button" class="btn_small" id="small_style">Aa</button>
-      <button type="button" class="btn_med" id="med_style">Aa</button>
-      <button type="button" class="btn_big" id="big_style" >Aa</button>
-    </div>
+    <p class="name">Appearance</p>
+    <p>
+      <span>Theme: </span>
+      <button type="button" id="light" class="setting selected">Light</button>
+      <button type="button" id="dark" class="setting unselected" >Dark</button>
+    </p>
+    <p>
+      <span>Text size: <span>
+      <button type="button" class="setting selected" id="default">Default</button>
+      <button type="button" class="setting unselected" id="bigger">Bigger</button>
+      <button type="button" class="setting unselected" id="biggest" >Biggest</button>
+    </p>
   </div>
 </body>
 </html>

@@ -22,3 +22,31 @@ function setBrowserAction(isPersonal) {
     browser.browserAction.setIcon(CENO_ICON);
   }
 }
+
+function setTheme(theme) {
+  const rootcl = document.documentElement.classList;
+  if ( theme === 'dark' ) {
+      rootcl.add('dark');
+      rootcl.remove('light');
+  } else /* if ( theme === 'light' ) */ {
+      rootcl.add('light');
+      rootcl.remove('dark');
+  }
+}
+
+function setTextSize(size) {
+  const rootcl = document.documentElement.classList;
+  if ( size === 'biggest' ) {
+      rootcl.remove('default');
+      rootcl.remove('bigger');
+      rootcl.add('biggest');
+  } else if ( size === 'bigger' ) {
+      rootcl.remove('default');
+      rootcl.add('bigger');
+      rootcl.remove('biggest');
+  } else {
+      rootcl.add('default');
+      rootcl.remove('bigger');
+      rootcl.remove('biggest');
+  }
+}

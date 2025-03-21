@@ -174,24 +174,84 @@ class LogControl {
   }
 }
 
-class StyleSelector {
+class ThemeSelector {
   constructor(id) {
     var elem = document.getElementById(id);
     if (!elem) { return; }
     if (elem.type !== 'button') { return; }
 
     elem.addEventListener('click', event => this.onClick(event));
+    elem.addEventListener('mouseover', event => this.onMouseOver(event));
+    elem.addEventListener('mouseout', event => this.onMouseOut(event));
 
     this.id = id;
     this.elem = elem;
     this.cb = null;
   }
 
+  onMouseOver(event) {
+    browser.storage.local.get("theme").then(item => {
+      if ((this.elem.id != item.theme) && !this.elem.disabled) {
+        this.elem.className = "setting hover"
+      }
+    });
+  }
+
+  onMouseOut(event) {
+    browser.storage.local.get("theme").then(item => {
+      if ((this.elem.id != item.theme) && !this.elem.disabled) {
+        this.elem.className = "setting unselected"
+        console.log(this.elem)
+      }
+    });
+  }
+
   onClick(event) {
     if (!this.elem) return;
-    setStyle(this.id)
+    setSelectedTheme(this.id)
     browser.storage.local.set({
-      style: this.id
+      theme: this.id
+    });
+  }
+}
+
+class TextSizeSelector {
+  constructor(id) {
+    var elem = document.getElementById(id);
+    if (!elem) { return; }
+    if (elem.type !== 'button') { return; }
+
+    elem.addEventListener('click', event => this.onClick(event));
+    elem.addEventListener('mouseover', event => this.onMouseOver(event));
+    elem.addEventListener('mouseout', event => this.onMouseOut(event));
+
+    this.id = id;
+    this.elem = elem;
+    this.cb = null;
+  }
+
+  onMouseOver(event) {
+    browser.storage.local.get("size").then(item => {
+      if ((this.elem.id != item.size) && !this.elem.disabled) {
+        this.elem.className = "setting hover"
+      }
+    });
+  }
+
+  onMouseOut(event) {
+    browser.storage.local.get("size").then(item => {
+      if ((this.elem.id != item.size) && !this.elem.disabled) {
+        this.elem.className = "setting unselected"
+        console.log(this.elem)
+      }
+    });
+  }
+
+  onClick(event) {
+    if (!this.elem) return;
+    setSelectedTextSize(this.id)
+    browser.storage.local.set({
+      size: this.id
     });
   }
 }
@@ -241,8 +301,11 @@ class State {
     this.items = new Map();
     this.actions = new Array();
 
-    var selectors = ["small_style", "med_style", "big_style"];
-    selectors.map(v => new StyleSelector(v));
+    var themes = ["light", "dark"];
+    themes.map(v => new ThemeSelector(v));
+
+    var textSize = ["default", "bigger", "biggest"];
+    textSize.map(v => new TextSizeSelector(v));
 
     var buttons = ["origin_access", "proxy_access", "injector_access", "distributed_cache"];
     buttons.map(v => this.items.set(v, new Button(v)));
@@ -333,133 +396,49 @@ function setFrontEndLinks() {
   }
 }
 
-const smallStyle = {
-  headerHeight: "60px",
-  fontSize: "1em",
-  formPadding: "25px",
-  rowHeight: "25px",
-  cbPadding: "25px",
-  cbTop: "4px",
-  cbSize: "15px",
-  cbBorder: "#aaa solid 2px",
-  cbBorderRadius: "5px",
-  smallBtnBorder: "#0ea5e9",
-  medBtnBorder: "#aaa",
-  bigBtnBorder: "#aaa"
-};
+function setSelectedTheme(theme) {
+    const lightBtn = document.getElementById('light');
+    const darkBtn = document.getElementById('dark');
+    if (theme == "dark") {
+      lightBtn.className = "setting unselected"
+      darkBtn.className = "setting selected"
+    }
+    else {
+      lightBtn.className = "setting selected"
+      darkBtn.className = "setting unselected"
+    }
+    setTheme(theme)
+}
 
-const mediumStyle = {
-  headerHeight: "80px",
-  fontSize: "2em",
-  formPadding: "37.5px",
-  rowHeight: "50px",
-  cbPadding: "50px",
-  cbTop: "10px",
-  cbSize: "30px",
-  cbBorder: "#aaa solid 4px",
-  cbBorderRadius: "10px",
-  smallBtnBorder: "#aaa",
-  medBtnBorder: "#0ea5e9",
-  bigBtnBorder: "#aaa"
-};
-
-const bigStyle = {
-  headerHeight: "120px",
-  fontSize: "3em",
-  formPadding: "50px",
-  rowHeight: "80px",
-  cbPadding: "80px",
-  cbTop: "16px",
-  cbSize: "40px",
-  cbBorder: "#aaa solid 5px",
-  cbBorderRadius: "15px",
-  smallBtnBorder: "#aaa",
-  medBtnBorder: "#aaa",
-  bigBtnBorder: "#0ea5e9",
-};
-
-function setStyle(size) {
+function setSelectedTextSize(size) {
   if (size == null)
     return;
+  const smallBtn = document.getElementById('default');
+  const mediumBtn = document.getElementById('bigger');
+  const bigBtn = document.getElementById('biggest');
 
-  var style = {};
-  if (size == "small_style") {
-    style = smallStyle;
+  if (size == "default") {
+    smallBtn.className = "setting selected"
+    mediumBtn.className = "setting unselected"
+    bigBtn.className = "setting unselected"
   }
-  else if (size == "med_style") {
-    style = mediumStyle;
+  else if (size == "bigger") {
+    smallBtn.className = "setting unselected"
+    mediumBtn.className = "setting selected"
+    bigBtn.className = "setting unselected"
   }
-  else if (size == "big_style") {
-    style = bigStyle;
+  else if (size == "biggest") {
+    smallBtn.className = "setting unselected"
+    mediumBtn.className = "setting unselected"
+    bigBtn.className = "setting selected"
   }
-
-  const h = document.getElementById('header');
-  h.style.height = style.headerHeight;
-  h.style.lineHeight = style.headerHeight;
-  h.style.paddingLeft = style.formPadding;
-  h.style.fontSize = style.fontSize;
-
-  const radios = document.querySelectorAll('.rd_form');
-  Array.from(radios).map(f => {
-    f.style.fontSize = style.fontSize;
-  });
-
-  const rd_rows = document.querySelectorAll('.rd_form .row');
-  Array.from(rd_rows).map(r => {
-    r.style.height = style.rowHeight;
-    r.style.lineHeight = style.rowHeight;
-  });
-
-  const rd_checkboxs = document.querySelectorAll('.rd_checkmark');
-  Array.from(rd_checkboxs).map(cb => {
-    cb.style.height = style.cbSize;
-    cb.style.width = style.cbSize;
-    cb.style.border = style.cbBorder;
-  });
-
-  const forms = document.querySelectorAll('.cb_form');
-  Array.from(forms).map(f => {
-    f.style.fontSize = style.fontSize;
-    f.style.padding = style.formPadding;
-  });
-
-  const rows = document.querySelectorAll('.cb_form .row');
-  Array.from(rows).map(r => {
-    r.style.height = style.rowHeight;
-    r.style.lineHeight = style.rowHeight;
-  });
-
-  const containers = document.querySelectorAll('.cb_container');
-  // TODO: account for bi-directional i18n
-  Array.from(containers).map(c => c.style.paddingLeft = style.cbPadding);
-
-  const checkboxs = document.querySelectorAll('.checkmark');
-  Array.from(checkboxs).map(cb => {
-    cb.style.top = style.cbTop;
-    cb.style.height = style.cbSize;
-    cb.style.width = style.cbSize;
-    cb.style.border = style.cbBorder;
-    cb.style.borderRadius = style.cbBorderRadius;
-  });
-
-  const items = document.querySelectorAll('.status_items');
-  Array.from(items).map(f => {
-    f.style.fontSize = style.fontSize;
-    f.style.padding = style.formPadding;
-  });
-
-  const smallBtn = document.querySelector('.btn_small');
-  smallBtn.style.borderColor = style.smallBtnBorder
-  const mediumBtn = document.querySelector('.btn_med');
-  mediumBtn.style.borderColor = style.medBtnBorder
-  const bigBtn = document.querySelector('.btn_big');
-  bigBtn.style.borderColor = style.bigBtnBorder
+  setTextSize(size)
 }
 
 window.addEventListener("load", async () => {
+  browser.storage.local.get("theme").then(item => setSelectedTheme(item.theme));
+  browser.storage.local.get("size").then(item => setSelectedTextSize(item.size));
   setFrontEndLinks();
-
-  browser.storage.local.get("style").then(item => setStyle(item.style));
 
   let state = new State();
 

@@ -4,14 +4,18 @@
   <meta charset="utf-8">
   <title data-i18n="popupTitle">Ceno Sources</title>
   <link rel="stylesheet" href="themes/default.css">
+  <link rel="stylesheet" href="common.css">
   <link rel="stylesheet" href="popup.css">
 <script type="module" src="localizer/Localizer.js"></script>
 <script src="utils.js"></script>
 <script src="popup.js"></script>
 </head>
 <body>
-  <div data-i18n="popupTitle" id="header">Ceno Sources</div>
-  <p data-i18n="popupHead">Number of page elements per source:</p>
+  <div id="header">
+    <span><a class="back_button"><</a></span>
+    <span data-i18n="popupTitle">Ceno Sources</span>
+  </div>
+  <p data-i18n="popupHead" class="title">Number of page elements per source:</p>
   <table>
       <tr>
           <td data-i18n="popupSrcOrigin">Direct from website</td><td class="value" id="origin"></td>
@@ -26,12 +30,12 @@
       </tr>
   </table>
   <form class="rd_form">
-    <div data-18n="settingsMode" class="mode_title">Browsing Mode</div>
-    <button type="button" class="mode selected" id="public" enabled>Public</button>
-    <button type="button" class="mode unselected" id="personal" enabled>Personal</button>
+    <div data-18n="settingsMode" class="title">Browsing Mode</div>
+    <button data-18n="settingsModePublic" type="button" class="mode selected" id="public" enabled>PUBLIC</button>
+    <button data-18n="settingsModePersonal" type="button" class="mode unselected" id="personal" enabled>PERSONAL</button>
   </form>
   <div class="option">
-    <a href="settings.html" title="Ceno settings" target="_parent" class="button">Additional settings <span class="value">></span></a>
+    <a href="settings.html" title="Ceno settings" target="_parent" class="settings_button">Additional settings <span class="value">></span></a>
   </div>
 </body>
 </html>
