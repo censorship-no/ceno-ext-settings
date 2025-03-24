@@ -174,5 +174,14 @@
     },
     "settingsStatusPubEndpoints": {
         "message": "Puntos de conexión UDP públicos"
+    },
+    "settingsMode": {
+        "message": "Modo de navegación"
+    },
+    "settingsModePublic": {
+        "message": "PÚBLICA"
+    },
+    "settingsModePersonal": {
+        "message": "PERSONAL"
     }
 }

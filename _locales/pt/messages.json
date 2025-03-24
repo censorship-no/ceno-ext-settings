@@ -181,5 +181,14 @@
     "updateGetpaskoocheh": {
         "message": "Baixe no Paskoocheh",
         "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsMode": {
+        "message": "Modo de navegação"
+    },
+    "settingsModePublic": {
+        "message": "PÚBLICO"
+    },
+    "settingsModePersonal": {
+        "message": "PESSOAL"
     }
 }

@@ -181,5 +181,14 @@
     },
     "settingsStatusPubEndpoints": {
         "message": "نقطه‌های انتهایی «یو‌دی‌پی UDP» عمومی"
+    },
+    "settingsMode": {
+        "message": "حالت مرورگری"
+    },
+    "settingsModePublic": {
+        "message": "عمومی"
+    },
+    "settingsModePersonal": {
+        "message": "شخصی"
     }
 }

@@ -181,5 +181,14 @@
     },
     "settingsStatusExtEndpoints": {
         "message": "Extrémités UDP externes"
+    },
+    "settingsMode": {
+        "message": "Mode de navigation"
+    },
+    "settingsModePublic": {
+        "message": "PUBLIQUE"
+    },
+    "settingsModePersonal": {
+        "message": "PERSONNEL"
     }
 }

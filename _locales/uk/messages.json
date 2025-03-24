@@ -181,5 +181,14 @@
     "updateGetpaskoocheh": {
         "message": "Отримати з Paskoocheh",
         "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsMode": {
+        "message": "Режим перегляду"
+    },
+    "settingsModePublic": {
+        "message": "ПУБЛІЧНІ"
+    },
+    "settingsModePersonal": {
+        "message": "ПЕРСОНАЛЬНІ"
     }
 }

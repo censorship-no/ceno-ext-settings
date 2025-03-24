@@ -118,13 +118,6 @@
     "settingsLogDownload": {
         "message": "Download"
     },
-    "settingsModePublic": {
-        "message": "Public"
-    },
-    "settingsModePersonal": {
-        "message": "Personal"
-    },
-
     "popupTitle": {
         "message": "Ceno Sources"
     },
@@ -183,5 +176,14 @@
     "updateGetpaskoocheh": {
         "message": "Get it on Paskoocheh",
         "description": "Alt text for Paskoocheh badge."
+    },
+    "settingsMode": {
+        "message": "Browsing mode"
+    },
+    "settingsModePublic": {
+        "message": "PUBLIC"
+    },
+    "settingsModePersonal": {
+        "message": "PERSONAL"
     }
 }

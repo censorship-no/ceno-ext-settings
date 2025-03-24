@@ -181,5 +181,14 @@
     },
     "settingsStatusExtEndpoints": {
         "message": "Внешние конечные точки UDP"
+    },
+    "settingsMode": {
+        "message": "Режим Просмотра"
+    },
+    "settingsModePublic": {
+        "message": "ПУБЛИЧНОЕ"
+    },
+    "settingsModePersonal": {
+        "message": "ЛИЧНОЕ"
     }
 }
