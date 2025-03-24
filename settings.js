@@ -399,11 +399,11 @@ function setFrontEndLinks() {
 function setSelectedTheme(theme) {
     const lightBtn = document.getElementById('light');
     const darkBtn = document.getElementById('dark');
-    if (theme == "dark") {
+    if (theme === "dark") {
       lightBtn.className = "setting unselected"
       darkBtn.className = "setting selected"
     }
-    else {
+    else /* if (theme === "light") */ {
       lightBtn.className = "setting selected"
       darkBtn.className = "setting unselected"
     }
@@ -411,26 +411,23 @@ function setSelectedTheme(theme) {
 }
 
 function setSelectedTextSize(size) {
-  if (size == null)
-    return;
-  const smallBtn = document.getElementById('default');
-  const mediumBtn = document.getElementById('bigger');
-  const bigBtn = document.getElementById('biggest');
-
-  if (size == "default") {
-    smallBtn.className = "setting selected"
-    mediumBtn.className = "setting unselected"
-    bigBtn.className = "setting unselected"
+  const defaultBtn = document.getElementById('default');
+  const biggerBtn = document.getElementById('bigger');
+  const biggestBtn = document.getElementById('biggest');
+  if (size === "bigger") {
+    defaultBtn.className = "setting unselected"
+    biggerBtn.className = "setting selected"
+    biggestBtn.className = "setting unselected"
   }
-  else if (size == "bigger") {
-    smallBtn.className = "setting unselected"
-    mediumBtn.className = "setting selected"
-    bigBtn.className = "setting unselected"
+  else if (size === "biggest") {
+    defaultBtn.className = "setting unselected"
+    biggerBtn.className = "setting unselected"
+    biggestBtn.className = "setting selected"
   }
-  else if (size == "biggest") {
-    smallBtn.className = "setting unselected"
-    mediumBtn.className = "setting unselected"
-    bigBtn.className = "setting selected"
+  else /* if (size === "default") */ {
+    defaultBtn.className = "setting selected"
+    biggerBtn.className = "setting unselected"
+    biggestBtn.className = "setting unselected"
   }
   setTextSize(size)
 }

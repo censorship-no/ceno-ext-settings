@@ -11,6 +11,7 @@ DEFINES["MOZ_APP_MAXVERSION"] = CONFIG["MOZ_APP_MAXVERSION"]
 
 FINAL_TARGET_FILES.features["ceno@equalit.ie"] += [
     "background.js",
+    "common.css",
     "config.js",
     "LICENSE",
     "manifest.json",
@@ -124,6 +125,10 @@ FINAL_TARGET_FILES.features["ceno@equalit.ie"]["localizer"] += [
     "localizer/LICENSE.md",
     "localizer/Localizer.js",
     "localizer/replaceInnerContent.js",
+]
+
+FINAL_TARGET_FILES.features["ceno@equalit.ie"]["themes"] += [
+    "themes/default.css",
 ]
 
 FINAL_TARGET_FILES.features["ceno@equalit.ie"]["update-page"] += [

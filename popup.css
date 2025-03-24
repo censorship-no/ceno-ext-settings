@@ -5,11 +5,12 @@ p {
 table {
   width: 100%;
   padding-__MSG_@@bidi_start_edge__: var(--form-padding);
-  padding-bottom: var(--section-padding)
+  padding-bottom: var(--section-padding);
   color: var(--on-primary);
 }
 .value {
   padding-__MSG_@@bidi_start_edge__: var(--form-padding);
+  padding-__MSG_@@bidi_end_edge__: var(--form-padding);
   text-align: __MSG_@@bidi_end_edge__;
 }
 .title {

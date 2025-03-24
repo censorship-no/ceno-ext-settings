@@ -29,6 +29,31 @@
     --purple_700: #751A85;
     --purple_800: #53115F;
     --purple_900: #320B39;
+
+    /* Default style: light theme, default scaling */
+    --primary: white;
+    --on-primary: var(--grey_700);
+    --secondary: var(--grey_200);
+    --on-secondary: var(--grey_900);
+    --tertiary: var(--grey_400);
+    --accent-1: var(--blue_400);
+    --accent-2: var(--purple_300);
+
+    --body-width: 325px;
+    --header-height: 60px;
+    --header-padding: 20px;
+    --font-size: 1em;
+    --form-padding: 25px;
+    --row-height: 25px;
+    --section-padding: 10px;
+    --checkbox-padding: 25px;
+    --checkbox-top: 4px;
+    --checkbox-size: 15px;
+    --line-weight-1: 2px;
+    --button-border-radius: 5px;
+    --button-border-width: 3px;
+    --button-padding: 4px;
+    --back-button-padding: 8px;
 }
 
 @media (prefers-color-scheme: light) {
