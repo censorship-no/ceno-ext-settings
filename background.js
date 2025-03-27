@@ -451,14 +451,16 @@ browser.runtime.onStartup.addListener(clearLocalStorage);
 browser.tabs.onUpdated.addListener(
   (id, changeInfo, tab) => setBrowserActionForTab(id));
 
-browser.windows.onFocusChanged.addListener(
-  (id) => {
-    browser.tabs.query({currentWindow:true, active:true}).then(
-      (tabs) => {
-        const tabId = tabs[0].id;
-        setBrowserActionForTab(tabId)
-    });
-});
+if (browser.windows != null) {
+  browser.windows.onFocusChanged.addListener(
+    (id) => {
+      browser.tabs.query({currentWindow:true, active:true}).then(
+        (tabs) => {
+          const tabId = tabs[0].id;
+          setBrowserActionForTab(tabId)
+      });
+  });
+}
 
 /**
  * Initialize all tabs.
@@ -469,8 +471,14 @@ browser.tabs.query({}).then(
 browser.tabs.onRemoved.addListener(
   (id) => removeCacheForTab(id));
 
-// Set up listener for native messages
-port.onMessage.addListener(response => {
-  // Send back ouinet statistics
-  port.postMessage(`${JSON.stringify(gOuinetStats[gActiveTabId])}`);
+browser.runtime.getPlatformInfo().then(info => {
+  if (info.os === "android") {
+    // Establish connection with application
+    const port = browser.runtime.connectNative("browser");
+    // Set up listener for native messages
+    port.onMessage.addListener(response => {
+      // Send back ouinet statistics
+      port.postMessage(`${JSON.stringify(gOuinetStats[gActiveTabId])}`);
+    });
+  }
 });
