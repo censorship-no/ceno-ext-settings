@@ -13,7 +13,8 @@
 
   "browser_specific_settings": {
     "gecko": {
-      "id": "ceno@equalit.ie"
+      "id": "ceno@equalit.ie",
+      "strict_min_version": "91.1.0"
       }
   },
 
@@ -32,14 +33,14 @@
   ],
 
   "browser_action": {
-    "default_icon": "icons/ceno-logo-48.png",
-    "default_title": "CENO"
-  },
-
-  "page_action": {
-    "default_icon": "icons/ceno-logo-32.png",
-    "default_title": "CENO",
-    "default_popup": "popup.html"
+    "default_icon": {
+      "32" : "icons/ceno-logo-32.png",
+      "48" : "icons/ceno-logo-48.png",
+      "96" : "icons/ceno-logo-96.png"
+    },
+    "default_title": "Ceno",
+    "default_popup": "popup.html",
+    "default_area": "navbar"
   },
 
   "options_ui": {
@@ -48,13 +49,8 @@
   },
 
   "background": {
-    "scripts": [ "config.js", "background.js" ]
+    "scripts": [ "config.js", "utils.js", "background.js" ]
   },
-
-  "content_scripts": [{
-    "matches": ["*://*/*"],
-    "js": [ "content.js" ]
-  }],
 
   "web_accessible_resources": [
     "settings.html",

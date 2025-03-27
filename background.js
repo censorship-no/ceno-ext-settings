@@ -1,5 +1,4 @@
 'use strict';
-const CENO_ICON = "icons/ceno-logo-32.png";
 const CACHE_MAX_ENTRIES = 500;
 const OUINET_RESPONSE_VERSION_MIN = 1  // protocol versions accepted
 const OUINET_RESPONSE_VERSION_MAX = 6
@@ -68,10 +67,10 @@ function onBeforeSendHeaders(e) {
 
   // tabs.get returns a Promise
   return browser.tabs.get(e.tabId).then(tab => {
-      // The `tab` structure is described here:
-      // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab
-
-      let is_private = tab.incognito || !isUrlCacheable(e.url);
+    // The `tab` structure is described here:
+    // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab
+    return browser.storage.local.get("mode").then(item => {
+      let is_private = tab.incognito || !isUrlCacheable(e.url) || item.mode == "personal" ;
       e.requestHeaders.push({name: "X-Ouinet-Private", value: (is_private ? "True" : "False")});
 
       if (!is_private) {
@@ -79,6 +78,7 @@ function onBeforeSendHeaders(e) {
       }
 
       return {requestHeaders: e.requestHeaders};
+    });
   });
 }
 
@@ -324,13 +324,15 @@ function setPageActionIcon(tabId, isUsingOuinet) {
 }
 
 /**
- * Updates the icon for the page action using the details
+ * Updates the icon for the browser action using the details
  * about the page from local storage.
  */
-function setPageActionForTab(tabId) {
-  getCacheEntry(tabId, (ouinetDetails) => {
-      var isUsingOuinet = ouinetDetails && ouinetDetails.isProxied;
-      setPageActionIcon(tabId, true /* isUsingOuinet */);
+function setBrowserActionForTab(tabId) {
+  browser.tabs.get(tabId).then(tab => {
+    browser.storage.local.get("mode").then(item => {
+      let isPersonal = tab.incognito || item.mode == "personal" ;
+      setBrowserAction(isPersonal)
+    });
   });
 }
 
@@ -410,10 +412,7 @@ function setOuinetClientAsProxy() {
 
 setOuinetClientAsProxy();
 
-browser.browserAction.onClicked.addListener(function() {
-  var url = browser.extension.getURL("settings.html");
-  browser.tabs.create({url: url});
-})
+browser.browserAction.onClicked.addListener(browser.browserAction.openPopup)
 
 browser.webRequest.onBeforeSendHeaders.addListener(
   onBeforeSendHeaders,
@@ -451,7 +450,7 @@ browser.webRequest.onHeadersReceived.addListener(
 );
 
 browser.runtime.onMessage.addListener(
-  (request, sender, sendResponse) => setPageActionForTab(sender.tab.id, sender));
+  (request, sender, sendResponse) => setBrowserActionForTab(sender.tab.id, sender));
 
 browser.runtime.onStartup.addListener(clearLocalStorage);
 
@@ -459,21 +458,36 @@ browser.runtime.onStartup.addListener(clearLocalStorage);
  * Each time a tab is updated, reset the page action for that tab.
  */
 browser.tabs.onUpdated.addListener(
-  (id, changeInfo, tab) => setPageActionForTab(id));
+  (id, changeInfo, tab) => setBrowserActionForTab(id));
+
+if (browser.windows != null) {
+  browser.windows.onFocusChanged.addListener(
+    (id) => {
+      browser.tabs.query({currentWindow:true, active:true}).then(
+        (tabs) => {
+          const tabId = tabs[0].id;
+          setBrowserActionForTab(tabId)
+      });
+  });
+}
 
 /**
  * Initialize all tabs.
  */
 browser.tabs.query({}).then(
-  (tabs) => tabs.map((tab) => setPageActionForTab(tab.id)));
+  (tabs) => tabs.map((tab) => setBrowserActionForTab(tab.id)));
 
 browser.tabs.onRemoved.addListener(
   (id) => removeCacheForTab(id));
 
-browser.pageAction.onClicked.addListener(browser.pageAction.openPopup);
-
-// Set up listener for native messages
-port.onMessage.addListener(response => {
-  // Send back ouinet statistics
-  port.postMessage(`${JSON.stringify(gOuinetStats[gActiveTabId])}`);
+browser.runtime.getPlatformInfo().then(info => {
+  if (info.os === "android") {
+    // Establish connection with application
+    const port = browser.runtime.connectNative("browser");
+    // Set up listener for native messages
+    port.onMessage.addListener(response => {
+      // Send back ouinet statistics
+      port.postMessage(`${JSON.stringify(gOuinetStats[gActiveTabId])}`);
+    });
+  }
 });

@@ -1,20 +1,20 @@
 {
     "extName": {
-        "message": "افزونه‌های مرورگر CENO",
+        "message": "افزونه‌های مرورگر Ceno",
         "description": "Name of the extension."
     },
     "extDesc": {
-        "message": "ادغام و هم‌پیوندی CENO و Ouinet را فراهم می‌کند: ذخیره صفحه‌ها و گروه‌بندی، اطلاعات مرتبط با منبع صفحه، تنظیمات و دیگر ویژگی‌ها. شامل کدهای بومی شده توسط rugk تحت مجوز MIT است.",
+        "message": "ادغام و هم‌پیوندی Ceno و Ouinet را فراهم می‌کند: ذخیره صفحه‌ها و گروه‌بندی، اطلاعات مرتبط با منبع صفحه، تنظیمات و دیگر ویژگی‌ها. شامل کدهای بومی شده توسط rugk تحت مجوز MIT است.",
         "description": "Description of the extension."
     },
     "bgCenoWarning": {
-        "message": "اخطار CENO"
+        "message": "اخطار Ceno"
     },
     "settingsTitle": {
-        "message": "تنظیمات CENO"
+        "message": "تنظیمات Ceno"
     },
     "settingsWarn": {
-        "message": "تنظیمات این صفحه فقط برای آزمایش عملکرد CENO در شرایط مختلف شبکه در نظر گرفته شده است. برای اطلاعات بیشتر به بخش $MANUAL$ مراجعه کنید.",
+        "message": "تنظیمات این صفحه فقط برای آزمایش عملکرد Ceno در شرایط مختلف شبکه در نظر گرفته شده است. برای اطلاعات بیشتر به بخش $MANUAL$ مراجعه کنید.",
         "placeholders": {
             "manual": {
                 "content": "$1"
@@ -29,7 +29,7 @@
         "description": "Link to the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "settingsWarnManTI": {
-        "message": "نه به سانسور! تنظیمات دستی کاربر - تنظیمات CENO"
+        "message": "نه به سانسور! تنظیمات دستی کاربر - تنظیمات Ceno"
     },
     "settingsSources": {
         "message": "منابع بازیابی محتوا:"
@@ -38,13 +38,13 @@
         "message": "به طور مستقیم از وب‌سایت"
     },
     "settingsSrcProxy": {
-        "message": "از طریق شبکه CENO (خصوصی)"
+        "message": "از طریق شبکه Ceno (خصوصی)"
     },
     "settingsSrcInjector": {
-        "message": "از طریق شبکه CENO (عمومی)"
+        "message": "از طریق شبکه Ceno (عمومی)"
     },
     "settingsSrcDcache": {
-        "message": "به اشتراک گذاشته شده توسط دیگر کاربران CENO"
+        "message": "به اشتراک گذاشته شده توسط دیگر کاربران Ceno"
     },
     "settingsPubwarn": {
         "message": "$PUBLIC_BROWSING$ با تنظیمات فعلی موفق نخواهد بود.",
@@ -69,10 +69,10 @@
         "message": "مرورگری خصوصی"
     },
     "settingsStatusBrowser": {
-        "message": "مرورگر CENO"
+        "message": "مرورگر Ceno"
     },
     "settingsStatusExtension": {
-        "message": "افزونه‌های CENO"
+        "message": "افزونه‌های Ceno"
     },
     "settingsStatusOuinet": {
         "message": "Ouinet"
@@ -114,7 +114,7 @@
         "message": "دانلود (بارگذاری)"
     },
     "popupTitle": {
-        "message": "منابع CENO"
+        "message": "منابع Ceno"
     },
     "popupHead": {
         "message": "تعداد المنت‌های صفحه به ازای هر منبع:"
@@ -123,13 +123,13 @@
         "message": "مستقیم از وب‌سایت"
     },
     "popupSrcProxy": {
-        "message": "از طریق شبکه CENO (خصوصی)"
+        "message": "از طریق شبکه Ceno (خصوصی)"
     },
     "popupSrcInjector": {
-        "message": "از طریق شبکه CENO (عمومی)"
+        "message": "از طریق شبکه Ceno (عمومی)"
     },
     "popupSrcDcache": {
-        "message": "به اشتراک گذاشته شده توسط کاربران CENO"
+        "message": "به اشتراک گذاشته شده توسط کاربران Ceno"
     },
     "popupSrcLcache": {
         "message": "به اشتراک گذاشته شده توسط شما"
@@ -150,16 +150,16 @@
         "description": "Link to the access mechanisms subsection in the Settings section of the User Manual. Keep it as is unless the section has been translated."
     },
     "popupFootManTI": {
-        "message": "نه به سانسور! تنظیمات دستی کاربر - تنظیمات CENO"
+        "message": "نه به سانسور! تنظیمات دستی کاربر - تنظیمات Ceno"
     },
     "updateTitle": {
-        "message": "به‌روز‌رسانی CENO"
+        "message": "به‌روز‌رسانی Ceno"
     },
     "updateMetacontent": {
-        "message": "به‌روزرسانی CENO"
+        "message": "به‌روزرسانی Ceno"
     },
     "updateHead": {
-        "message": "مرورگر CENO شما به‌روز نیست."
+        "message": "مرورگر Ceno شما به‌روز نیست."
     },
     "updateSubhead": {
         "message": "لطفا برنامه خود را از طریق کانال‌های زیر به روز کنید:",
@@ -181,5 +181,14 @@
     },
     "settingsStatusPubEndpoints": {
         "message": "نقطه‌های انتهایی «یو‌دی‌پی UDP» عمومی"
+    },
+    "settingsMode": {
+        "message": "حالت مرورگری"
+    },
+    "settingsModePublic": {
+        "message": "عمومی"
+    },
+    "settingsModePersonal": {
+        "message": "شخصی"
     }
 }
